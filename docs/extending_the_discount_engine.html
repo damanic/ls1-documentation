@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Extending the Discount Engine</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="extending_lemonstand.html">Extending LemonStand</a></li><li class="last">Extending the Discount Engine</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Extending the Discount Engine</h2>
+        
+        <p>You can extend the discount engine with new actions and conditions.</p>
+<h3>Developing discount engine actions</h3>
+<p>Discount engine actions are classes which apply specific discounts to cart items (for cart-level discounts) or products (for catalog-level price rules). Action class names should follow the naming convention described in the <a href="extending_the_discount_engine.html#">developing_lemonstand_modules</a>&nbsp;section. You can define new actions by adding them to the Shop module, or to custom modules.</p>
+<p>If you add an action to the Shop module, the action PHP script should be placed to the <strong>/modules/shop/price_rule_actions</strong> directory. The action class name should have the <strong>_Action</strong> suffix. For example, class name - Shop_MyDiscount_Action, file name - /modules/shop/price_rule_actions/shop_mydiscount_action.php.</p>
+<p>If you add an action to a custom module, the action PHP script should be placed to the module classes directory - <strong>/modules/mymodule/classes</strong>. The action class name should have a prefix in the following format: <strong>ModuleName_De_</strong>, and the <strong>_Action</strong> suffix. Example: class name - MyModule_De_SomeDiscount_Action, file name - /modules/mymodule/classes/mymodule_de_somediscount_action.php.</p>
+<p>Discount engine action classes should extend the <strong>Shop_CartRuleActionBase</strong> class. The following methods could be defined in any discount engine action class:</p>
+<ul>
+<li><strong>get_name()</strong> - returns the action name. This method is required.</li>
+<li><strong>get_action_type()</strong> - determines whether the action is applicable for <a href="shopping_cart_price_rules.html">Discounts</a> or <a href="extending_the_discount_engine.html#">Catalog Price Rules</a>. This method is required.</li>
+<li><strong>eval_discount()</strong> - applies discounts to cart items. This method should be overridden only for Discount actions (which apply discount to cart items).</li>
+<li><strong>eval_amount()</strong> - applies discount to a product. This method should be overridden only for Catalog Price Rules actions.</li>
+<li><strong>is_per_product_action()</strong> - determines whether the action can apply discounts only to specific items in the cart. If this method returns TRUE, the Product Filter section is displayed on the action configuration form.&nbsp;<br /><img src="../resources/i/wiki/Product&#32;filter.png" alt="" />&nbsp;</li>
+<li><strong>build_config_form()</strong> - adds action-specific controls to the action configuration form. If your action does not have any controls, you can omit this method.</li>
+</ul>
+<p>Below is a typical template of a discount action which applies <a href="shopping_cart_price_rules.html">discounts</a> to cart items. <div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class Shop_MyCartDiscount_Action extends Shop_CartRuleActionBase
+  {
+    public function get_action_type()
+    {
+      return self::type_cart;
+    }
+    
+    public function get_name()
+    {
+      return &quot;Discount the shopping cart subtotal by fixed amount&quot;;
+    }
+    
+    public function build_config_form($host_obj)
+    {
+      ...
+    }
+    
+    public function is_per_product_action()
+    {
+      return false;
+    }
+    
+    public function eval_discount(&amp;$params, $host_obj, &amp;$item_discount_map,
+                                  &amp;$item_discount_tax_incl_map, $product_conditions)
+    {
+      ...
+    }
+  }
+?&gt;</pre></div></p>
+<p>Below is a typical template of a discount action which applies discounts to products (applicable for the <a href="extending_the_discount_engine.html#">Catalog Price Rules</a> section).&nbsp;<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+
+  class Shop_MyProductDiscount_Action extends Shop_RuleActionBase
+  {
+    public function get_action_type()
+    {
+      return self::type_product;
+    }
+    
+    public function get_name()
+    {
+      return &quot;By fixed amount&quot;;
+    }
+    
+    public function build_config_form($host_obj)
+    {
+      ...
+    }
+    
+    public function eval_amount(&amp;$params, $host_obj)
+    {
+      ...
+    }
+  }
+
+?&gt;</pre></div></p>
+<h4>Building the discount action configuration form</h4>
+<p>You can add controls to the discount action configuration form in the&nbsp;<strong>build_config_form()</strong>. This method builds the discount configuration form and it is similar to the&nbsp;<strong>define_form_fields()</strong>&nbsp;method of the model class, which we described in the&nbsp;<a href="administration_area_forms.html">Forms</a>&nbsp;article. In this method you can add fields to the action configuration form. All field values are saved automatically and you can access them in the code which calculates discounts. The set of fields you define in the <strong>build_config_form()</strong> method&nbsp;depends on the action you are developing.</p>
+<p>Below is a definition of the&nbsp;<strong>build_config_form()</strong>&nbsp;method of the&nbsp;Shop_ProductToPercentage_Action discount action class: <div class="codeblock"><pre class="brush:php; collapse: false">public function build_config_form($host_obj)
+{
+  $host_obj-&gt;add_field('discount_amount', 'Discount amount', 'full', db_float)-&gt;comment('Please 
+    specify a percentage of the original product price to use as a final product price.', 'above')
+    -&gt;validation()-&gt;required('Please specify discount amount');
+}</pre></div></p>
+<p>The method has a single - the Active Record object, which should be used for adding form fields.&nbsp;The example code creates 1 field on the configuration form -<strong>&nbsp;Discount amount</strong>. Usually all discount action have this field. Below is a screenshot of the Action tab of the discount rule configuration form:</p>
+<p><img src="../resources/i/wiki/action&#32;configuration&#32;form.png" alt="" /></p>
+<p>To add fields to the configuration form, the code inside the&nbsp;<strong><strong>build_config_form</strong>()</strong>&nbsp;method should call the&nbsp;<strong>add_field()</strong>&nbsp;method of the object, passed in the first method parameter. This method has 4 parameters - the field identifier, the field title, field alignment and field type. Field identifiers should be compatible with PHP variable names - they should not contain spaces, and they can contain only Latin characters and numbers. Using the third parameter you can specify a field placement on the form. Allowed parameter values are&nbsp;<strong>left</strong>,&nbsp;<strong>right</strong>&nbsp;and&nbsp;<strong>full</strong>&nbsp;(the default value). The fourth parameter allows to specify the field type. For currency values use the <strong>db_float</strong> type.</p>
+<h4>Applying discounts to cart items</h4>
+<p>If you are developing a discount action which should apply discounts to the cart items, you should declare the eval_discount() method in your discount action class. The method should return the total discount value applied to cart items. The method has the following parameters:</p>
+<ul>
+<li><strong>$params</strong> - contains a list of discount engine parameters which could be needed in the discount calculation. The array contains the following elements: <br /><strong>-&nbsp;</strong><strong>cart_items</strong> - an array of <a href="class_shop_cartitem.html">Shop_CartItem</a> objects, representing the cart content.<br /><strong>- current_subtotal</strong> - current cart subtotal. This value takes into account discounts applied by other discount actions (if any). <br /><strong>- customer</strong>&nbsp;- an object of class <a href="class_shop_customer.html">Shop_Customer</a>, or null. Specifies a customer the order belongs to. </li>
+<li><strong>$host_obj</strong> - an object containing the action configuration values specified in the configuration form.</li>
+<li><strong>&amp;$item_discount_map</strong> - a list of cart item identifiers and corresponding discounts. This array can be used for obtaining a value of discount applied to a cart item and should be updated by the action class. The discount action should update values for items the action applies discount to.</li>
+<li><strong>&amp;$item_discount_tax_incl_map</strong> - the same as the $item_discount_map parameter, but with taxes included to the discount values. You do not need to maintain this parameter if you are not going to use the action in tax inclusive jurisdictions (Australia, Great Britain, and others). </li>
+<li><strong>$product_conditions</strong> - the product filter object. This object is needed to detect whether the product filter configuration allows to apply discount to a specific cart item.</li>
+</ul>
+<p class="wiki_note">The content of the eval_discount() method depends on the business logic you want to implement inside the action, but the task of any discount action is calculating the total discount amount applied to all items (taking into account item quantities) and maintaining the content of the <strong>$item_discount_map</strong> and <strong>$item_discount_tax_incl_map</strong> variables.</p>
+<p>Let's review the typical example of the discount action, which applies fixed discount to specific items in the cart. This action is complicated, but illustrative. Below is a commented code of the action. <div class="codeblock"><pre class="brush:php; collapse: true">public function get_action_type()
+{
+  /*
+   * This action applies discounts to the cart items
+   */
+  return self::type_cart;
+}
+
+public function get_name()
+{
+  return &quot;Discount each cart item unit price by fixed amount&quot;;
+}
+
+public function is_per_product_action()
+{
+  /*
+   * This action allows the product filter
+   */
+  return true;
+}
+
+public function build_config_form($host_obj)
+{
+  /*
+   * The action has a single required field - the discount amount. The code
+   * below adds this field to the action configuration form.
+   */
+  $host_obj-&gt;add_field('discount_amount', 'Discount amount', 'full', db_float)
+  -&gt;comment('Please specify an amount to subtract from cart item unit price. ', 'above')
+  -&gt;validation()-&gt;required('Please specify discount amount');
+}
+
+public function eval_discount(&amp;$params, $host_obj, &amp;$item_discount_map,
+                              &amp;$item_discount_tax_incl_map, $product_conditions)
+{
+  /*
+   * Extract the cart items from the $params array and initialize discount variables
+   */
+
+  $cart_items = $params['cart_items'];
+  $total_discount = 0;
+  $total_discount_incl_tax = 0;
+
+  /*
+   * Determine whether the tax should be included to discounts
+   */
+  $include_tax = Shop_CheckoutData::display_prices_incl_tax();
+
+  /*
+   * Loop through the cart items
+   */
+  foreach ($cart_items as $item)
+  {
+    /*
+     * Calculate the current product price as a difference between the original product price and discount
+     * applied to it by other discount actions (if any)
+     */
+    $original_product_price = $item-&gt;total_single_price();
+    $current_product_price = max($original_product_price - $item_discount_map[$item-&gt;key], 0);
+
+    /*
+     * The following array ($rule_params) is needed for the product filter, to determine whether
+     * the discount should be applied to the current item. Usually the parameters initialization
+     * is similar for all discount actions.
+     */
+    $rule_params = array();
+    $rule_params['product'] = $item-&gt;product;
+    $rule_params['item'] = $item;
+    $rule_params['current_price'] = $item-&gt;single_price_no_tax(false) - $item-&gt;discount(false);
+    $rule_params['quantity_in_cart'] = $item-&gt;quantity;
+    $rule_params['row_total'] = $item-&gt;total_price_no_tax();
+    $rule_params['item_discount'] = isset($item_discount_map[$item-&gt;key]) ? $item_discount_map[$item-&gt;key] : 0;
+
+    /*
+     * Apply the product filter. The $this-&gt;is_active_for_product() method checks whether the product is allowed 
+     * by the filter configuration.
+     */
+    if ($this-&gt;is_active_for_product($item-&gt;product, $product_conditions, $current_product_price, $rule_params))
+    {
+      /*
+       * Initialize the discount amount variables - just load the value from the configuration form.
+       */
+      $total_discount_incl_tax = $discount_value = $host_obj-&gt;discount_amount;
+      
+      if ($include_tax)
+      {
+        /*
+         * If the tax inclusive mode is enabled, we need to extract the real discount value from the discount total,
+         * because the discount engine works in the tax exclusive mode, but discounts are specified in tax inclusive mode.
+         */
+        $discount_value = Shop_TaxClass::get_subtotal($item-&gt;product-&gt;tax_class_id, $discount_value);
+      }
+      
+      /*
+       * Do not allow the discount to exceed the current product price
+       */
+      if ($discount_value &gt; $current_product_price)
+        $total_discount_incl_tax = $discount_value = $current_product_price;
+      
+      /*
+       * Calculate the total discount with tax included value - apply the tax to the tax value and add it to the tax value
+       */
+      if ($include_tax)
+        $total_discount_incl_tax = Shop_TaxClass::get_total_tax($item-&gt;product-&gt;tax_class_id, $discount_value) + $discount_value;
+      
+      /*
+       * Increase the total discount (the method result)
+       * and update the item discount maps for the tax exclusive and tax inclusive discounts.
+       */
+      $total_discount += $discount_value*$item-&gt;quantity;
+      $item_discount_map[$item-&gt;key] += $discount_value;
+      $item_discount_tax_incl_map[$item-&gt;key] += $total_discount_incl_tax;
+    }
+  }
+  
+  /*
+   * Return the discount amount
+   */
+  return $total_discount;
+}</pre></div></p>
+<h4>Applying discounts to products</h4>
+<p><a href="extending_the_discount_engine.html#">Catalog-level</a> discount actions are usually simpler than cart-level actions, because they have less configuration parameters and context variables. The action class for catalog-level actions should contain the eval_amount() method. This method should return the amount of the discount applied by the rule. The method has the following parameters:</p>
+<ul>
+<li><strong>$params</strong> - contains a list of discount engine parameters which could be needed in the discount calculation. The array contains the following elements:<br /><strong>-&nbsp;</strong><strong>product</strong> - an object of the <a href="class_shop_product.html">Shop_Product</a> class, representing a product the discount should be calculated for. <br /><strong>- current_price</strong> - determines the current product price </li>
+<li><strong>$host_obj</strong> - an object containing the action configuration values specified in the configuration form.</li>
+</ul>
+<p>Below is a code of an action which applies a percentage discount to products. <div class="codeblock"><pre class="brush:php; collapse: true">public function get_action_type()
+{
+  return self::type_product;
+}
+
+public function build_config_form($host_obj)
+{
+  /*
+   * The action has a single required field - the discount amount. The code
+   * below adds this field to the action configuration form.
+   */
+  $host_obj-&gt;add_field('discount_amount', 'Discount amount', 'full', db_float)
+  -&gt;comment('Please specify a percentage of the original product price to use as a final product price.', 'above')
+  -&gt;validation()-&gt;required('Please specify discount amount');
+}
+
+public function eval_amount(&amp;$params, $host_obj)
+{
+  /*
+   * Extract the product price from the parameter array
+   */
+  $current_price = $params['current_price'];
+  
+  /*
+   * Calculate and return the discount value
+   */
+  return $current_price*$host_obj-&gt;discount_amount/100;
+}</pre></div></p>
+<h4>Other examples</h4>
+<p>We suggest you to check the <strong>/modules/shop/price_rule_actions/</strong> directory for other examples of Discount Engine actions.</p>
+        
+        <p>Next: <a href="authoring_for_lemonstand_marketplace.html">Authoring for LemonStand Marketplace</a><br/>Previous: <a href="accessing_lemonstand_api_from_third_party_scripts.html">Accessing LemonStand API from third-party scripts</a><br/>Return to <a href="extending_lemonstand.html">Extending LemonStand</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_355"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/extending_the_discount_engine/";
+		var disqus_title = "Extending the Discount Engine";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Displaying a List of Shopping Cart Items</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="shopping_cart.html">Shopping Cart</a></li><li class="last">Displaying a List of Shopping Cart Items</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Displaying a List of Shopping Cart Items</h2>
+        
+        <h3>Creating a partial for displaying a list of cart items</h3>
+<p>Items in the LemonStand shopping cart can be postponed and so we need a way to display both active and postponed items on the cart page. As the nature of both lists are the same, it is a good idea to use the same partial for both lists.</p>
+<p>A list of items in the shopping cart must contain an item image, if any, item title, item options and extra options controls for postponing an item and making it active, item quantity, item single price and item total price.</p>
+<p>The following code demonstrates an example of the cart item list partial. The partial accepts 2 parameters to be passed in it - <strong>$postponed</strong> and <strong>$items</strong>. $postponed parameter must have a value TRUE for the postponed item list.</p>
+<p>Create a new partial and name it <strong>shop:cart_table</strong>. The partial name could be anything, but we used the <strong>shop:cart_table</strong> in the cart page code example above.</p>
+<div class="code-tabs" id="cart_partial"><ul><li><a href="displaying_a_list_of_shopping_cart_items.html#cart_partial-php">PHP</a></li><li><a href="displaying_a_list_of_shopping_cart_items.html#cart_partial-twig">Twig</a></li></ul><div id="cart_partial-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;? $postponed = isset($postponed) ? $postponed : null ?&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Cart Items&lt;/th&gt;
+    &lt;th&gt;&lt;? if (!$postponed): ?&gt;Postpone&lt;? else: ?&gt;Postponed&lt;? endif ?&gt;&lt;/th&gt;
+    &lt;th&gt;Quantity&lt;/th&gt;
+    &lt;th&gt;Delete&lt;/th&gt;
+    &lt;th&gt;Price&lt;/th&gt;
+    &lt;th&gt;Discount&lt;/th&gt;
+    &lt;th&gt;Total&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;? if (!count($items)): ?&gt;
+    &lt;tr&gt;
+      &lt;td colspan=&quot;6&quot;&gt;Your cart is empty.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;? else: ?&gt;
+  &lt;?
+    foreach ($items as $item):
+    $image_url = $item-&gt;product-&gt;image_url(0, 60, 'auto');
+    $options_str = $item-&gt;options_str();
+  ?&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;? if ($image_url): ?&gt;
+          &lt;img src=&quot;&lt;?= $image_url ?&gt;&quot; alt=&quot;&lt;?= h($item-&gt;product-&gt;name) ?&gt;&quot;/&gt;
+        &lt;? endif ?&gt;
+        &lt;strong&gt;&lt;?= h($item-&gt;product-&gt;name) ?&gt;&lt;/strong&gt;
+        &lt;? if (strlen($options_str)): ?&gt;
+          &lt;br/&gt;&lt;?= h($options_str) ?&gt;.
+        &lt;? endif ?&gt;
+        &lt;? if ($item-&gt;extra_options): ?&gt;
+          &lt;? foreach ($item-&gt;extra_options as $option): ?&gt;
+            &lt;br/&gt;
+            + &lt;?= h($option-&gt;description) ?&gt;:
+            &lt;?= format_currency($option-&gt;get_price($item-&gt;product)) ?&gt;
+          &lt;? endforeach ?&gt;
+        &lt;? endif ?&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;item_postponed[&lt;?= $item-&gt;key ?&gt;]&quot; value=&quot;0&quot;/&gt;
+        &lt;input type=&quot;checkbox&quot; &lt;?= checkbox_state($item-&gt;postponed) ?&gt; name=&quot;item_postponed[&lt;?= $item-&gt;key ?&gt;]&quot; value=&quot;1&quot;/&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;? if (!$postponed): ?&gt;
+          &lt;input type=&quot;text&quot; name=&quot;item_quantity[&lt;?= $item-&gt;key ?&gt;]&quot; value=&quot;&lt;?= $item-&gt;quantity ?&gt;&quot;/&gt;
+        &lt;? else: ?&gt;
+          &lt;?= $item-&gt;quantity ?&gt;
+        &lt;? endif ?&gt;
+      &lt;/td&gt;
+      &lt;td&gt;&lt;input type=&quot;checkbox&quot; name=&quot;delete_item[]&quot; value=&quot;&lt;?= $item-&gt;key ?&gt;&quot;/&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;?= format_currency($item-&gt;single_price()) ?&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;?= format_currency($item-&gt;total_discount()) ?&gt;&lt;/td&gt;
+      &lt;th&gt;&lt;?= format_currency($item-&gt;total_price()) ?&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;? endforeach ?&gt;
+  &lt;? endif ?&gt;
+&lt;/table&gt;</pre></div></div><div id="cart_partial-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Cart Items&lt;/th&gt;
+      &lt;th&gt;{% if not postponed %}Postpone{% else %}Postponed{% endif %}&lt;/th&gt;
+      &lt;th&gt;Quantity&lt;/th&gt;
+      &lt;th&gt;Delete&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+      &lt;th&gt;Discount&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    {% if items|length == 0 %}
+      &lt;tr&gt;
+        &lt;td colspan=&quot;5&quot;&gt;Your cart is empty.&lt;/td&gt;
+      &lt;/tr&gt;    
+    {% else %}
+      {% for item in items %}
+        {% set image_url = item.product.image_url(0, 60, 'auto') %}
+        {% set options_str = item.options_str() %}
+        &lt;tr&gt;
+          &lt;td&gt;
+            {% if image_url is not empty %}
+              &lt;img src=&quot;{{ image_url }}&quot; alt=&quot;{{ item.product.name }}&quot;/&gt;
+            {% endif %}
+            
+            &lt;strong&gt;{{ item.product.name }}&lt;/strong&gt;
+            {% if options_str|length &gt; 0 %}
+              &lt;br/&gt;{{ options_str }}.
+            {% endif %}
+            
+            {% if item.extra_options|length &gt; 0 %}
+              {% for option in item.extra_options %}
+                &lt;br/&gt;
+                + {{ option.description }}:
+                  {{ option.get_price(item.product)|currency }}
+              {% endfor %}
+            {% endif %}
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;item_postponed[{{ item.key }}]&quot; value=&quot;0&quot;/&gt;
+            &lt;input type=&quot;checkbox&quot; {{ checkbox_state(item.postponed) }} name=&quot;item_postponed[{{ item.key }}]&quot; value=&quot;1&quot;/&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            {% if not postponed %}
+              &lt;input type=&quot;text&quot; name=&quot;item_quantity[{{ item.key }}]&quot; value=&quot;{{ item.quantity }}&quot;/&gt;
+            {% else %}
+              {{ item.quantity }}
+            {% endif %}
+          &lt;/td&gt;
+          &lt;td&gt;&lt;input type=&quot;checkbox&quot; name=&quot;delete_item[]&quot; value=&quot;&lt;?= $item-&gt;key ?&gt;&quot;/&gt;&lt;/td&gt;
+          &lt;td&gt;{{ item.single_price()|currency }}&lt;/td&gt;
+          &lt;td&gt;{{ item.total_discount()|currency }}&lt;/td&gt;
+          &lt;th&gt;{{ item.total_price()|currency }}&lt;/th&gt;
+        &lt;/tr&gt;
+      {% endfor %}
+    {% endif %}
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre></div></div></div><p>The code iterates over the passed <strong>$items</strong> array and creates a table row for each item.</p>
+<p>The first column of the table contains an item image, name, and selected options.</p>
+<p>The second column contains a checkbox for postponing or activating an item. Please note the name of the checkbox &ndash; <strong>item_postponed[item_key]</strong>. This name should not be changed in order for LemonStand to be able to process the checkbox state. You may also note a hidden element with the same name placed before the checkbox. It is used to pass 0 value to PHP in case the checkbox is not checked. By default, values of unchecked checkboxes are not sent to the server on form submit.</p>
+<p>The third column contains a checkbox for deleting an item. The checkbox INPUT element has name <strong>delete_item[]</strong> and value corresponding to the item key. The name of the checkbox element should not be changed.</p>
+<p>The next column contains the item quantity input field. The name <strong>item_quantity[item_key]</strong> should not be changed. Note that the postponed items the code does not output the field, replacing it with a static text.</p>
+<p>The two last columns display the item individual price, item discount and row total price. The discount value is calculated basted on the currently active catalog-level price rules.</p>
+        
+        <p><br/>Previous: <a href="displaying_bundle_items_in_the_shopping_cart.html">Displaying Bundle Items in the Shopping Cart</a><br/>Return to <a href="shopping_cart.html">Shopping Cart</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_520"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/displaying_a_list_of_shopping_cart_items/";
+		var disqus_title = "Displaying a List of Shopping Cart Items";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

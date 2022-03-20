@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Creating a Form for Shipping Method</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="checkout_process.html">Checkout Process</a></li><li><a href="single_page_checkout.html">AJAX-driven single-page checkout</a></li><li class="last">Creating a Form for Shipping Method</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Creating a Form for Shipping Method</h2>
+        
+        <p>The Shipping Method partial contains a form for selecting a suitable shipping method from the list of available methods. LemonStand prepares the list of available shipping methods basing on the shipping information provided by a customer on a Shipping Information checkout step. The list of available shipping methods is presented by the <strong>$shipping_options</strong> <span>PHP variable supplied by LemonStand.</span></p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/creating_pages_shipping_mehtod_03.png" alt="" /></p>
+<p>Start with creating a new partial. According to the code example in the <a href="creating_shipping_method_partial.html#">Checkout Page</a> partial, the name of the Billing Information partial should be <strong>shop:checkout_shipping_method</strong>. You can use any name for partials in your store.</p>
+<p>The $shipping_options variable contains a list of available shipping options. Some shipping methods, like UPS, can provide multiple shipping options - for example UPS Express and UPS Standard. The code which displays the shipping option list must check the multi_option field of each object in the $shipping_options collection in order to create corresponding markup for single option and multi option payment methods.</p>
+<p>The following code demonstrates an example of the Shipping Method partial code:</p>
+<div class="code-tabs" id="partial_code"><ul><li><a href="creating_shipping_method_partial.html#partial_code-php">PHP</a></li><li><a href="creating_shipping_method_partial.html#partial_code-twig">Twig</a></li></ul><div id="partial_code-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;h3&gt;Shipping Method&lt;/h3&gt;
+&lt;? if (count($shipping_options)): ?&gt;
+  &lt;p&gt;Please select shipping option.&lt;/p&gt;
+  &lt;? foreach ($shipping_options as $option): ?&gt;
+    &lt;? if ($option-&gt;multi_option): ?&gt;
+    
+      &lt;h5&gt;&lt;?= h($option-&gt;name) ?&gt;&lt;/h5&gt;
+      
+      &lt;? if ($option-&gt;description): ?&gt;
+        &lt;p&gt;&lt;?= h($option-&gt;description) ?&gt;&lt;/p&gt;
+      &lt;? endif ?&gt;               
+
+      &lt;? foreach ($option-&gt;sub_options as $sub_option): ?&gt;
+        &lt;input &lt;?= radio_state($option-&gt;id == $shipping_method-&gt;id &amp;&amp; $sub_option-&gt;id == $shipping_method-&gt;sub_option_id) ?&gt; 
+          id=&quot;&lt;?= 'option'.$sub_option-&gt;id ?&gt;&quot; type=&quot;radio&quot; name=&quot;shipping_option&quot; value=&quot;&lt;?= $sub_option-&gt;id ?&gt;&quot;/&gt;
+        &lt;label for=&quot;&lt;?= 'option'.$sub_option-&gt;id ?&gt;&quot;&gt;
+  &lt;?= h($sub_option-&gt;name) ?&gt; - &lt;strong&gt;&lt;?= !$sub_option-&gt;is_free ? format_currency($sub_option-&gt;quote) : 'free!' ?&gt;&lt;/strong&gt;
+        &lt;/label&gt;&lt;br/&gt;
+      &lt;? endforeach ?&gt;
+      
+    &lt;? else: ?&gt;
+    
+      &lt;input &lt;?= radio_state($option-&gt;id == $shipping_method-&gt;id) ?&gt; id=&quot;&lt;?= 'option'.$option-&gt;id ?&gt;&quot; 
+        type=&quot;radio&quot; name=&quot;shipping_option&quot; value=&quot;&lt;?= $option-&gt;id ?&gt;&quot;/&gt;
+      &lt;label for=&quot;&lt;?= 'option'.$option-&gt;id ?&gt;&quot;&gt;
+  &lt;strong&gt;&lt;?= h($option-&gt;name) ?&gt;&lt;/strong&gt; - &lt;strong&gt;&lt;?= !$option-&gt;is_free ? format_currency($option-&gt;quote) : 'free!' ?&gt;&lt;/strong&gt;
+        &lt;? if ($option-&gt;description): ?&gt;
+          &lt;br/&gt;&lt;?= h($option-&gt;description) ?&gt;
+        &lt;? endif ?&gt;
+      &lt;/label&gt;&lt;br/&gt;
+      
+    &lt;? endif ?&gt;
+  &lt;? endforeach ?&gt;  
+  &lt;input type=&quot;hidden&quot; name=&quot;checkout_step&quot; value=&quot;&lt;?= $checkout_step ?&gt;&quot;/&gt;
+  &lt;input type=&quot;image&quot; src=&quot;/resources/images/btn_next.gif&quot; alt=&quot;Next&quot; onclick=&quot;return $(this).getForm().sendRequest(
+    'on_action', {update:{'checkout_page': 'checkout_partial'}})&quot;/&gt;
+&lt;? else: ?&gt;
+  &lt;p&gt;There are no shipping options available for your location.&lt;/p&gt;
+&lt;? endif ?&gt;
+</pre></div></div><div id="partial_code-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;h3&gt;Shipping Method&lt;/h3&gt;
+{% if shipping_options %}
+  &lt;p&gt;Please select shipping option.&lt;/p&gt;
+  
+  {% for option in shipping_options %}
+    {% if option.multi_option %}
+      &lt;h5&gt;{{ option.name }}&lt;/h4&gt;
+        {% if option.description %}
+          &lt;p&gt;{{ option.description }}&lt;/p&gt;
+        {% endif %}
+
+        {% for sub_option in option.sub_options %}
+          &lt;input {{ radio_state(option.id == shipping_method.id and sub_option.id == shipping_method.sub_option_id) }}
+            id=&quot;{{ 'option'~sub_option.id }}&quot; type=&quot;radio&quot; name=&quot;shipping_option&quot; value=&quot;{{ sub_option.id }}&quot;/&gt;
+          &lt;label for=&quot;{{ 'option'~sub_option.id }}&quot;&gt;
+            {{ sub_option.name }} - &lt;strong&gt;{{ not sub_option.is_free ? sub_option.quote|currency : 'free' }}&lt;/strong&gt;
+          &lt;/label&gt;&lt;br/&gt;
+        {% endfor %}
+      {% else %}
+        &lt;input {{ radio_state(option.id == shipping_method.id) }} id=&quot;{{ 'option'~option.id }}&quot; type=&quot;radio&quot; name=&quot;shipping_option&quot; value=&quot;{{ option.id }}&quot;/&gt;
+        &lt;label for=&quot;{{ 'option'~option.id }}&quot;&gt;
+          &lt;strong&gt;{{ option.name }}&lt;/strong&gt; - &lt;strong&gt;{{ not option.is_free ? option.quote|currency : 'free' }}&lt;/strong&gt;
+            {% if option.description %}
+              &lt;br/&gt;{{ option.description }}
+            {% endif %}
+          &lt;/label&gt;&lt;br/&gt;
+      {% endif %}
+  {% endfor %}
+  
+  &lt;input type=&quot;hidden&quot; name=&quot;checkout_step&quot; value=&quot;{{ checkout_step }}&quot;/&gt;
+  &lt;input type=&quot;image&quot; src=&quot;/resources/images/btn_next.gif&quot; alt=&quot;Next&quot; onclick=&quot;return $(this).getForm().sendRequest(
+    'on_action', {update:{'checkout_page': 'checkout_partial'}})&quot;/&gt;
+{% else %}
+  &lt;p&gt;There are no shipping options available for your location.&lt;/p&gt;
+{% endif %}</pre></div></div></div><p>The code checks whether the <strong>$shipping_options</strong> array contains any shipping options. If there are no shipping options available, the corresponding message is displayed. Otherwise, the <strong>foreach</strong> PHP loop is used for iterating over the list of shipping options. For each shipping option the code outputs a label and a radio button control. For multiple option shipping method, the method header is displayed before the list of options. The label element contains the shipping option name, shipping quote, and shipping option description. Please note the value of the radio button INPUT element name <strong>shipping_option</strong>, corresponding to the shipping option identifier.</p>
+<p>The <strong>checkout_step</strong> hidden field should be used in all checkout partials.</p>
+<h4>Displaying shipping service error messages</h4>
+<p>By default LemonStand does not return shipping options with errors. If a visitor entered an invalid ZIP code, all shipping options provided by external services (USPS, UPS, etc.) would be suppressed. You can enable the&nbsp;<strong>Display shipping service errors</strong>&nbsp;option&nbsp;on the&nbsp;<strong>Parameters</strong>&nbsp;tab&nbsp;of the&nbsp;<strong>System/Settings/Shipping Configuration</strong>&nbsp;page. When this option is enabled, LemonStand returns all options. To determine whether a shipping option has an error message&nbsp;assigned, use the&nbsp;<strong>error_hint</strong>&nbsp;field of the&nbsp;<a href="class_shop_shippingoption.html">Shop_ShippingOption</a>&nbsp;class. If this field is not empty, you should display its content instead of the option price and radio button. Example: <div class="code-tabs" id="error_hint"><ul><li><a href="creating_shipping_method_partial.html#error_hint-php">PHP</a></li><li><a href="creating_shipping_method_partial.html#error_hint-twig">Twig</a></li></ul><div id="error_hint-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;? if (count($shipping_options)): ?&gt;
+  &lt;p&gt;Please select shipping option.&lt;/p&gt;
+  &lt;? foreach ($shipping_options as $option): ?&gt;
+    &lt;? if ($option-&gt;error_hint): ?&gt;
+      &lt;p&gt;&lt;?= h($option-&gt;name) ?&gt; - &lt;?= h($option-&gt;error_hint) ?&gt;&lt;/p&gt;
+    &lt;? else: ?&gt;
+      Display the usual shipping option elements here
+    &lt;? endif ?&gt;
+  &lt;? endforeach ?&gt;
+  ...
+</pre></div></div><div id="error_hint-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% if shipping_options %}
+  &lt;p&gt;Please select shipping option.&lt;/p&gt;
+  {% for option in shipping_options %}
+    {% if option.error_hint %}
+      &lt;p&gt;{{ option.name }} - {{ option.error_hint }}&lt;/p&gt;
+    {% else %}
+      Display the usual shipping option elements here
+    {% endif %}
+  {% endfor %}
+  ...</pre></div></div></div></p>
+<h4>See also:</h4>
+<ul>
+<li><a href="http://v1.lemonstand.com/docs/class_cms_controller">Cms_Controller class</a></li>
+</ul>
+        
+        <p>Next: <a href="creating_payment_method_partial.html">Creating a Form for Payment Method</a><br/>Previous: <a href="creating_shipping_information_partial.html">Creating a Form for Shipping Information</a><br/>Return to <a href="single_page_checkout.html">AJAX-driven single-page checkout</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_85"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/creating_shipping_method_partial/";
+		var disqus_title = "Creating a Form for Shipping Method";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

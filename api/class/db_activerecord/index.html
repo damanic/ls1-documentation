@@ -1,0 +1,2589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>LemonStand Version 1 - Class Db_ActiveRecord</title>
+  <link rel="shortcut icon" href="../../../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../../../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="LemonStand API documentation: Db_ActiveRecord class." />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+      <meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Class Db_ActiveRecord"/>
+<meta property="og:description" content="LemonStand API documentation: Db_ActiveRecord class."/>
+<meta property="og:image" content="http://v1.lemonstand.com/uploaded/public/5131b2accbf273.83665238.png"/>
+<meta property="og:image" content="http://v1.lemonstand.com/uploaded/public/5131b2d9d35414.27253766.png"/>
+<meta property="og:url" content="http://v1.lemonstand.com/api/class/db_activerecord/"/>
+<meta property="og:site_name" content="LemonStand"/>
+
+    <link type="text/css" rel="stylesheet" href="../../../resources/shl/styles/shCore.css" />
+    <link type="text/css" rel="stylesheet" href="../../../resources/shl/styles/shThemeRDark.css" />
+    
+    <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushPhp.js&amp;file[]=%252Fresources%252Fshl%252Fs"></script>
+  
+    
+    <script type="text/javascript">
+      SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+      SyntaxHighlighter.all();
+      SyntaxHighlighter.defaults.gutter = false;
+      SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+    </script>  
+    
+    <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Ftreeview%252Fjquery.treeview.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.apidox.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.ui.core.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.ui.po"></script>
+    
+    <link rel="stylesheet" type="text/css" href="../../../ls_css_combine/index.html@file[]=ls_styles&amp;file[]=%252Fresources%252Fcss%252Fstyles.css&amp;file[]=%252Fresources%252Fjs%252Ftreeview%252Fjquery.treeview.css&amp;file[]=%252Fresources%252Fjs%252Fautocomplete%252Fjquery.ui.autocomplete.css&amp;file[]=%252.css" />  </head>
+  <body id="b_help" class="mac api-page">
+    <div id="wrapper">
+      <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the API docs for LemonStand V1, which has been discontinued. LemonStand is now a cloud based platform, available at <a href="https://lemonstand.com">lemonstand.com</a>.</p>
+	  	</div>
+         <div id="header">
+	         <a href="../../../index.html" id="headerLogo"><img src="../../../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+	         	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../../../docs.html">Documentation</a></li>
+			  <li><a href="../../../docs/api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../../../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../../../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      		     </div><!--/header-->
+      </div><!-- /headerWrapper -->    
+      <div id="topContentWrapper">  
+        <div id="topContent">
+          <div id="topCol1">
+            <h1>LemonStand <span>API</span></h1>
+          </div><!--/topCol1-->
+        </div><!--/topContent-->
+      </div><!-- /topContentWrapper -->  
+      <div id="contentWrapper">  
+        <div id="content" class="clearfix">
+          <div class="wrap12">
+            <table class="api-layout">
+              <tr>
+                <td class="tree">
+<div class="api-search-form ">
+  <form action="http://v1.lemonstand.com/api/search/core/" method="get">
+    <input type="text" id="api-search-query" class="text_field with-placeholder search_field" placeholder="Find class, event or function" name="term" value=""/>
+  </form>
+</div>
+
+<div class="api-tree-area">
+  <ul id="api-tree-view-list" class="filetree">
+    <li class="root"><a href="../../../docs/api_function_and_class_reference/index.html">API Table of Contents</a></li>
+  
+          <li>
+        <span class="folder">backend.events</span>
+      
+        <ul>
+                      <li><a href="../../event/backend%253Aonaddadditionalcmsfiles/index.html">backend:onAddAdditionalCmsFiles</a></li>
+                      <li><a href="../../event/backend%253Aonafterfilebrowserupload/index.html">backend:onAfterFileBrowserUpload</a></li>
+                      <li><a href="../../event/backend%253Aonafterremoteevent/index.html">backend:onAfterRemoteEvent</a></li>
+                      <li><a href="../../event/backend%253Aonbeforeremoteevent/index.html">backend:onBeforeRemoteEvent</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderlayout/index.html">backend:onBeforeRenderLayout</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderpage/index.html">backend:onBeforeRenderPage</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderpartial/index.html">backend:onBeforeRenderPartial</a></li>
+                      <li><a href="../../event/backend%253Aoncontrollerinit/index.html">backend:onControllerInit</a></li>
+                      <li><a href="../../event/backend%253Aoncontrollerready/index.html">backend:onControllerReady</a></li>
+                      <li><a href="../../event/backend%253Aonextendfooter/index.html">backend:onExtendFooter</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.classes</span>
+      
+        <ul>
+                      <li><a href="../cms_controller/index.html">Cms_Controller</a></li>
+                      <li><a href="../cms_exportmanager/index.html">Cms_ExportManager</a></li>
+                      <li><a href="../cms_pagenavigationnode/index.html">Cms_PageNavigationNode</a></li>
+                      <li><a href="../cms_visitorpreferences/index.html">Cms_VisitorPreferences</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.events</span>
+      
+        <ul>
+                      <li><a href="../../event/cms%253Aonafterdisplay/index.html">cms:onAfterDisplay</a></li>
+                      <li><a href="../../event/cms%253Aonafterevalpagecontent/index.html">cms:onAfterEvalPageContent</a></li>
+                      <li><a href="../../event/cms%253Aonafterhandleajax/index.html">cms:onAfterHandleAjax</a></li>
+                      <li><a href="../../event/cms%253Aonafterpageduplicate/index.html">cms:onAfterPageDuplicate</a></li>
+                      <li><a href="../../event/cms%253Aonafterrenderpartial/index.html">cms:onAfterRenderPartial</a></li>
+                      <li><a href="../../event/cms%253Aonafterresourcefileupload/index.html">cms:onAfterResourceFileUpload</a></li>
+                      <li><a href="../../event/cms%253Aonapplypagesecurity/index.html">cms:onApplyPageSecurity</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedataexport/index.html">cms:onBeforeDataExport</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedataimport/index.html">cms:onBeforeDataImport</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedisplay/index.html">cms:onBeforeDisplay</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeevalpagecontent/index.html">cms:onBeforeEvalPageContent</a></li>
+                      <li><a href="../../event/cms%253Aonbeforehandleajax/index.html">cms:onBeforeHandleAjax</a></li>
+                      <li><a href="../../event/cms%253Aonbeforerenderpartial/index.html">cms:onBeforeRenderPartial</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeresourcecombine/index.html">cms:onBeforeResourceCombine</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeroute/index.html">cms:onBeforeRoute</a></li>
+                      <li><a href="../../event/cms%253Aonbeforetrackingcodeinclude/index.html">cms:onBeforeTrackingCodeInclude</a></li>
+                      <li><a href="../../event/cms%253Aoncmspageimport/index.html">cms:onCmsPageImport</a></li>
+                      <li><a href="../../event/cms%253Aonconfigurepagespage/index.html">cms:onConfigurePagesPage</a></li>
+                      <li><a href="../../event/cms%253Aondeletepage/index.html">cms:onDeletePage</a></li>
+                      <li><a href="../../event/cms%253Aondeletepartial/index.html">cms:onDeletePartial</a></li>
+                      <li><a href="../../event/cms%253Aondeletetemplate/index.html">cms:onDeleteTemplate</a></li>
+                      <li><a href="../../event/cms%253Aondisplaypageform/index.html">cms:onDisplayPageForm</a></li>
+                      <li><a href="../../event/cms%253Aonevaluatecode/index.html">cms:onEvaluateCode</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagecontenttoolbar/index.html">cms:onExtendPageContentToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendpageform/index.html">cms:onExtendPageForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagemodel/index.html">cms:onExtendPageModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagescontextmenu/index.html">cms:onExtendPagesContextMenu</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagestoolbar/index.html">cms:onExtendPagesToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialform/index.html">cms:onExtendPartialForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialmodel/index.html">cms:onExtendPartialModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialstoolbar/index.html">cms:onExtendPartialsToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplateform/index.html">cms:onExtendTemplateForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplatemodel/index.html">cms:onExtendTemplateModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplatestoolbar/index.html">cms:onExtendTemplatesToolbar</a></li>
+                      <li><a href="../../event/cms%253Aongetactivetheme/index.html">cms:onGetActiveTheme</a></li>
+                      <li><a href="../../event/cms%253Aongetcustomergroupid/index.html">cms:onGetCustomerGroupId</a></li>
+                      <li><a href="../../event/cms%253Aongetpageblockcontent/index.html">cms:onGetPageBlockContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpagecontent/index.html">cms:onGetPageContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpagefieldoptions/index.html">cms:onGetPageFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aongetpagenavigationvisibility/index.html">cms:onGetPageNavigationVisibility</a></li>
+                      <li><a href="../../event/cms%253Aongetpartialcontent/index.html">cms:onGetPartialContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpartialfieldoptions/index.html">cms:onGetPartialFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aongettemplatecontent/index.html">cms:onGetTemplateContent</a></li>
+                      <li><a href="../../event/cms%253Aongettemplatefieldoptions/index.html">cms:onGetTemplateFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aonlistpageeditorsidebartabs/index.html">cms:onListPageEditorSidebarTabs</a></li>
+                      <li><a href="../../event/cms%253Aonpagenotfound/index.html">cms:onPageNotFound</a></li>
+                      <li><a href="../../event/cms%253Aonpreparepagelistdata/index.html">cms:onPreparePageListData</a></li>
+                      <li><a href="../../event/cms%253Aonpreparepartiallistdata/index.html">cms:onPreparePartialListData</a></li>
+                      <li><a href="../../event/cms%253Aonpreparetemplatelistdata/index.html">cms:onPrepareTemplateListData</a></li>
+                      <li><a href="../../event/cms%253Aonsetdefaulttheme/index.html">cms:onSetDefaultTheme</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.helpers</span>
+      
+        <ul>
+                      <li><a href="../../function/close_form/index.html">close_form()</a></li>
+                      <li><a href="../../../docs/function_content_block.html">content_block()</a></li>
+                      <li><a href="../../function/flash_message/index.html">flash_message()</a></li>
+                      <li><a href="../../function/global_content_block/index.html">global_content_block()</a></li>
+                      <li><a href="../../function/include_resources/index.html">include_resources()</a></li>
+                      <li><a href="../../function/open_form/index.html">open_form()</a></li>
+                      <li><a href="../../function/resource_url/index.html">resource_url()</a></li>
+                      <li><a href="../../function/root_url/index.html">root_url()</a></li>
+                      <li><a href="../../function/site_url/index.html">site_url()</a></li>
+                      <li><a href="../../function/text_content_block/index.html">text_content_block()</a></li>
+                      <li><a href="../../function/theme_resource_url/index.html">theme_resource_url()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.models</span>
+      
+        <ul>
+                      <li><a href="../cms_page/index.html">Cms_Page</a></li>
+                      <li><a href="../cms_partial/index.html">Cms_Partial</a></li>
+                      <li><a href="../cms_template/index.html">Cms_Template</a></li>
+                      <li><a href="../cms_theme/index.html">Cms_Theme</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.classes</span>
+      
+        <ul>
+                      <li><a href="../core_cachebase/index.html">Core_CacheBase</a></li>
+                      <li><a href="index.html">Db_ActiveRecord</a></li>
+                      <li><a href="../db_act_as_tree/index.html">Db_Act_As_Tree</a></li>
+                      <li><a href="../db_columndefinition/index.html">Db_ColumnDefinition</a></li>
+                      <li><a href="../db_datacollection/index.html">Db_DataCollection</a></li>
+                      <li><a href="../db_file/index.html">Db_File</a></li>
+                      <li><a href="../db_filterbehavior/index.html">Db_FilterBehavior</a></li>
+                      <li><a href="../db_formbehavior/index.html">Db_FormBehavior</a></li>
+                      <li><a href="../db_formcustomarea/index.html">Db_FormCustomArea</a></li>
+                      <li><a href="../db_formelement/index.html">Db_FormElement</a></li>
+                      <li><a href="../db_formfielddefinition/index.html">Db_FormFieldDefinition</a></li>
+                      <li><a href="../db_formpartial/index.html">Db_FormPartial</a></li>
+                      <li><a href="../db_formsection/index.html">Db_FormSection</a></li>
+                      <li><a href="../db_listbehavior/index.html">Db_ListBehavior</a></li>
+                      <li><a href="../phpr_datetime/index.html">Phpr_DateTime</a></li>
+                      <li><a href="../phpr_pagination/index.html">Phpr_Pagination</a></li>
+                      <li><a href="../phpr_request/index.html">Phpr_Request</a></li>
+                      <li><a href="../phpr_response/index.html">Phpr_Response</a></li>
+                      <li><a href="../phpr_validation/index.html">Phpr_Validation</a></li>
+                      <li><a href="../phpr_validationrules/index.html">Phpr_ValidationRules</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.events</span>
+      
+        <ul>
+                      <li><a href="../../event/core%253Aonafterarchivecreate/index.html">core:onAfterArchiveCreate</a></li>
+                      <li><a href="../../event/core%253Aonafterdatabasequery/index.html">core:onAfterDatabaseQuery</a></li>
+                      <li><a href="../../event/core%253Aonafteremailsendtocustomer/index.html">core:onAfterEmailSendToCustomer</a></li>
+                      <li><a href="../../event/core%253Aonafteremailsendtoteam/index.html">core:onAfterEmailSendToTeam</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecordcreate/index.html">core:onAfterFormRecordCreate</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecorddelete/index.html">core:onAfterFormRecordDelete</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecordupdate/index.html">core:onAfterFormRecordUpdate</a></li>
+                      <li><a href="../../event/core%253Aonafterrenderlistpagination/index.html">core:onAfterRenderListPagination</a></li>
+                      <li><a href="../../event/core%253Aonafterrenderlisttable/index.html">core:onAfterRenderListTable</a></li>
+                      <li><a href="../../event/core%253Aonaftersoftwareupdate/index.html">core:onAfterSoftwareUpdate</a></li>
+                      <li><a href="../../event/core%253Aonaftersoftwareupdaterequest/index.html">core:onAfterSoftwareUpdateRequest</a></li>
+                      <li><a href="../../event/core%253Aonbeforearchivecreate/index.html">core:onBeforeArchiveCreate</a></li>
+                      <li><a href="../../event/core%253Aonbeforearchiverestore/index.html">core:onBeforeArchiveRestore</a></li>
+                      <li><a href="../../event/core%253Aonbeforedatabaseconnect/index.html">core:onBeforeDatabaseConnect</a></li>
+                      <li><a href="../../event/core%253Aonbeforedatabasequery/index.html">core:onBeforeDatabaseQuery</a></li>
+                      <li><a href="../../event/core%253Aonbeforeemailsendtocustomer/index.html">core:onBeforeEmailSendToCustomer</a></li>
+                      <li><a href="../../event/core%253Aonbeforeemailsendtoteam/index.html">core:onBeforeEmailSendToTeam</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecordcreate/index.html">core:onBeforeFormRecordCreate</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecorddelete/index.html">core:onBeforeFormRecordDelete</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecordupdate/index.html">core:onBeforeFormRecordUpdate</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrender/index.html">core:onBeforeFormRender</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrenderpreview/index.html">core:onBeforeFormRenderPreview</a></li>
+                      <li><a href="../../event/core%253Aonbeforelistexport/index.html">core:onBeforeListExport</a></li>
+                      <li><a href="../../event/core%253Aonbeforelistrecorddisplay/index.html">core:onBeforeListRecordDisplay</a></li>
+                      <li><a href="../../event/core%253Aonbeforesoftwareupdate/index.html">core:onBeforeSoftwareUpdate</a></li>
+                      <li><a href="../../event/core%253Aonbeforesoftwareupdaterequest/index.html">core:onBeforeSoftwareUpdateRequest</a></li>
+                      <li><a href="../../event/core%253Aonextendemailtemplateform/index.html">core:onExtendEmailTemplateForm</a></li>
+                      <li><a href="../../event/core%253Aonextendemailtemplatemodel/index.html">core:onExtendEmailTemplateModel</a></li>
+                      <li><a href="../../event/core%253Aonextenduserform/index.html">core:onExtendUserForm</a></li>
+                      <li><a href="../../event/core%253Aonextendusermodel/index.html">core:onExtendUserModel</a></li>
+                      <li><a href="../../event/core%253Aonfilebeforecreate/index.html">core:onFileBeforeCreate</a></li>
+                      <li><a href="../../event/core%253Aongetemailtemplatefieldoptions/index.html">core:onGetEmailTemplateFieldOptions</a></li>
+                      <li><a href="../../event/core%253Aongetuserfieldoptions/index.html">core:onGetUserFieldOptions</a></li>
+                      <li><a href="../../event/core%253Aoninitialize/index.html">core:onInitialize</a></li>
+                      <li><a href="../../event/core%253Aonprocessimage/index.html">core:onProcessImage</a></li>
+                      <li><a href="../../event/core%253Aonsendemail/index.html">core:onSendEmail</a></li>
+                      <li><a href="../../event/core%253Aonuninitialize/index.html">core:onUninitialize</a></li>
+                      <li><a href="../../event/core%253Aonuserbeforesave/index.html">core:onUserBeforeSave</a></li>
+                      <li><a href="../../event/onafterfrontendlogin/index.html">onAfterFrontEndLogin</a></li>
+                      <li><a href="../../event/ondeleteemailtemplate/index.html">onDeleteEmailTemplate</a></li>
+                      <li><a href="../../event/onfrontendlogin/index.html">onFrontEndLogin</a></li>
+                      <li><a href="../../event/onfrontendlogout/index.html">onFrontEndLogout</a></li>
+                      <li><a href="../../event/onlogin/index.html">onLogin</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.functions</span>
+      
+        <ul>
+                      <li><a href="../../function/url/index.html">url()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.helpers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/function_checkbox_state.html">checkbox_state()</a></li>
+                      <li><a href="../../function/h/index.html">h()</a></li>
+                      <li><a href="../../function/option_state/index.html">option_state()</a></li>
+                      <li><a href="../../function/post/index.html">post()</a></li>
+                      <li><a href="../../function/post_array_item/index.html">post_array_item()</a></li>
+                      <li><a href="../../function/radio_state/index.html">radio_state()</a></li>
+                      <li><a href="../../function/tracelog/index.html">traceLog()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.models</span>
+      
+        <ul>
+                      <li><a href="../users_user/index.html">Users_User</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig filters</span>
+      
+        <ul>
+                      <li><a href="../../function/repeat/index.html">repeat</a></li>
+                      <li><a href="../../function/unescape/index.html">unescape</a></li>
+                      <li><a href="../../function/unset/index.html">unset</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig functions</span>
+      
+        <ul>
+                      <li><a href="../../function/field/index.html">field()</a></li>
+                      <li><a href="../../function/method/index.html">method()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig tests</span>
+      
+        <ul>
+                      <li><a href="../../function/array/index.html">array</a></li>
+                      <li><a href="../../function/instance_of/index.html">instance_of</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.actions</span>
+      
+        <ul>
+                      <li><a href="../../../docs/action_shop_cart.html">shop:cart</a></li>
+                      <li><a href="../../../docs/action_shop_category.html">shop:category</a></li>
+                      <li><a href="../../action/shop%253Achange_password/index.html">shop:change_password</a></li>
+                      <li><a href="../../action/shop%253Acheckout/index.html">shop:checkout</a></li>
+                      <li><a href="../../../docs/shop_checkout_billing_info.html">shop:checkout_billing_info</a></li>
+                      <li><a href="../../../docs/shop_checkout_order_review.html">shop:checkout_order_review</a></li>
+                      <li><a href="../../../docs/shop_checkout_payment_method.html">shop:checkout_payment_method</a></li>
+                      <li><a href="../../../docs/shop_checkout_shipping_info.html">shop:checkout_shipping_info</a></li>
+                      <li><a href="../../../docs/shop_checkout_shipping_method.html">shop:checkout_shipping_method</a></li>
+                      <li><a href="../../../docs/action_shop_compare.html">shop:compare</a></li>
+                      <li><a href="../../action/shop%253Acustomer_profile/index.html">shop:customer_profile</a></li>
+                      <li><a href="../../../docs/action_shop_login.html">shop:login</a></li>
+                      <li><a href="../../../docs/action_shop_manufacturer.html">shop:manufacturer</a></li>
+                      <li><a href="../../../docs/action_shop_manufacturers.html">shop:manufacturers</a></li>
+                      <li><a href="../../../docs/action_shop_order.html">shop:order</a></li>
+                      <li><a href="../../../docs/action_shop_orders.html">shop:orders</a></li>
+                      <li><a href="../../../docs/action_shop_password_restore.html">shop:password_restore</a></li>
+                      <li><a href="../../action/shop%253Apassword_restore_request/index.html">shop:password_restore_request</a></li>
+                      <li><a href="../../../docs/action_shop_pay.html">shop:pay</a></li>
+                      <li><a href="../../../docs/shop_payment_information.html">shop:payment_information</a></li>
+                      <li><a href="../../action/shop%253Apayment_profile/index.html">shop:payment_profile</a></li>
+                      <li><a href="../../action/shop%253Apayment_profiles/index.html">shop:payment_profiles</a></li>
+                      <li><a href="../../../docs/action_shop_payment_receipt.html">shop:payment_receipt</a></li>
+                      <li><a href="../../../docs/action_shop_product.html">shop:product</a></li>
+                      <li><a href="../../../docs/shop_search.html">shop:search</a></li>
+                      <li><a href="../../action/shop%253Asignup/index.html">shop:signup</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.ajax handlers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/habdler_shop_on_addproductreview.html">shop:on_addProductReview</a></li>
+                      <li><a href="../../ajax/shop%253Aon_addtocart/index.html">shop:on_addToCart</a></li>
+                      <li><a href="../../../docs/handler_shop_on_addtocompare.html">shop:on_addToCompare</a></li>
+                      <li><a href="../../ajax/shop%253Aon_changepassword/index.html">shop:on_changePassword</a></li>
+                      <li><a href="../../ajax/shop%253Aon_clearcomparelist/index.html">shop:on_clearCompareList</a></li>
+                      <li><a href="../../ajax/shop%253Aon_deletecartitem/index.html">shop:on_deleteCartItem</a></li>
+                      <li><a href="../../ajax/shop%253Aon_evalshippingrate/index.html">shop:on_evalShippingRate</a></li>
+                      <li><a href="../../ajax/shop%253Aon_removefromcompare/index.html">shop:on_removeFromCompare</a></li>
+                      <li><a href="../../ajax/shop%253Aon_setcouponcode/index.html">shop:on_setCouponCode</a></li>
+                      <li><a href="../../ajax/shop%253Aon_updatestatelist/index.html">shop:on_updateStateList</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.classes</span>
+      
+        <ul>
+                      <li><a href="../../../docs/class_shop_cart.html">Shop_Cart</a></li>
+                      <li><a href="../../../docs/class_shop_cartitem.html">Shop_CartItem</a></li>
+                      <li><a href="../../../docs/class_shop_checkoutaddressinfo.html">Shop_CheckoutAddressInfo</a></li>
+                      <li><a href="../../../docs/shop_checkoutdata.html">Shop_CheckoutData</a></li>
+                      <li><a href="../../../docs/class_shop_comparisonlist.html">Shop_ComparisonList</a></li>
+                      <li><a href="../shop_optionmatrixmanager/index.html">Shop_OptionMatrixManager</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.events</span>
+      
+        <ul>
+                      <li><a href="../../event/shop%253Aonafteraddtocart/index.html">shop:onAfterAddToCart</a></li>
+                      <li><a href="../../event/shop%253Aonaftercategoryrecordfetch/index.html">shop:onAfterCategoryRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvcustomercreated/index.html">shop:onAfterCsvCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvcustomerupdated/index.html">shop:onAfterCsvCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvoptionmatriximport/index.html">shop:onAfterCsvOptionMatrixImport</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvproductcreated/index.html">shop:onAfterCsvProductCreated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvproductupdated/index.html">shop:onAfterCsvProductUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercustomermerged/index.html">shop:onAfterCustomerMerged</a></li>
+                      <li><a href="../../event/shop%253Aonafteroptionmatrixrecordfound/index.html">shop:onAfterOptionMatrixRecordFound</a></li>
+                      <li><a href="../../event/shop%253Aonafterorderrecordfetch/index.html">shop:onAfterOrderRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonafterproductfileadded/index.html">shop:onAfterProductFileAdded</a></li>
+                      <li><a href="../../event/shop%253Aonafterproductrecordfetch/index.html">shop:onAfterProductRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonafterremovefromcart/index.html">shop:onAfterRemoveFromCart</a></li>
+                      <li><a href="../../event/shop%253Aonaftersetcartquantity/index.html">shop:onAfterSetCartQuantity</a></li>
+                      <li><a href="../../event/shop%253Aonauthenticatecustomer/index.html">shop:onAuthenticateCustomer</a></li>
+                      <li><a href="../../event/shop%253Aonautomatedbillingsupported/index.html">shop:onAutomatedBillingSupported</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeaddtocart/index.html">shop:onBeforeAddToCart</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecsvcustomercreated/index.html">shop:onBeforeCsvCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecsvcustomerupdated/index.html">shop:onBeforeCsvCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecustomermerged/index.html">shop:onBeforeCustomerMerged</a></li>
+                      <li><a href="../../event/shop%253Aonbeforedeleteshippingtrackingcode/index.html">shop:onBeforeDeleteShippingTrackingCode</a></li>
+                      <li><a href="../../event/shop%253Aonbeforegeneratecustomerpassword/index.html">shop:onBeforeGenerateCustomerPassword</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeordercustomerstatusmessagesent/index.html">shop:onBeforeOrderCustomerStatusMessageSent</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderinternalstatusmessagesent/index.html">shop:onBeforeOrderInternalStatusMessageSent</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderitemsaved/index.html">shop:onBeforeOrderItemSaved</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderrecordcreate/index.html">shop:onBeforeOrderRecordCreate</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeordersrssexport/index.html">shop:onBeforeOrdersRssExport</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeproductfileadded/index.html">shop:onBeforeProductFileAdded</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeremovefromcart/index.html">shop:onBeforeRemoveFromCart</a></li>
+                      <li><a href="../../event/shop%253Aonbeforesetcartquantity/index.html">shop:onBeforeSetCartQuantity</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeshippingquote/index.html">shop:onBeforeShippingQuote</a></li>
+                      <li><a href="../../event/shop%253Aonconfigurecustomerspage/index.html">shop:onConfigureCustomersPage</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureorderspage/index.html">shop:onConfigureOrdersPage</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureproductscontroller/index.html">shop:onConfigureProductsController</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureproductspage/index.html">shop:onConfigureProductsPage</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerafterdelete/index.html">shop:onCustomerAfterDelete</a></li>
+                      <li><a href="../../event/shop%253Aoncustomercreated/index.html">shop:onCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerprofilesave/index.html">shop:onCustomerProfileSave</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerupdated/index.html">shop:onCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aondisplaycustomerspage/index.html">shop:onDisplayCustomersPage</a></li>
+                      <li><a href="../../event/shop%253Aondisplayorderspage/index.html">shop:onDisplayOrdersPage</a></li>
+                      <li><a href="../../event/shop%253Aondisplayproductform/index.html">shop:onDisplayProductForm</a></li>
+                      <li><a href="../../event/shop%253Aondisplayproductlist/index.html">shop:onDisplayProductList</a></li>
+                      <li><a href="../../event/shop%253Aonextendattributeform/index.html">shop:onExtendAttributeForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendattributemodel/index.html">shop:onExtendAttributeModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcategoryform/index.html">shop:onExtendCategoryForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcategorymodel/index.html">shop:onExtendCategoryModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcompanyinformationform/index.html">shop:onExtendCompanyInformationForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcompanyinformationmodel/index.html">shop:onExtendCompanyInformationModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerform/index.html">shop:onExtendCustomerForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomergroupform/index.html">shop:onExtendCustomerGroupForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomergroupmodel/index.html">shop:onExtendCustomerGroupModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomermodel/index.html">shop:onExtendCustomerModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerpreviewtabs/index.html">shop:onExtendCustomerPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerpreviewtoolbar/index.html">shop:onExtendCustomerPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerstoolbar/index.html">shop:onExtendCustomersToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomgroupform/index.html">shop:onExtendCustomGroupForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomgroupmodel/index.html">shop:onExtendCustomGroupModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendextraoptionform/index.html">shop:onExtendExtraOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendextraoptionmodel/index.html">shop:onExtendExtraOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendmanufacturerform/index.html">shop:onExtendManufacturerForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendmanufacturermodel/index.html">shop:onExtendManufacturerModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionform/index.html">shop:onExtendOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmatrix/index.html">shop:onExtendOptionMatrix</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmatrixrecordmodel/index.html">shop:onExtendOptionMatrixRecordModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmodel/index.html">shop:onExtendOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderform/index.html">shop:onExtendOrderForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderinvoicestoolbar/index.html">shop:onExtendOrderInvoicesToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderitemform/index.html">shop:onExtendOrderItemForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderitemmodel/index.html">shop:onExtendOrderItemModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendordermodel/index.html">shop:onExtendOrderModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpaymenttransactionstoolbar/index.html">shop:onExtendOrderPaymentTransactionsToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewheader/index.html">shop:onExtendOrderPreviewHeader</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewtabs/index.html">shop:onExtendOrderPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewtoolbar/index.html">shop:onExtendOrderPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstatusform/index.html">shop:onExtendOrderStatusForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstatusmodel/index.html">shop:onExtendOrderStatusModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstoolbar/index.html">shop:onExtendOrdersToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendpaymentmethodform/index.html">shop:onExtendPaymentMethodForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendpaymentmethodmodel/index.html">shop:onExtendPaymentMethodModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductform/index.html">shop:onExtendProductForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductmodel/index.html">shop:onExtendProductModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewheader/index.html">shop:onExtendProductPreviewHeader</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewtabs/index.html">shop:onExtendProductPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewtoolbar/index.html">shop:onExtendProductPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductreviewform/index.html">shop:onExtendProductReviewForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductreviewmodel/index.html">shop:onExtendProductReviewModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductstoolbar/index.html">shop:onExtendProductsToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendproducttypeform/index.html">shop:onExtendProductTypeForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproducttypemodel/index.html">shop:onExtendProductTypeModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendreportfilters/index.html">shop:onExtendReportFilters</a></li>
+                      <li><a href="../../event/shop%253Aonextendshippingoptionform/index.html">shop:onExtendShippingOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendshippingoptionmodel/index.html">shop:onExtendShippingOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonfilterpaymentmethods/index.html">shop:onFilterPaymentMethods</a></li>
+                      <li><a href="../../event/shop%253Aonfiltershippingoptions/index.html">shop:onFilterShippingOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetattributefieldoptions/index.html">shop:onGetAttributeFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcartitemprice/index.html">shop:onGetCartItemPrice</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryfieldoptions/index.html">shop:onGetCategoryFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryfieldstate/index.html">shop:onGetCategoryFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryproductsortingquery/index.html">shop:onGetCategoryProductSortingQuery</a></li>
+                      <li><a href="../../event/shop%253Aongetcompanyinformationfieldoptions/index.html">shop:onGetCompanyInformationFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcompanyinformationfieldstate/index.html">shop:onGetCompanyInformationFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomerfieldoptions/index.html">shop:onGetCustomerFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomerfieldstate/index.html">shop:onGetCustomerFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomergroupfieldoptions/index.html">shop:onGetCustomerGroupFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomgroupfieldoptions/index.html">shop:onGetCustomGroupFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetendreportingdate/index.html">shop:onGetEndReportingDate</a></li>
+                      <li><a href="../../event/shop%253Aongetextraoptionfieldoptions/index.html">shop:onGetExtraOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetmanufacturerfieldoptions/index.html">shop:onGetManufacturerFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetmanufacturerfieldstate/index.html">shop:onGetManufacturerFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetoptionfieldoptions/index.html">shop:onGetOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderfieldoptions/index.html">shop:onGetOrderFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderfieldstate/index.html">shop:onGetOrderFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetorderitemdisplaydetails/index.html">shop:onGetOrderItemDisplayDetails</a></li>
+                      <li><a href="../../event/shop%253Aongetorderitemfieldoptions/index.html">shop:onGetOrderItemFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderstatusfieldoptions/index.html">shop:onGetOrderStatusFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderstatusfieldstate/index.html">shop:onGetOrderStatusFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetpaymentmethodfieldoptions/index.html">shop:onGetPaymentMethodFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetpaymentmethodfieldstate/index.html">shop:onGetPaymentMethodFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetproductextraprice/index.html">shop:onGetProductExtraPrice</a></li>
+                      <li><a href="../../event/shop%253Aongetproductfieldoptions/index.html">shop:onGetProductFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetproductfieldstate/index.html">shop:onGetProductFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetproductpricenotax/index.html">shop:onGetProductPriceNoTax</a></li>
+                      <li><a href="../../event/shop%253Aongetproductreviewfieldoptions/index.html">shop:onGetProductReviewFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsaleprice/index.html">shop:onGetProductSalePrice</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsearchsortcolumns/index.html">shop:onGetProductSearchSortColumns</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsortcolumns/index.html">shop:onGetProductSortColumns</a></li>
+                      <li><a href="../../event/shop%253Aongetproducttypefieldoptions/index.html">shop:onGetProductTypeFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetshippingoptionfieldoptions/index.html">shop:onGetShippingOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetshippingparams/index.html">shop:onGetShippingParams</a></li>
+                      <li><a href="../../event/shop%253Aongetstartreportingdate/index.html">shop:onGetStartReportingDate</a></li>
+                      <li><a href="../../event/shop%253Aoninvoicesystemsupported/index.html">shop:onInvoiceSystemSupported</a></li>
+                      <li><a href="../../event/shop%253Aonnewinvoiceitemcopy/index.html">shop:onNewInvoiceItemCopy</a></li>
+                      <li><a href="../../event/shop%253Aonneworder/index.html">shop:onNewOrder</a></li>
+                      <li><a href="../../event/shop%253Aonorderafterdelete/index.html">shop:onOrderAfterDelete</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforecreate/index.html">shop:onOrderBeforeCreate</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforestatuschanged/index.html">shop:onOrderBeforeStatusChanged</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforeupdate/index.html">shop:onOrderBeforeUpdate</a></li>
+                      <li><a href="../../event/shop%253Aonordercopybillingaddress/index.html">shop:onOrderCopyBillingAddress</a></li>
+                      <li><a href="../../event/shop%253Aonordererror/index.html">shop:onOrderError</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemadded/index.html">shop:onOrderItemAdded</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemdeleted/index.html">shop:onOrderItemDeleted</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemupdated/index.html">shop:onOrderItemUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonordermarkeddeleted/index.html">shop:onOrderMarkedDeleted</a></li>
+                      <li><a href="../../event/shop%253Aonorderrestored/index.html">shop:onOrderRestored</a></li>
+                      <li><a href="../../event/shop%253Aonorderstatuschanged/index.html">shop:onOrderStatusChanged</a></li>
+                      <li><a href="../../event/shop%253Aonorderstockchange/index.html">shop:onOrderStockChange</a></li>
+                      <li><a href="../../event/shop%253Aonordersupportsinvoices/index.html">shop:onOrderSupportsInvoices</a></li>
+                      <li><a href="../../event/shop%253Aonoverrideproductcategorycsvimportdata/index.html">shop:onOverrideProductCategoryCsvImportData</a></li>
+                      <li><a href="../../event/shop%253Aonprepareproductlistdata/index.html">shop:onPrepareProductListData</a></li>
+                      <li><a href="../../event/shop%253Aonpreprocessproductcustomdata/index.html">shop:onPreProcessProductCustomData</a></li>
+                      <li><a href="../../event/shop%253Aonproductduplicated/index.html">shop:onProductDuplicated</a></li>
+                      <li><a href="../../event/shop%253Aonproductoutofstock/index.html">shop:onProductOutOfStock</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewaftercreate/index.html">shop:onProductReviewAfterCreate</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewapproved/index.html">shop:onProductReviewApproved</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewbeforecreate/index.html">shop:onProductReviewBeforeCreate</a></li>
+                      <li><a href="../../event/shop%253Aonregisterproductsearchevent/index.html">shop:onRegisterProductSearchEvent</a></li>
+                      <li><a href="../../event/shop%253Aonupdatecartitemprice/index.html">shop:onUpdateCartItemPrice</a></li>
+                      <li><a href="../../event/shop%253Aonupdateshippingquote/index.html">shop:onUpdateShippingQuote</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.helpers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/class_shop_bundlehelper.html">Shop_BundleHelper</a></li>
+                      <li><a href="../../../docs/class_shop_producthelper.html">Shop_ProductHelper</a></li>
+                      <li><a href="../../function/customer_logout/index.html">customer_logout()</a></li>
+                      <li><a href="../../function/format_currency/index.html">format_currency()</a></li>
+                      <li><a href="../../function/tax_incl_label/index.html">tax_incl_label()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.models</span>
+      
+        <ul>
+                      <li><a href="../shop_bundleitemproduct/index.html">Shop_BundleItemProduct</a></li>
+                      <li><a href="../../../docs/class_shop_category.html">Shop_Category</a></li>
+                      <li><a href="../shop_companyinformation/index.html">Shop_CompanyInformation</a></li>
+                      <li><a href="../../../docs/class_shop_country.html">Shop_Country</a></li>
+                      <li><a href="../../../docs/class_shop_countrystate.html">Shop_CountryState</a></li>
+                      <li><a href="../shop_customattribute/index.html">Shop_CustomAttribute</a></li>
+                      <li><a href="../../../docs/class_shop_customer.html">Shop_Customer</a></li>
+                      <li><a href="../../../docs/shop_customergroup.html">Shop_CustomerGroup</a></li>
+                      <li><a href="../shop_customerpaymentprofile/index.html">Shop_CustomerPaymentProfile</a></li>
+                      <li><a href="../../../docs/class_shop_customgroup.html">Shop_CustomGroup</a></li>
+                      <li><a href="../../../docs/class_shop_extraoption.html">Shop_ExtraOption</a></li>
+                      <li><a href="../../../docs/class_shop_manufacturer.html">Shop_Manufacturer</a></li>
+                      <li><a href="../shop_optionmatrixrecord/index.html">Shop_OptionMatrixRecord</a></li>
+                      <li><a href="../../../docs/class_shop_order.html">Shop_Order</a></li>
+                      <li><a href="../../../docs/class_shop_orderitem.html">Shop_OrderItem</a></li>
+                      <li><a href="../shop_orderstatus/index.html">Shop_OrderStatus</a></li>
+                      <li><a href="../shop_orderstatuslog/index.html">Shop_OrderStatusLog</a></li>
+                      <li><a href="../../../docs/class_shop_paymentmethod.html">Shop_PaymentMethod</a></li>
+                      <li><a href="../../../docs/class_shop_product.html">Shop_Product</a></li>
+                      <li><a href="../shop_productbundleitem/index.html">Shop_ProductBundleItem</a></li>
+                      <li><a href="../shop_productfile/index.html">Shop_ProductFile</a></li>
+                      <li><a href="../shop_productproperty/index.html">Shop_ProductProperty</a></li>
+                      <li><a href="../../../docs/class_shop_productreview.html">Shop_ProductReview</a></li>
+                      <li><a href="../shop_producttype/index.html">Shop_ProductType</a></li>
+                      <li><a href="../../../docs/class_shop_shippingoption.html">Shop_ShippingOption</a></li>
+                      <li><a href="../shop_shippingparams/index.html">Shop_ShippingParams</a></li>
+                      <li><a href="../shop_transactionupdate/index.html">Shop_TransactionUpdate</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.twig filters</span>
+      
+        <ul>
+                      <li><a href="../../function/categories/index.html">categories</a></li>
+                      <li><a href="../../function/currency/index.html">currency</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.twig functions</span>
+      
+        <ul>
+                      <li><a href="../../function/cart_items/index.html">cart_items()</a></li>
+                      <li><a href="../../function/company_information/index.html">company_information()</a></li>
+                      <li><a href="../../function/shipping_method_selected/index.html">shipping_method_selected()</a></li>
+                      <li><a href="../../function/total_cart_items/index.html">total_cart_items()</a></li>
+                      <li><a href="../../function/total_cart_price/index.html">total_cart_price()</a></li>
+                  </ul>
+      </li>
+      </ul>
+
+  <script type="text/javascript">
+    jQuery("#api-tree-view-list").treeview({
+      animated: "fast",
+      collapsed: true,
+      unique: true,
+      persist: "location"
+    });
+  </script>
+</div></td>
+                <td class="details">  <h2><span>Db_ActiveRecord</span> class</h2>
+  
+  <table class="api-summary-table">
+  <tr>
+    <th>Defined in</th>
+    <td>/phproad/modules/db/classes/db_activerecord.php, lines 46-3136</td>
+  </tr>
+      <tr>
+      <th>Inheritance</th>
+      <td>Phpr_Extension » Phpr_Extensible » Phpr_Validatable » Db_Base » Db_WhereBase » Db_SqlBase » Db_ActiveRecord</td>
+    </tr>
+        <tr>
+      <th>Subclasses</th>
+      <td><a href="../db_file/index.html">Db_File</a>, <a href="../shop_bundleitemproduct/index.html">Shop_BundleItemProduct</a>, <a href="../../../docs/class_shop_category.html">Shop_Category</a>, <a href="../shop_companyinformation/index.html">Shop_CompanyInformation</a>, <a href="../../../docs/class_shop_country.html">Shop_Country</a>, <a href="../../../docs/class_shop_countrystate.html">Shop_CountryState</a>, <a href="../shop_customattribute/index.html">Shop_CustomAttribute</a>, <a href="../../../docs/class_shop_customgroup.html">Shop_CustomGroup</a>, <a href="../../../docs/class_shop_customer.html">Shop_Customer</a>, <a href="../../../docs/shop_customergroup.html">Shop_CustomerGroup</a>, <a href="../shop_customerpaymentprofile/index.html">Shop_CustomerPaymentProfile</a>, <a href="../../../docs/class_shop_extraoption.html">Shop_ExtraOption</a>, <a href="../../../docs/class_shop_manufacturer.html">Shop_Manufacturer</a>, <a href="../shop_optionmatrixrecord/index.html">Shop_OptionMatrixRecord</a>, <a href="../../../docs/class_shop_order.html">Shop_Order</a>, <a href="../../../docs/class_shop_orderitem.html">Shop_OrderItem</a>, <a href="../shop_orderstatus/index.html">Shop_OrderStatus</a>, <a href="../shop_orderstatuslog/index.html">Shop_OrderStatusLog</a>, <a href="../../../docs/class_shop_paymentmethod.html">Shop_PaymentMethod</a>, <a href="../../../docs/class_shop_product.html">Shop_Product</a>, <a href="../shop_productbundleitem/index.html">Shop_ProductBundleItem</a>, <a href="../shop_productproperty/index.html">Shop_ProductProperty</a>, <a href="../../../docs/class_shop_productreview.html">Shop_ProductReview</a>, <a href="../shop_producttype/index.html">Shop_ProductType</a>, <a href="../../../docs/class_shop_shippingoption.html">Shop_ShippingOption</a>, <a href="../shop_shippingparams/index.html">Shop_ShippingParams</a></td>
+    </tr>
+        <tr>
+      <th>Author</th>
+      <td>LemonStand eCommerce Inc.</td>
+    </tr>
+  </table>
+
+
+<div class="api-description">
+  Base class for LemonStand models.
+Db_ActiveRecord class is a base class for many other LemonStand classes, including 
+<a href="../../../docs/class_shop_customer.html">Shop_Customer</a>, <a href="../../../docs/class_shop_order.html">Shop_Order</a>, <a href="../cms_page/index.html">Cms_Page</a> and others. The class has a number of 
+methods which enable you to find and update records in the database.
+<br/><div class="api-separator"></div>
+Properties of this class subclasses depend on the table fields they represent. If a table
+had <em>name</em> field, a corresponding model class would have public <em>$name</em> property.
+<br/><div class="api-separator"></div>
+ActiveRecord uses the following constants for mapping data types:
+<ul>
+  <li><em>db_varchar</em> - varchar field</li>
+  <li><em>db_number</em> - integer field</li>
+  <li><em>db_float</em> - floating point number field</li>
+  <li><em>db_bool</em> - boolean field</li>
+  <li><em>db_datetime</em> - date/time field</li>
+  <li><em>db_date - date field</em></li>
+  <li><em>db_text</em> - text field</li>
+</ul>
+ActiveRecord incapsulates all methods required for finding, creating, updating and deleting 
+records in the database. Example of finding and updating a database record:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+  $obj = new Shop_Customer();
+  $customer = $obj-&gt;where('first_name=?', 'John')-&gt;where('last_name=?', 'Doe')-&gt;find();
+  $customer-&gt;last_name = 'Smith';
+  $customer-&gt;save();
+</pre></div></div>
+
+<div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="http://lemonstand.com/docs/working_with_the_database/">Working with the database</a></li>
+            
+        </ul>
+</div>  
+  <div class="api-property-summary api-toggle-parent">
+      <h3 class="api-section-header">Public properties</h3>
+    
+    
+    <table class="api-summary-table">
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Defined By</th>
+      </tr>
+              <tr class="">
+          <td><a href="index.html#auto_create_timestamps-property">auto_create_timestamps</a></td>
+          <td>array</td>
+          <td>a list of create timestamp columns.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#auto_timestamps-property">auto_timestamps</a></td>
+          <td>boolean</td>
+          <td>determines whether create and update timestamp field should be set automatically.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#auto_update_timestamps-property">auto_update_timestamps</a></td>
+          <td>array</td>
+          <td>a list of update timestamp columns.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#belongs_to-property">belongs_to</a></td>
+          <td>array</td>
+          <td>contains a list of <em>Belongs To</em> Many relations.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#calculated_columns-property">calculated_columns</a></td>
+          <td>array</td>
+          <td>contains a list of calculated columns.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#custom_columns-property">custom_columns</a></td>
+          <td>array</td>
+          <td>contains a list of custom fields definition.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#fetched-property">fetched</a></td>
+          <td>array</td>
+          <td>contains an associative array of table column values fetched from the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#has_and_belongs_to_many-property">has_and_belongs_to_many</a></td>
+          <td>array</td>
+          <td>contains a list of <em>Has and Belongs To Many</em> relations.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#has_many-property">has_many</a></td>
+          <td>array</td>
+          <td>contains a list of <em>Has Many</em> relations.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#has_one-property">has_one</a></td>
+          <td>array</td>
+          <td>contains a list of <em>Has One</em> relations.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#primary_key-property">primary_key</a></td>
+          <td>string</td>
+          <td>specifies a name of the table primary key.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#validation-property">validation</a></td>
+          <td><a href="../phpr_validation/index.html">Phpr_Validation</a></td>
+          <td>contains the model's validation object.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+          </table>
+  </div>  <div class="api-property-summary api-toggle-parent">
+  </div>  
+  <div class="api-method-summary api-toggle-parent">
+      <h3 class="api-section-header">Public methods</h3>
+    
+          <p><a href="index.html#" class="api-toggle">Show</a> inherited methods.</p>
+    
+    <table class="api-summary-table">
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Defined By</th>
+      </tr>
+              <tr class="">
+          <td><a href="index.html#add_form_custom_area()">add_form_custom_area()</a></td>
+          <td>adds a form custom area.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#add_form_field()">add_form_field()</a></td>
+          <td>makes a column visible in forms.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#add_form_partial()">add_form_partial()</a></td>
+          <td>adds a custom form partial.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#add_form_section()">add_form_section()</a></td>
+          <td>adds a form section.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_create()">after_create()</a></td>
+          <td>called after a new object is saved to the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_create_saved()">after_create_saved()</a></td>
+          <td>called after a new object is saved to the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_delete()">after_delete()</a></td>
+          <td>called after an existing or new record is deleted from the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_modify()">after_modify()</a></td>
+          <td>called after an existing or new record was modified.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_save()">after_save()</a></td>
+          <td>called after an existing or new record is created or updated in the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_update()">after_update()</a></td>
+          <td>called after an existing record is updated in the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_validation()">after_validation()</a></td>
+          <td>triggered after the model column values are validated.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_validation_on_create()">after_validation_on_create()</a></td>
+          <td>triggered after a new model column values are validated.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#after_validation_on_update()">after_validation_on_update()</a></td>
+          <td>triggered after an existing model column values are validated.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#before_create()">before_create()</a></td>
+          <td>called before a new object is saved to the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#before_delete()">before_delete()</a></td>
+          <td>called before a record is deleted from the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#before_save()">before_save()</a></td>
+          <td>called before an existing or new record is created or updated in the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#before_update()">before_update()</a></td>
+          <td>called before an existing record is updated in the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#before_validation()">before_validation()</a></td>
+          <td>triggered before the model column values are validated.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#before_validation_on_create()">before_validation_on_create()</a></td>
+          <td>triggered before a new model column values are validated.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#before_validation_on_update()">before_validation_on_update()</a></td>
+          <td>triggered before an existing model column values are validated.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#collection()">collection()</a></td>
+          <td>executes the find_all() method and returns a <a href="../db_datacollection/index.html">collection</a>.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#columnValue()">columnValue()</a></td>
+          <td>alias for the <a href="index.html#displayField()">displayField()</a> method.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#define_column()">define_column()</a></td>
+          <td>adds a column definition to the model.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#define_form_fields()">define_form_fields()</a></td>
+          <td>defines form fields.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#define_multi_relation_column()">define_multi_relation_column()</a></td>
+          <td>adds column definition for <em>has_and_belongs_to_many</em> or <em>has_many</em> <a href="http://lemonstand.com/docs/creating_data_relations/">relation</a> field.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#define_relation_column()">define_relation_column()</a></td>
+          <td>adds column definition for <em>has_on</em> or <em>belongs_to</em> <a href="http://lemonstand.com/docs/creating_data_relations/">relation</a> field.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#delete()">delete()</a></td>
+          <td>deletes the record from the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#delete_form_field()">delete_form_field()</a></td>
+          <td>deletes a form field by its corresponding column name.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#displayField()">displayField()</a></td>
+          <td>returns a formatted column value. The field should be defined with <a href="index.html#define_column()">define_column()</a>,</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#find()">find()</a></td>
+          <td>finds a record by its primary key value.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#find_all()">find_all()</a></td>
+          <td>finds all records and returns the <a href="../db_datacollection/index.html">Db_DataCollection</a> object, containing a list of models.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#find_by()">find_by()</a></td>
+          <td>finds a record by a field value.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#find_column_definition()">find_column_definition()</a></td>
+          <td>finds a column definition by the column name.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#find_form_field()">find_form_field()</a></td>
+          <td>finds a form field definition by its corresponding column name.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="index.html#join()">join()</a></td>
+          <td>adds a table to the query with JOIN statement.</td>
+          <td>Db_SqlBase</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#limit()">limit()</a></td>
+          <td>allows to limit the result of the <a href="index.html#find_all()">find_all()</a> method with the specified number of records.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#list_related_records_deferred()">list_related_records_deferred()</a></td>
+          <td>returns a list of <a href="http://lemonstand.com/docs/creating_data_relations/">relation</a> objects, taking into account deferred relations.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="index.html#order()">order()</a></td>
+          <td>allows to order the result of the <a href="index.html#find_all()">find_all()</a> method by a specific table column.</td>
+          <td>Db_SqlBase</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="index.html#orWhere()">orWhere()</a></td>
+          <td>adds OR statement to the where clause, allowing to to limit the result of the <a href="index.html#find()">find()</a> and <a href="index.html#find_all()">find_all()</a> methods with SQL filter.</td>
+          <td>Db_WhereBase</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#paginate()">paginate()</a></td>
+          <td>allows to limit the result of the <a href="index.html#find_all()">find_all()</a> method with a single page of records.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#requestRowCount()">requestRowCount()</a></td>
+          <td>returns a number of rows which would be returned with <a href="index.html#find_all()">find_all()</a> method.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#save()">save()</a></td>
+          <td>saves record to the database.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="index.html#where()">where()</a></td>
+          <td>allows to limit the result of the <a href="index.html#find()">find()</a> and <a href="index.html#find_all()">find_all()</a> methods with SQL filter.</td>
+          <td>Db_WhereBase</td>
+        </tr>
+          </table>
+  </div>  <div class="api-method-summary api-toggle-parent">
+      <h3 class="api-section-header">Protected methods</h3>
+    
+    
+    <table class="api-summary-table">
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Defined By</th>
+      </tr>
+              <tr class="">
+          <td><a href="index.html#define_columns()">define_columns()</a></td>
+          <td>defines model columns.</td>
+          <td>Db_ActiveRecord</td>
+        </tr>
+          </table>
+  </div>
+  <div class="api-property-summary api-toggle-parent">
+      <h3 class="api-section-header">Events</h3>
+
+    <table class="api-summary-table">
+      <tr>
+        <th>Event</th>
+        <th>Description</th>
+      </tr>
+              <tr>
+          <td><a href="../../event/core%253Aonafterdatabasequery/index.html">core:onAfterDatabaseQuery</a></td>
+          <td>Triggered before a SQL query is executed by the database.</td>
+        </tr>
+              <tr>
+          <td><a href="../../event/core%253Aonbeforedatabaseconnect/index.html">core:onBeforeDatabaseConnect</a></td>
+          <td>Triggered before database connection is established.</td>
+        </tr>
+              <tr>
+          <td><a href="../../event/core%253Aonbeforedatabasequery/index.html">core:onBeforeDatabaseQuery</a></td>
+          <td>Triggered before a SQL query is sent to the database.</td>
+        </tr>
+          </table>
+  </div>
+    <h3>Property details</h3>
+  
+      <h4 class="api-object-name">
+      <a href="index.html#auto_create_timestamps-property" name="auto_create_timestamps-property">¶</a>
+      <span>auto_create_timestamps</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$auto_create_timestamps</b>;</div>
+    
+    <div class="api-description">A list of create timestamp columns.
+Values of columns specified in this list are automatically
+set when the new model object is saved to the database
+By default <em>created_at</em> and <em>created_on</em> columns
+are considered as create timestamp columns.
+<br/><div class="api-separator"></div>
+Setting the create timestamp column values takes place only if
+<a href="index.html#auto_timestamps-property">auto_timestamps</a> property value is TRUE.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#auto_timestamps-property" name="auto_timestamps-property">¶</a>
+      <span>auto_timestamps</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$auto_timestamps</b>;</div>
+    
+    <div class="api-description">Determines whether create and update timestamp field should be set automatically.
+By default columns specified in <a href="index.html#auto_create_timestamps-property">auto_create_timestamps</a> and 
+<a href="index.html#auto_update_timestamps-property">auto_update_timestamps</a> properties are set automatically when the model 
+is saved. Assign FALSE value to this property to cancel this behavior.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#auto_update_timestamps-property" name="auto_update_timestamps-property">¶</a>
+      <span>auto_update_timestamps</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$auto_update_timestamps</b>;</div>
+    
+    <div class="api-description">A list of update timestamp columns.
+Values of columns specified in this list are automatically
+set when an existing model object is saved to the database
+By default <em>updated_at</em> and <em>updated_on</em> columns
+are considered as update timestamp columns.
+<br/><div class="api-separator"></div>
+Setting the update timestamp column values takes place only if
+<a href="index.html#auto_timestamps-property">auto_timestamps</a> property value is TRUE.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#belongs_to-property" name="belongs_to-property">¶</a>
+      <span>belongs_to</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$belongs_to</b>;</div>
+    
+    <div class="api-description">Contains a list of <em>Belongs To</em> Many relations.
+Please read <a href="http://lemonstand.com/docs/creating_data_relations/">Creating data relations</a>
+article for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#calculated_columns-property" name="calculated_columns-property">¶</a>
+      <span>calculated_columns</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$calculated_columns</b>;</div>
+    
+    <div class="api-description">Contains a list of calculated columns.
+Use this property to define calculated columns in your models. Calculated columns do not 
+exist in the data table. Instead they are calculated with SQL. Example:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public $calculated_columns = array( 
+  'comment_num'=&gt;'select count(*) from comments where post_id=post.id',
+  'disk_file_name'=&gt;array('sql'=&gt;'files.file_create_date', 'join'=&gt;array('files'=&gt;'files.post_id=post.id'), 'type'=&gt;db_date)
+);
+</pre></div>
+Defined calculated columns can be accessed as a regular class property:
+<div class="codeblock"><pre class="brush:php; collapse:false">$comment_num = $obj-&gt;comment_num;</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#custom_columns-property" name="custom_columns-property">¶</a>
+      <span>custom_columns</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$custom_columns</b>;</div>
+    
+    <div class="api-description">Contains a list of custom fields definition.
+Use this field to define custom columns in your models. Custom columns do not exist in the database
+and their values a are evaluated with special model methods when the model is loaded from the database. 
+Each custom column should have a corresponding method in the model class.
+Example:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public $custom_columns = array('record_status'=&gt;db_number, 'record_css_class'=&gt;db_text);
+</pre></div>
+This example the model to have two public methods for evaluating the column values:
+<div class="codeblock"><pre class="brush:php; collapse:true">
+public function eval_record_status() 
+{
+  return 1;
+}
+
+public function eval_record_css_class() 
+{
+  return $this-&gt;deleted ? 'deleted' : 'normal';
+}
+</pre></div>
+Defined custom fields can be accessed as a regular class property:
+<div class="codeblock"><pre class="brush:php; collapse:false">$record_status = $obj-&gt;record_status;</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#fetched-property" name="fetched-property">¶</a>
+      <span>fetched</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$fetched</b>;</div>
+    
+    <div class="api-description">Contains an associative array of table column values fetched from the database.
+You can use this field to compare original values with new values before the model is saved
+to the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#has_and_belongs_to_many-property" name="has_and_belongs_to_many-property">¶</a>
+      <span>has_and_belongs_to_many</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$has_and_belongs_to_many</b>;</div>
+    
+    <div class="api-description">Contains a list of <em>Has and Belongs To Many</em> relations.
+Please read <a href="http://lemonstand.com/docs/creating_data_relations/">Creating data relations</a>
+article for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#has_many-property" name="has_many-property">¶</a>
+      <span>has_many</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$has_many</b>;</div>
+    
+    <div class="api-description">Contains a list of <em>Has Many</em> relations.
+Please read <a href="http://lemonstand.com/docs/creating_data_relations/">Creating data relations</a>
+article for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#has_one-property" name="has_one-property">¶</a>
+      <span>has_one</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$has_one</b>;</div>
+    
+    <div class="api-description">Contains a list of <em>Has One</em> relations.
+Please read <a href="http://lemonstand.com/docs/creating_data_relations/">Creating data relations</a>
+article for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#primary_key-property" name="primary_key-property">¶</a>
+      <span>primary_key</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$primary_key</b>;</div>
+    
+    <div class="api-description">Specifies a name of the table primary key.
+Default primary key name is <em>id</em>. Override this
+property in a model if its table has primary key with
+another name.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#validation-property" name="validation-property">¶</a>
+      <span>validation</span> property
+    </h4>
+    
+    <div class="api-signature">public <a href="../phpr_validation/index.html">Phpr_Validation</a> <b>$validation</b>;</div>
+    
+    <div class="api-description">Contains the model's validation object.
+This model uses this method during the validation process.</div>
+
+          <h3>Method details</h3>
+  
+      <h4 class="api-object-name">
+      <a href="index.html#add_form_custom_area()" name="add_form_custom_area()">¶</a>
+      <span>add_form_custom_area()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_formcustomarea/index.html">Db_FormCustomArea</a> <b>add_form_custom_area</b>(string $id, string $location=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$id</th>
+            <td>string</td>
+            <td>specifies an area identifier</td>
+          </tr>
+                  <tr>
+            <th>$location</th>
+            <td>string</td>
+            <td>optional path of a directory containing the form area partial.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_formcustomarea/index.html">Db_FormCustomArea</a></td>
+            <td>returns the form custom area object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds a form custom area. 
+Form areas can contain arbitrary HTML markup. Form area contents should be defined in
+a partial with name _form_area_<em>name</em>.htm in the controller's views directory,
+where <em>id</em> is an area identifier specified in the method parameter. The optional
+$location parameter allows to specify a path of a directory containing the partial.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#add_form_field()" name="add_form_field()">¶</a>
+      <span>add_form_field()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_formfielddefinition/index.html">Db_FormFieldDefinition</a> <b>add_form_field</b>(string $dbName, $side $side='full')</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$dbName</th>
+            <td>string</td>
+            <td>specifies a column database name or a calculated column name</td>
+          </tr>
+                  <tr>
+            <th>$side</th>
+            <td>$side</td>
+            <td>specifies a side of the form the column should appear. Supported values: <em>left</em>, <em>right</em>, <em>full</em></td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_formfielddefinition/index.html">Db_FormFieldDefinition</a></td>
+            <td>returns the form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Makes a column visible in forms.
+The column should be defined with <a href="index.html#define_column()">define_column()</a>, 
+<a href="index.html#define_relation_column()">define_relation_column()</a> or 
+<a href="index.html#define_multi_relation_column()">define_multi_relation_column()</a> method before this method is called.
+The method returns the <a href="../db_formfielddefinition/index.html">form field definition</a> object which can be used for further configuration of the field. Example:
+<div class="codeblock"><pre class="brush:php; collapse:false">$this-&gt;add_form_field('author_name', 'left');</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#add_form_partial()" name="add_form_partial()">¶</a>
+      <span>add_form_partial()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_formpartial/index.html">Db_FormPartial</a> <b>add_form_partial</b>(string $path)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$path</th>
+            <td>string</td>
+            <td>specifies an absolute path to the partial file.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_formpartial/index.html">Db_FormPartial</a></td>
+            <td>returns the form partial object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds a custom form partial.
+Form partials can contain arbitrary HTML markup. Example:
+<div class="codeblock"><pre class="brush:php; collapse:false">$this-&gt;add_form_partial(PATH_APP.'/modules/mymodule/partials/_form_partial.htm');</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#add_form_section()" name="add_form_section()">¶</a>
+      <span>add_form_section()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_formsection/index.html">Db_FormSection</a> <b>add_form_section</b>(string $description, string $title=NULL, string $html_id=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$description</th>
+            <td>string</td>
+            <td>specifies a section description</td>
+          </tr>
+                  <tr>
+            <th>$title</th>
+            <td>string</td>
+            <td>specifies a section title, optional</td>
+          </tr>
+                  <tr>
+            <th>$html_id</th>
+            <td>string</td>
+            <td>specifies an id for the html element the form section will be rendered in on the form, optional</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_formsection/index.html">Db_FormSection</a></td>
+            <td>returns the form section object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds a form section.
+Form sections allow to separate form space with a title and description text.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_create()" name="after_create()">¶</a>
+      <span>after_create()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_create</b>()</div>
+    
+        
+        
+    <div class="api-description">Called after a new object is saved to the database.
+Override this method in your model classes if you need to perform
+any operations after the record is created in the database.
+When this method is called, object relations are not saved to the database yet.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_create_saved()" name="after_create_saved()">¶</a>
+      <span>after_create_saved()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_create_saved</b>()</div>
+    
+        
+        
+    <div class="api-description">Called after a new object is saved to the database.
+Override this method in your model classes if you need to perform
+any operations after the record is created in the database.
+When this method is called, object relations are already saved to the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_delete()" name="after_delete()">¶</a>
+      <span>after_delete()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_delete</b>()</div>
+    
+        
+        
+    <div class="api-description">Called after an existing or new record is deleted from the database.
+Override this method in your model classes if you need to perform
+any operations after the record is deleted from the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_modify()" name="after_modify()">¶</a>
+      <span>after_modify()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_modify</b>(string $operation, string $deferred_session_key)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$operation</th>
+            <td>string</td>
+            <td>specifies the operation type.
+Possible values are: <em>created</em>, <em>updated</em>, <em>deleted</em></td>
+          </tr>
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Called after an existing or new record was modified.
+Override this method in your model classes if you need to perform
+any operations after the record is modified.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_save()" name="after_save()">¶</a>
+      <span>after_save()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_save</b>()</div>
+    
+        
+        
+    <div class="api-description">Called after an existing or new record is created or updated in the database.
+Override this method in your model classes if you need to perform
+any operations after the record is saved to the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_update()" name="after_update()">¶</a>
+      <span>after_update()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_update</b>()</div>
+    
+        
+        
+    <div class="api-description">Called after an existing record is updated in the database.
+Override this method in your model classes if you need to perform
+any operations after the record is updated in the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_validation()" name="after_validation()">¶</a>
+      <span>after_validation()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_validation</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Triggered after the model column values are validated.
+Override this method in your model classes if you need to perform
+any operations after the model is validated.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_validation_on_create()" name="after_validation_on_create()">¶</a>
+      <span>after_validation_on_create()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_validation_on_create</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Triggered after a new model column values are validated.
+Override this method in your model classes if you need to perform
+any operations after a new model is validated.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#after_validation_on_update()" name="after_validation_on_update()">¶</a>
+      <span>after_validation_on_update()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>after_validation_on_update</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Triggered after an existing model column values are validated.
+Override this method in your model classes if you need to perform
+any operations after an existing model is validated.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#before_create()" name="before_create()">¶</a>
+      <span>before_create()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>before_create</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Called before a new object is saved to the database.
+Override this method in your model classes if you need to perform
+any operations before the record is created in the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#before_delete()" name="before_delete()">¶</a>
+      <span>before_delete()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>before_delete</b>(integer $id=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$id</th>
+            <td>integer</td>
+            <td>specifies the record primary key value.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Called before a record is deleted from the database.
+Override this method in your model classes if you need to perform
+any operations before the record is deleted from the database. Usually
+this method is used for checking whether the object can be deleted.
+You can throw an exception in the handler to stop the operation. The following
+example demonstrates a typical usage of the method:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public function before_delete($id=null) 
+{
+  if ($order_num = $this-&gt;orders-&gt;count) // Load the number of customer orders from the relation
+    throw new Phpr_ApplicationException(&quot;Error deleting customer. There are $order_num order(s) 
+      belonging to this customer.&quot;);
+}
+</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#before_save()" name="before_save()">¶</a>
+      <span>before_save()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>before_save</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Called before an existing or new record is created or updated in the database.
+Override this method in your model classes if you need to perform
+any operations before the record is saved to the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#before_update()" name="before_update()">¶</a>
+      <span>before_update()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>before_update</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Called before an existing record is updated in the database.
+Override this method in your model classes if you need to perform
+any operations before the record is updated in the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#before_validation()" name="before_validation()">¶</a>
+      <span>before_validation()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>before_validation</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Triggered before the model column values are validated.
+Override this method in your model classes if you need to perform
+any operations before the model is validated.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#before_validation_on_create()" name="before_validation_on_create()">¶</a>
+      <span>before_validation_on_create()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>before_validation_on_create</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Triggered before a new model column values are validated.
+Override this method in your model classes if you need to perform
+any operations before a new model is validated.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#before_validation_on_update()" name="before_validation_on_update()">¶</a>
+      <span>before_validation_on_update()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>before_validation_on_update</b>(string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies the deferred session key passed to the <a href="index.html#save()">save()</a> method.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Triggered before an existing model column values are validated.
+Override this method in your model classes if you need to perform
+any operations before an existing model is validated.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#collection()" name="collection()">¶</a>
+      <span>collection()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_datacollection/index.html">Db_DataCollection</a> <b>collection</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_datacollection/index.html">Db_DataCollection</a></td>
+            <td>returns a collection</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Executes the find_all() method and returns a <a href="../db_datacollection/index.html">collection</a>.
+This method simplifies front-end coding.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#columnValue()" name="columnValue()">¶</a>
+      <span>columnValue()</span> method
+    </h4>
+    
+    <div class="api-signature">public string <b>columnValue</b>(string $dbName)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$dbName</th>
+            <td>string</td>
+            <td>specifies the column name.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>string</td>
+            <td>returns the formatted column value.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Alias for the <a href="index.html#displayField()">displayField()</a> method</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#define_column()" name="define_column()">¶</a>
+      <span>define_column()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_columndefinition/index.html">Db_ColumnDefinition</a> <b>define_column</b>(string $dbName, string $displayName)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$dbName</th>
+            <td>string</td>
+            <td>specifies a column database name, a calculated column name, or a relation name.</td>
+          </tr>
+                  <tr>
+            <th>$displayName</th>
+            <td>string</td>
+            <td>specifies a name to display in lists and forms.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_columndefinition/index.html">Db_ColumnDefinition</a></td>
+            <td>returns the column definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds a column definition to the model.
+Column definitions determine column labels, validation rules and other properties. The method
+returns <a href="../db_columndefinition/index.html">column definition object</a> object which you can use to configure the column presentation and validation parameters.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#define_form_fields()" name="define_form_fields()">¶</a>
+      <span>define_form_fields()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>define_form_fields</b>(string $context=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$context</th>
+            <td>string</td>
+            <td>specifies the execution context.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Defines form fields.
+Override this method to define the model's form fields. All column which you add to the form
+should be defined with <a href="index.html#define_columns()">define_columns()</a> method.
+Use <a href="index.html#add_form_field()">add_form_field()</a>, 
+<a href="index.html#add_form_custom_area()">add_form_custom_area()</a>, 
+<a href="index.html#add_form_partial()">add_form_partial()</a>, 
+and add_form_section() 
+methods inside this method. Example:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public function define_form_fields($context = null)
+{
+  $this-&gt;add_form_field('author_name', 'left');
+  $this-&gt;add_form_field('author_email', 'right');
+}
+</pre></div></div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="http://lemonstand.com/docs/administration_area_forms/">Forms</a></li>
+            
+        </ul>
+</div>      <h4 class="api-object-name">
+      <a href="index.html#define_multi_relation_column()" name="define_multi_relation_column()">¶</a>
+      <span>define_multi_relation_column()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_columndefinition/index.html">Db_ColumnDefinition</a> <b>define_multi_relation_column</b>(string $columnName, string $relationName, string $displayName, string $valueExpression)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$columnName</th>
+            <td>string</td>
+            <td>specifies a column name. Use any unique sql-compatible name.</td>
+          </tr>
+                  <tr>
+            <th>$relationName</th>
+            <td>string</td>
+            <td>specifies a relation name (should be declared as has_and_belongs_to_many or has_many)</td>
+          </tr>
+                  <tr>
+            <th>$displayName</th>
+            <td>string</td>
+            <td>specifies a name to display in lists and forms</td>
+          </tr>
+                  <tr>
+            <th>$valueExpression</th>
+            <td>string</td>
+            <td>specifies SQL expression for evaluating the relation display value used in lists and forms.
+Use '@' symbol to indicate a joined table: concat(@first_name, ' ', @last_name).</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_columndefinition/index.html">Db_ColumnDefinition</a></td>
+            <td>returns the column definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds column definition for <em>has_and_belongs_to_many</em> or <em>has_many</em> <a href="http://lemonstand.com/docs/creating_data_relations/">relation</a> field.
+You should define columns for a relation field if you want the field to be displayed in lists or forms. The method
+returns a <a href="../db_columndefinition/index.html">column definition object</a> which you can use to configure the column presentation and validation parameters.
+Example:
+<div class="codeblock"><pre class="brush:php; collapse:true">
+public $has_and_belongs_to_many = array(
+  'categories'=&gt;array('class_name'=&gt;'Blog_Category', 'join_table'=&gt;'blog_posts_categories', 'order'=&gt;'name')
+);
+
+...
+
+public function define_columns($context = null)
+{
+  $this-&gt;define_multi_relation_column('categories', 'categories', 'Categories', '@name');
+  ...
+}
+</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#define_relation_column()" name="define_relation_column()">¶</a>
+      <span>define_relation_column()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_columndefinition/index.html">Db_ColumnDefinition</a> <b>define_relation_column</b>(string $columnName, string $relationName, string $displayName, string $type, string $valueExpression)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$columnName</th>
+            <td>string</td>
+            <td>specifies the column name. Use any unique sql-compatible name.</td>
+          </tr>
+                  <tr>
+            <th>$relationName</th>
+            <td>string</td>
+            <td>specifies the relation name (should be declared as <a href="index.html#has_many-property">has_many</a>, 
+<a href="index.html#has_and_belongs_to_many-property">has_and_belongs_to_many</a>, 
+<a href="index.html#belongs_to-property">belongs_to</a>)</td>
+          </tr>
+                  <tr>
+            <th>$displayName</th>
+            <td>string</td>
+            <td>specifies a name to display in lists and forms</td>
+          </tr>
+                  <tr>
+            <th>$type</th>
+            <td>string</td>
+            <td>specifies a display value type (see <em>db_xxx</em> constants in the description of <a href="index.html">Db_ActiveRecord</a> class)</td>
+          </tr>
+                  <tr>
+            <th>$valueExpression</th>
+            <td>string</td>
+            <td>specifies SQL expression for evaluating the relation display value used in lists and forms.
+Use '@' symbol to indicate a joined table: concat(@first_name, ' ', @last_name).</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_columndefinition/index.html">Db_ColumnDefinition</a></td>
+            <td>returns the column definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds column definition for <em>has_on</em> or <em>belongs_to</em> <a href="http://lemonstand.com/docs/creating_data_relations/">relation</a> field.
+You should define columns for a relation field if you want the field to be displayed in lists or forms. The method
+returns <a href="../db_columndefinition/index.html">column definition object</a> object which you can use to configure the column presentation and validation parameters.
+Example:
+<div class="codeblock"><pre class="brush:php; collapse:true">
+public $belongs_to = array(
+  'post'=&gt;array('class_name'=&gt;'Blog_Post', 'foreign_key'=&gt;'post_id')
+);
+
+...
+
+public function define_columns($context = null)
+{
+  $this-&gt;define_relation_column('post', 'post', 'Post', db_varchar, '@title');
+  ...
+}
+</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#delete()" name="delete()">¶</a>
+      <span>delete()</span> method
+    </h4>
+    
+    <div class="api-signature">public void <b>delete</b>(integer $id=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$id</th>
+            <td>integer</td>
+            <td>specifies the record identifier.
+If the identifier is not provided, deletes the current record.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Deletes the record from the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#delete_form_field()" name="delete_form_field()">¶</a>
+      <span>delete_form_field()</span> method
+    </h4>
+    
+    <div class="api-signature">public boolean <b>delete_form_field</b>(string $dbName)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$dbName</th>
+            <td>string</td>
+            <td>specifies the column name.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>boolean</td>
+            <td>returns TRUE if the field has been found and deleted. Returns FALSE otherwise.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Deletes a form field by its corresponding column name.
+This method can be used for removing a form field from an existing model
+before its form is rendered.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#displayField()" name="displayField()">¶</a>
+      <span>displayField()</span> method
+    </h4>
+    
+    <div class="api-signature">public string <b>displayField</b>(string $dbName, string $media='form')</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$dbName</th>
+            <td>string</td>
+            <td>specifies the column name.</td>
+          </tr>
+                  <tr>
+            <th>$media</th>
+            <td>string</td>
+            <td>specifies a media - a list or a form. Text values could be truncated for the list media.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>string</td>
+            <td>returns the formatted column value.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Returns a formatted column value. The field should be defined with <a href="index.html#define_column()">define_column()</a>, 
+<a href="index.html#define_relation_column()">define_relation_column()</a> or 
+<a href="index.html#define_multi_relation_column()">define_multi_relation_column()</a> method.
+<br/><div class="api-separator"></div>
+For relation fields the method uses relation data loaded from database with the model data
+instead of issuing another SQL query. It makes this method efficient in record lists.
+<br/><div class="api-separator"></div>
+<span class="note">By default datetime fields are converted to GMT during saving and displayField() returns value converted
+back to a time zone specified in <em>TIMEZONE</em> parameter in the configuration file (config.php). You can cancel this behavior
+by calling <a href="../db_columndefinition/index.html#dateAsIs()">dateAsIs()</a> of the column definition object.</span></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#find()" name="find()">¶</a>
+      <span>find()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_ActiveRecord <b>find</b>(integer $id=NULL, array $include=array(), string $form_context=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$id</th>
+            <td>integer</td>
+            <td>specifies the primary key value.</td>
+          </tr>
+                  <tr>
+            <th>$include</th>
+            <td>array</td>
+            <td>this parameter is reserved.</td>
+          </tr>
+                  <tr>
+            <th>$form_context</th>
+            <td>string</td>
+            <td>allows to set the form execution context for the loaded records.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_ActiveRecord</td>
+            <td>returns a model object corresponding to the found record or NULL.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Finds a record by its primary key value.
+Note that if the primary key value passed to the method is NULL,
+the method returns the first record from the result set.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#find_all()" name="find_all()">¶</a>
+      <span>find_all()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_datacollection/index.html">Db_DataCollection</a> <b>find_all</b>(integer $id=NULL, array $include=array(), string $form_context=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$id</th>
+            <td>integer</td>
+            <td>specifies the primary key value.</td>
+          </tr>
+                  <tr>
+            <th>$include</th>
+            <td>array</td>
+            <td>this parameter is reserved.</td>
+          </tr>
+                  <tr>
+            <th>$form_context</th>
+            <td>string</td>
+            <td>allows to set the form execution context for the loaded records.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_datacollection/index.html">Db_DataCollection</a></td>
+            <td>returns a collection of found records.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Finds all records and returns the <a href="../db_datacollection/index.html">Db_DataCollection</a> object, containing a list of models.</div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="../db_datacollection/index.html">Db_DataCollection</a></li>
+            
+        </ul>
+</div>      <h4 class="api-object-name">
+      <a href="index.html#find_by()" name="find_by()">¶</a>
+      <span>find_by()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_ActiveRecord <b>find_by</b>(string $field, mixed $value, array $include=array())</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$field</th>
+            <td>string</td>
+            <td>specifies the database field name.</td>
+          </tr>
+                  <tr>
+            <th>$value</th>
+            <td>mixed</td>
+            <td>specifies the field value to find.</td>
+          </tr>
+                  <tr>
+            <th>$include</th>
+            <td>array</td>
+            <td>this parameter is reserved.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_ActiveRecord</td>
+            <td>returns the model object corresponding to the found record or NULL.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Finds a record by a field value.
+There is a more usable magic method <em>find_by_[column_name]</em>, where column_name is 
+any database column name. Example:
+<div class="codeblock"><pre class="brush:php; collapse:false">$usa = Shop_Country::create()-&gt;find_by_code('US');</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#find_column_definition()" name="find_column_definition()">¶</a>
+      <span>find_column_definition()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_columndefinition/index.html">Db_ColumnDefinition</a> <b>find_column_definition</b>(string $columnName)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$columnName</th>
+            <td>string</td>
+            <td>specifies the column name.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_columndefinition/index.html">Db_ColumnDefinition</a></td>
+            <td>returns the column definition object or NULL if the column was not found in the model.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Finds a column definition by the column name.
+Columns are defined in <a href="index.html#define_columns()">define_columns()</a> method.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#find_form_field()" name="find_form_field()">¶</a>
+      <span>find_form_field()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_formfielddefinition/index.html">Db_FormFieldDefinition</a> <b>find_form_field</b>(string $dbName)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$dbName</th>
+            <td>string</td>
+            <td>specifies the column name.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_formfielddefinition/index.html">Db_FormFieldDefinition</a></td>
+            <td>returns the form field definition object or NULL if the field was not found.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Finds a form field definition by its corresponding column name.
+The form field should be defined with define_form_field() method.
+This method can be used for configuring a form field in an existing model
+before its form is rendered.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#join()" name="join()">¶</a>
+      <span>join()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_ActiveRecord <b>join</b>(string $table_name, string $conditions, string $columns='', string $type='left')</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$table_name</th>
+            <td>string</td>
+            <td>specifies the table name to join.</td>
+          </tr>
+                  <tr>
+            <th>$conditions</th>
+            <td>string</td>
+            <td>specifies the JOIN conditions (ON statement).</td>
+          </tr>
+                  <tr>
+            <th>$columns</th>
+            <td>string</td>
+            <td>specifies a list of columns to include to the result set. 
+This parameter is ignored in ActiveRecord.</td>
+          </tr>
+                  <tr>
+            <th>$type</th>
+            <td>string</td>
+            <td>specifies the join type - <em>left</em>, <em>inner</em>, <em>left outer</em>, <em>full outer</em>.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_ActiveRecord</td>
+            <td>returns the configured model object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds a table to the query with JOIN statement.
+The following code example loads all manufacturers which have products with name "T-shirt".
+<div class="codeblock"><pre class="brush:php; collapse:false">
+$obj = new Shop_Manufacturer();
+$obj-&gt;join('shop_products', 'shop_products.manufacturer_id = shop_manufacturers.id');
+$obj-&gt;where('shop_products.name=?', 'T-shirt');
+$manufacturers = $obj-&gt;find_all();
+</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#limit()" name="limit()">¶</a>
+      <span>limit()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_ActiveRecord <b>limit</b>(integer $count=NULL, integer $offset=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$count</th>
+            <td>integer</td>
+            <td>number of records to return.</td>
+          </tr>
+                  <tr>
+            <th>$offset</th>
+            <td>integer</td>
+            <td>zero-based offset of the first returned record.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_ActiveRecord</td>
+            <td>returns the model object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Allows to limit the result of the <a href="index.html#find_all()">find_all()</a> method with the specified number of records.
+The following example loads 10 newest orders from the database.
+<div class="codeblock"><pre class="brush:php; collapse:false">$orders = Shop_Order::create()-&gt;order('id desc')-&gt;limit(10);</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#list_related_records_deferred()" name="list_related_records_deferred()">¶</a>
+      <span>list_related_records_deferred()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_datacollection/index.html">Db_DataCollection</a> <b>list_related_records_deferred</b>(string $name, string $deferred_session_key)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$name</th>
+            <td>string</td>
+            <td>specifies the relation name.</td>
+          </tr>
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>specifies deferred session key.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_datacollection/index.html">Db_DataCollection</a></td>
+            <td>returns the data collection object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Returns a list of <a href="http://lemonstand.com/docs/creating_data_relations/">relation</a> objects, taking into account deferred relations.
+Use this method to obtain a list of relation records, before the record is saved to the database.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#order()" name="order()">¶</a>
+      <span>order()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_ActiveRecord <b>order</b>(string $spec)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$spec</th>
+            <td>string</td>
+            <td>specifies the SQL order clause.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_ActiveRecord</td>
+            <td>returns the model object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Allows to order the result of the <a href="index.html#find_all()">find_all()</a> method by a specific table column.
+The following example loads 10 newest orders from the database, ordered by identifier.
+<div class="codeblock"><pre class="brush:php; collapse:false">$orders = Shop_Order::create()-&gt;order('id desc')-&gt;limit(10);</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#orWhere()" name="orWhere()">¶</a>
+      <span>orWhere()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_ActiveRecord <b>orWhere</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td>Db_ActiveRecord</td>
+            <td></td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds OR statement to the where clause, allowing to to limit the result of the <a href="index.html#find()">find()</a> and <a href="index.html#find_all()">find_all()</a> methods with SQL filter. 
+Pass a SQL WHERE string to the parameter:
+<div class="codeblock"><pre class="brush:php; collapse:false">$order-&gt;where('customer_id is null')-&gt;orWhere('customer_id=4')-&gt;find_all();</pre></div>
+or use the <em>question mark</em> as a data placeholder to pass a parameter value. Parameter values are automatically escaped (sanitized).
+<div class="codeblock"><pre class="brush:php; collapse:false">$orders = $order-&gt;orWhere('customer_id=?', 4)-&gt;find_all();</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#paginate()" name="paginate()">¶</a>
+      <span>paginate()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../phpr_pagination/index.html">Phpr_Pagination</a> <b>paginate</b>(integer $page_index, integer $records_per_page)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$page_index</th>
+            <td>integer</td>
+            <td>specifies a zero-based page index.</td>
+          </tr>
+                  <tr>
+            <th>$records_per_page</th>
+            <td>integer</td>
+            <td>specifies the number of records the page should contain.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../phpr_pagination/index.html">Phpr_Pagination</a></td>
+            <td>returns the pagination object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Allows to limit the result of the <a href="index.html#find_all()">find_all()</a> method with a single page of records.
+Call this method before the <a href="index.html#find_all()">find_all()</a> method call.
+<div class="codeblock"><pre class="brush:php; collapse:false">$pagination = $products-&gt;paginate(0, 10);</pre></div></div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="../phpr_pagination/index.html">Phpr_Pagination</a></li>
+            
+        </ul>
+</div>      <h4 class="api-object-name">
+      <a href="index.html#requestRowCount()" name="requestRowCount()">¶</a>
+      <span>requestRowCount()</span> method
+    </h4>
+    
+    <div class="api-signature">public integer <b>requestRowCount</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td>integer</td>
+            <td>returns the number of rows.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Returns a number of rows which would be returned with <a href="index.html#find_all()">find_all()</a> method.
+Use this method to obtain the number of records which is going to be returned by a subsequent <a href="index.html#find_all()">find_all()</a> 
+method call.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#save()" name="save()">¶</a>
+      <span>save()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_ActiveRecord <b>save</b>(array $values=NULL, string $deferred_session_key=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$values</th>
+            <td>array</td>
+            <td></td>
+          </tr>
+                  <tr>
+            <th>$deferred_session_key</th>
+            <td>string</td>
+            <td>optional deferred session key.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_ActiveRecord</td>
+            <td>returns the saved model object</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Saves record to the database.
+Depending on whether the model was created or loaded from the database the method
+creates or updates a corresponding table record.
+The optional $values array can be used to set the record field values.
+<div class="codeblock"><pre class="brush:php; collapse:false">
+$customer = Shop_Customer::create()-&gt;find(23);
+$customer-&gt;save(array('first_name'=&gt;'john'));
+</pre></div>
+Alternatively you can set the column values directly:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+$customer = Shop_Customer::create()-&gt;find(23);
+$customer-&gt;first_name = 'john';
+$customer-&gt;save();
+</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#where()" name="where()">¶</a>
+      <span>where()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_ActiveRecord <b>where</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td>Db_ActiveRecord</td>
+            <td></td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Allows to limit the result of the <a href="index.html#find()">find()</a> and <a href="index.html#find_all()">find_all()</a> methods with SQL filter. 
+Pass a SQL WHERE string to the parameter:
+<div class="codeblock"><pre class="brush:php; collapse:false">$order-&gt;where('customer_id is not null')-&gt;find_all();</pre></div>
+or use the <em>question mark</em> as a data placeholder to pass a parameter value. Parameter values are automatically escaped (sanitized).
+<div class="codeblock"><pre class="brush:php; collapse:false">$orders = $order-&gt;where('customer_id=?', 4)-&gt;find_all();</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#define_columns()" name="define_columns()">¶</a>
+      <span>define_columns()</span> method
+    </h4>
+    
+    <div class="api-signature">protected void <b>define_columns</b>(string $context=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$context</th>
+            <td>string</td>
+            <td>specifies the execution context.</td>
+          </tr>
+                      </table>
+        
+    <div class="api-description">Defines model columns.
+Override this method to define columns, references and form fields in your models. 
+By defining columns you inform the framework which fields from the database table we are going 
+to use in lists and forms, and what titles these fields should have. Columns are objects of
+<a href="../db_columndefinition/index.html">Db_ColumnDefinition</a> class, which has a number of properties determining how 
+the column is displayed and validated. You can call model's <a href="index.html#define_column()">define_column()</a>, 
+<a href="index.html#define_relation_column()">define_relation_column()</a> and 
+<a href="index.html#define_multi_relation_column()">define_multi_relation_column()</a>
+methods inside this method. Example:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public function define_columns($context = null)
+{
+  $this-&gt;define_column('title', 'Title')-&gt;order('asc')-&gt;validation()-&gt;fn('trim');
+  $this-&gt;define_multi_relation_column('categories', 'categories', 'Categories', '@name');
+}
+</pre></div></div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="http://lemonstand.com/docs/administration_area_lists/">Lists</a></li>
+                <li><a href="http://lemonstand.com/docs/administration_area_forms/">Forms</a></li>
+            
+        </ul>
+</div>  
+  
+<div class="commentsWrap">
+  <div id="thread"></div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_identifier = "api-class-Db_ActiveRecord";
+    var disqus_url = "http://v1.lemonstand.com/api/class/db_activerecord//";
+    var disqus_title = "API class Db_ActiveRecord";
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://lemonstand.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+</div><!--/commentsWrap--></td>
+              </tr>
+            </table>
+          </div>
+        </div><!--/content-->
+      </div><!-- /contentWrapper -->
+  </div><!--/wrapper-->
+  <div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../../../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../../../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../../../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="../../../docs/ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="../../../docs/developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../../../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../../../tos/index.html">Terms &amp; Conditions</a> | <a href="../../../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+  </body>
+</html>

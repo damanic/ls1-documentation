@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - AJAX-driven single-page checkout</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="checkout_process.html">Checkout Process</a></li><li class="last">AJAX-driven single-page checkout</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>AJAX-driven single-page checkout</h2>
+        
+        <p>This section describes the implementation of the single-page checkout process. This implementation involves a single page, with checkout steps loaded one by one using the AJAX requests. Please note that there are other ways of implementing the checkout process, which allows more customization of the process flow. You can read about other methods of implementing the checkout process in the <a href="single_page_checkout.html#">Checkout Pages</a> section.</p>
+<p>The default checkout process consists of the following steps:</p>
+<ul>
+<li>Customer billing address information</li>
+<li>Customer shipping address information</li>
+<li>Shipping method selection</li>
+<li>Payment method selection</li>
+<li>Order review</li>
+</ul>
+<p>The checkout page consists of a single page and the 6 partials &ndash; one partial for each step, and one common partial, responsible for rendering a specific partial depending on a current checkout step. Each step partial contains a form for gathering corresponding information. For better understanding of the single-page Checkout implementation we recommend you to check how the Checkout page is organized in <a href="http://demo.lemonstandapp.com/basic/backdoor/session/handle/create#auto_login" target="_blank">LemonStand Demo store</a>.</p>
+<h3>Creating the checkout page</h3>
+<p>Start with creating a new page and specify a title and page URL for it, for example Checkout and /checkout correspondingly. Click the Action page and select <a href="http://v1.lemonstand.com/docs/action_shop_checkout">the shop:checkout</a> action in the drop-down list.</p>
+<p>The <a href="http://v1.lemonstand.com/docs/action_shop_checkout">shop:checkout</a> action handles AJAX events occurring on the page (for example Next button clicks) and supplies a number of variables which values could be displayed on the page. The following variables are available on each checkout step:</p>
+<ul>
+<li><strong>$billing_info</strong> &ndash; an object variable of class Shop_CheckoutAddressInfo. Represents a billing address information of a current customer.</li>
+<li><strong>$shipping_info</strong> &ndash; the same as <strong>$billing_info</strong>, but represents a shipping address.</li>
+<li><strong>$shipping_method</strong> &ndash; a PHP object variable with fields <strong>$id</strong>, <strong>$quote</strong> and <strong>$name</strong>. Represents a preferred shipping method of a current customer.</li>
+<li><strong>$payment_method</strong> &ndash; a PHP object variable with fields <strong>$id</strong> and <strong>$name</strong>. Represents a preferred payment method of a current customer.</li>
+<li><strong>$checkout_step</strong> &ndash; a string variable representing a current checkout step code. The variable could have one of the following values: 'billing_info', 'shipping_info', 'shipping_method', 'payment_method', 'review'. Depending on a value of this variable a specific checkout step (partial) is rendered on the Checkout page.</li>
+<li><strong>$discount</strong> - estimated cart discount. You can display this value during the checkout process.</li>
+<li><strong>$cart_total</strong> - cart total value (subtotal).</li>
+<li><strong>$estimated_total</strong> - an estimated total value. This value is calculated on each step of the checkout process, taking into account price rules and known information about the customer.</li>
+<li><strong>$estimated_tax</strong> - an estimated tax value.&nbsp;This value is calculated on each step of the checkout process, taking into account price rules (defined on the Shop/Discounts page) and known information about the customer. The tax value includes the sales tax and shipping taxes.</li>
+</ul>
+<p>Also, depending on a current checkout process step, additional variables become available.</p>
+<h4>Variables, available on the <strong>billing_info</strong> step</h4>
+<ul>
+<li><strong>$countries</strong> &ndash; a list of countries to fill the Billing Country drop-down list</li>
+<li><strong>$states</strong> &ndash; a list of states to fill the Billing State drop-down list</li>
+</ul>
+<h4>Variables, available on the shipping_<strong>info</strong> step</h4>
+<ul>
+<li><strong>$countries</strong> &ndash; a list of countries to fill the Shipping Country drop-down list</li>
+<li><strong>$states</strong> &ndash; a list of states to fill the Shipping State drop-down list</li>
+</ul>
+<h4>Variables, available on the shipping_<strong>method</strong> step</h4>
+<ul>
+<li><strong>$shipping_options</strong> &ndash; a list of available shipping options</li>
+</ul>
+<h4>Variables, available on the payment_<strong>method</strong> step</h4>
+<ul>
+<li><strong>$payment_methods</strong> &ndash; a list of available payment methods</li>
+<li><strong>$goods_tax</strong> &ndash; a value of a goods tax</li>
+<li><strong>$subtotal</strong> &ndash; order subtotal sum</li>
+<li><strong>$shipping_quote</strong> &ndash; a shipping quote value</li>
+<li><strong>$shipping_tax</strong> &ndash; a shipping tax value</li>
+</ul>
+<p>The following code demonstrates an example of the Checkout page content.</p>
+<div class="code-tabs" id="checkout_page_content"><ul><li><a href="single_page_checkout.html#checkout_page_content-php">PHP</a></li><li><a href="single_page_checkout.html#checkout_page_content-twig">Twig</a></li></ul><div id="checkout_page_content-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;h2&gt;Check Out&lt;/h2&gt;
+&lt;? if (Shop_Cart::get_item_total_num() != 0): ?&gt;
+  &lt;div id=&quot;checkout_page&quot;&gt;
+    &lt;? $this-&gt;render_partial('checkout_partial') ?&gt;
+  &lt;/div&gt;
+&lt;? else: ?&gt;
+  &lt;p&gt;Your shopping cart is empty.&lt;/p&gt;
+&lt;? endif ?&gt;</pre></div></div><div id="checkout_page_content-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">&lt;h2&gt;Check Out&lt;/h2&gt;
+{% if method('Shop_Cart', 'get_item_total_num') != 0 %}
+  &lt;div id=&quot;checkout_page&quot;&gt;
+    {{ render_partial('checkout_partial') }}
+  &lt;/div&gt;
+{% else %}
+  &lt;p&gt;Your shopping cart is empty.&lt;/p&gt;
+{% endif %}</pre></div></div></div><p>First, the code checks whether any items are in the shopping cart, using the <strong>get_item_total_num</strong> method of the <a href="class_shop_cart.html">Shop_Cart</a> object. If the shopping cart is empty, a message is displayed instead of the Billing Information form. If the shopping cart is not empty the code outputs a DIV element with specific ID attribute value. This DIV contains a partial, corresponding a specific checkout process step. The content of the DIV element is updated using AJAX each time a user clicks the Next button. The value of the ID attribute could be anything, but you should specify the same ID value in AJAX requests.</p>
+<p>The partial rendered in the example (<strong>checkout_partial</strong>) is a helper container partial which renders a specific checkout step partial depending on a current checkout step.</p>
+<h3>Creating a checkout container partial</h3>
+<p>The checkout container partial, named <strong>checkout_partial</strong> in the page code example above, acts as a container for one of the checkout step partials. The following code demonstrate how to render a specific partial depending on a current checkout step.</p>
+<div class="code-tabs" id="checkout_container_partial"><ul><li><a href="single_page_checkout.html#checkout_container_partial-php">PHP</a></li><li><a href="single_page_checkout.html#checkout_container_partial-twig">Twig</a></li></ul><div id="checkout_container_partial-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?= open_form() ?&gt;
+  &lt;?
+  switch ($checkout_step)
+  {
+    case 'billing_info': $this-&gt;render_partial('shop:checkout_billing_info'); break;
+    case 'shipping_info': $this-&gt;render_partial('shop:checkout_shipping_info'); break;
+    case 'shipping_method': $this-&gt;render_partial('shop:checkout_shipping_method'); break;
+    case 'payment_method': $this-&gt;render_partial('shop:checkout_payment_method'); break;
+    case 'review': $this-&gt;render_partial('shop:checkout_review'); break;
+  }
+  ?&gt;
+&lt;/form&gt;</pre></div></div><div id="checkout_container_partial-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{{ open_form() }}
+  {% if checkout_step == 'billing_info' %}
+    {{ render_partial('shop:checkout_billing_info') }}
+  {% elseif checkout_step == 'shipping_info' %}
+    {{ render_partial('shop:checkout_shipping_info') }}
+  {% elseif checkout_step == 'shipping_method' %}
+    {{ render_partial('shop:checkout_shipping_method') }}
+  {% elseif checkout_step == 'payment_method' %}
+    {{ render_partial('shop:checkout_payment_method') }}
+  {% elseif checkout_step == 'review' %}
+    {{ render_partial('shop:checkout_review') }}
+  {% elseif checkout_step == 'pay' %}
+    {{ render_partial('shop:checkout_pay') }}
+  {% endif %}
+{{ close_form() }}</pre></div></div></div><p>The HTML FORM element is needed because the checkout page contains forms for gathering information. The <strong>switch</strong> control structure inspects a current value of the <strong>$checkout_step</strong> variable and renders a corresponding partial. Partials in the example code have descriptive names which we will use from now on in this documentation. You can use other names for your partials.</p>
+<h3 class="western">Navigating between checkout steps</h3>
+<p>To enable users to navigate between the checkout step, you can create a simple partial displaying links to the previous checkout steps. By previous we mean steps which have already been visited by a costumer. For example, if at the moment a visitor is on the Shipping Method checkout step, he must be able to return to the Shipping Information and Billing information checkout steps.</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/creating_pages_checkout_steps_01.png" alt="" /></p>
+<p>The simplest and most correct way to create the checkout steps navigation, is to create a separate step and render it in each checkout step. Start with creating a new partial and assign it some meaningful name, for example <strong>shop::checkout_progress</strong>. The following code snippet demonstrates a checkout steps navigation code we used in the LemonStand Demo store.</p>
+<div class="code-tabs" id="navigation_widget"><ul><li><a href="single_page_checkout.html#navigation_widget-php">PHP</a></li><li><a href="single_page_checkout.html#navigation_widget-twig">Twig</a></li></ul><div id="navigation_widget-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  $steps = array(
+  'billing_info' =&gt; 'Billing Information',
+  'shipping_info' =&gt; 'Shipping Information',
+  'shipping_method' =&gt; 'Shipping Method',
+  'payment_method' =&gt; 'Payment Method',
+  'review' =&gt; 'Order Review',
+  'pay' =&gt; 'Pay',
+  );
+?&gt;
+&lt;ul&gt;
+  &lt;?
+    $current_found = false;
+    foreach ($steps as $step=&gt;$name):
+    $is_current = $checkout_step == $step;
+    $current_found = $current_found || $is_current;
+  ?&gt;
+    &lt;li &lt;? if ($is_current): ?&gt;class=&quot;current&quot;&lt;? endif ?&gt;&gt;
+      &lt;? if ($current_found): ?&gt;
+        &lt;?= h($name) ?&gt;
+      &lt;? else: ?&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;return $(this).getForm().sendRequest(
+          'on_action', 
+          {update:{'checkout_page': 'checkout_partial'}, 
+          extraFields: {'move_to': '&lt;?= $step ?&gt;'}})&quot;&gt;&lt;?= h($name) ?&gt;&lt;/a&gt;
+      &lt;? endif ?&gt;
+    &lt;/li&gt;
+  &lt;? endforeach ?&gt;
+&lt;/ul&gt;</pre></div></div><div id="navigation_widget-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{%
+  set steps = {
+    'billing_info': 'Billing Information',
+    'shipping_info': 'Shipping Information',
+    'shipping_method': 'Shipping Method',
+    'payment_method': 'Payment Method',
+    'review': 'Order Review',
+    'pay': 'Pay'
+  }
+%}
+
+{% set current_found = false %}
+
+&lt;ul&gt;
+  {% for step, name in steps %}
+    {% set is_current = checkout_step == step %}
+    {% set current_found = current_found or is_current %}
+
+    &lt;li {% if is_current %}class=&quot;current&quot;{% endif %}&gt;
+      {% if current_found %}
+        {{ name }}
+      {% else %}
+        &lt;a href=&quot;#&quot; onclick=&quot;return $(this).getForm().sendRequest(
+          'on_action', 
+          {update:{'checkout_page': 'checkout_partial'}, 
+          extraFields: {'move_to': '{{ step }}'}})&quot;&gt;{{ name }}&lt;/a&gt;
+      {% endif %}
+    &lt;/li&gt;
+  {%  endfor %}
+&lt;/ul&gt;</pre></div></div></div><p>The code iterates over possible checkout steps and outputs a LI element for each step. Also, it checks whether a step is already visited by a customer, by examining the <strong>$checkout_step</strong> variable value. The code outputs a link only for visited steps.</p>
+<p>The key element in the code above is the <strong>onclick</strong> event handler, which is assigned to the&nbsp; visited step links. It sends an AJAX request to LemonStand, asking it to execute the <strong>on_action</strong> event handler and passing it a value of a step code in the <strong>move_to</strong> parameter.</p>
+<p>Once you finished developing the navigation partial, you can render it in each checkout step partial, or a better way &ndash; you can render the navigation partial in the checkout partial container code. To render the navigation partial, use the following code:</p>
+<div class="code-tabs" id="navigation_widget_render"><ul><li><a href="single_page_checkout.html#navigation_widget_render-php">PHP</a></li><li><a href="single_page_checkout.html#navigation_widget_render-twig">Twig</a></li></ul><div id="navigation_widget_render-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? $this-&gt;render_partial('shop:checkout_progress') ?&gt;</pre></div></div><div id="navigation_widget_render-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{{ render_partial('shop:checkout_progress') }}</pre></div></div></div><p>You can place it on the top of the checkout partial container, before rendering a specific partial step.</p>
+<h4>Continue:</h4>
+<ul class="wiki_toc"><li><a href="creating_billing_information_partial.html">Creating a Form for Billing Information</a> - explains how to create a partial for gathering customer billing information.</li><li><a href="creating_shipping_information_partial.html">Creating a Form for Shipping Information</a> - explains how to create a partial for gathering customer shipping information.</li><li><a href="creating_shipping_method_partial.html">Creating a Form for Shipping Method</a> - explains how to create a partial for selecting a shipping method.</li><li><a href="creating_payment_method_partial.html">Creating a Form for Payment Method</a> - explains how to create a partial for a selected payment option.</li><li><a href="creating_order_review_page.html">Creating an Order Review Page</a> - explains how to create a partial for reviewing an order content.</li><li><a href="configuring_non_required_shipping_method.html">Configuring a Non-Required Shipping for Digital Products and Services</a> - explains how to configure LemonStand 	in such a way that the Shipping Method step is automatically skipped for downloadable or service-type products.</li></ul><h4>See also:</h4>
+<ul>
+<li><a href="class_shop_checkoutaddressinfo.html">Shop_CheckoutAddressInfo class</a></li>
+<li><a href="class_shop_cart.html">Shop_Cart class</a></li>
+<li><a href="automatic_customer_registration.html">Automatic customer registration</a></li>
+</ul>
+        
+        <p>Next: <a href="creating_billing_information_partial.html">Creating a Form for Billing Information</a><br/>Previous: <a href="checkout_process.html">Checkout Process</a><br/>Return to <a href="checkout_process.html">Checkout Process</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_82"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/single_page_checkout/";
+		var disqus_title = "AJAX-driven single-page checkout";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

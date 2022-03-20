@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Displaying Bundle Items in the Shopping Cart</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="shopping_cart.html">Shopping Cart</a></li><li class="last">Displaying Bundle Items in the Shopping Cart</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Displaying Bundle Items in the Shopping Cart</h2>
+        
+        <p><strong>Required: Ensure you complete the guide on <a href="displaying_a_list_of_shopping_cart_items.html">Displaying a List in your Shopping Cart</a> before you continue.</strong></p>
+<p>There are different ways to represent bundle products in the cart. For example, if your base bundle product has no price and its price is a sum of bundle items, then you can display the total product bundle price right in the base product row. Another way to display the total bundle price is a separate line in the cart table. This option is more universal, and its implementation is described in this section. This approach is implemented in our <a href="http://v1.lemonstand.com/marketplace/theme/simplicity/">Simplicity</a> theme:</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/cart-bundles.png" alt="" /></p>
+<p>In general the process if displaying bundle items in the cart is similar to the process described above, but there are a number of significant differences:</p>
+<ol>
+<li>Required bundle items cannot be removed from the cart, so &nbsp;Delete link should be hidden.</li>
+<li>Some bundle items do not allow manual quantity input, so Quantity field should be hidden and replaced with a static text. Also, you should use cart item's get_quantity() method to display the item quantity instead of the $quantity field. get_quantity() method correctly calculates the item item quantity <strong>in bundle</strong>. For example, imagine that your base product is a PC and it has a bundle item RAM which quantity is 1. If the user sets quantity 2 for the PC, this will mean that the total quantity is RAM is 2, but there will be still 1 RAM per 1 PC. get_quantity() method will return 1 in this case (meaning 1 RAM item per each PC product), while $quantity field will return 2 (the total quantity value for RAM in the order).&nbsp;</li>
+<li>Bundle items cannot be postponed separately from the base bundle product, so the Postpone checkbox should not be visible.</li>
+<li>Value in the total column for bundle items should display the total price per single master product. Optionally you can display the multiplier value (see the code snippet below).</li>
+</ol>
+<h4>Updating the cart partial to display bundle items</h4>
+<p>The following code represents the updated cart table body for displaying bundle items: <div class="code-tabs" id="cart_bundles"><ul><li><a href="displaying_bundle_items_in_the_shopping_cart.html#cart_bundles-php">PHP</a></li><li><a href="displaying_bundle_items_in_the_shopping_cart.html#cart_bundles-twig">Twig</a></li></ul><div id="cart_bundles-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  $last_index = count($items)-1;
+
+  foreach ($items as $index=&gt;$item):
+  $image_url = $item-&gt;product-&gt;image_url(0, 60, 'auto');
+  $options_str = $item-&gt;options_str();
+  
+  // Load item bundle item and bundle item product objects
+  $bundle_item = $item-&gt;get_bundle_item();
+  $bundle_item_product = $item-&gt;get_bundle_item_product();
+  
+?&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;? if ($image_url): ?&gt;
+        &lt;img src=&quot;&lt;?= $image_url ?&gt;&quot; alt=&quot;&lt;?= h($item-&gt;product-&gt;name) ?&gt;&quot;/&gt;
+      &lt;? endif ?&gt;
+      &lt;strong&gt;&lt;?= h($item-&gt;product-&gt;name) ?&gt;&lt;/strong&gt;
+      &lt;? if (strlen($options_str)): ?&gt;
+        &lt;br/&gt;&lt;?= h($options_str) ?&gt;.
+      &lt;? endif ?&gt;
+      &lt;? if ($item-&gt;extra_options): ?&gt;
+        &lt;? foreach ($item-&gt;extra_options as $option): ?&gt;
+          &lt;br/&gt;
+          + &lt;?= h($option-&gt;description) ?&gt;:
+          &lt;?= format_currency($option-&gt;get_price($item-&gt;product)) ?&gt;
+        &lt;? endforeach ?&gt;
+      &lt;? endif ?&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;!-- Do not display the Postpone checkbox for bundle items --&gt;
+      &lt;? if (!$bundle_item_product): ?&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;item_postponed[&lt;?= $item-&gt;key ?&gt;]&quot; value=&quot;0&quot;/&gt;
+        &lt;input 
+          type=&quot;checkbox&quot; 
+          &lt;?= checkbox_state($item-&gt;postponed) ?&gt; name=&quot;item_postponed[&lt;?= $item-&gt;key ?&gt;]&quot; value=&quot;1&quot;/&gt;
+      &lt;? endif  ?&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;!-- Do not display the Delete checkbox for required bundle items --&gt;
+      &lt;? if (!$bundle_item || !$bundle_item-&gt;is_required): ?&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;delete_item[]&quot; value=&quot;&lt;?= $item-&gt;key ?&gt;&quot;/&gt;
+      &lt;? endif  ?&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;!-- Do not display the Quantity field for postponed items and 
+           bundle items which do not allow manual quantity input --&gt;
+      &lt;? if (!$postponed &amp;&amp; (!$bundle_item_product || $bundle_item_product-&gt;allow_manual_quantity)): ?&gt;
+        &lt;input type=&quot;text&quot; name=&quot;item_quantity[&lt;?= $item-&gt;key ?&gt;]&quot; value=&quot;&lt;?= $item-&gt;get_quantity() ?&gt;&quot;/&gt;
+      &lt;? else: ?&gt;
+        &lt;?= $item-&gt;get_quantity() ?&gt;
+      &lt;? endif ?&gt;
+    &lt;/td&gt;
+    &lt;td&gt;&lt;?= format_currency($item-&gt;single_price()) ?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;?= format_currency($item-&gt;total_discount()) ?&gt;&lt;/td&gt;
+    &lt;th&gt;
+      &lt;? if (!$item-&gt;is_bundle_item()): ?&gt;
+        &lt;?= format_currency($item-&gt;total_price()) ?&gt;
+      &lt;? else:
+        // For bundle items use the bundle_item_total_price() method to get 
+        // the total item price per single base product
+        // and display the multiplier.
+        $master_item = $item-&gt;get_master_bundle_item();
+        $multiplier = ($master_item &amp;&amp; $master_item-&gt;quantity &gt; 1) ? ' x '.$master_item-&gt;quantity : null;
+      ?&gt;
+        &lt;?= format_currency($item-&gt;bundle_item_total_price()).$multiplier ?&gt;
+      &lt;? endif  ?&gt;
+    &lt;/th&gt;
+  &lt;/tr&gt;
+  
+  &lt;!-- Display the bundle total row --&gt;
+  
+  &lt;? 
+    if (
+          ($bundle_item &amp;&amp; $index == $last_index) 
+          || ($bundle_item &amp;&amp; $bundle_item-&gt;id &amp;&amp; !$items[$index+1]-&gt;get_bundle_item())): 
+      $master_item = $item-&gt;get_master_bundle_item();
+      if ($master_item):
+  ?&gt;
+      &lt;tr&gt;
+        &lt;td colspan=&quot;3&quot;&gt;&lt;?= h($master_item-&gt;product-&gt;name) ?&gt; bundle totals&lt;/td&gt;
+        &lt;td&gt;&lt;?= $master_item-&gt;quantity ?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;?= format_currency($master_item-&gt;bundle_single_price()) ?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;?= format_currency($master_item-&gt;bundle_total_discount()) ?&gt;&lt;/td&gt;
+        &lt;th&gt;&lt;?= format_currency($master_item-&gt;bundle_total_price()) ?&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;? 
+      endif;
+    endif ?&gt;  
+&lt;? endforeach ?&gt;</pre></div></div><div id="cart_bundles-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{% set last_index = items|length-1 %}
+{% for index, item in items %}
+  {% set image_url = item.product.image_url(0, 60, 'auto') %}
+  {% set options_str = item.options_str() %}
+  
+  {# Load item bundle item and bundle item product objects #}
+  {% set bundle_item = item.get_bundle_item() %}
+  {% set bundle_item_product = item.get_bundle_item_product()  %}
+  &lt;tr&gt;
+    &lt;td&gt;
+      {% if image_url is not empty %}
+        &lt;img src=&quot;{{ image_url }}&quot; alt=&quot;{{ item.product.name }}&quot;/&gt;
+      {% endif %}
+      
+      &lt;strong&gt;{{ item.product.name }}&lt;/strong&gt;
+      {% if options_str|length &gt; 0 %}
+        &lt;br/&gt;{{ options_str }}.
+      {% endif %}
+      
+      {% if item.extra_options|length &gt; 0 %}
+        {% for option in item.extra_options %}
+          &lt;br/&gt;
+          + {{ option.description }}:
+            {{ option.get_price(item.product)|currency }}
+        {% endfor %}
+      {% endif %}
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;!-- Do not display the Postpone checkbox for bundle items --&gt;
+      {% if not bundle_item_product %}
+        &lt;input type=&quot;hidden&quot; name=&quot;item_postponed[{{ item.key }}]&quot; value=&quot;0&quot;/&gt;
+        &lt;input type=&quot;checkbox&quot; {{ checkbox_state(item.postponed) }} name=&quot;item_postponed[{{ item.key }}]&quot; value=&quot;1&quot;/&gt;
+      {% endif %}
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;!-- Do not display the Quantity field for postponed items and 
+          bundle items which do not allow manual quantity input --&gt;
+      {% if not postponed or (not bundle_item_product or bundle_item_product.allow_manual_quantity) %}
+        &lt;input type=&quot;text&quot; name=&quot;item_quantity[{{ item.key }}]&quot; value=&quot;{{ item.quantity }}&quot;/&gt;
+      {% else %}
+        {{ item.quantity }}
+      {% endif %}
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;!-- Do not display the Delete checkbox for required bundle items --&gt;
+      {% if not bundle_item or not bundle_item.is_required %}
+        &lt;input type=&quot;checkbox&quot; name=&quot;delete_item[]&quot; value=&quot;&lt;?= $item-&gt;key ?&gt;&quot;/&gt;
+      {% endif %}
+    &lt;/td&gt;
+    &lt;td&gt;
+      {% if not item.is_bundle_item() %}
+        {{ item.total_price()|currency }}
+      {% else %}
+        {#
+          For bundle items use the bundle_item_total_price() method to get 
+          the total item price per single base product
+          and display the multiplier.
+        #}
+        {% set master_item = item.get_master_bundle_item() %}
+        {% set multiplier = (master_item and master_item.quantity &gt; 1) ? ' x '~master_item.quantity : null %}
+        {{ item.bundle_item_total_price()|currency~multiplier }}
+      {% endif %}
+    &lt;/td&gt;
+    &lt;td&gt;{{ item.total_discount()|currency }}&lt;/td&gt;
+    &lt;th&gt;{{ item.total_price()|currency }}&lt;/th&gt;
+  &lt;/tr&gt;
+  
+  &lt;!-- Display the bundle total row --&gt;
+  {% if 
+    (bundle_item and index == last_index) or 
+    (bundle_item and bundle_item.id and 
+      not attribute(items, index+1).get_bundle_item()) %}
+      
+    {% set master_item = item.get_master_bundle_item() %}
+    {% if master_item %}
+      &lt;tr&gt;
+        &lt;td colspan=&quot;3&quot;&gt;{{ master_item.product.name }} bundle totals&lt;/td&gt;
+        &lt;td&gt;{{ master_item.quantity }}&lt;/td&gt;
+        &lt;td&gt;{{ master_item.bundle_single_price()|currency }}&lt;/td&gt;
+        &lt;td&gt;{{ master_item.bundle_total_discount()|currency }}&lt;/td&gt;
+        &lt;th&gt;{{ master_item.bundle_total_price()|currency }}&lt;/th&gt;
+      &lt;/tr&gt;
+    {% endif %}
+  {% endif %}
+{% endfor %}</pre></div></div></div></p>
+        
+        <p>Next: <a href="displaying_a_list_of_shopping_cart_items.html">Displaying a List of Shopping Cart Items</a><br/>Previous: <a href="creating_a_checkout_button_with_a_coupon_field.html">Creating a Checkout Button with a Coupon Field</a><br/>Return to <a href="shopping_cart.html">Shopping Cart</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_519"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/displaying_bundle_items_in_the_shopping_cart/";
+		var disqus_title = "Displaying Bundle Items in the Shopping Cart";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Guide to Developing Shipping Modules</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="extending_lemonstand.html">Extending LemonStand</a></li><li class="last">Guide to Developing Shipping Modules</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Guide to Developing Shipping Modules</h2>
+        
+        <p>LemonStand shipping modules are PHP classes defined in scripts located in the <strong>shipping_types</strong> directory of a LemonStand module. Any LemonStand module can host any number of shipping modules. Before you begin developing a new shipping module you should choose whether you want to develop it as a Shop module class, or as a class of a separate <a href="developing_shipping_modules.html#">custom module</a>. You can choose the first option if you are developing a new shipping module for a private use. The last option will allow you to share the module through the LemonStand marketplace.&nbsp;</p>
+<p><a href="http://res.lemonstandapp.com/files/demoshipping.zip">Click here</a> to &nbsp;download a shipping module template.</p>
+<h3>Structure of a shipping module</h3>
+<p>Shipping module classes should extend the <strong>Shop_ShippingType</strong> class. This abstract PHP class contains all methods sufficient for developing any shipping module. By overriding methods of this base class you can add specific features to your shipping module.</p>
+<p>There is a naming convention, which allows LemonStand to load shipping module classes automatically. Shipping module class names should have the following structure: <strong>ModuleCode_</strong>ShippingModuleName<strong>_Shipping</strong>. The <strong>ModuleCode_</strong> prefix and the <strong>_Shipping</strong> suffix are required. Between the prefix and suffix can you use any suitable name, describing the shipping module. Shipping module class name example: Shop_FedEx_Shipping, MyModule_Usps_Shipping.</p>
+<p>Each shipping module class should be defined in a separate file, with the name matching the class name it contains, written in lower case. If the class name was the <strong>MyModule_Usps_Shipping</strong>, a corresponding file name, would be <strong>mymodule_usps_shipping.php</strong>.</p>
+<p>Aside from the shipping module PHP file, shipping modules can also have a directory, with name matching the module PHP file name. The directory should be located in the same directory with the module PHP file, i.e. in the <strong>modules/shop/shipping_types</strong> directory, in case if the shipping module belongs to the Shop module, or <strong>modules/mymodule/shipping_types</strong>, in case if the module belongs to a custom module with the <strong>MyModule</strong> code. If a shipping module file name is mymodule_usps_shipping.php, than the corresponding module directory name is mymodule_usps_shipping. Module directories can contain XML or any other files required for the module. Below is a screenshot of the modules/shop/shipping_types directory. On the screenshot you can see some shipping module PHP files and corresponding directories.</p>
+<p><img src="../resources/i/wiki/extending/shipping-types-dir.png" alt="" /></p>
+<h3>Common shipping module functions</h3>
+<p>Regardless of a specific shipping service all shipping module classes have a set of common function. Each module should provide the information about itself - the shipping service name and description. Also each module should have a configuration form, which LemonStand administrators will use for creating a shipping option and setting module-specific parameters. All required shipping module functions should be implemented as class methods described below.</p>
+<h4>Defining a shipping module class</h4>
+<p>Below is a partial declaration of a shipping module class, which implements the FedEx shipping service integration. The code defines the class and a method which returns the module specific information. <div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class Shop_Ups_Shipping extends Shop_ShippingType
+  {
+    public function get_info()
+    {
+      return array(
+        'name'=&gt;'UPS',
+        'description'=&gt;'This shipping method allows to request quotes 
+            and shipping options from the United Parcel Service of America (UPS).
+            You must have a UPS account in order to use this method.'
+      );
+    }
+  }
+?&gt;</pre></div></p>
+<p>The <strong>get_info()</strong> method should be declared in all shipping modules. The method should return an array containing the module name and description. This information will be presented in the Add Shipping Method form in the Administration Area: <img src="../resources/i/wiki/extending/add-shipping-option.png" alt="" /></p>
+<h4>Building a shipping module configuration form</h4>
+<p>Another required shipping module class method is the b<strong>uild_config_ui()</strong>. This method builds the module configuration form and it is similar to the <strong>define_form_fields()</strong> method of the model class, which we described in the <a href="administration_area_forms.html">Forms</a> article. In this method you can add tabs and fields to the module configuration form. All field values are saved automatically and you can access them inside the shipping quote request code. In this method you should add only module-specific fields, for example fields for API user name and password. All fields which are common for all shipping modules, for example shipping option name, description and checkboxes for selecting countries the option is applicable for, are added by LemonStand automatically. The set of fields depends on specific shipping service and you need to refer to your shipping service API description in order to find out which configuration fields you need to create on the configuration form.</p>
+<p>Below is a definition of the build_config_ui() method of the UPS shipping module. <div class="codeblock"><pre class="brush:php; collapse: true">public function build_config_ui($host_obj, $context = null)
+{
+  if ($context !== 'preview')
+  {
+    $host_obj-&gt;add_field('api_user', 'User Name', 'left')-&gt;tab('API Credentials')-&gt;
+      comment('UPS API user name.', 'above')-&gt;renderAs(frm_text)-&gt;validation()-&gt;
+      required('Please specify API user name');
+    $host_obj-&gt;add_field('api_password', 'User Password', 'right')-&gt;tab('API Credentials')-&gt;
+      comment('UPS API password.', 'above')-&gt;renderAs(frm_password)-&gt;validation();
+    $host_obj-&gt;add_field('access_key', 'API Access Key')-&gt;tab('API Credentials')-&gt;
+      comment('UPS API access key.', 'above')-&gt;renderAs(frm_text)-&gt;validation()-&gt;
+      required('Please specify API access key');
+  }
+
+  $host_obj-&gt;add_field('container', 'Container Type', 'left')-&gt;tab('Shipping Parameters')-&gt;
+    renderAs(frm_dropdown)-&gt;validation()-&gt;required('Please specify container type');
+  $host_obj-&gt;add_field('pickup_type', 'Pickup Type', 'right')-&gt;tab('Shipping Parameters')-&gt;
+    renderAs(frm_dropdown)-&gt;validation()-&gt;required('Please specify pickup type');
+  $host_obj-&gt;add_field('allowed_methods', ' Allowed methods')-&gt;tab('Shipping Parameters')-&gt;
+    renderAs(frm_checkboxlist)-&gt;validation();
+
+  $host_obj-&gt;add_field('free_shipping_enabled', ' Enable free shipping option')-&gt;
+    tab('Free Shipping')-&gt;renderAs(frm_checkbox)-&gt;validation();
+  $host_obj-&gt;add_field('free_shipping_option', ' Free shipping method')-&gt;
+    tab('Free Shipping')-&gt;renderAs(frm_dropdown)-&gt;validation();
+  $host_obj-&gt;add_field('free_shipping_min_amount', 'Minimum order amount for free shipping', 'full', db_number)-&gt;
+    tab('Free Shipping')-&gt;renderAs(frm_text)-&gt;validation();
+}</pre></div></p>
+<p>The method receives 2 parameters - the Active Record object, which should be used for adding form fields, and a form context. If the form context value is <strong>preview</strong>, the method should not create any form fields which contain API user names or passwords, because the shipping method preview form is available in read-only mode from the Order Preview page. The example code creates a number of UPS-specific fields and tabs on the configuration form. Below is a screenshot of the API Credentials tab of the module configuration form:</p>
+<p><img src="../resources/i/wiki/extending/ups-setup-form.png" alt="" /></p>
+<p>To add fields to the configuration form, the code inside the build_config_ui() method should call the add_field() method of the object, passed in the first method parameter. This method has two parameters - the field identifier and the field title. Field identifiers should be compatible with PHP variable names - they should not contain spaces, and they can contain only Latin characters and numbers. Using the optional third parameter you can specify a field alignemt on the form. Allowed parameter values are <strong>left</strong>, <strong>right</strong> and <strong>full</strong> (it is a default value).</p>
+<p>The <strong>add_field()</strong> method returns an object of the Db_FormFieldDefinition class, which you can use for configuring a field appearance and validation rules. The <strong>renderAs()</strong> method allows to specify a preferable control type for a field. You can find a list of possible control types in the Db_FormFieldDefinition class description.</p>
+<p>The code above sets the drop-down control type for some fields (Container Type, Pickup Type and Free shipping method). For each drop-down field there has to be defined a method returning a list of options. The method name should have the following structure: get_<strong>field_name</strong>_options. Thus, for the <strong>container</strong> field valid method name is <strong>get_order_container_options</strong>. The method should have a single parameter with default value -1. Below is an example of the method: <div class="codeblock"><pre class="brush:php; collapse: true">public function get_container_options($current_key_value = -1)
+{
+  $container_types = array(
+    '00'=&gt;'Unknown',
+    '01'=&gt;'UPS letter',
+    ...
+    '30'=&gt;'Pallet'
+  );
+  
+  if ($current_key_value == -1)
+    return $container_types;
+
+  return array_key_exists($current_key_value, $container_types) ? $container_types[$current_key_value] : null;
+}</pre></div></p>
+<p>The methods return arrays of available options as an associative array with indexes matching option identifiers and values matching option titles. Methods which return option lists, should check the method parameter value. If the parameter value is equal to -1, a method should return all possible options as array. If the parameter value is not -1, the method should try to find an option corresponding the parameter value, and return the option name (title). You can find the corresponding condition in the get_container_options() method example above.</p>
+<h4>Validating the configuration form data</h4>
+<p>All shipping module classes should override the <strong>validate_config_on_save()</strong> method. Inside this method a module can check configuration field values before the configuration is saved to the database. The method has a single parameter - an object, with fields matching form fields defined in the <strong>build_config_ui()</strong> method. The method should be implemented even if you are not going to perform any parameter validation. In this case you can leave it empty. Example: <div class="codeblock"><pre class="brush:php; collapse: false">public function validate_config_on_save($host_obj)
+{
+  if ($host_obj-&gt;free_shipping_enabled &amp;&amp; !strlen($host_obj-&gt;free_shipping_min_amount))
+    $host_obj-&gt;validation-&gt;setError('Please specify minimum order amount for free shipping
+      or disable the free shipping option', 'free_shipping_min_amount', true);
+    
+  ...
+}</pre></div></p>
+<h4>Initializing the configuration form field values</h4>
+<p>You can initialize values of the configuration form fields using the <strong>init_config_data()</strong> optional method. The values will be applied when a shipping option based on your shipping module is created. The method receives a single parameter, which you can use for setting values to fields defined in the <strong>build_config_ui()</strong> method. Example: <div class="codeblock"><pre class="brush:php; collapse: false">public function init_config_data($host_obj)
+{
+  $host_obj-&gt;api_user = 'john_01';
+}
+</pre></div></p>
+<h4>Processing the shipping quote requests</h4>
+<p>The <strong>get_quote()</strong> method is the heart of any shipping module. This method returns a list of available shipping options and shipping quotes. The method receives a single parameter - the associative array of values, which identify the cart content, shipping location, etc. Method definition: <div class="codeblock"><pre class="brush:php; collapse: false">public function get_quote($parameters)
+{
+}</pre></div></p>
+<p>The $parameters array has the following keys:</p>
+<ul>
+<li><strong>host_obj</strong> - an object containing the shipping module configuration values</li>
+<li><strong>country_id</strong> - specifies the shipping country identifier. Use the <a href="class_shop_country.html">Shop_Country</a> class to load a country object by its identifier.</li>
+<li><strong>state_id</strong> - specifies shipping state identifier. Use the&nbsp;<a href="class_shop_countrystate.html">Shop_CountryState</a> class to load a state by its identifier.</li>
+<li><strong>zip</strong> - specifies shipping zip/postal code</li>
+<li><strong>city</strong> - specifies shipping city name</li>
+<li><strong>total_price</strong> - specifies total price of items in the shopping cart</li>
+<li><strong>total_volume</strong> - specifies total volume of items in the shopping cart</li>
+<li><strong>total_weight</strong> - specifies total weight of items in the shopping cart</li>
+<li><strong>total_item_num</strong> - specifies total number of items in the shopping cart</li>
+<li><strong>cart_items</strong> - a list of cart items (<a href="class_shop_cartitem.html">Shop_CartItem</a> objects)</li>
+<li><strong>is_business</strong> - determines whether the shipping location is a business address&nbsp;</li>
+</ul>
+<p>The simplest way to work with the values contained in the $parameters parameter &nbsp;in the method is to run the <a href="http://php.net/manual/en/function.extract.php">extract()</a> function in the beginning of the method body. The extract() function converts array elements to local variables. Example: <div class="codeblock"><pre class="brush:php; collapse: false">public function get_quote($parameters)
+{
+  extract($parameters);
+  
+  // Now you can work with the $parameters elements as with local variables.  
+}</pre></div></p>
+<p>There are single-option and multi-option shipping services. Most of the shipping services are multi-option. For example, FedEx provides the following shipping options (services): Europe First International Priority, FedEx 1-Day Freight, FedEx Express Saver and so on. Depending on the shipping service and available options, the get_quote() method can return the following values:</p>
+<ul>
+<li>null - of no shipping options are available.</li>
+<li>numeric value - shipping quote for a single-option shipping services.</li>
+<li>array of option names and quote values for multi-option shipping service. Value format: <br /> array(<br />&nbsp;&nbsp; 'UPS Express'=&gt;array('id'=&gt;'express', 'quote'=&gt;12.29), <br />&nbsp;&nbsp; 'UPS Expedited'=&gt;array('id'=&gt;'expedited, 'quote'=&gt;32.12)<br />)</li>
+</ul>
+<p>You can use any identifiers and names of options for multi-option shipping modules. They only need to be consistent with the option names and identifiers returned by the <strong>list_enabled_options()</strong> method described below.</p>
+<p>Inside the method you should request the shipping service gateway, parse the response and prepare the result value. Please refer to the shipping service implementation guide for details.</p>
+<p>If the shipping service gateway requires the request to be a XML document, you can use the XML formatting features which are built into the Shop_ShippingType class. Inside the shipping method directory (described above) you can place XML template files, containing PHP code. Example of the Access Request XML template file from UPS shipping module: <div class="codeblock"><pre class="brush:xml; collapse: false">&lt;AccessRequest xml:lang='en-US'&gt;
+  &lt;AccessLicenseNumber&gt;&lt;?= h($settings_obj-&gt;access_key) ?&gt;&lt;/AccessLicenseNumber&gt;
+  &lt;UserId&gt;&lt;?= h($settings_obj-&gt;api_user) ?&gt;&lt;/UserId&gt;
+  &lt;Password&gt;&lt;?= h($settings_obj-&gt;api_password) ?&gt;&lt;/Password&gt;
+&lt;/AccessRequest&gt;</pre></div></p>
+<p>As you can see the template contains several PHP blocks, which refer to variable passed from outside. To get a formatted XML document in the shipping module code you should call the <strong>format_xml_template()</strong> method. This method accepts 2 parameters - the XML template file name, and an array of variables. The method returns a formatted XML string which you can send to the shipping service gateway. Example: <div class="codeblock"><pre class="brush:php; collapse: false">$access_doc = $this-&gt;format_xml_template('access_doc.xml', array('settings_obj'=&gt;$host_obj));
+</pre></div></p>
+<h4>Returning a list of services for the Free Shipping</h4>
+<p>The Discount Engine supports the Free Shipping Options feature, which enables users to choose specific shipping services to make free when the discount action takes effect.</p>
+<p><img src="../resources/i/wiki/extending/free-shipping.png" alt="" /></p>
+<p>Multi-option shipping options should implement the <strong>list_enabled_options()</strong> method for returning a list of enabled shipping options. Implementing this method is required for multi-option shipping modules, if you are going to distribute your shipping service through the Marketplace.</p>
+<p>The method accepts a single parameter - the object with the configuration field values. The method should return an array containing a list of shipping options in the following format: <br /> array(<br />&nbsp;&nbsp;array('id'=&gt;'option_id_1', 'name'=&gt;'Option 1 name'), <br />&nbsp;&nbsp;array('id'=&gt;'option_id_2', 'name'=&gt;'Option 2 name')<br />)</p>
+<p>The option names and identifiers should match the option names and identifiers returned by the <strong>get_quote()</strong> method.</p>
+        
+        <p>Next: <a href="lemonstand_module_templates.html">LemonStand Module Templates</a><br/>Previous: <a href="extending_existing_models.html">Extending Existing Models</a><br/>Return to <a href="extending_lemonstand.html">Extending LemonStand</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_358"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/developing_shipping_modules/";
+		var disqus_title = "Guide to Developing Shipping Modules";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

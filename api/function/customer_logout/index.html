@@ -1,0 +1,837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>LemonStand Version 1 - Function customer_logout</title>
+  <link rel="shortcut icon" href="../../../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../../../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="LemonStand API documentation: customer_logout function." />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+      <meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Function customer_logout"/>
+<meta property="og:description" content="LemonStand API documentation: customer_logout function."/>
+<meta property="og:image" content="http://v1.lemonstand.com/uploaded/public/5131b2accbf273.83665238.png"/>
+<meta property="og:image" content="http://v1.lemonstand.com/uploaded/public/5131b2d9d35414.27253766.png"/>
+<meta property="og:url" content="http://v1.lemonstand.com/api/function/customer_logout/"/>
+<meta property="og:site_name" content="LemonStand"/>
+
+    <link type="text/css" rel="stylesheet" href="../../../resources/shl/styles/shCore.css" />
+    <link type="text/css" rel="stylesheet" href="../../../resources/shl/styles/shThemeRDark.css" />
+    
+    <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushPhp.js&amp;file[]=%252Fresources%252Fshl%252Fs"></script>
+  
+    
+    <script type="text/javascript">
+      SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+      SyntaxHighlighter.all();
+      SyntaxHighlighter.defaults.gutter = false;
+      SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+    </script>  
+    
+    <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Ftreeview%252Fjquery.treeview.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.apidox.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.ui.core.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.ui.po"></script>
+    
+    <link rel="stylesheet" type="text/css" href="../../../ls_css_combine/index.html@file[]=ls_styles&amp;file[]=%252Fresources%252Fcss%252Fstyles.css&amp;file[]=%252Fresources%252Fjs%252Ftreeview%252Fjquery.treeview.css&amp;file[]=%252Fresources%252Fjs%252Fautocomplete%252Fjquery.ui.autocomplete.css&amp;file[]=%252.css" />  </head>
+  <body id="b_help" class="mac api-page">
+    <div id="wrapper">
+      <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the API docs for LemonStand V1, which has been discontinued. LemonStand is now a cloud based platform, available at <a href="https://lemonstand.com">lemonstand.com</a>.</p>
+	  	</div>
+         <div id="header">
+	         <a href="../../../index.html" id="headerLogo"><img src="../../../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+	         	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../../../docs.html">Documentation</a></li>
+			  <li><a href="../../../docs/api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../../../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../../../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      		     </div><!--/header-->
+      </div><!-- /headerWrapper -->    
+      <div id="topContentWrapper">  
+        <div id="topContent">
+          <div id="topCol1">
+            <h1>LemonStand <span>API</span></h1>
+          </div><!--/topCol1-->
+        </div><!--/topContent-->
+      </div><!-- /topContentWrapper -->  
+      <div id="contentWrapper">  
+        <div id="content" class="clearfix">
+          <div class="wrap12">
+            <table class="api-layout">
+              <tr>
+                <td class="tree">
+<div class="api-search-form ">
+  <form action="http://v1.lemonstand.com/api/search/core/" method="get">
+    <input type="text" id="api-search-query" class="text_field with-placeholder search_field" placeholder="Find class, event or function" name="term" value=""/>
+  </form>
+</div>
+
+<div class="api-tree-area">
+  <ul id="api-tree-view-list" class="filetree">
+    <li class="root"><a href="../../../docs/api_function_and_class_reference/index.html">API Table of Contents</a></li>
+  
+          <li>
+        <span class="folder">backend.events</span>
+      
+        <ul>
+                      <li><a href="../../event/backend%253Aonaddadditionalcmsfiles/index.html">backend:onAddAdditionalCmsFiles</a></li>
+                      <li><a href="../../event/backend%253Aonafterfilebrowserupload/index.html">backend:onAfterFileBrowserUpload</a></li>
+                      <li><a href="../../event/backend%253Aonafterremoteevent/index.html">backend:onAfterRemoteEvent</a></li>
+                      <li><a href="../../event/backend%253Aonbeforeremoteevent/index.html">backend:onBeforeRemoteEvent</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderlayout/index.html">backend:onBeforeRenderLayout</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderpage/index.html">backend:onBeforeRenderPage</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderpartial/index.html">backend:onBeforeRenderPartial</a></li>
+                      <li><a href="../../event/backend%253Aoncontrollerinit/index.html">backend:onControllerInit</a></li>
+                      <li><a href="../../event/backend%253Aoncontrollerready/index.html">backend:onControllerReady</a></li>
+                      <li><a href="../../event/backend%253Aonextendfooter/index.html">backend:onExtendFooter</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.classes</span>
+      
+        <ul>
+                      <li><a href="../../class/cms_controller/index.html">Cms_Controller</a></li>
+                      <li><a href="../../class/cms_exportmanager/index.html">Cms_ExportManager</a></li>
+                      <li><a href="../../class/cms_pagenavigationnode/index.html">Cms_PageNavigationNode</a></li>
+                      <li><a href="../../class/cms_visitorpreferences/index.html">Cms_VisitorPreferences</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.events</span>
+      
+        <ul>
+                      <li><a href="../../event/cms%253Aonafterdisplay/index.html">cms:onAfterDisplay</a></li>
+                      <li><a href="../../event/cms%253Aonafterevalpagecontent/index.html">cms:onAfterEvalPageContent</a></li>
+                      <li><a href="../../event/cms%253Aonafterhandleajax/index.html">cms:onAfterHandleAjax</a></li>
+                      <li><a href="../../event/cms%253Aonafterpageduplicate/index.html">cms:onAfterPageDuplicate</a></li>
+                      <li><a href="../../event/cms%253Aonafterrenderpartial/index.html">cms:onAfterRenderPartial</a></li>
+                      <li><a href="../../event/cms%253Aonafterresourcefileupload/index.html">cms:onAfterResourceFileUpload</a></li>
+                      <li><a href="../../event/cms%253Aonapplypagesecurity/index.html">cms:onApplyPageSecurity</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedataexport/index.html">cms:onBeforeDataExport</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedataimport/index.html">cms:onBeforeDataImport</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedisplay/index.html">cms:onBeforeDisplay</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeevalpagecontent/index.html">cms:onBeforeEvalPageContent</a></li>
+                      <li><a href="../../event/cms%253Aonbeforehandleajax/index.html">cms:onBeforeHandleAjax</a></li>
+                      <li><a href="../../event/cms%253Aonbeforerenderpartial/index.html">cms:onBeforeRenderPartial</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeresourcecombine/index.html">cms:onBeforeResourceCombine</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeroute/index.html">cms:onBeforeRoute</a></li>
+                      <li><a href="../../event/cms%253Aonbeforetrackingcodeinclude/index.html">cms:onBeforeTrackingCodeInclude</a></li>
+                      <li><a href="../../event/cms%253Aoncmspageimport/index.html">cms:onCmsPageImport</a></li>
+                      <li><a href="../../event/cms%253Aonconfigurepagespage/index.html">cms:onConfigurePagesPage</a></li>
+                      <li><a href="../../event/cms%253Aondeletepage/index.html">cms:onDeletePage</a></li>
+                      <li><a href="../../event/cms%253Aondeletepartial/index.html">cms:onDeletePartial</a></li>
+                      <li><a href="../../event/cms%253Aondeletetemplate/index.html">cms:onDeleteTemplate</a></li>
+                      <li><a href="../../event/cms%253Aondisplaypageform/index.html">cms:onDisplayPageForm</a></li>
+                      <li><a href="../../event/cms%253Aonevaluatecode/index.html">cms:onEvaluateCode</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagecontenttoolbar/index.html">cms:onExtendPageContentToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendpageform/index.html">cms:onExtendPageForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagemodel/index.html">cms:onExtendPageModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagescontextmenu/index.html">cms:onExtendPagesContextMenu</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagestoolbar/index.html">cms:onExtendPagesToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialform/index.html">cms:onExtendPartialForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialmodel/index.html">cms:onExtendPartialModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialstoolbar/index.html">cms:onExtendPartialsToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplateform/index.html">cms:onExtendTemplateForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplatemodel/index.html">cms:onExtendTemplateModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplatestoolbar/index.html">cms:onExtendTemplatesToolbar</a></li>
+                      <li><a href="../../event/cms%253Aongetactivetheme/index.html">cms:onGetActiveTheme</a></li>
+                      <li><a href="../../event/cms%253Aongetcustomergroupid/index.html">cms:onGetCustomerGroupId</a></li>
+                      <li><a href="../../event/cms%253Aongetpageblockcontent/index.html">cms:onGetPageBlockContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpagecontent/index.html">cms:onGetPageContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpagefieldoptions/index.html">cms:onGetPageFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aongetpagenavigationvisibility/index.html">cms:onGetPageNavigationVisibility</a></li>
+                      <li><a href="../../event/cms%253Aongetpartialcontent/index.html">cms:onGetPartialContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpartialfieldoptions/index.html">cms:onGetPartialFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aongettemplatecontent/index.html">cms:onGetTemplateContent</a></li>
+                      <li><a href="../../event/cms%253Aongettemplatefieldoptions/index.html">cms:onGetTemplateFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aonlistpageeditorsidebartabs/index.html">cms:onListPageEditorSidebarTabs</a></li>
+                      <li><a href="../../event/cms%253Aonpagenotfound/index.html">cms:onPageNotFound</a></li>
+                      <li><a href="../../event/cms%253Aonpreparepagelistdata/index.html">cms:onPreparePageListData</a></li>
+                      <li><a href="../../event/cms%253Aonpreparepartiallistdata/index.html">cms:onPreparePartialListData</a></li>
+                      <li><a href="../../event/cms%253Aonpreparetemplatelistdata/index.html">cms:onPrepareTemplateListData</a></li>
+                      <li><a href="../../event/cms%253Aonsetdefaulttheme/index.html">cms:onSetDefaultTheme</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.helpers</span>
+      
+        <ul>
+                      <li><a href="../close_form/index.html">close_form()</a></li>
+                      <li><a href="../../../docs/function_content_block.html">content_block()</a></li>
+                      <li><a href="../flash_message/index.html">flash_message()</a></li>
+                      <li><a href="../global_content_block/index.html">global_content_block()</a></li>
+                      <li><a href="../include_resources/index.html">include_resources()</a></li>
+                      <li><a href="../open_form/index.html">open_form()</a></li>
+                      <li><a href="../resource_url/index.html">resource_url()</a></li>
+                      <li><a href="../root_url/index.html">root_url()</a></li>
+                      <li><a href="../site_url/index.html">site_url()</a></li>
+                      <li><a href="../text_content_block/index.html">text_content_block()</a></li>
+                      <li><a href="../theme_resource_url/index.html">theme_resource_url()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.models</span>
+      
+        <ul>
+                      <li><a href="../../class/cms_page/index.html">Cms_Page</a></li>
+                      <li><a href="../../class/cms_partial/index.html">Cms_Partial</a></li>
+                      <li><a href="../../class/cms_template/index.html">Cms_Template</a></li>
+                      <li><a href="../../class/cms_theme/index.html">Cms_Theme</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.classes</span>
+      
+        <ul>
+                      <li><a href="../../class/core_cachebase/index.html">Core_CacheBase</a></li>
+                      <li><a href="../../class/db_activerecord/index.html">Db_ActiveRecord</a></li>
+                      <li><a href="../../class/db_act_as_tree/index.html">Db_Act_As_Tree</a></li>
+                      <li><a href="../../class/db_columndefinition/index.html">Db_ColumnDefinition</a></li>
+                      <li><a href="../../class/db_datacollection/index.html">Db_DataCollection</a></li>
+                      <li><a href="../../class/db_file/index.html">Db_File</a></li>
+                      <li><a href="../../class/db_filterbehavior/index.html">Db_FilterBehavior</a></li>
+                      <li><a href="../../class/db_formbehavior/index.html">Db_FormBehavior</a></li>
+                      <li><a href="../../class/db_formcustomarea/index.html">Db_FormCustomArea</a></li>
+                      <li><a href="../../class/db_formelement/index.html">Db_FormElement</a></li>
+                      <li><a href="../../class/db_formfielddefinition/index.html">Db_FormFieldDefinition</a></li>
+                      <li><a href="../../class/db_formpartial/index.html">Db_FormPartial</a></li>
+                      <li><a href="../../class/db_formsection/index.html">Db_FormSection</a></li>
+                      <li><a href="../../class/db_listbehavior/index.html">Db_ListBehavior</a></li>
+                      <li><a href="../../class/phpr_datetime/index.html">Phpr_DateTime</a></li>
+                      <li><a href="../../class/phpr_pagination/index.html">Phpr_Pagination</a></li>
+                      <li><a href="../../class/phpr_request/index.html">Phpr_Request</a></li>
+                      <li><a href="../../class/phpr_response/index.html">Phpr_Response</a></li>
+                      <li><a href="../../class/phpr_validation/index.html">Phpr_Validation</a></li>
+                      <li><a href="../../class/phpr_validationrules/index.html">Phpr_ValidationRules</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.events</span>
+      
+        <ul>
+                      <li><a href="../../event/core%253Aonafterarchivecreate/index.html">core:onAfterArchiveCreate</a></li>
+                      <li><a href="../../event/core%253Aonafterdatabasequery/index.html">core:onAfterDatabaseQuery</a></li>
+                      <li><a href="../../event/core%253Aonafteremailsendtocustomer/index.html">core:onAfterEmailSendToCustomer</a></li>
+                      <li><a href="../../event/core%253Aonafteremailsendtoteam/index.html">core:onAfterEmailSendToTeam</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecordcreate/index.html">core:onAfterFormRecordCreate</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecorddelete/index.html">core:onAfterFormRecordDelete</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecordupdate/index.html">core:onAfterFormRecordUpdate</a></li>
+                      <li><a href="../../event/core%253Aonafterrenderlistpagination/index.html">core:onAfterRenderListPagination</a></li>
+                      <li><a href="../../event/core%253Aonafterrenderlisttable/index.html">core:onAfterRenderListTable</a></li>
+                      <li><a href="../../event/core%253Aonaftersoftwareupdate/index.html">core:onAfterSoftwareUpdate</a></li>
+                      <li><a href="../../event/core%253Aonaftersoftwareupdaterequest/index.html">core:onAfterSoftwareUpdateRequest</a></li>
+                      <li><a href="../../event/core%253Aonbeforearchivecreate/index.html">core:onBeforeArchiveCreate</a></li>
+                      <li><a href="../../event/core%253Aonbeforearchiverestore/index.html">core:onBeforeArchiveRestore</a></li>
+                      <li><a href="../../event/core%253Aonbeforedatabaseconnect/index.html">core:onBeforeDatabaseConnect</a></li>
+                      <li><a href="../../event/core%253Aonbeforedatabasequery/index.html">core:onBeforeDatabaseQuery</a></li>
+                      <li><a href="../../event/core%253Aonbeforeemailsendtocustomer/index.html">core:onBeforeEmailSendToCustomer</a></li>
+                      <li><a href="../../event/core%253Aonbeforeemailsendtoteam/index.html">core:onBeforeEmailSendToTeam</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecordcreate/index.html">core:onBeforeFormRecordCreate</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecorddelete/index.html">core:onBeforeFormRecordDelete</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecordupdate/index.html">core:onBeforeFormRecordUpdate</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrender/index.html">core:onBeforeFormRender</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrenderpreview/index.html">core:onBeforeFormRenderPreview</a></li>
+                      <li><a href="../../event/core%253Aonbeforelistexport/index.html">core:onBeforeListExport</a></li>
+                      <li><a href="../../event/core%253Aonbeforelistrecorddisplay/index.html">core:onBeforeListRecordDisplay</a></li>
+                      <li><a href="../../event/core%253Aonbeforesoftwareupdate/index.html">core:onBeforeSoftwareUpdate</a></li>
+                      <li><a href="../../event/core%253Aonbeforesoftwareupdaterequest/index.html">core:onBeforeSoftwareUpdateRequest</a></li>
+                      <li><a href="../../event/core%253Aonextendemailtemplateform/index.html">core:onExtendEmailTemplateForm</a></li>
+                      <li><a href="../../event/core%253Aonextendemailtemplatemodel/index.html">core:onExtendEmailTemplateModel</a></li>
+                      <li><a href="../../event/core%253Aonextenduserform/index.html">core:onExtendUserForm</a></li>
+                      <li><a href="../../event/core%253Aonextendusermodel/index.html">core:onExtendUserModel</a></li>
+                      <li><a href="../../event/core%253Aonfilebeforecreate/index.html">core:onFileBeforeCreate</a></li>
+                      <li><a href="../../event/core%253Aongetemailtemplatefieldoptions/index.html">core:onGetEmailTemplateFieldOptions</a></li>
+                      <li><a href="../../event/core%253Aongetuserfieldoptions/index.html">core:onGetUserFieldOptions</a></li>
+                      <li><a href="../../event/core%253Aoninitialize/index.html">core:onInitialize</a></li>
+                      <li><a href="../../event/core%253Aonprocessimage/index.html">core:onProcessImage</a></li>
+                      <li><a href="../../event/core%253Aonsendemail/index.html">core:onSendEmail</a></li>
+                      <li><a href="../../event/core%253Aonuninitialize/index.html">core:onUninitialize</a></li>
+                      <li><a href="../../event/core%253Aonuserbeforesave/index.html">core:onUserBeforeSave</a></li>
+                      <li><a href="../../event/onafterfrontendlogin/index.html">onAfterFrontEndLogin</a></li>
+                      <li><a href="../../event/ondeleteemailtemplate/index.html">onDeleteEmailTemplate</a></li>
+                      <li><a href="../../event/onfrontendlogin/index.html">onFrontEndLogin</a></li>
+                      <li><a href="../../event/onfrontendlogout/index.html">onFrontEndLogout</a></li>
+                      <li><a href="../../event/onlogin/index.html">onLogin</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.functions</span>
+      
+        <ul>
+                      <li><a href="../url/index.html">url()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.helpers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/function_checkbox_state.html">checkbox_state()</a></li>
+                      <li><a href="../h/index.html">h()</a></li>
+                      <li><a href="../option_state/index.html">option_state()</a></li>
+                      <li><a href="../post/index.html">post()</a></li>
+                      <li><a href="../post_array_item/index.html">post_array_item()</a></li>
+                      <li><a href="../radio_state/index.html">radio_state()</a></li>
+                      <li><a href="../tracelog/index.html">traceLog()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.models</span>
+      
+        <ul>
+                      <li><a href="../../class/users_user/index.html">Users_User</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig filters</span>
+      
+        <ul>
+                      <li><a href="../repeat/index.html">repeat</a></li>
+                      <li><a href="../unescape/index.html">unescape</a></li>
+                      <li><a href="../unset/index.html">unset</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig functions</span>
+      
+        <ul>
+                      <li><a href="../field/index.html">field()</a></li>
+                      <li><a href="../method/index.html">method()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig tests</span>
+      
+        <ul>
+                      <li><a href="../array/index.html">array</a></li>
+                      <li><a href="../instance_of/index.html">instance_of</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.actions</span>
+      
+        <ul>
+                      <li><a href="../../../docs/action_shop_cart.html">shop:cart</a></li>
+                      <li><a href="../../../docs/action_shop_category.html">shop:category</a></li>
+                      <li><a href="../../action/shop%253Achange_password/index.html">shop:change_password</a></li>
+                      <li><a href="../../action/shop%253Acheckout/index.html">shop:checkout</a></li>
+                      <li><a href="../../../docs/shop_checkout_billing_info.html">shop:checkout_billing_info</a></li>
+                      <li><a href="../../../docs/shop_checkout_order_review.html">shop:checkout_order_review</a></li>
+                      <li><a href="../../../docs/shop_checkout_payment_method.html">shop:checkout_payment_method</a></li>
+                      <li><a href="../../../docs/shop_checkout_shipping_info.html">shop:checkout_shipping_info</a></li>
+                      <li><a href="../../../docs/shop_checkout_shipping_method.html">shop:checkout_shipping_method</a></li>
+                      <li><a href="../../../docs/action_shop_compare.html">shop:compare</a></li>
+                      <li><a href="../../action/shop%253Acustomer_profile/index.html">shop:customer_profile</a></li>
+                      <li><a href="../../../docs/action_shop_login.html">shop:login</a></li>
+                      <li><a href="../../../docs/action_shop_manufacturer.html">shop:manufacturer</a></li>
+                      <li><a href="../../../docs/action_shop_manufacturers.html">shop:manufacturers</a></li>
+                      <li><a href="../../../docs/action_shop_order.html">shop:order</a></li>
+                      <li><a href="../../../docs/action_shop_orders.html">shop:orders</a></li>
+                      <li><a href="../../../docs/action_shop_password_restore.html">shop:password_restore</a></li>
+                      <li><a href="../../action/shop%253Apassword_restore_request/index.html">shop:password_restore_request</a></li>
+                      <li><a href="../../../docs/action_shop_pay.html">shop:pay</a></li>
+                      <li><a href="../../../docs/shop_payment_information.html">shop:payment_information</a></li>
+                      <li><a href="../../action/shop%253Apayment_profile/index.html">shop:payment_profile</a></li>
+                      <li><a href="../../action/shop%253Apayment_profiles/index.html">shop:payment_profiles</a></li>
+                      <li><a href="../../../docs/action_shop_payment_receipt.html">shop:payment_receipt</a></li>
+                      <li><a href="../../../docs/action_shop_product.html">shop:product</a></li>
+                      <li><a href="../../../docs/shop_search.html">shop:search</a></li>
+                      <li><a href="../../action/shop%253Asignup/index.html">shop:signup</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.ajax handlers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/habdler_shop_on_addproductreview.html">shop:on_addProductReview</a></li>
+                      <li><a href="../../ajax/shop%253Aon_addtocart/index.html">shop:on_addToCart</a></li>
+                      <li><a href="../../../docs/handler_shop_on_addtocompare.html">shop:on_addToCompare</a></li>
+                      <li><a href="../../ajax/shop%253Aon_changepassword/index.html">shop:on_changePassword</a></li>
+                      <li><a href="../../ajax/shop%253Aon_clearcomparelist/index.html">shop:on_clearCompareList</a></li>
+                      <li><a href="../../ajax/shop%253Aon_deletecartitem/index.html">shop:on_deleteCartItem</a></li>
+                      <li><a href="../../ajax/shop%253Aon_evalshippingrate/index.html">shop:on_evalShippingRate</a></li>
+                      <li><a href="../../ajax/shop%253Aon_removefromcompare/index.html">shop:on_removeFromCompare</a></li>
+                      <li><a href="../../ajax/shop%253Aon_setcouponcode/index.html">shop:on_setCouponCode</a></li>
+                      <li><a href="../../ajax/shop%253Aon_updatestatelist/index.html">shop:on_updateStateList</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.classes</span>
+      
+        <ul>
+                      <li><a href="../../../docs/class_shop_cart.html">Shop_Cart</a></li>
+                      <li><a href="../../../docs/class_shop_cartitem.html">Shop_CartItem</a></li>
+                      <li><a href="../../../docs/class_shop_checkoutaddressinfo.html">Shop_CheckoutAddressInfo</a></li>
+                      <li><a href="../../../docs/shop_checkoutdata.html">Shop_CheckoutData</a></li>
+                      <li><a href="../../../docs/class_shop_comparisonlist.html">Shop_ComparisonList</a></li>
+                      <li><a href="../../class/shop_optionmatrixmanager/index.html">Shop_OptionMatrixManager</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.events</span>
+      
+        <ul>
+                      <li><a href="../../event/shop%253Aonafteraddtocart/index.html">shop:onAfterAddToCart</a></li>
+                      <li><a href="../../event/shop%253Aonaftercategoryrecordfetch/index.html">shop:onAfterCategoryRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvcustomercreated/index.html">shop:onAfterCsvCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvcustomerupdated/index.html">shop:onAfterCsvCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvoptionmatriximport/index.html">shop:onAfterCsvOptionMatrixImport</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvproductcreated/index.html">shop:onAfterCsvProductCreated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvproductupdated/index.html">shop:onAfterCsvProductUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercustomermerged/index.html">shop:onAfterCustomerMerged</a></li>
+                      <li><a href="../../event/shop%253Aonafteroptionmatrixrecordfound/index.html">shop:onAfterOptionMatrixRecordFound</a></li>
+                      <li><a href="../../event/shop%253Aonafterorderrecordfetch/index.html">shop:onAfterOrderRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonafterproductfileadded/index.html">shop:onAfterProductFileAdded</a></li>
+                      <li><a href="../../event/shop%253Aonafterproductrecordfetch/index.html">shop:onAfterProductRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonafterremovefromcart/index.html">shop:onAfterRemoveFromCart</a></li>
+                      <li><a href="../../event/shop%253Aonaftersetcartquantity/index.html">shop:onAfterSetCartQuantity</a></li>
+                      <li><a href="../../event/shop%253Aonauthenticatecustomer/index.html">shop:onAuthenticateCustomer</a></li>
+                      <li><a href="../../event/shop%253Aonautomatedbillingsupported/index.html">shop:onAutomatedBillingSupported</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeaddtocart/index.html">shop:onBeforeAddToCart</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecsvcustomercreated/index.html">shop:onBeforeCsvCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecsvcustomerupdated/index.html">shop:onBeforeCsvCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecustomermerged/index.html">shop:onBeforeCustomerMerged</a></li>
+                      <li><a href="../../event/shop%253Aonbeforedeleteshippingtrackingcode/index.html">shop:onBeforeDeleteShippingTrackingCode</a></li>
+                      <li><a href="../../event/shop%253Aonbeforegeneratecustomerpassword/index.html">shop:onBeforeGenerateCustomerPassword</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeordercustomerstatusmessagesent/index.html">shop:onBeforeOrderCustomerStatusMessageSent</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderinternalstatusmessagesent/index.html">shop:onBeforeOrderInternalStatusMessageSent</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderitemsaved/index.html">shop:onBeforeOrderItemSaved</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderrecordcreate/index.html">shop:onBeforeOrderRecordCreate</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeordersrssexport/index.html">shop:onBeforeOrdersRssExport</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeproductfileadded/index.html">shop:onBeforeProductFileAdded</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeremovefromcart/index.html">shop:onBeforeRemoveFromCart</a></li>
+                      <li><a href="../../event/shop%253Aonbeforesetcartquantity/index.html">shop:onBeforeSetCartQuantity</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeshippingquote/index.html">shop:onBeforeShippingQuote</a></li>
+                      <li><a href="../../event/shop%253Aonconfigurecustomerspage/index.html">shop:onConfigureCustomersPage</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureorderspage/index.html">shop:onConfigureOrdersPage</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureproductscontroller/index.html">shop:onConfigureProductsController</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureproductspage/index.html">shop:onConfigureProductsPage</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerafterdelete/index.html">shop:onCustomerAfterDelete</a></li>
+                      <li><a href="../../event/shop%253Aoncustomercreated/index.html">shop:onCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerprofilesave/index.html">shop:onCustomerProfileSave</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerupdated/index.html">shop:onCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aondisplaycustomerspage/index.html">shop:onDisplayCustomersPage</a></li>
+                      <li><a href="../../event/shop%253Aondisplayorderspage/index.html">shop:onDisplayOrdersPage</a></li>
+                      <li><a href="../../event/shop%253Aondisplayproductform/index.html">shop:onDisplayProductForm</a></li>
+                      <li><a href="../../event/shop%253Aondisplayproductlist/index.html">shop:onDisplayProductList</a></li>
+                      <li><a href="../../event/shop%253Aonextendattributeform/index.html">shop:onExtendAttributeForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendattributemodel/index.html">shop:onExtendAttributeModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcategoryform/index.html">shop:onExtendCategoryForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcategorymodel/index.html">shop:onExtendCategoryModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcompanyinformationform/index.html">shop:onExtendCompanyInformationForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcompanyinformationmodel/index.html">shop:onExtendCompanyInformationModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerform/index.html">shop:onExtendCustomerForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomergroupform/index.html">shop:onExtendCustomerGroupForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomergroupmodel/index.html">shop:onExtendCustomerGroupModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomermodel/index.html">shop:onExtendCustomerModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerpreviewtabs/index.html">shop:onExtendCustomerPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerpreviewtoolbar/index.html">shop:onExtendCustomerPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerstoolbar/index.html">shop:onExtendCustomersToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomgroupform/index.html">shop:onExtendCustomGroupForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomgroupmodel/index.html">shop:onExtendCustomGroupModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendextraoptionform/index.html">shop:onExtendExtraOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendextraoptionmodel/index.html">shop:onExtendExtraOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendmanufacturerform/index.html">shop:onExtendManufacturerForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendmanufacturermodel/index.html">shop:onExtendManufacturerModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionform/index.html">shop:onExtendOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmatrix/index.html">shop:onExtendOptionMatrix</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmatrixrecordmodel/index.html">shop:onExtendOptionMatrixRecordModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmodel/index.html">shop:onExtendOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderform/index.html">shop:onExtendOrderForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderinvoicestoolbar/index.html">shop:onExtendOrderInvoicesToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderitemform/index.html">shop:onExtendOrderItemForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderitemmodel/index.html">shop:onExtendOrderItemModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendordermodel/index.html">shop:onExtendOrderModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpaymenttransactionstoolbar/index.html">shop:onExtendOrderPaymentTransactionsToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewheader/index.html">shop:onExtendOrderPreviewHeader</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewtabs/index.html">shop:onExtendOrderPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewtoolbar/index.html">shop:onExtendOrderPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstatusform/index.html">shop:onExtendOrderStatusForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstatusmodel/index.html">shop:onExtendOrderStatusModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstoolbar/index.html">shop:onExtendOrdersToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendpaymentmethodform/index.html">shop:onExtendPaymentMethodForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendpaymentmethodmodel/index.html">shop:onExtendPaymentMethodModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductform/index.html">shop:onExtendProductForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductmodel/index.html">shop:onExtendProductModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewheader/index.html">shop:onExtendProductPreviewHeader</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewtabs/index.html">shop:onExtendProductPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewtoolbar/index.html">shop:onExtendProductPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductreviewform/index.html">shop:onExtendProductReviewForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductreviewmodel/index.html">shop:onExtendProductReviewModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductstoolbar/index.html">shop:onExtendProductsToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendproducttypeform/index.html">shop:onExtendProductTypeForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproducttypemodel/index.html">shop:onExtendProductTypeModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendreportfilters/index.html">shop:onExtendReportFilters</a></li>
+                      <li><a href="../../event/shop%253Aonextendshippingoptionform/index.html">shop:onExtendShippingOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendshippingoptionmodel/index.html">shop:onExtendShippingOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonfilterpaymentmethods/index.html">shop:onFilterPaymentMethods</a></li>
+                      <li><a href="../../event/shop%253Aonfiltershippingoptions/index.html">shop:onFilterShippingOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetattributefieldoptions/index.html">shop:onGetAttributeFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcartitemprice/index.html">shop:onGetCartItemPrice</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryfieldoptions/index.html">shop:onGetCategoryFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryfieldstate/index.html">shop:onGetCategoryFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryproductsortingquery/index.html">shop:onGetCategoryProductSortingQuery</a></li>
+                      <li><a href="../../event/shop%253Aongetcompanyinformationfieldoptions/index.html">shop:onGetCompanyInformationFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcompanyinformationfieldstate/index.html">shop:onGetCompanyInformationFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomerfieldoptions/index.html">shop:onGetCustomerFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomerfieldstate/index.html">shop:onGetCustomerFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomergroupfieldoptions/index.html">shop:onGetCustomerGroupFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomgroupfieldoptions/index.html">shop:onGetCustomGroupFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetendreportingdate/index.html">shop:onGetEndReportingDate</a></li>
+                      <li><a href="../../event/shop%253Aongetextraoptionfieldoptions/index.html">shop:onGetExtraOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetmanufacturerfieldoptions/index.html">shop:onGetManufacturerFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetmanufacturerfieldstate/index.html">shop:onGetManufacturerFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetoptionfieldoptions/index.html">shop:onGetOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderfieldoptions/index.html">shop:onGetOrderFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderfieldstate/index.html">shop:onGetOrderFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetorderitemdisplaydetails/index.html">shop:onGetOrderItemDisplayDetails</a></li>
+                      <li><a href="../../event/shop%253Aongetorderitemfieldoptions/index.html">shop:onGetOrderItemFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderstatusfieldoptions/index.html">shop:onGetOrderStatusFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderstatusfieldstate/index.html">shop:onGetOrderStatusFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetpaymentmethodfieldoptions/index.html">shop:onGetPaymentMethodFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetpaymentmethodfieldstate/index.html">shop:onGetPaymentMethodFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetproductextraprice/index.html">shop:onGetProductExtraPrice</a></li>
+                      <li><a href="../../event/shop%253Aongetproductfieldoptions/index.html">shop:onGetProductFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetproductfieldstate/index.html">shop:onGetProductFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetproductpricenotax/index.html">shop:onGetProductPriceNoTax</a></li>
+                      <li><a href="../../event/shop%253Aongetproductreviewfieldoptions/index.html">shop:onGetProductReviewFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsaleprice/index.html">shop:onGetProductSalePrice</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsearchsortcolumns/index.html">shop:onGetProductSearchSortColumns</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsortcolumns/index.html">shop:onGetProductSortColumns</a></li>
+                      <li><a href="../../event/shop%253Aongetproducttypefieldoptions/index.html">shop:onGetProductTypeFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetshippingoptionfieldoptions/index.html">shop:onGetShippingOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetshippingparams/index.html">shop:onGetShippingParams</a></li>
+                      <li><a href="../../event/shop%253Aongetstartreportingdate/index.html">shop:onGetStartReportingDate</a></li>
+                      <li><a href="../../event/shop%253Aoninvoicesystemsupported/index.html">shop:onInvoiceSystemSupported</a></li>
+                      <li><a href="../../event/shop%253Aonnewinvoiceitemcopy/index.html">shop:onNewInvoiceItemCopy</a></li>
+                      <li><a href="../../event/shop%253Aonneworder/index.html">shop:onNewOrder</a></li>
+                      <li><a href="../../event/shop%253Aonorderafterdelete/index.html">shop:onOrderAfterDelete</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforecreate/index.html">shop:onOrderBeforeCreate</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforestatuschanged/index.html">shop:onOrderBeforeStatusChanged</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforeupdate/index.html">shop:onOrderBeforeUpdate</a></li>
+                      <li><a href="../../event/shop%253Aonordercopybillingaddress/index.html">shop:onOrderCopyBillingAddress</a></li>
+                      <li><a href="../../event/shop%253Aonordererror/index.html">shop:onOrderError</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemadded/index.html">shop:onOrderItemAdded</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemdeleted/index.html">shop:onOrderItemDeleted</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemupdated/index.html">shop:onOrderItemUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonordermarkeddeleted/index.html">shop:onOrderMarkedDeleted</a></li>
+                      <li><a href="../../event/shop%253Aonorderrestored/index.html">shop:onOrderRestored</a></li>
+                      <li><a href="../../event/shop%253Aonorderstatuschanged/index.html">shop:onOrderStatusChanged</a></li>
+                      <li><a href="../../event/shop%253Aonorderstockchange/index.html">shop:onOrderStockChange</a></li>
+                      <li><a href="../../event/shop%253Aonordersupportsinvoices/index.html">shop:onOrderSupportsInvoices</a></li>
+                      <li><a href="../../event/shop%253Aonoverrideproductcategorycsvimportdata/index.html">shop:onOverrideProductCategoryCsvImportData</a></li>
+                      <li><a href="../../event/shop%253Aonprepareproductlistdata/index.html">shop:onPrepareProductListData</a></li>
+                      <li><a href="../../event/shop%253Aonpreprocessproductcustomdata/index.html">shop:onPreProcessProductCustomData</a></li>
+                      <li><a href="../../event/shop%253Aonproductduplicated/index.html">shop:onProductDuplicated</a></li>
+                      <li><a href="../../event/shop%253Aonproductoutofstock/index.html">shop:onProductOutOfStock</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewaftercreate/index.html">shop:onProductReviewAfterCreate</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewapproved/index.html">shop:onProductReviewApproved</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewbeforecreate/index.html">shop:onProductReviewBeforeCreate</a></li>
+                      <li><a href="../../event/shop%253Aonregisterproductsearchevent/index.html">shop:onRegisterProductSearchEvent</a></li>
+                      <li><a href="../../event/shop%253Aonupdatecartitemprice/index.html">shop:onUpdateCartItemPrice</a></li>
+                      <li><a href="../../event/shop%253Aonupdateshippingquote/index.html">shop:onUpdateShippingQuote</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.helpers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/class_shop_bundlehelper.html">Shop_BundleHelper</a></li>
+                      <li><a href="../../../docs/class_shop_producthelper.html">Shop_ProductHelper</a></li>
+                      <li><a href="index.html">customer_logout()</a></li>
+                      <li><a href="../format_currency/index.html">format_currency()</a></li>
+                      <li><a href="../tax_incl_label/index.html">tax_incl_label()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.models</span>
+      
+        <ul>
+                      <li><a href="../../class/shop_bundleitemproduct/index.html">Shop_BundleItemProduct</a></li>
+                      <li><a href="../../../docs/class_shop_category.html">Shop_Category</a></li>
+                      <li><a href="../../class/shop_companyinformation/index.html">Shop_CompanyInformation</a></li>
+                      <li><a href="../../../docs/class_shop_country.html">Shop_Country</a></li>
+                      <li><a href="../../../docs/class_shop_countrystate.html">Shop_CountryState</a></li>
+                      <li><a href="../../class/shop_customattribute/index.html">Shop_CustomAttribute</a></li>
+                      <li><a href="../../../docs/class_shop_customer.html">Shop_Customer</a></li>
+                      <li><a href="../../../docs/shop_customergroup.html">Shop_CustomerGroup</a></li>
+                      <li><a href="../../class/shop_customerpaymentprofile/index.html">Shop_CustomerPaymentProfile</a></li>
+                      <li><a href="../../../docs/class_shop_customgroup.html">Shop_CustomGroup</a></li>
+                      <li><a href="../../../docs/class_shop_extraoption.html">Shop_ExtraOption</a></li>
+                      <li><a href="../../../docs/class_shop_manufacturer.html">Shop_Manufacturer</a></li>
+                      <li><a href="../../class/shop_optionmatrixrecord/index.html">Shop_OptionMatrixRecord</a></li>
+                      <li><a href="../../../docs/class_shop_order.html">Shop_Order</a></li>
+                      <li><a href="../../../docs/class_shop_orderitem.html">Shop_OrderItem</a></li>
+                      <li><a href="../../class/shop_orderstatus/index.html">Shop_OrderStatus</a></li>
+                      <li><a href="../../class/shop_orderstatuslog/index.html">Shop_OrderStatusLog</a></li>
+                      <li><a href="../../../docs/class_shop_paymentmethod.html">Shop_PaymentMethod</a></li>
+                      <li><a href="../../../docs/class_shop_product.html">Shop_Product</a></li>
+                      <li><a href="../../class/shop_productbundleitem/index.html">Shop_ProductBundleItem</a></li>
+                      <li><a href="../../class/shop_productfile/index.html">Shop_ProductFile</a></li>
+                      <li><a href="../../class/shop_productproperty/index.html">Shop_ProductProperty</a></li>
+                      <li><a href="../../../docs/class_shop_productreview.html">Shop_ProductReview</a></li>
+                      <li><a href="../../class/shop_producttype/index.html">Shop_ProductType</a></li>
+                      <li><a href="../../../docs/class_shop_shippingoption.html">Shop_ShippingOption</a></li>
+                      <li><a href="../../class/shop_shippingparams/index.html">Shop_ShippingParams</a></li>
+                      <li><a href="../../class/shop_transactionupdate/index.html">Shop_TransactionUpdate</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.twig filters</span>
+      
+        <ul>
+                      <li><a href="../categories/index.html">categories</a></li>
+                      <li><a href="../currency/index.html">currency</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.twig functions</span>
+      
+        <ul>
+                      <li><a href="../cart_items/index.html">cart_items()</a></li>
+                      <li><a href="../company_information/index.html">company_information()</a></li>
+                      <li><a href="../shipping_method_selected/index.html">shipping_method_selected()</a></li>
+                      <li><a href="../total_cart_items/index.html">total_cart_items()</a></li>
+                      <li><a href="../total_cart_price/index.html">total_cart_price()</a></li>
+                  </ul>
+      </li>
+      </ul>
+
+  <script type="text/javascript">
+    jQuery("#api-tree-view-list").treeview({
+      animated: "fast",
+      collapsed: true,
+      unique: true,
+      persist: "location"
+    });
+  </script>
+</div></td>
+                <td class="details">  <h2>
+    <span>customer_logout</span>
+    function  </h2>
+  
+  <table class="api-summary-table">
+    <tr>
+      <th>Defined in</th>
+      <td>/modules/shop/init/custom_helpers.php, lines 34-37</td>
+    </tr>
+          <tr>
+        <th>Author</th>
+        <td>LemonStand eCommerce Inc.</td>
+      </tr>
+      </table>
+
+    
+  <div class="api-signature">void function <b>customer_logout</b>(string $redirect=NULL)</div>
+  
+      <table class="api-summary-table">
+              <tr>
+          <th>$redirect</th>
+          <td>string</td>
+          <td>specifies an URL to redirect the customer to.</td>
+        </tr>
+                </table>
+    
+  <div class="api-description">
+    Closes a session of a current customer and optionally redirects browser to a specified address. 
+Use this function to create the Logout page.
+The following code represents contents of a simplest logout page.
+<div class="codeblock"><pre class="brush:php; collapse:false">&lt;? customer_logout('/'); ?&gt;</pre></div>  </div>
+  
+  <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="http://lemonstand.com/docs/customer_login_and_logout/">Customer login and logout pages</a></li>
+            
+        </ul>
+</div>  
+  
+<div class="commentsWrap">
+  <div id="thread"></div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_identifier = "api-function-customer_logout";
+    var disqus_url = "http://v1.lemonstand.com/api/function/customer_logout//";
+    var disqus_title = "API function customer_logout";
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://lemonstand.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+</div><!--/commentsWrap--></td>
+              </tr>
+            </table>
+          </div>
+        </div><!--/content-->
+      </div><!-- /contentWrapper -->
+  </div><!--/wrapper-->
+  <div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../../../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../../../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../../../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="../../../docs/ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="../../../docs/developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../../../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../../../tos/index.html">Terms &amp; Conditions</a> | <a href="../../../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+  </body>
+</html>

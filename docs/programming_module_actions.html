@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Programming Module CMS Actions</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="extending_lemonstand.html">Extending LemonStand</a></li><li><a href="understanding_lemonstand_modules.html">Understanding LemonStand Modules</a></li><li class="last">Programming Module CMS Actions</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Programming Module CMS Actions</h2>
+        
+        <p>Actions allow modules to add specific features to website pages. For example, the LemonStand Shop module has the following actions: shop:product, shop:category, shop:cart and many others. Actions allow you to prepare all data required for a specific page, effectively simplifying the page code. Also using actions you can handle POST and AJAX requests sent from website pages.</p>
+<p>In this article we will continue extending the simple blog module, which we started in the <a href="developing_a_simple_module.html">Developing a simple module</a> article. We will add actions for displaying a post list and a specific post on the front-end website.</p>
+<h3>Defining the module action class</h3>
+<p>Module actions are methods of a special class, which could be defined in any module. The class name should have the following structure: ModuleIdentifier_Actions. Our module identifier is AbcBlog, so the action class name for the blog module is AbcBlog_Actions. The class must be defined in the /modules/abcblog/classes/abcblog_actions.php file. Action classes should extend the <strong>Cms_ActionScope</strong> class. Here is a code of an empty action class of the AbcBlog module:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?php
+  class Abcblog_Actions extends Cms_ActionScope
+  {
+  }
+?&gt;</pre></div><h3>Creating the blog post list action</h3>
+<p>Now we can create an action for the <strong>blog posts</strong> page. This page will display all blog posts. A suitable action name is 'posts'. The action should be defined as a public method of the actions class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?php
+  class Abcblog_Actions extends Cms_ActionScope
+  {
+    public function posts()
+    {
+    }
+  }
+?&gt;</pre></div><p>As soon as you define an action in the actions class, it becomes available on the CMS Create/Edit Page form. Let's create a new page (CMS/Pages/Add page) for testing your action. Do not forget to select the abcblog:posts action on the <strong>Action</strong> tab:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/blog_posts_page_action.png" alt="" /></p>
+<p>In the posts action we should prepare a list of all blog posts and generate a corresponding PHP variable. The <strong>Cms_ActionScope</strong> class, which we extend by the module action class, has the same fields and methods as the <a href="http://v1.lemonstand.com/docs/class_cms_controller">Cms_Controller</a> class. It means that we can add page variables using the <strong>$this-&gt;data[]</strong> array. The code below creates the $posts variable and loads all blog posts into it:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function posts()
+{
+  $obj = new AbcBlog_Post();
+  $this-&gt;data['posts'] = $obj-&gt;order('created_at desc')-&gt;find_all();
+}</pre></div><p>The <strong>$posts</strong> variable is now available on all pages which use the <strong>abcblog:posts</strong> action and we can use it to display a list of posts on a page, for example using the following code:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/blog_posts_page_code.png" alt="" /></p>
+<p>This code outputs post titles. Each post title has a link to a corresponding post details page. In the example code we used the <strong>/abcblog_post</strong> URL for the post details page, but the actual URLs do not matter - URLs just should be consistent across the website.</p>
+<p>If you have any blog posts created in your database, you can test the blog posts page:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/blog_posts_preview.png" alt="" /></p>
+<p>The links on the post titles has a suffix corresponding a specific blog post identifier, for example /abcblog_post/<strong>1</strong>, /abcblog_post/<strong>2</strong>, /abcblog_post/<strong>5</strong>. The last segment of the URL is needed for loading a specific post form the database on the blog post page, which we will create in the next section.</p>
+<h3>Creating the blog post details action</h3>
+<p>The blog post details action should prepare a PHP variable containing a requested blog post object. But we first should extract a post identifier from the last segment of a page URL. For this purpose we will use the <strong>request_param()</strong> method of the Cms_ActionScope class. Here is a code of the blog post action:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function post()
+{
+  $this-&gt;data['post'] = null;
+  
+  $post_id = $this-&gt;request_param(0);
+  if (!strlen($post_id))
+    return;
+    
+  $obj = new AbcBlog_Post();
+  $this-&gt;data['post'] = $obj-&gt;find($post_id);
+}</pre></div><p>The first line of the post action creates the <strong>$post</strong> variable and assigns the NULL value to it. We recommend to follow this pattern for all variables which could be supplied by an action, because it simplifies error handling in a front-end page implementation. If a requested post does not exist in the database, the <strong>$post</strong> variable is still presented.</p>
+<p>The remaining part of the action code loads the first segment of the page URL and checks whether it is not empty. Then the code loads the blog post object from the database and updates the <strong>$post</strong> variable.</p>
+<p>To test the new action, we need to create a page and assign the <strong>abcblog:post</strong> action to it. According the blog post list page example above, the blog post page should have the "abcblog_post" url. Below is an example code of the blog post page:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/blog_post_page.png" alt="" /></p>
+<h3>Developing form handlers</h3>
+<p>We often need to process some events which could occur on a front-end website page. For example, a blog post page can have a comment form. We should be able to process the form submission in the blog action class. LemonStand API allows you to implement both AJAX and regular POST form processing methods.</p>
+<p>The post commenting feature is not implemented in our simple blog post module and we will not implement it now, because we already described all necessary techniques in the previous articles and you can do it by yourself. However we will demonstrate how you can handle the comment form submission in the blog action class.</p>
+<h4>Implementing the AJAX comment submission handler</h4>
+<p>We will start with developing the AJAX request handler. You may need to read the <a href="lemonstand_front_end_javascript_framework.html">LemonStand front-end JavaScript Framework</a> article to refresh your knowledge about implementing the AJAX requests on the front-end.</p>
+<p>Let's add a comment form to the blog post page, which we created in the previous section. Below is a example of a simplest comment form, which contains a text area and a button.</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= open_form() ?&gt;
+  &lt;textarea name=&quot;comment&quot;&gt;&lt;/textarea&gt;
+  &lt;input 
+    type=&quot;button&quot; 
+    value=&quot;Submit&quot; 
+    onclick=&quot;$(this).getForm().sendRequest('abcblog:on_addComment')&quot;/&gt;
+&lt;/form&gt;
+</pre></div><p>The important part of the example is the AJAX request initiation code, which refers the <strong>abcblog:on_addComment</strong> event handler. We need to add this handler to the blog action class. AJAX event handlers should be implemented as public class methods. There is a simple naming convention for AJAX event handlers - the function names should start with the <strong>on_</strong> prefix. Public methods of the action class which have this prefix are considered as AJAX event handlers. All other public methods are considered as actions. Below is an example of the action handler implementation:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function on_addComment()
+{
+  /*
+   * Some code for adding a comment
+   */
+  
+  /*
+   * Trigger some error
+   */
+
+  throw new Phpr_ApplicationException('Error adding the comment to the database!');
+}</pre></div><p>This implementation example does not contain any real code for adding a comment to the database. But it demonstrates the error handling approach. If your code throws an exception inside an event handler, the AJAX front-end framework will display a standard alert window, containing the error message:</p>
+<p><img src="../resources/i/wiki/extending/ajax_error_message.png" alt="" /></p>
+<h4>Implementing the POST handler</h4>
+<p>Now we will demonstrate how you can process a regular POST request for adding a blog comment. We will use the event handler which we developed for the AJAX processing, but this time we will call it manually from the blog post action. Here is a code of the update blog post action:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function post()
+{
+  $this-&gt;data['post'] = null;
+  
+  $post_id = $this-&gt;request_param(0);
+  if (!strlen($post_id))
+    return;
+    
+  $obj = new AbcBlog_Post();
+  $this-&gt;data['post'] = $obj-&gt;find($post_id);
+  
+  if (post('add_comment'))
+    $this-&gt;on_addComment();
+}</pre></div><p>The two lines in the end of the method check whether the 'add_comment' field exists in the $_POST array. If so, the code calls the event handler which we created before. We need to update our front-end form in order to add the 'add_comment' variable to the POST array and to display error messages correctly:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= open_form() ?&gt;
+  &lt;?= flash_message() ?&gt;
+
+  &lt;textarea name=&quot;comment&quot;&gt;&lt;/textarea&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; name=&quot;add_comment&quot;/&gt;
+&lt;/form&gt;</pre></div><p>Please note that we used the <a href="http://v1.lemonstand.com/docs/function_flash_message">flash_message()</a> function for displaying error messages. Also the SUBMIT element has the <strong>add_comment</strong> name, which allows our action to detect the comment form submission. Here is a screenshot of the blog post page displaying an error message</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/post_error_message.png" alt="" /></p>
+<h3>Conclusion</h3>
+<p>In this article we demonstrated how your modules can add new features to the front-end website and how you can process forms in AJAX and POST modes. The important thing about event handlers that it is possible to use a single function for processing AJAX and POST requests.</p>
+<p>You can download the updated blog module <a href="http://res.lemonstandapp.com/wiki/files/abcblog-06.zip">here</a>.</p>
+        
+        <p>Next: <a href="using_module_access_points.html">Using Module Access Points</a><br/>Previous: <a href="developing_a_simple_module.html">Guide to Build a Simple LemonStand Module</a><br/>Return to <a href="understanding_lemonstand_modules.html">Understanding LemonStand Modules</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_189"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/programming_module_actions/";
+		var disqus_title = "Programming Module CMS Actions";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

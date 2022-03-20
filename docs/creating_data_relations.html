@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Creating Data Relations</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="extending_lemonstand.html">Extending LemonStand</a></li><li><a href="working_with_the_database.html">Working with the Database</a></li><li class="last">Creating Data Relations</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Creating Data Relations</h2>
+        
+        <p>ActiveRecord allows to organize relations between data models in a very simple way. Mostly you will need to use the following types of relations: one-to-many and many-to-many. These cases are implemented in ActiveRecord as <strong>has many</strong>, <strong>belongs to</strong>, and <strong>has and belongs to many</strong> relations.</p>
+<h3>"Has Many" data relation</h3>
+<p>The <strong>has many</strong> relation is suitable when you need to link multiple records from a details table to a single record in a master table. For example, LemonStand products can have options. Each product can have many options. Products and options are different tables. To organize a connection between tables, we use an extra field (a foreign key) in the options table - <strong>product_id</strong>. This field contains an identifier of a product the option belongs to. On a database level the relation looks like follows:</p>
+<p><img src="../resources/i/wiki/extending/data_relations.gif" alt="" /></p>
+<p>It is possible to have many records in the options table, with a same value of the <strong>product_id</strong> field. Thus, we can link many options to a single product. Now we can organize a link between model PHP classes. Of course, first we need to have both model classes - for products and for options. The process of creating a simple model class is described in the <a href="working_with_the_database.html">Working with the database</a> article. If we have the Product and Option model classes, it is simple to add a <strong>has many</strong> relation to the products data model:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?
+  class Product extends Db_ActiveRecord
+  {
+    public $table_name = 'products';
+    
+    public $has_many = array(
+      'options'=&gt;array('class_name'=&gt;'Option', 'foreign_key'=&gt;'product_id')
+    );
+  }
+?&gt;</pre></div><p>The <strong>$has_many</strong> field is dedicated for declaring "has many" relations. It is an array-type field. Each element of this array defines a separate has-many relation. The array indexes ("options" in this case) define relation names, which you can use for accessing a list of related objects (see below). The array used for defining a relation should contain the following indexes:</p>
+<ul>
+<li><strong>class_name</strong> - a name of a PHP model class which represents detail records. The class should be defined in a separate file, as a usual data model class.</li>
+<li><strong>foreign_key</strong> - a name of a foreign key field in the details table.</li>
+</ul>
+<p>Also you can use some optional indexes:</p>
+<ul>
+<li><strong>order</strong> - a field name in the details table to use for ordering details records.</li>
+<li><strong>delete</strong> - indicates that detail records should be automatically deleted from the database when you delete a master record.</li>
+<li><strong>conditions</strong> - allows to filter the detail records list using a SQL query.</li>
+</ul>
+<p>If we apply all possible parameters to the options relation declaration, we will have the following relation declaration:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public $has_many = array(
+  'options'=&gt;array('class_name'=&gt;'Option', 'foreign_key'=&gt;'product_id', 'order'=&gt;'name', 'delete'=&gt;true, 'conditions'=&gt;'enabled=1')
+);</pre></div><p>Now, when we have the <strong>options</strong> data relation declared in the product class we can fetch a list of product options using the following code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  // Create a product class instance and find a record with identifier 1
+  $product = new Product();
+  $product = $product-&gt;find(1);
+  
+  // Fetch product options
+  $options = $product-&gt;options;
+  
+  // Output options
+  foreach ($options as $option)
+    echo $option-&gt;name;
+?&gt;</pre></div><p>The <strong>options</strong> class field added by the ActiveRecord engine is an object of the <strong><a href="http://v1.lemonstand.com/docs/class_db_datacollection">Db_DataCollection</a>&nbsp;</strong>class. This class allows to iterate through a list of items, and add or delete collection elements. You can find more details about the class in the <a href="api_function_and_class_reference.html">class reference</a> documentation section.</p>
+<h3>"Belongs To" data relation</h3>
+<p>The <strong>belongs to</strong> data relation represents the same data relation scenario as the <strong>has many</strong> relation, but from the details data model point of view. In case of the products and product options case explained earlier in this section, the <strong>belongs to</strong> relation could be added to the product options model. It would mean "The option belongs to a product". The relation declaration code could look like this:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?
+  class Option extends Db_ActiveRecord
+  {
+    public $table_name = 'product_options';
+    
+    public $belongs_to = array(
+      'product'=&gt;array('class_name'=&gt;'Product', 'foreign_key'=&gt;'product_id')
+    );
+  }
+?&gt;</pre></div><p>This code adds the <strong>product</strong> field to the Option class. The <strong>foreign_key</strong> parameter should contain a name of a foreign key used for binding data in the details table with records in the master table. Now if you have an Option class instance, you can easily a product the option belongs to:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?
+  // Create an option class instance and find a record with identifier 1
+  $option = new Option();
+  $option = $option-&gt;find(1);
+  
+  // Output the option product name
+  $product = $option-&gt;product;
+  echo $product-&gt;name; 
+?&gt;</pre></div><p>The <strong>product</strong> field of the Option class is an instance of the Product class. In case if there is no product record the option refers to, the product field would be <strong>null</strong>. It means that it is a good idea to check object existence before accessing their fields or methods.</p>
+<h3>"Has and Belongs To Many" data relation</h3>
+<p>The <strong>has and belongs to many</strong> data relation represents the <strong>many-to-many</strong> data layout scenario. The example of a many-to-many relation is blog posts which could belong to multiple categories. The difference between the <strong>has many</strong> and <strong>has and belongs to</strong>&nbsp;relations is that the <strong>has and belongs to</strong> relation allows same categories to be assigned to multiple blog posts. This relation requires an extra join table for storing relations between master and detail records.</p>
+<p><img src="../resources/i/wiki/extending/many_to_many_relation.gif" alt="" /></p>
+<p>The post_categories table has foreign keys which refer to both master and details table records. To implement this data layout in data models, you need two model classes - for the blog posts and for the categories. You do not need a model class for the join table. This is a definition of the blog posts model class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class Post extends Db_ActiveRecord
+  {
+    public $table_name = 'posts';
+    
+    public $has_and_belongs_to_many = array(
+      'categories'=&gt;array(
+          'class_name'=&gt;'Category',
+          'join_table'=&gt;'posts_categories',
+          'primary_key'=&gt;'post_id',
+          'foreign_key'=&gt;'category_id'
+       )
+    );
+  }
+?&gt;
+</pre></div><p>The <strong>$has_and_belongs_to_many</strong> field declaration creates the <strong>categories</strong> field in the Post class, which contains a list of all categories assigned to a post. The field is in instance of the <a href="http://v1.lemonstand.com/docs/class_db_datacollection">Db_DataCollection</a> class. The <strong>$has_and_belongs_to_many</strong> field should be an array. The ActiveRecord engine creates class fields with names matching the array index names. Each relation should be declared as an array with the following required indexes:</p>
+<ul>
+<li><strong>class_name</strong> - a name of a PHP model class representing a details record</li>
+<li><strong>join_table</strong> - a name of a database table used for linking master and detail records</li>
+<li><strong>primary_key</strong> - a name of a field in the join table, which refers to the master table record identifiers</li>
+<li><strong>foreign_key</strong> - a name of a field in the join table, which refers to the details table record identifiers</li>
+</ul>
+<p>Also you can use optional parameters - order, delete and conditions which are described in the <strong>Has Many data relation</strong>&nbsp;earlier in this section.</p>
+<h3>Extending the blog module with post categories</h3>
+<p>In this section we will continue extending a simple blog module which we started in the <a href="developing_a_simple_module.html">Developing a simple module</a> article. Now we are going to add blog categories model class and bind it to the blog posts model, which we already created earlier. We will use many-to-many data layout, and this will allow us ti bind multiple categories to each blog post.</p>
+<h4>Adding the categories and join table</h4>
+<p>As it was described in the <a href="creating_and_updating_database_tables.html">Creating and updating database tables</a> article, in order to create new database tables, we need to add a record to the version information file, and create a corresponding SQL file. After adding a line to the version.dat file it contents should look like follows:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">#1 Module initialization
+#2 Created the blog posts database table
+#3 Added the categories feature</pre></div><p>We also prepared a content for the 3.sql file update file, which should be created in the updates module directory. To prepare the queries, we created the tables using the CocoaMySQL tool. A content of the 3.sql file:</p>
+<div class="codeblock"><pre class="brush:sql; collapse: true">CREATE TABLE `abcblog_categories` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `abcblog_posts_categories` (
+  `category_id` int(11) NOT NULL default '0',
+  `post_id` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`category_id`,`post_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;</pre></div><p>In order to apply updates we need to log out and log in to the Administration Area.</p>
+<h4>Defining the category model class and adding the post-categories data relation</h4>
+<p>According the naming conventions described in the <a href="creating_data_relations.html#">Developing LemonStand modules</a> article, a suitable name for the category model class is AbcBlog_Category. A PHP file for this class should have the abcblog_category.php name, and should be placed to the module <strong>models</strong> directory. This is a definition of the AbcBlog_Category class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?
+  class AbcBlog_Category extends Db_ActiveRecord
+  {
+    public $table_name = 'abcblog_categories';
+  }
+?&gt;</pre></div><p>Now we can add the categories field to the AbcBlog_Post class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class AbcBlog_Post extends Db_ActiveRecord
+  {
+    public $table_name = 'abcblog_posts';
+
+    public $has_and_belongs_to_many = array(
+      'categories'=&gt;array(
+          'class_name'=&gt;'AbcBlog_Category',
+          'join_table'=&gt;'abcblog_posts_categories',
+          'primary_key'=&gt;'post_id', 
+          'foreign_key'=&gt;'category_id'
+       )
+    );
+  }
+?&gt;</pre></div><p>Now our blog post class has the <strong>categories</strong> field. To test whether our code works, we can create a category and add it to an existing blog post record.</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">// Create a new category object
+$category = new AbcBlog_Category();
+$category-&gt;name = 'My first category';
+$category-&gt;save();
+
+// Find a blog post with identifier 1
+$post = new AbcBlog_Post();
+$post = $post-&gt;find(1);
+
+// Add the category to the post category list
+$post-&gt;categories-&gt;add($category);
+
+// Save the post record in order to apply changes
+$post-&gt;save();</pre></div><p class="wiki_note">Please note that if you are adding a new related object to a master object relation, the new object should be saved before it is added (see the example above).</p>
+<p>If you look to the database after executing this code, you will see that the abcblog_categories contains one record</p>
+<table class="wiki_data_table">
+<thead>
+<tr><th>id</th><th>name</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>My first category</td>
+</tr>
+</tbody>
+</table>
+<p>Also, the abcblog_posts_categories table will contain a single record as well:</p>
+<table class="wiki_data_table">
+<thead>
+<tr><th>category_id</th><th>post_id</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, adding manipulating with data using model classes is a simple task. In the further articles we will demonstrate how you can add pages to the Administration Area for managing categories and blog posts. You can download the updated blog module <a href="http://res.lemonstandapp.com/wiki/files/abcblog-02.zip">here</a>.</p>
+        
+        <p><br/>Previous: <a href="creating_and_updating_database_tables.html">Creating and Updating Database Tables</a><br/>Return to <a href="working_with_the_database.html">Working with the Database</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_177"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/creating_data_relations/";
+		var disqus_title = "Creating Data Relations";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

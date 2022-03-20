@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Implementing a One-Step Checkout</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="checkout_process.html">Checkout Process</a></li><li class="last">Implementing a One-Step Checkout</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Implementing a One-Step Checkout</h2>
+        
+        <p>Let's imagine that we are building an online store for a local shop based in California, USA. They want to sell goods only to local customers, so there is no need to force customers to select the country and state during the checkout. Also, the shop accepts only one payment method - credit cards, and always shipping is always free. It is possible to build the checkout implementation which will involve only one, for entering the customer billing name and address. The whole checkout process will contain only two steps:</p>
+<ol>
+<li>Billing information page. On this page customers will enter the billing name and address.</li>
+<li>Order review page. On this page customers will check the order content and click the Place Order and Pay button.</li>
+</ol>
+<p>We require that the credit card payment method already exists and has the&nbsp;<strong>credit_card</strong> LemonStand API Code. Also, we suppose that the free shipping option exists and has the <strong>free_shipping</strong> LemonStand API Code. You can create a free shipping option basing on the Table Rate shipping method by specifying the * character in the country and state columns and 0 on the Price column.</p>
+<p>For better understanding of the one-click checkout implementation we recommend you to check how the Checkout page is organized in <a href="http://demo.lemonstandapp.com/basic/backdoor/session/handle/create/#auto_login">LemonStand Demo store</a>.</p>
+<h3>Billing Information Page</h3>
+<p>The billing information page for this scenario does not contain the country and state menus, because the country and state are already known. Instead of the drop-down menus, we can use the hidden form elements with values loaded from the database. Below is the example code of the billing information page. The page should be based on the&nbsp;<a href="shop_checkout_billing_info.html">shop:checkout_billing_info</a> action.</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;h3&gt;One-step checkout&lt;/h3&gt;
+
+&lt;?= open_form() ?&gt;
+&lt;?= flash_message() ?&gt;
+
+  &lt;label for=&quot;first_name&quot;&gt;First Name&lt;/label&gt;
+  &lt;input name=&quot;first_name&quot; value=&quot;&lt;?= h($billing_info-&gt;first_name) ?&gt;&quot; id=&quot;first_name&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;
+  
+  &lt;label for=&quot;last_name&quot;&gt;Last Name&lt;/label&gt;
+  &lt;input name=&quot;last_name&quot; value=&quot;&lt;?= h($billing_info-&gt;last_name) ?&gt;&quot; id=&quot;last_name&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;
+  
+  &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+  &lt;input id=&quot;email&quot; name=&quot;email&quot; value=&quot;&lt;?= h($billing_info-&gt;email) ?&gt;&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;
+  
+  &lt;label for=&quot;street_address&quot;&gt;Street Address&lt;/label&gt;
+  &lt;input id=&quot;street_address&quot; name=&quot;street_address&quot; type=&quot;text&quot; value=&quot;&lt;?= h($billing_info-&gt;street_address) ?&gt;&quot;/&gt;&lt;br/&gt;
+
+  &lt;label for=&quot;city&quot;&gt;City&lt;/label&gt;
+  &lt;input id=&quot;city&quot; type=&quot;text&quot; name=&quot;city&quot; value=&quot;&lt;?= h($billing_info-&gt;city) ?&gt;&quot;/&gt;&lt;br/&gt;
+
+  &lt;label for=&quot;zip&quot;&gt;Zip/Postal Code&lt;/label&gt;
+  &lt;input id=&quot;zip&quot; type=&quot;text&quot; name=&quot;zip&quot; value=&quot;&lt;?= h($billing_info-&gt;zip) ?&gt;&quot;/&gt;&lt;br/&gt;
+  
+  &lt;input type=&quot;hidden&quot; name=&quot;country&quot; value=&quot;&lt;?= Shop_Country::create()-&gt;find_by_code('US')-&gt;id ?&gt;&quot;/&gt;
+  &lt;input type=&quot;hidden&quot; name=&quot;state&quot; value=&quot;&lt;?= Shop_CountryState::create()-&gt;find_by_code('CA')-&gt;id ?&gt;&quot;/&gt;
+  
+  &lt;input
+    type=&quot;image&quot;
+    src=&quot;/resources/images/btn_next.gif&quot;
+    alt=&quot;Next&quot;
+    onclick=&quot;return $(this).getForm().sendRequest('create_local_order')&quot;/&gt;
+&lt;/form&gt;</pre></div><p>In the bottom of the page is the image link which sends the AJAX request to the server, asking to execute the&nbsp;<strong>create_local_order</strong> AJAX handler. We need to create this handler manually. This method will perform the following steps:</p>
+<ol>
+<li>Assign the billing information data to, specified by the customer in the form.</li>
+<li>Copy the billing information into the shipping information, inside the server checkout data storage (the <a href="shop_checkoutdata.html">Shop_CheckoutData</a> class).</li>
+<li>Assign the credit_card payment method to the checkout data storage</li>
+<li>Assign the free_shipping shipping option to the checkout data storage</li>
+<li>Redirect the browser to the order preview page. We suppose that the order preview page has the&nbsp;<strong>/checkout_order_preview</strong> URL.</li>
+</ol>
+<p>Below is a code of the <strong>create_local_order</strong> handler. This code should be pasted into the <strong>AJAX Handlers</strong> field of the <strong>AJAX</strong>&nbsp;tab of the Edit Page form.</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">function create_local_order($controller, $page, $params)
+{
+  if (!Shop_Cart::list_active_items())
+    throw new Exception('Your cart is empty!');
+
+  $controller-&gt;exec_action_handler('shop:on_checkoutSetBillingInfo');
+  Shop_CheckoutData::copy_billing_to_shipping();
+  Shop_CheckoutData::set_payment_method(Shop_PaymentMethod::find_by_api_code('credit_card')-&gt;id);
+  Shop_CheckoutData::set_shipping_method(Shop_ShippingOption::find_by_api_code('free_shipping')-&gt;id);
+  
+  Phpr::$response-&gt;redirect('/checkout_order_preview');
+}</pre></div><h3>Order Review page</h3>
+<p>The order review page displays the information gathered during the checkout process along with complete order information. Also this page contains the Place Order button. This page should be based on the <a href="shop_checkout_order_review.html">shop:checkout_order_review</a> action. Example of the order review page code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;h3&gt;Order Review&lt;/h3&gt;
+
+&lt;?= open_form() ?&gt;
+  &lt;?
+    $bill_to_str = $billing_info-&gt;as_string();
+    $ship_to_str = $shipping_info-&gt;as_string();
+    $items = Shop_Cart::list_active_items();
+  ?&gt;
+  
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Cart Items&lt;/th&gt;
+        &lt;th&gt;Quantity&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+        &lt;th&gt;Discount&lt;/th&gt;
+        &lt;th&gt;Total&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;? 
+        foreach ($items as $item): 
+        $options_str = $item-&gt;options_str();
+      ?&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;strong&gt;&lt;?= h($item-&gt;product-&gt;name) ?&gt;&lt;/strong&gt;
+          &lt;? if (strlen($options_str)): ?&gt;
+            &lt;br/&gt;&lt;?= h($options_str) ?&gt;.
+          &lt;? endif ?&gt;
+          &lt;? if ($item-&gt;extra_options): ?&gt;
+            &lt;? foreach ($item-&gt;extra_options as $option): ?&gt;
+              &lt;br/&gt;
+              + &lt;?= h($option-&gt;description) ?&gt;:
+              &lt;?= format_currency($option-&gt;price) ?&gt;
+            &lt;? endforeach ?&gt;
+          &lt;? endif ?&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;?= $item-&gt;quantity ?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;?= format_currency($item-&gt;single_price()) ?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;?= format_currency($item-&gt;discount()) ?&gt;&lt;/td&gt;
+        &lt;th&gt;&lt;?= format_currency($item-&gt;total_price()) ?&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;? endforeach ?&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+  
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Subtotal: &lt;/td&gt;
+      &lt;th&gt;&lt;?= format_currency($subtotal) ?&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Discount: &lt;/td&gt;
+      &lt;th&gt;&lt;?= format_currency($discount) ?&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;? foreach ($product_taxes as $tax): ?&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;?= ($tax-&gt;name) ?&gt;: &lt;/td&gt;
+        &lt;th&gt;&lt;?= format_currency($tax-&gt;total) ?&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;? endforeach ?&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shipping: &lt;/td&gt;
+      &lt;th&gt;&lt;?= format_currency($shipping_quote) ?&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;? foreach ($shipping_taxes as $tax): ?&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Shipping tax (&lt;?= ($tax-&gt;name) ?&gt;): &lt;/td&gt;
+        &lt;th&gt;&lt;?= format_currency($tax-&gt;rate) ?&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;? endforeach ?&gt;
+  &lt;/table&gt;
+  
+  &lt;h3&gt;Total&lt;/h3&gt;
+  &lt;p&gt;&lt;?= format_currency($total) ?&gt;&lt;/p&gt;
+  
+  &lt;input
+    type=&quot;image&quot;
+    src=&quot;/resources/images/btn_place_order.gif&quot;
+    alt=&quot;Place Order and Pay&quot;
+    onclick=&quot;return $(this).getForm().sendRequest('shop:on_checkoutPlaceOrder')&quot;/&gt;
+&lt;/form&gt;</pre></div><h4>See also:</h4>
+<ul>
+<li><a href="class_shop_country.html">Shop_Country class</a></li>
+<li><a href="class_shop_countrystate.html">Shop_CountryState class</a></li>
+<li><a href="class_shop_paymentmethod.html">Shop_PaymentMethod class</a></li>
+<li><a href="class_shop_shippingoption.html">Shop_ShippingOption class</a></li>
+</ul>
+        
+        <p><br/>Previous: <a href="implementing_the_step_by_step_checkout.html">Implementing the Step-By-Step Checkout</a><br/>Return to <a href="checkout_process.html">Checkout Process</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_148"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/implementing_one_step_checkout/";
+		var disqus_title = "Implementing a One-Step Checkout";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

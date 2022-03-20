@@ -1,0 +1,135 @@
+/* -------------------- Grid -------------------- */
+
+
+.wrap1 {
+	float: left;
+	width: 80px;
+}
+
+.wrap2 {
+	float: left;
+	width: 160px;
+}
+
+.wrap3 {
+	float: left;
+	width: 240px;
+}
+
+.wrap4 {
+	float: left;
+	width: 320px;
+}
+
+.wrap5 {
+	float: left;
+	width: 400px;
+}
+
+.wrap6 {
+	float: left;
+	width: 480px;
+}
+
+.wrap7 {
+	float: left;
+	width: 560px;
+}
+
+.wrap8 {
+	float: left;
+	width: 640px;
+}
+
+.wrap9 {
+	float: left;
+	width: 720px;
+}
+
+.wrap10 {
+	float: left;
+	width: 800px;
+}
+
+.wrap11 {
+	float: left;
+	width: 880px;
+}
+
+.wrap12 {
+	float: left;
+	width: 960px;
+}
+
+
+.col1 {
+	float: left;
+	width: 60px;
+	padding: 0 10px;
+}
+
+.col2 {
+	float: left;
+	width: 140px;
+	padding: 0 10px;
+}
+
+.col3 {
+	float: left;
+	width: 220px;
+	padding: 0 10px;
+}
+
+.col4 {
+	float: left;
+	width: 300px;
+	padding: 0 10px;
+}
+
+.col5 {
+	float: left;
+	width: 380px;
+	padding: 0 10px;
+}
+
+.col6 {
+	float: left;
+	width: 460px;
+	padding: 0 10px;
+}
+
+.col7 {
+	float: left;
+	width: 540px;
+	padding: 0 10px;
+}
+
+.col8 {
+	float: left;
+	width: 620px;
+	padding: 0 10px;
+}
+
+.col9 {
+	float: left;
+	width: 700px;
+	padding: 0 10px;
+}
+
+.col10 {
+	float: left;
+	width: 780px;
+	padding: 0 10px;
+}
+
+.col11 {
+	float: left;
+	width: 860px;
+	padding: 0 10px;
+}
+
+.col12 {
+	float: left;
+	width: 940px;
+	padding: 0 10px;
+}

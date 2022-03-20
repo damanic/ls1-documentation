@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Guide for Developing a Payment Module</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="extending_lemonstand.html">Extending LemonStand</a></li><li class="last">Guide for Developing a Payment Module</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Guide for Developing a Payment Module</h2>
+        
+        <p>LemonStand payment modules are classes defined in PHP scripts located in the <strong>payment_types</strong> directory of a LemonStand module. Technically payment module classes can belong to the Shop module or to any other custom module which you develop. You can develop your own payment module classes in order to provide LemonStand integration with specific payment gateways.&nbsp;Any LemonStand module can host any number of payment modules. Before you begin developing a new payment module you should choose whether you want to develop it as a Shop module class, or as a class of a separate custom module. You can choose the first option if you are developing a new payment module for a private use. The last option will allow you to share the module through the LemonStand marketplace.&nbsp;</p>
+<h3>Structure of a payment module</h3>
+<p>Payment module classes should extend the <strong>Shop_PaymentType</strong> class. This abstract PHP class contains all methods sufficient for developing any payment module. By overriding methods of this base class you can add specific features to your payment module.</p>
+<p>There is a naming convention, which allows LemonStand to load payment module classes automatically. Payment module class names should have the following structure: <strong>ModuleCode_</strong>PaymentModuleName<strong>_Payment</strong>. The <strong>ModuleCode_</strong> prefix and the <strong>_Payment</strong> suffix are required. Between the prefix and suffix you use any suitable name, describing the payment module. For example, in this article we will demonstrate the process of developing a payment module for the <a href="http://www.beanstream.com/">Beanstream</a> payment gateway. This gateway has two integration options - the basic HTTP method and the advanced method, also called the server-to-server method. A suitable class name for the Beanstream basic integration method is Shop_<strong>Beanstream_Basic</strong>_Payment, if you are going to host it in the Shop module, or MyModule_<strong>Beanstream_Basic</strong>_Payment, if you are going to host it in your custom module with the MyModule code.</p>
+<p>Each payment module class should be defined in a separate file, with the name matching the class name it contains, written in lower case. If the class name was the <strong>Shop_Beanstream_Basic_Payment</strong>, a corresponding file name, would be <strong>shop_beanstream_basic_payment.php</strong>.</p>
+<p>Aside from the payment module PHP file, payment modules can also have a directory, with name matching the module PHP file name. The directory should be located in the same directory with the module PHP file, i.e. in the <strong>modules/shop/payment_types</strong> directory, in case if the payment module belongs to the Shop module, or <strong>modules/mymodule/payment_types</strong>, in case if the module belongs to a custom module with the MyModule code. If a payment module class name is <strong>shop_beanstream_basic_payment.php</strong>, than the corresponding module directory name is <strong>shop_beanstream_basic_payment</strong>. Module directories can contain HTML and XML files required for the module. Below is a screenshot of the <strong>modules/shop/payment_types</strong> directory. On the screenshot you can see some payment module PHP files and corresponding directories.</p>
+<p><img src="../resources/i/wiki/extending/payment_types_directory.png" alt="" /></p>
+<h3>Types of the payment gateway integration</h3>
+<p>There are two generic types of payment integration methods. The <strong>redirection method</strong> implies a payment form located on the payment gateway server. When a customer clicks the Pay button on your store, he is redirected away from the store to the secure payment form hosted on the payment gateway server. PayPal Standard and Authorize.Net Simple Integration Method are examples of the redirection integration approach.</p>
+<p>With another integration method, which is sometimes called the <strong>server-to-server integration method</strong>, the payment form is located on your own server. When a customer clicks the Pay button, the payment module sends a request to the payment gateway in background, and then displays the transaction registration result to the customer. Customers do not leave your website, and the method provides more consistent user experience. PayPal Pro and Authorize.net Advanced Integration Method are examples of the server-to-server integration.</p>
+<p>You can implement both integration methods with LemonStand payment modules. Actually, most of the existing LemonStand payment modules have two versions, corresponding the redirection and server-to-server integration. If you are going to implement both integration methods for a single payment gateway, you will need to develop two different classes. For example, for the Beanstream payment gateway there are two payment module classes: Shop_Beanstream_Basic_Payment and Shop_Beanstream_ServerToServer_Payment.</p>
+<p>You can find the Beanstream payment modules which we refer in this article in the following files:</p>
+<ul>
+<li>/modules/shop/payment_types/shop_beanstream_basic_payment.php - Beanstram basic (redirection) integration method.</li>
+<li>/modules/shop/payment_types/shop_beanstream_servertoserver_payment.php - Beanstram server-to-server integration method.</li>
+</ul>
+<h3>Common payment module functions</h3>
+<p>Regardless of what specific integration type (redirection or server-to-server) a payment module implements, there is a number of common function each payment module should provide. Firstly, each module should provide the information about itself - the payment gateway name, and payment module description. Also each module should have a configuration form, which LemonStand administrators will use for creating a payment option and setting module-specific parameters. All required payment module functions should be implemented as class methods, which we are describing below.</p>
+<h4>Defining a payment module class</h4>
+<p>Below is a partial declaration of the payment module class, which implements the Beansream Basic integration. The code defines the class and a method which returns the module specific information.</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class Shop_Beanstream_Basic_Payment extends Shop_PaymentType
+  {
+    public function get_info()
+    {
+      return array(
+        'name'=&gt;'Beanstream Basic Integration',
+        'description'=&gt;'A basic HTTP POST integration. The customer&rsquo;s browser will be pointed to the Beanstream server at the time of processing.'
+      );
+    }
+  }
+?&gt;</pre></div><p>The <strong>get_info()</strong> method should be declared in all payment modules. The method should return an array containing the module name and description. This information will be presented in the Add Payment Method form in the Administration Area:</p>
+<p><img src="../resources/i/wiki/extending/add_payment_method_form.png" alt="" /></p>
+<p>The resulting array can also contain elements specific for the redirection and server-to-server integration methods. We will explain the possible array elements in corresponding articles.</p>
+<h4>Building the payment module configuration form</h4>
+<p>Another required payment module class method is the <strong>build_config_ui()</strong>. This method builds the module configuration form and it is similar to the <strong>define_form_fields()</strong> method of the model class, which we described in the <a href="administration_area_forms.html">Forms</a> article. In this method you can add tabs and fields to the module configuration form. All field values are saved automatically and you can access them inside the payment processing code. In this method you should add only module-specific fields, for example fields for API user name and password. All fields which are common for all payment modules, for example payment method name, description and checkboxes for selecting countries the method is applicable for, are added by LemonStand automatically. The set of fields depends on specific payment gateway and you need to refer to your payment gateway API description in order to find out which configuration fields you need to create on the configuration form.</p>
+<p>Below is a definition of the <strong>build_config_ui()</strong> method of the Beanstream Basic Integration payment module.</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function build_config_ui($host_obj, $context = null)
+{
+  if ($context !== 'preview')
+  {
+    $host_obj-&gt;add_field('merchant_id', 'Merchant ID')-&gt;tab('Configuration')-&gt;renderAs(frm_text)-&gt;
+      comment('Include the 9-digit Beanstream ID number here.', 'above')-&gt;validation()-&gt;fn('trim')-&gt;
+      required('Please provide Merchant ID.');
+  }
+
+  $host_obj-&gt;add_field('transaction_type', 'Transaction Type')-&gt;tab('Configuration')-&gt;renderAs(frm_dropdown)-&gt;
+    comment('The type of credit card transaction you want to perform.', 'above');
+  
+  $host_obj-&gt;add_field('order_status', 'Order Status')-&gt;tab('Configuration')-&gt;renderAs(frm_dropdown)-&gt;
+    comment('Select status to assign the order in case of successful payment.', 'above', true);
+}</pre></div><p>The method receives 2 parameters - the Active Record object, which should be used for adding form fields, and a form context. If the form context value is <strong>preview</strong>, the method should not create any form fields which contain API user names or passwords, because the payment gateway preview form is available in read-only mode from the Order Preview page. The condition in the beginning of the example code excludes the Merchant ID field from the Preview form. For example, below is the preview form of the PayPal Standard payment module, which LemonStand administrators can access from the Shop/Orders/Order Preview page.</p>
+<p><img src="../resources/i/wiki/extending/paypal_preview_form.png" alt="" /></p>
+<p>The example code creates 3 fields on the configuration form - <strong>Merchant ID</strong>, <strong>Transaction Type</strong> and <strong>Order Status</strong>. The Merchant Id field is a gateway-specific field, which is required in order to register a transaction on the Beanstream payment gateway. The Transaction Type field is also a gateway-specific field. It allows to choose a specific operation to be applied to a credit card. Many payment gateways allow to specify a transaction type in the transaction registration request. The Order Status field allows to select a status the order should be sent after successful transaction registration. With rare exception you will need to create this form field on all payment module forms. Below is a screenshot of the Configuration tab of the module configuration form:</p>
+<p><img src="../resources/i/wiki/extending/beanstream_config_form.png" alt="" /></p>
+<p>To add fields to the configuration form, the code inside the <strong>build_config_ui()</strong> method should call the <strong>add_field()</strong> method of the object, passed in the first method parameter. This method has two parameters - the field identifier and the field title. Field identifiers should be compatible with PHP variable names - they should not contain spaces, and they can contain only Latin characters and numbers. Using the optional third parameter you can specify a field placement on the form. Allowed parameter values are <strong>left</strong>, <strong>right</strong> and <strong>full</strong> (it is a default value).</p>
+<p>The <strong>add_field()</strong> method returns an object of the <a href="../api/class/db_formfielddefinition/index.html">Db_FormFieldDefinition</a> class, which you can use for configuring a field appearance and validation rules. The <strong>renderAs()</strong> method allows to specify a preferable control type for a field. You can find a list of possible control types in the <a href="../api/class/db_formfielddefinition/index.html">Db_FormFieldDefinition</a> class description.</p>
+<p>The code above sets the <strong>drop-down</strong> control type for the <strong>order_status</strong> and transaction_type form fields. For each drop-down field there has to be defined a method returning a list of options. The method name should have the following structure: get_<strong>field_name</strong>_options. Thus, for the <strong>order_status</strong> and transaction_type valid method names are <strong>get_order_status_options</strong> and <strong>get_transaction_type_options</strong>. The methods should have a single parameter with default value -1. Below is an example of the both methods:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function get_transaction_type_options($current_key_value = -1)
+{
+  $options = array(
+    'PA'=&gt;'Pre-authorization',
+    'P'=&gt;'Purchase'
+  );
+  
+  if ($current_key_value == -1)
+    return $options;
+
+  return isset($options[$current_key_value]) ? $options[$current_key_value] : null;
+}
+
+public function get_order_status_options($current_key_value = -1)
+{
+  if ($current_key_value == -1)
+    return Shop_OrderStatus::create()-&gt;order('name')-&gt;find_all()-&gt;as_array('name', 'id');
+
+  return Shop_OrderStatus::create()-&gt;find($current_key_value)-&gt;name;
+}</pre></div><p>The methods return arrays of available options as associative arrays with indexes matching option identifiers and values matching option titles. For example, the get_transaction_type_options() method, which returns a list of options for the Transaction Type field, returns the following array:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">array(
+  'PA'=&gt;'Pre-authorization',
+  'P'=&gt;'Purchase'
+);
+</pre></div><p>The array key values (PA and P) correspond the Beanstream API documentation for possible transaction types. LemonStand renders this field as a drop-down menu with options corresponding the array elements:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/payment_merchant_id_field.png" alt="" /></p>
+<p>Methods which return option lists, should check the method parameter value. If the parameter value is equal to -1, a method should return all possible options. If the parameter value is not -1, the method should try to find an option corresponding the parameter value, and return the option name (title). You can find conditions examining the <strong>$current_key_value</strong> parameter value in the code examples above.</p>
+<h4>Validating the configuration form data</h4>
+<p>All payment module classes should override the <strong>validate_config_on_save()</strong> method. Inside this method a module can check configuration field values before the configuration is saved to the database. The method has a single parameter - an object, with fields matching form fields defined in the <strong>build_config_ui()</strong> method. The method should be implemented even if you are not going to perform any parameter validation. In this case you can leave it empty. Below is a code example, which checks the merchant_id field:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function validate_config_on_save($host_obj)
+{
+  if ($host_obj-&gt;merchant_id == 'some_false_value')
+    $host_obj-&gt;field_error('merchant_id', 'Please specify a valid value in the Merchant Id field.');
+}</pre></div><h4>Processing gateway response</h4>
+<p>Another method which must be implemented in all payment method classes is the <strong>process_payment_form()</strong>. This method is called by LemonStand when it receives a response from a payment gateway. We will describe the method implementation for the redirection and server-to-server integration types in the corresponding articles.</p>
+<h4>Initializing the configuration form field values</h4>
+<p>You can initialize values of the configuration form fields using the <strong>init_config_data()</strong> optional method. The values will be applied when a payment method based on your payment module is created. The method receives a single parameter, which you can use for setting values to fields defined in the <strong>build_config_ui()</strong> method. Example:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function init_config_data($host_obj)
+{
+  $host_obj-&gt;merchant_id = '000000';
+}
+</pre></div><h4>Disallowing an order status deletion</h4>
+<p>If your payment method configuration form has the <strong>Order Status</strong> field, you should disallow LemonStand administrators to delete an order status the payment method refers to, in order to keep the system integrity. The <strong>status_deletion_check()</strong> method is called by LemonStand each time when somebody tries to delete an order status on the System/Order Route page. You can implement the method in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function status_deletion_check($host_obj, $status)
+{
+  if ($host_obj-&gt;order_status == $status-&gt;id)
+    throw new Phpr_ApplicationException('This status cannot be deleted because it is used in the Beanstream Basic payment method.');
+}</pre></div><h3 id="partial-templates">Payment form partial templates</h3>
+<p>Each payment gateway should provide template files for the <strong>payment form partial</strong>, containing a payment form which will be displayed on the front-end store. There should be two template files - for PHP and Twig templating engines. When LemonStand finds a new payment module, it creates a new partial from the template file. The partial name depends on a payment module name. For example, for the Beanstream Basic payment module, LemonStand creates a partial with the "payment:beanstream_basic" name. Store developers can modify payment partials for styling purposes.</p>
+<p>The payment form partial is automatically rendered by LemonStand when the <strong>render_payment_form()</strong> method is called from the <a href="developing_payment_modules.html#">Pay page</a>. The partial template files should have the <strong>front_end_partial.htm</strong>&nbsp;and <strong>front_end_partial.twig</strong> names and should be placed to the payment method directory, which we mentioned earlier in the <strong>Structure of a payment module</strong> section of this article.</p>
+<p>Please note that LemonStand creates partials from template files only once, if it cannot find a payment partial for a specific payment method. LemonStand never updates contents of existing payment form partials, allowing LemonStand administrators to customize them. During the payment module development process, if you need to update a payment form partial content, you may need to delete the corresponding partial manually (on the CMS/Partials page), and then update the partial template file. Then LemonStand will re-create the partial from the template file as soon as you open the Pay page.</p>
+<p>We will describe the template files content for redirection and server-to-server integration methods in the following articles:</p>
+<ul class="wiki_toc"><li><a href="redirection_integration_method.html">Using a Redirection Integration Method</a></li><li><a href="server_to_server_integration_method.html">Using a Server-to-Server Integration Method</a></li></ul><h3>Implementing the customer payment profiles support</h3>
+<p>If the payment gateway supports tokenization, you can implement the <a href="implementing_customer_payment_profiles.html">customer payment profile</a> support your payment module. In order a payment module to support payment profiles, you should implement the following methods in the payment module class:</p>
+<ul>
+<li>public function supports_payment_profiles() - the method should return TRUE.</li>
+<li>public function update_customer_profile($host_obj, $customer, $data) - updates or creates a payment profile on the payment gateway and in LemonStand database.</li>
+<li>pay_from_profile($host_obj, $order, $back_end = false, $redirect = true) - pays an order from an existing payment profile.</li>
+<li>delete_customer_profile($host_obj, $customer, $profile) - deletes a payment profile from the payment gateway</li>
+</ul>
+<p>if you are developing a server-to-server payment method, in the&nbsp;<strong>process_payment_form()</strong> method you should examine the&nbsp;<strong>create_customer_profile</strong>&nbsp;element in the input <strong>$data</strong> array, and if it is set - create (or update) a payment profile.&nbsp;Also you should create template files for the payment profile partial, containing the form for creating and updating the payment profile. The form should contain gateway-specific fields for entering the credit card details. The template files should be placed to the payment module directory. There should be two templates - for PHP and Twig templating engines. The template file names should be&nbsp;<strong>payment_profile_partial.htm </strong>and<strong>&nbsp;<strong>payment_profile_partial.twig</strong></strong>. Below is a typical payment profile form partial content:&nbsp;</p>
+<div class="code-tabs" id="payment_profile_parital"><ul><li><a href="developing_payment_modules.html#payment_profile_parital-php">PHP</a></li><li><a href="developing_payment_modules.html#payment_profile_parital-twig">Twig</a></li></ul><div id="payment_profile_parital-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;p&gt;Please provide your credit card information.&lt;/p&gt;
+
+&lt;?= open_form() ?&gt;
+  &lt;?= flash_message() ?&gt;
+  &lt;label for=&quot;FIRSTNAME&quot;&gt;Cardholder First Name&lt;/label&gt;
+  &lt;input autocomplete=&quot;off&quot; name=&quot;FIRSTNAME&quot; value=&quot;&quot; id=&quot;FIRSTNAME&quot; type=&quot;text&quot; class=&quot;text&quot;/&gt;&lt;br/&gt;
+    
+  &lt;label for=&quot;LASTNAME&quot;&gt;Cardholder Last Name&lt;/label&gt;
+  &lt;input autocomplete=&quot;off&quot; name=&quot;LASTNAME&quot; value=&quot;&quot; id=&quot;LASTNAME&quot; type=&quot;text&quot; class=&quot;text&quot;/&gt;&lt;br/&gt;
+
+  &lt;label for=&quot;ACCT&quot;&gt;Credit Card Number&lt;/label&gt;
+  &lt;input autocomplete=&quot;off&quot; name=&quot;ACCT&quot; value=&quot;&quot; id=&quot;ACCT&quot; type=&quot;text&quot; class=&quot;text&quot;/&gt;&lt;br/&gt;
+    
+  &lt;label for=&quot;EXPDATE_MONTH&quot;&gt;Expiration Date - Month&lt;/label&gt;
+  &lt;select autocomplete=&quot;off&quot; name=&quot;EXPDATE_MONTH&quot; id=&quot;EXPDATE_MONTH&quot;&gt;
+    &lt;? for ($month=1; $month &lt;= 12; $month++): ?&gt;
+      &lt;option value=&quot;&lt;?= $month ?&gt;&quot;&gt;&lt;?= $month ?&gt;&lt;/option&gt;
+    &lt;? endfor ?&gt; 
+  &lt;/select&gt;
+
+  &lt;label for=&quot;EXPDATE_YEAR&quot;&gt;Expiration Date - Year&lt;/label&gt;
+  &lt;select autocomplete=&quot;off&quot; name=&quot;EXPDATE_YEAR&quot; id=&quot;EXPDATE_YEAR&quot;&gt;
+    &lt;?
+      $startYear = Phpr_DateTime::now()-&gt;getYear();
+      for ($year=$startYear; $year &lt;= $startYear + 10; $year++): 
+    ?&gt;
+      &lt;option value=&quot;&lt;?= $year ?&gt;&quot;&gt;&lt;?= $year ?&gt;&lt;/option&gt;
+    &lt;? endfor ?&gt; 
+  &lt;/select&gt;&lt;br/&gt;
+
+  &lt;label for=&quot;CVV2&quot;&gt;CVV2&lt;/label&gt;
+  &lt;input autocomplete=&quot;off&quot; name=&quot;CVV2&quot; value=&quot;&quot; id=&quot;CVV2&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;
+  
+  &lt;input type=&quot;button&quot; onclick=&quot;return $(this).getForm().sendRequest('shop:on_updatePaymentProfile')&quot; value=&quot;Submit&quot;/&gt;
+&lt;/form&gt;</pre></div></div><div id="payment_profile_parital-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;p&gt;Please provide your credit card information.&lt;/p&gt;
+
+{{ open_form() }}
+  {{ flash_message() }}
+  &lt;label for=&quot;FIRSTNAME&quot;&gt;Cardholder First Name&lt;/label&gt;
+  &lt;input autocomplete=&quot;off&quot; name=&quot;FIRSTNAME&quot; value=&quot;&quot; id=&quot;FIRSTNAME&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;
+
+  &lt;label for=&quot;LASTNAME&quot;&gt;Cardholder Last Name&lt;/label&gt;
+  &lt;input autocomplete=&quot;off&quot; name=&quot;LASTNAME&quot; value=&quot;&quot; id=&quot;LASTNAME&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;
+
+  &lt;label for=&quot;ACCT&quot;&gt;Credit Card Number&lt;/label&gt;
+  &lt;input autocomplete=&quot;off&quot; name=&quot;ACCT&quot; value=&quot;&quot; id=&quot;ACCT&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;
+
+  &lt;label for=&quot;EXPDATE_MONTH&quot;&gt;Expiration Date - Month&lt;/label&gt;
+  &lt;select autocomplete=&quot;off&quot; name=&quot;EXPDATE_MONTH&quot; id=&quot;EXPDATE_MONTH&quot;&gt;
+    {% for month in 1..12 %}
+      &lt;option value=&quot;{{ month }}&quot;&gt;{{ month }}&lt;/option&gt;
+    {% endfor %}
+  &lt;/select&gt;
+
+  &lt;label for=&quot;EXPDATE_YEAR&quot;&gt;Expiration Date - Year&lt;/label&gt;
+  &lt;select autocomplete=&quot;off&quot; name=&quot;EXPDATE_YEAR&quot; id=&quot;EXPDATE_YEAR&quot;&gt;
+    {% set startYear = method('Phpr_DateTime', 'now').getYear() %}
+    {% for year in startYear..(startYear+10) %}
+      &lt;option value=&quot;{{ year }}&quot;&gt;{{ year }}&lt;/option&gt;
+    {% endfor %}
+  &lt;/select&gt;
+
+  &lt;label for=&quot;CVV2&quot;&gt;CVV2&lt;/label&gt;
+  &lt;input autocomplete=&quot;off&quot; name=&quot;CVV2&quot; value=&quot;&quot; id=&quot;CVV2&quot; type=&quot;text&quot;/&gt;&lt;br/&gt;
+
+  &lt;input type=&quot;button&quot; onclick=&quot;return $(this).getForm().sendRequest('shop:on_updatePaymentProfile')&quot; value=&quot;Submit&quot;/&gt;
+&lt;/form&gt;</pre></div></div></div><p>Implementation of the listed methods depends on a specific payment gateway API, but there are some parts common for all payment gateways.</p>
+<h4>Creating/updating a customer payment profile</h4>
+<p>In the update_customer_profile() you should define code for updating or creating a customer payment profile. Inside the method you first need to check whether a customer profile exists with the <strong>$host_obj-&gt;find_customer_profile($customer)</strong> call and then - update existing or create new profile. Below is a typical template of the&nbsp;update_customer_profile() method for a server-to-server payment module.</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function update_customer_profile($host_obj, $customer, $data)
+{
+  /*
+   * Find the existing profile
+   */
+  
+  $profile = $host_obj-&gt;find_customer_profile($customer);
+  $new_profile_required = !$profile;
+
+  /*
+   * Validate input data - examine the $data array which contains values of the Create/Update Payment Profile form
+   * (the payment_profile_partial.htm partial) and trow an exception if needed.
+   */
+  
+  ...
+  
+  /*
+   * Create or update the profile
+   */
+
+  if ($new_profile_required)
+  {
+    /*
+     * Profile is not found or empty - create new profile using the payment gateway API
+     */
+    
+    ...
+
+    /*
+     * Create new payment profile with the $host_obj-&gt;init_customer_profile() call and
+     * set the profile data. Profile data is a gateway specific values, which you can
+     * use in the subsequent operations with the payment profile.
+     */
+
+    $profile = $host_obj-&gt;init_customer_profile($customer);
+
+    $profile_data = array(
+      ... create payment gateway specific values here ...
+    );
+    
+    /*
+     * Save the profile data along with the last 4 digits of the credit card number.
+     * The API will truncate the CC number even if you provide more than 4 digits.
+     */
+    
+    $profile-&gt;set_profile_data($profile_data, '1234');
+  } else
+  {
+    /*
+     * Profile exists - update the profile on the gateway with the gateway API. 
+     */
+
+    ...
+    
+    /*
+     * Update the last 4 digits of the credit card stored in the profile
+     */
+  
+    $profile-&gt;set_cc_num('1234');
+  }
+  
+  return $profile;
+}</pre></div><p>Redirection payment methods usually process payment profiles on the gateway side and do not require implementing this method.</p>
+<h4>Paying from an existing profile</h4>
+<p>In the&nbsp;pay_from_profile() method you should define code for paying an order from an existing payment profile. The method should first check whether the payment profile exists for a specified customer, and then use the payment gateway API for paying the order from this profile. Below is a typical template of the&nbsp;pay_from_profile() method:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function pay_from_profile($host_obj, $order, $back_end = false, $redirect = true)
+{
+  /*
+   * Find customer profile and throw an exception if it doesn't exist
+   */
+  
+  $profile = $host_obj-&gt;find_customer_profile($order-&gt;customer);
+  if (!$profile)
+    throw new Phpr_ApplicationException('Payment profile not found');
+
+  try
+  {
+    /*
+     * Use the payment gateway API to pay with an existing payment profile. Use gateway specific
+     * information saved in the payment profile data array.
+     */
+
+    ...
+
+    /*
+     * Successful payment. Set order status and mark it as paid.
+     */
+
+    $this-&gt;log_payment_attempt($order, 'Successful payment', 1, $this-&gt;prepare_fields_log($request-&gt;getPostString()), $response_array, $response_text);
+    
+    /*
+     * Change order status
+     */
+
+    Shop_OrderStatusLog::create_record($host_obj-&gt;order_status, $order);
+
+    /*
+     * Mark order as paid
+     */
+    $order-&gt;set_payment_processed();
+  } catch (exception $ex)
+  {
+    /*
+     * Log the error
+     */
+  
+    $this-&gt;log_payment_attempt($order, $ex-&gt;getMessage(), 0, $this-&gt;prepare_fields_log($request-&gt;getPostString()), array(), null);
+
+    throw new Phpr_ApplicationException($ex-&gt;getMessage());
+  }
+}
+</pre></div><h4>Deleting a payment profile&nbsp;</h4>
+<p>Inside the&nbsp;delete_customer_profile() your payment module should use the payment gateway API for deleting a module from the payment gateway. Deleting the profile from LemonStand database is not needed - LemonStand does it automatically. Module template:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function delete_customer_profile($host_obj, $customer, $profile)
+{
+  /*
+   * Use the payment gateway API to delete the profile from the gateway.
+   * Use the gateway specific data stored in the profile data array.
+   */
+
+  $request = new PaymentGatewayRequest();
+  $response = $request-&gt;deleteCustomerProfile($profile-&gt;profile_data['customer_profile_id']);
+  if (!$response-&gt;isOk())
+    throw new Phpr_ApplicationException('Error deleting customer payment profile. '.$response-&gt;getMessageText());
+}
+</pre></div>
+        
+        <p>Next: <a href="redirection_integration_method.html">Using a Redirection Integration Method</a><br/>Previous: <a href="handling_lemonstand_events.html">Handling LemonStand Events</a><br/>Return to <a href="extending_lemonstand.html">Extending LemonStand</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_192"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/developing_payment_modules/";
+		var disqus_title = "Guide for Developing a Payment Module";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

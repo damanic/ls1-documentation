@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Standard Page Elements</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="administrative_dashboard.html">Administrative Dashboard</a></li><li><a href="adding_a_back_end_user_interface.html">Adding a Back-End User Interface</a></li><li class="last">Standard Page Elements</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Standard Page Elements</h2>
+        
+        <p>Administration Area pages provided by third-party modules should be consistent and visually compatible with pages supplied by native LemonStand modules. LemonStand framework helps to achieve this goal by automating many common tasks like generating buttons, lists, forms and data preview forms (read-only forms). You do not need to write any HTML markup for such page elements. For example, to output the Orders page we have coded manually only the indicators area, which displays the total number of orders and last order information. All other elements were generated by different LemonStand behaviors, which we will describe later in this guide.</p>
+<p><img src="../resources/i/wiki/extending/page_standard_elements.png" alt="" /></p>
+<h3>Breadcrumbs</h3>
+<p>Breadcrumbs should display a path to a current page. Each page name in the path, excepting the current page, should have a link to a corresponding Administration Area page.</p>
+<p><img src="../resources/i/wiki/extending/standard_breadcrumbs.png" alt="" /></p>
+<p>Breadcrumbs should be displayed on the top of a page. To output breadcrumbs you should use the a code similar to the following:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;ul class=&quot;breadcrumbs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;&lt;?= url('shop/orders') ?&gt;&quot;&gt;Orders&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&lt;?= url('shop/orders/preview/'.$order_id) ?&gt;&quot;&gt;Order Preview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;?= $this-&gt;app_page_title ?&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre></div><p>The <strong>url()</strong> function has been described in the <a href="adding_a_back_end_user_interface.html">Adding a back-end user interface</a> article.</p>
+<h3>Indicators</h3>
+<p>We use indicators for displaying important data above forms and lists:</p>
+<p><img src="../resources/i/wiki/extending/standard_indicators.png" alt="" /></p>
+<p>To output indicators please use a code similar to the following:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;div class=&quot;scoreboardReport&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;h3&gt;Total number of orders&lt;/h3&gt;
+      &lt;p&gt;29&lt;/p&gt;
+      &lt;p class=&quot;description&quot;&gt;
+        Some description text
+      &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;last&quot;&gt;
+      &lt;h3&gt;Last order&lt;/h3&gt;
+      &lt;p&gt;&lt;a href=&quot;&lt;?= url('shop/orders/preview/100038') ?&gt;&quot;&gt;# 100038&lt;/a&gt;&lt;/p&gt;
+      &lt;p class=&quot;description&quot;&gt;
+        Some description text
+      &lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></div><p>Please note that the LI element corresponding to the last indicator has the "last" CSS class assigned. It removes the gray border after the indicator.</p>
+<p>When you output indicators above a toolbar (a set of buttons), you should wrap the indicators element into another DIV element with the "minorPadding" CSS class assigned:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;div class=&quot;minorPadding&quot;&gt;
+  &lt;div class=&quot;scoreboardReport&quot;&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div><h3>Buttons</h3>
+<p>There are two types of buttons in LemonStand - link buttons and AJAX buttons. AJAX buttons will be described in the <a href="using_ajax.html">Using AJAX</a>. To output a link button use the following markup:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= backend_button('Create order', url('/shop/orders/create')) ?&gt;</pre></div><p>Also it is possible to call a JavaScript function when user clicks a button:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= backend_button('Click me!', array('href'=&gt;'#', 'onclick'=&gt;&quot;alert('Hi!'); return false&quot;)) ?&gt;</pre></div><p>Sometimes you will need to create right-aligned buttons. For example, we always place the Delete button on the right side. Use the <strong>right</strong> CSS class for it:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= backend_button('Click me!', array('class'=&gt;'right')) ?&gt;</pre></div><p>Buttons are floating elements, and you always need to add a clearing element after the buttons markup:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</pre></div><p>LemonStand supports default buttons. Their <strong>onclick</strong>&nbsp;handler code is triggered when a user presses <strong>ctrl+enter</strong> key combination. To create a default button, add the <strong>default</strong>&nbsp;CSS class to the button declaration.</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= backend_button('Click me!', array('href'=&gt;'#', 'onclick'=&gt;&quot;alert('Hi!'); return false&quot;, 'class'=&gt;'default')) ?&gt;
+-- or --
+&lt;?= backend_ajax_button('Save', 'edit_onSave',  array('class'=&gt;'default')) ?&gt;</pre></div><h3>Toolbars</h3>
+<p>Toolbars are a set of buttons with images, which we usually use above lists. There are two types of toolbars - integrated with lists, like on the picture below, and standalone.</p>
+<p><img src="../resources/i/wiki/extending/toolbar.png" alt="" /></p>
+<h4>Standalone toolbars</h4>
+<p>Use standalone toolbars if you do not need to integrate a toolbar with list controls. To define a toolbar use the following markup:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;div class=&quot;toolbar&quot;&gt;
+  &lt;?= backend_ctr_button('Create customer', 'new_document', url('/shop/customers/create')) ?&gt;
+  &lt;div class=&quot;separator&quot;&gt;&amp;nbsp;&lt;/div&gt;
+  &lt;?= backend_ctr_button('Delete', 'delete_document', array('href'=&gt;'#', 'onclick'=&gt;&quot;return delete_selected()&quot;)) ?&gt;
+  &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre></div><p>The <strong>backend_ctr_button()</strong> function creates a toolbar button. The function parameters are similar to the backend_button function parameters, described above, but the second parameter should specify a CSS class for the button. CSS classes determine an image to be used for a button. There are many standard classes defined in the modules/backend/resources/css/backend.css file. For example:</p>
+<ul>
+<li>new_document</li>
+<li>refresh</li>
+<li>print</li>
+<li>lorry</li>
+<li>delete_document</li>
+<li>restore_document</li>
+<li>document_export</li>
+<li>go_back</li>
+<li>apply</li>
+</ul>
+<p>Try to use existing classes for your buttons. Always use the <strong>new_document</strong> class for Create buttons and <strong>delete_document</strong> for Delete buttons. If you need more icons, you can define corresponding CSS classes in your module CSS files and link the CSS file to your module pages. Please use the <a href="http://www.famfamfam.com/lab/icons/silk/">Silk Icons</a> icon set for new buttons.</p>
+<h4>Toolbars integrated with list controls</h4>
+<p>We use integrated toolbars for cases when we need to embed list controls into the toolbar, like on the Shop/Products page and on many other pages in the Administration Area. Integrated toolbars require an external partial. Create a new partial and place the toolbar code into it. The integrated and standalone toolbar codes are similar.</p>
+<p>Then you render the list, pass a name of your toolbar partial with the<strong> list_control_panel</strong> parameter to the <strong>listRender()</strong> function call:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= $this-&gt;listRender(array('list_control_panel'=&gt;'my_toolbar')) ?&gt;</pre></div>
+        
+        <p>Next: <a href="handling_errors_and_displaying_status_messages.html">Handling Errors and Displaying Status Messages</a><br/>Previous: <a href="back_end_partials.html">Partials</a><br/>Return to <a href="adding_a_back_end_user_interface.html">Adding a Back-End User Interface</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_181"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/standard_page_elements/";
+		var disqus_title = "Standard Page Elements";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

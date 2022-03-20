@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Forms</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="administrative_dashboard.html">Administrative Dashboard</a></li><li><a href="adding_a_back_end_user_interface.html">Adding a Back-End User Interface</a></li><li><a href="lists_in_forms_in_the_administration_area.html">Lists and Forms in the Administration Area</a></li><li class="last">Forms</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Forms</h2>
+        
+        <p>LemonStand programming framework includes the <a href="../api/class/db_formbehavior/index.html">Db_FormBehavior</a> class, which allows to add form features to controllers with ease. In this article we will continue extending the simple blog module, which we started in the <a href="developing_a_simple_module.html">Developing a simple module</a> article. Now we will build pages for managing blog posts.</p>
+<h3>Declaring form fields in the model class</h3>
+<p>The form behavior builds forms automatically. But it requires a little help from our side. Specifically, we need to define which fields a form should contain. The Db_ActiveRecord class has the <strong>define_form_fields()</strong> method which should be used for defining for fields. Inside this method we will call the <strong>add_form_field()</strong> method for each field we want to add to the form.</p>
+<p>All fields which should be presented on a form, must be defined in the <strong>define_columns()</strong> method, which we described in the <a href="administration_area_lists.html">Lists</a> article. In the Lists article we defined 4 columns in the blog posts model class (AbcBlog_Post): <strong>id</strong>, <strong>title</strong>, <strong>description</strong> and categories. The blog post table also contains the <strong>content</strong> field. We need to display this field on the form, but we do not want it to be visible in the post list. We can achieve this by defining the column in the <strong>define_columns()</strong> method and marking it as invisible:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$this-&gt;define_column('content', 'Content')-&gt;invisible();</pre></div><p>Now we will define <strong>form fields</strong> corresponding to title, description and categories columns, using the <strong>define_form_fields()</strong> method. Below is a full code of the AbcBlog_Post class after adding the define_form_fields() method:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class AbcBlog_Post extends Db_ActiveRecord
+  {
+    public $table_name = 'abcblog_posts';
+
+    public $implement = 'Db_AutoFootprints';
+    public $auto_footprints_visible = true;
+
+    public $has_and_belongs_to_many = array(
+      'categories'=&gt;array('class_name'=&gt;'AbcBlog_Category', 'join_table'=&gt;'abcblog_posts_categories', 'primary_key'=&gt;'post_id', 'foreign_key'=&gt;'category_id')
+    );
+    
+    public function define_columns($context = null)
+    {
+      $this-&gt;define_column('id', '#');
+      $this-&gt;define_column('title', 'Title');
+      $this-&gt;define_column('description', 'Description');
+      
+      $this-&gt;define_multi_relation_column('categories', 'categories', 'Categories', &quot;@name&quot;);
+      $this-&gt;define_column('content', 'Content')-&gt;invisible();
+    }
+    
+    public function define_form_fields($context = null)
+    {
+      $this-&gt;add_form_field('title');
+      $this-&gt;add_form_field('description');
+      $this-&gt;add_form_field('categories');
+      $this-&gt;add_form_field('content');
+    }
+  }
+?&gt;
+</pre></div><p>The order you call the <strong>add_form_field()</strong> mehtod for different fields is important, because fields will be placed to the form in the same order. The method has 2 parameters - a column name and a form side you want a field to be placed on. The default value of the second parameter is "full" which means that a field will be form-wide. Other possible values are <strong>left</strong> and <strong>right</strong>. You can place form fields side by side using the <strong>left</strong> and <strong>right</strong> position specifiers.</p>
+<p>Before we continue, let's create a number of blog posts and categories, to make the testing process more interesting. Execute the following SQL queries in your LemonStand database:</p>
+<div class="codeblock"><pre class="brush:sql; collapse: false">insert into abcblog_posts(title, description, content, created_user_id, created_at) 
+  values ('First post', 'This is a first post', '&lt;p&gt;This is a first post. Yay!&lt;/p&gt;', 1, NOW());
+insert into abcblog_posts(title, description, content, created_user_id, created_at) 
+  values ('Second post', 'This is a second post', '&lt;p&gt;This is a second post!&lt;/p&gt;', 1, NOW());
+insert into abcblog_categories(name) values ('First category');
+insert into abcblog_categories(name) values ('Second category');</pre></div><h3>Extending the posts controller</h3>
+<p>Now we need to update the posts controller. In the <a href="list_filters.html">List filters</a> article we already added the <a href="../api/class/db_formbehavior/index.html">Db_FormBehavior</a> to the list of the posts controller behaviors:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">class AbcBlog_Posts extends Backend_Controller
+{
+  public $implement = 'Db_ListBehavior, Db_FilterBehavior, Db_FormBehavior';
+  ...</pre></div><p>If you missed this step, you need to add the form behavior now. As any other behavior, the form behavior has a number of configuration parameters. Most of them are optional, but there are two required options: <strong>$form_model_class</strong> and <strong>$form_redirect</strong>. These options must me added to the controller class as public class fields:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public $form_model_class = 'AbcBlog_Post';
+public $form_redirect = null;
+</pre></div><p>The <strong>$form_redirect</strong> parameter tells the form behavior where the browser should be redirected when a user clicks the Save, Cancel or Delete button. In our case we need to assign an URL of the blog post list page to this field. But as we explained in the <a href="administration_area_lists.html">Lists</a> article, URS of the Administration Area pages are not static, and we need to use the <strong>url()</strong> function in order to obtain an actual URL of our blog post list. That is why we defined the field with NULL value. We need to use the posts controller class constructor to assign an actual value to the field:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function __construct()
+{
+  ...
+  $this-&gt;form_redirect = url('/abcblog/posts');
+  ...
+}</pre></div><p>This controller configuration is sufficient, but we would like to show you 3 more useful form behavior options, which we use in all controllers:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public $form_create_title = 'New Post';
+public $form_edit_title = 'Edit Post';
+public $form_not_found_message = 'Post not found';
+</pre></div><p>These fields specify titles for the Create and Edit pages. And the last field sets an error message which should be displayed when a user tries to edit a non existing blog post.</p>
+<h3>Creating views for the Create Posts and Edit Post pages</h3>
+<p>Now we need to create view documents for our Create and Edit Post pages.</p>
+<p class="wiki_note">The form behavior adds the <strong>edit</strong>, <strong>preview</strong> and <strong>create</strong> actions to controllers automatically. You don't need to develop these actions. But you need to provide view documents for them.</p>
+<p>Let's start from the Edit Post view document. Create it in the modules/abcblog/controllers/abcblog_posts directory. The document name should be <strong>edit.htm</strong>. Below is a code of the view document. It contains <a href="standard_page_elements.html">breadcrumbs</a>, a correct <a href="handling_errors_and_displaying_status_messages.html">error handling code</a>, the form and 3 buttons:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;? Phpr_View::beginBlock(&quot;view&quot;) ?&gt;
+  &lt;ul class=&quot;breadcrumbs&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;&lt;?= url('/abcblog/posts') ?&gt;&quot;&gt;Blog Posts&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;?= $this-&gt;app_page_title ?&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  
+  &lt;?= flash() ?&gt;
+
+  &lt;? if (!isset($fatalError)): ?&gt;
+    &lt;div class=&quot;form600&quot;&gt;
+      &lt;?= Phpr_Form::openTag(array('id'=&gt;'form_element')) ?&gt;
+        &lt;? $this-&gt;formRender() ?&gt;
+
+        &lt;?= backend_ajax_button('Save', 'edit_onSave', array('class'=&gt;'default')) ?&gt;
+        &lt;?= backend_ajax_button('Cancel', 'edit_onCancel') ?&gt;
+      
+        &lt;?= backend_ajax_button('Delete', 'edit_onDelete', array('class'=&gt;&quot;right&quot;), &quot;confirm: 'Do you really want to delete this post?'&quot;) ?&gt;
+        &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;? else: ?&gt;
+    &lt;p&gt;&lt;a href=&quot;&lt;?= url('/abcblog/posts') ?&gt;&quot;&gt;Return to the post list&lt;/a&gt;&lt;/p&gt;
+  &lt;? endif ?&gt;
+&lt;? Phpr_View::endBlock() ?&gt;</pre></div><p>The most interesting thing in the code is the <strong>formRender()</strong> method call. This method is added to the controller by the form behavior. It outputs the form HTML markup. Also the code contains 3 <a href="using_ajax.html">AJAX buttons</a>, which refer to the <strong>edit_onSave</strong>, <strong>edit_onCancel</strong> and <strong>edit_onDelete</strong> AJAX event handlers.</p>
+<p class="wiki_note">The form behavior adds the <strong>edit_onSave</strong>, <strong>edit_onCancel</strong>, <strong>edit_onDelete</strong>, <strong>create_onSave</strong> and <strong>create_onCancel</strong> event handlers to controllers automatically and you do not need to define them manually.</p>
+<p>Now, if you click any record in the post list, you will see the Edit Post page:</p>
+<p><img src="../resources/i/wiki/extending/edit_post_form_start.png" alt="" /></p>
+<p>The form behavior created a correct form for us. As you can see it used the column database types for determining which control is best suitable for different columns. The Title column, which is defined as varchar field in the database, is presented with a single-line input element. The Description and Content fields, which are defined as text fields, are presented with the text area form elements. If there was a column with type tinyint, it would be rendered as a checkbox.</p>
+<h3>Using the validation</h3>
+<p>Some fields of a blog post must be required. Let's extend our post model by marking the Title and Categories fields as required. Also we will limit the minimum length of the title field with 4 characters. To do it we need to define <strong>validation rules</strong> for the Title and Categories fields. You can do it in the <strong>define_columns()</strong> method of the model class. The <strong>define_column()</strong> method returns an instance of the <a href="../api/class/db_columndefinition/index.html">Db_ColumnDefinition</a> class. This class has the <strong>validation()</strong> method, which returns the <a href="../api/class/phpr_validationrules/index.html">Phpr_ValidationRules</a> object. This class has multiple fields for managing different validation parameters. This is the updated column definition code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function define_columns($context = null)
+{
+  ...
+  $this-&gt;define_column('title', 'Title')-&gt;validation()-&gt;fn('trim')-&gt;
+    required('Please specify a blog post title')-&gt;
+    minLength(4, 'The post title should be at least 4 characters in length');
+  
+  $this-&gt;define_multi_relation_column('categories', 'categories', 'Categories', &quot;@name&quot;)-&gt;
+    validation()-&gt;required('Please select at least one category');
+  ...
+}</pre></div><p>In the code we used 3 methods of the Phpr_ValidationRules class returned by the <strong>validation()</strong> method:</p>
+<ul>
+<li><strong>fn()</strong> - executes a PHP function specified in the argument, using the field value as input. In our case we used the <strong>trim()</strong> function, which removes trailing and leading spaces from a string. This is a good practice to use the <strong>trim()</strong> function for all string-typed form fields.</li>
+<li><strong>required()</strong> - indicates that a field is required. The optional parameter allows to specify a custom error message.</li>
+<li><strong>minLength()</strong> - allows to set minimum length of a field value. The method has 2 parameters - a minimum field length, and an optional custom error message.</li>
+</ul>
+<p>The form behavior automatically marks required fields with the red asterisk symbol. Here is our updated blog post form, displaying an error message on the Title field:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/edit_post_title_error.png" alt="" /></p>
+<p>You can find more information about the form validation in the <a href="../api.html">API</a> section.</p>
+<h3>Adding form tabs and using field render modes</h3>
+<p>We can improve the post form appearance by adding form tabs. When you call the <strong>add_form_field()</strong> method in the <strong>define_form_fields()</strong> model method, it returns an instance of the <a href="../api/class/db_formfielddefinition/index.html">Db_FormFieldDefinition</a> class. This class has methods which manage how a field will be presented on the form. Among others it has the tab() method, which places a field to a specific tab. Let's add tabs to the post form by calling the <strong>tab()</strong> for all form fields:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function define_form_fields($context = null)
+{
+  $this-&gt;add_form_field('title')-&gt;tab('General parameters');
+  $this-&gt;add_form_field('description')-&gt;tab('General parameters');
+  $this-&gt;add_form_field('categories')-&gt;tab('General parameters');
+  $this-&gt;add_form_field('content')-&gt;tab('Content');
+}
+</pre></div><p>The code creates 2 tabs - General parameters and Content:</p>
+<p><img src="../resources/i/wiki/extending/edit_post_tabs.png" alt="" /></p>
+<p>And finally let's make the post editing process more comfortable by adding the full featured HTML editor to the Content field. We can achieve it by setting a <strong>field render mode</strong> for the content field. The <strong>renderAs()</strong> method of the Db_FormFieldDefinition class allows to set a specific form rendering mode for any field:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$this-&gt;add_form_field('content')-&gt;tab('Content')-&gt;renderAs(frm_html);</pre></div><p>The <strong>frm_html</strong> constant is defined in the Active Record engine. It indicates that a field should be rendered as an HTML editor. You can find more information about possible render modes in the <a href="../api/class/db_formfielddefinition/index.html">Db_FormFieldDefinition</a> class description.</p>
+<p>If you update the Edit Post page now and click the Content tab you will see that the Content field now contains the HTML editor:</p>
+<p><img src="../resources/i/wiki/extending/edit_post_html_field.png" alt="" /></p>
+<p>The HTML editor requires one extra action. Before we save the form, we need the HTML editor (TinyMCE) to save its content to the Content text area. To do it we need to update the Save button definition in the edit.htm file:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= backend_ajax_button('Save', 'edit_onSave',  array('class'=&gt;'default'), &quot;prepareFunction: function(){phprTriggerSave();}&quot;) ?&gt;</pre></div><p>The fourth parameter of the <a href="using_ajax.html">AJAX button</a> function allows to set parameters for the AJAX request triggered by the button. The <strong>phprTriggerSave()</strong> function is defined in the LemonStand forms engine and it prepares HTML fields for sending data to the server. You need to use this approach for all forms which contain HTML forms.</p>
+<h3>Adding the Create Post button and the Create Post page</h3>
+<p>The last thing we need to add is the Create Post button on the post list page, and the Create Post page. To add the Create Post button, add the following code to the index.htm document, above the <strong>listRender()</strong> function call:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;div class=&quot;list_controlPanel&quot;&gt;
+  &lt;?= backend_button('Create post', url('/abcblog/posts/create')) ?&gt;
+  &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre></div><p>The <strong>backend_button()</strong> and the control panel elements are described in the <a href="standard_page_elements.html">Standard page elements</a> article. The final view of the post lists page:</p>
+<p><img src="../resources/i/wiki/extending/post_list_final.png" alt="" /></p>
+<p>The button in our example is a regular link which points to the <strong>create</strong> action of our posts controller. The action itself is added by the form behavior, but we need to create a corresponding view document. Its name should be <strong>create.htm</strong> and it should be placed to the modules/abcblog/controllers/abcblog_posts directory. Here is a full code of the view file:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;? Phpr_View::beginBlock(&quot;view&quot;) ?&gt;
+  &lt;ul class=&quot;breadcrumbs&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;&lt;?= url('/abcblog/posts') ?&gt;&quot;&gt;Blog Posts&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;?= $this-&gt;app_page_title ?&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  
+  &lt;?= flash() ?&gt;
+
+  &lt;? if (!isset($fatalError)): ?&gt;
+    &lt;div class=&quot;form600&quot;&gt;
+      &lt;?= Phpr_Form::openTag(array('id'=&gt;'form_element')) ?&gt;
+        &lt;? $this-&gt;formRender() ?&gt;
+
+        &lt;?= backend_ajax_button('Save', 'create_onSave',  array('class'=&gt;'default'), 
+            &quot;prepareFunction: function(){phprTriggerSave();}&quot;) ?&gt;
+
+        &lt;?= backend_ajax_button('Cancel', 'create_onCancel') ?&gt;
+        &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;? else: ?&gt;
+    &lt;p&gt;&lt;a href=&quot;&lt;?= url('/abcblog/posts') ?&gt;&quot;&gt;Return to the post list&lt;/a&gt;&lt;/p&gt;
+  &lt;? endif ?&gt;
+&lt;? Phpr_View::endBlock() ?&gt;</pre></div><p>Please note that the Create Post page does not have the Delete button. And the Save and Cancel AJAX buttons point to the <strong>create_onSave</strong> and <strong>create_onCancel</strong> AJAX handlers.</p>
+<h3>Conclusion</h3>
+<p>In this article we demonstrated the power of the LemonStand forms engine, which can create rich forms almost without any coding from your side. In the further articles we will show how you can create <strong>actions</strong> for extending the front-end website with new features.</p>
+<p>You can download the updated module <a href="http://res.lemonstandapp.com/wiki/files/abcblog-05.zip">here</a>.</p>
+        
+        <p><br/>Previous: <a href="list_filters.html">List Filters</a><br/>Return to <a href="lists_in_forms_in_the_administration_area.html">Lists and Forms in the Administration Area</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_188"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/administration_area_forms/";
+		var disqus_title = "Forms";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

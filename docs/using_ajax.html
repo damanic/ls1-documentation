@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Using AJAX</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="administrative_dashboard.html">Administrative Dashboard</a></li><li><a href="adding_a_back_end_user_interface.html">Adding a Back-End User Interface</a></li><li class="last">Using AJAX</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Using AJAX</h2>
+        
+        <p>LemonStand Administration Area has a built-in AJAX implementation, which allows you to send AJAX requests from your pages and process them in a page controller. PHP Road AJAX framework is built upon the <a href="http://mootools.net/">MooTools</a> JavaScript framework. PHP Road is a PHP framework LemonStand is based on.</p>
+<h3>Sending and processing AJAX requests</h3>
+<p>To send an AJAX request, you need to write a few lines of JavaScript code. Each AJAX request should be bound to a specific FORM element. To create an opening FORM element use the <strong>Phpr_Form::openTag()</strong> construction. Example:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= Phpr_Form::openTag() ?&gt;
+  &lt;!-- Form content is here --&gt;
+&lt;/form&gt;</pre></div><p>We also want to mention that LemonStand can build forms automatically and you almost never will need to write the HTML code for creating form elements like text fields. The process of building forms will be described in the <a href="lists_in_forms_in_the_administration_area.html">Lists and forms in the Administration Area</a> article. However, you need to declare the FORM element manually, using the syntax described above.</p>
+<p>To send an AJAX request, you first need to obtain a JavaScript object corresponding the form element. It is easy to find a form object, if have a reference to any object inside the form. Each HTML element in the LemonStand Administration Area has the <strong>getForm()</strong> method, which finds a form the element belongs to. For example, if you are need to send an AJAX request when user clicks a link inside a form, you can use the following code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= Phpr_Form::openTag() ?&gt;
+  &lt;a href=&quot;#&quot; onclick=&quot;$(this).getForm().sendPhpr('index_onSomeEvent'); return false;&quot;&gt;Send request&lt;/a&gt;
+&lt;/form&gt;</pre></div><p>The code creates a form and a link inside it. The link click handler contains JavaScript code which finds a FORM element which wraps the link. After that the form <strong>sendPhpr()</strong> method is called. This method is added by the LemonStand framework. The method accepts two parameters, and only the first parameter is required. This parameter is a name of the controller method which should handle the request. To prevent the browser redirection, the click handler JavaScript code returns FALSE value.</p>
+<p>Another way to access a form element from JavaScript is to specify the form identifier in the <strong>Phpr_Form::openTag()</strong> function call. This function can accept a single array-typed parameter. Each element of the array becomes a FORM tag attribute in the result HTML code. For example, if you use the following code&nbsp;</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= Phpr_Form::openTag(array('id'=&gt;'my_form', 'class'=&gt;'some_class')) ?&gt;
+  &lt;!-- Form content is here --&gt;
+&lt;/form&gt;</pre></div><p>the function will return the following HTML markup:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;form action=&quot;/your/page/url&quot; method=&quot;post&quot; id=&quot;my_form&quot; class=&quot;some_class&quot; onsubmit=&quot;return false;&quot;&gt;
+  &lt;!-- Form content is here --&gt;
+&lt;/form&gt;
+</pre></div><p>The <strong>onsubmit</strong>, <strong>action</strong> and <strong>method</strong> attributes are added by function automatically. Also, if you do not define the <strong>id</strong> parameter, LemonStand will use the "FormElement" default value.&nbsp;</p>
+<p>Now, if you know a form identifier, you can access it from JavaScript code directly, in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= Phpr_Form::openTag(array('id'=&gt;'my_form')) ?&gt;
+  &lt;a href=&quot;#&quot; onclick=&quot;$('my_form').sendPhpr('index_onSomeEvent'); return false;&quot;&gt;Send request&lt;/a&gt;
+&lt;/form&gt;</pre></div><h4>Processing  a request</h4>
+<p>To process the request on the server side, you need to declare an <strong>event handler</strong> in the controller class. In the example above we invoke the <strong>index_onSomeEvent</strong> handler. This handler should be declared in the controller class in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">protected function index_onSomeEvent()
+{
+}
+</pre></div><p>There are 2 limitations applied to the event handlers:</p>
+<ul>
+<li>Handlers should be declared as <strong>protected</strong> class methods</li>
+<li>Event handler names should start with an action name and the <strong>_on</strong> letters. In the example above, we imply that the link is situated on the index controller page and we used the <strong>index_on</strong> prefix. If you are coding a page corresponding the 'edit' action, your event handlers should have the <strong>edit_on</strong> prefix.</li>
+</ul>
+<p>In some rare cases you may need to have a handler callable from different pages. It is possible by adding the <strong>$globalHandlers</strong> field to the controller class declaration. For example, in LemonStand Orders controller we have defined some global event handlers, which we can call both from the Create Order and Edit Order pages:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public $globalHandlers = array(
+  'onCopyBillingAddress', 
+  'onBillingCountryChange'
+);
+</pre></div><p>Of course you will need to define the event handler methods, with names matching the handler names defined in the <strong>$globalHandlers</strong> array.</p>
+<p>The important feature of event handler class methods is that LemonStand passes to them function parameters in a similar way as it does it with actions. In the <a href="adding_a_back_end_user_interface.html">Adding a back-end user interface</a> article in the <strong>Page parameters</strong> section we described how LemonStand converts URL sections to action method parameter values. If you have the /abcblog/posts/edit/4, you can get the parameter value in the action method (the <strong>edit</strong> action in this case):</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function edit($id)
+{
+  // $id value is 4
+}</pre></div><p>All AJAX event handlers called from the edit page will receive the same parameter. For example:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function edit_onSave($id)
+{
+  // $id value is 4
+}</pre></div><h4>Accessing form field values in the event handler</h4>
+<p>When you send an AJAX request, you can access all values of posted form fields through the PHP $_POST variable. LemonStand API has a jmore useful replacement of the $_POST array - the <strong>post()</strong> function. This function has 2 parameters - the POST field name and the field default value (the second parameter is optional). Thus, if a form contains a text input element with name "first_name", you can access the field value in the handler with the following code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$name = post('first_name', 'John'); 
+</pre></div><h3>Request options</h3>
+<p>You can configure a behavior of the <strong>sendPhpr()</strong> function by passing configuration parameters to the second method parameter. The second parameter should be a JavaScript hash variable, which you can define using the curly brackets:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  // Define parameters here
+});
+</pre></div><p>You can find descriptions of all possible request parameters below.</p>
+<ul>
+<li><strong>extraFields</strong> - allows to add extra form field values in addition to values of field contained by the form. The value should be a JavaScript hash object. Example: <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  extraFields: {'last_name': 'Doe'}
+});
+</pre></div> If you execute this request, you can access the <strong>last_name</strong> POST value in the event handler, as it was described earlier. </li>
+<li><strong>loadIndicator</strong> - configures the loading indicator behavior. Please see a detailed description of the parameter in the <strong>Managing loading indicators</strong> section below.</li>
+<li><strong>confirm</strong> - allows to ask a user to confirm the action before sending the request. Example: <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  confirm: 'Do you really want to delete this record?'
+});
+</pre></div></li>
+<li><strong>alert</strong> - allows to display a message instead of sending the request: <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  alert: 'You cannot delete this record'
+});</pre></div></li>
+<li><strong>preCheckFunction</strong> - allows to execute some code before sending the request. The function must return TRUE if the request is allowed. This function is called before displaying messages specified in the <strong>confirm</strong> and <strong>alert</strong> parameters. Example: <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  preCheckFunction: function(){ 
+    if (!some_condition)
+    {
+      alert('You cannot perform this operation');
+      return false;
+    }
+    return true;
+  }
+});</pre></div></li>
+<li><strong>postCheckFunction</strong> - works in the same way as the <strong>preCheckFunction</strong>, but is the function executed after displaying messages specified in the <strong>confirm</strong> and <strong>alert</strong> parameters.</li>
+<li><strong>prepareFunction</strong> - allows to execute some preparation code before sending the request. <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  prepareFunction: function(){ 
+    // Do some preparation work
+  }
+});</pre></div></li>
+<li><strong>update</strong> - allows to specify a page element identifier to be updated in case of the request success. Please read the <strong>Updating page content</strong> section below for details.</li>
+<li><strong>onSuccess</strong> - function to execute in case of the request success.</li>
+<li><strong>onComplete</strong> - function to execute when the request completes, the both cases - success or failure.</li>
+<li><strong>onFailure</strong> - function to execute in case if the server returned an error. Please read the <strong>Processing server errors</strong> section below for details.</li>
+<li><strong>onAfterError</strong> - function to execute if the server returned an error, after executing any JavaScript code sent by server.</li>
+<li><strong>onAfterUpdate</strong> - function to execute when the framework finishes updating page content in case of the successful request.</li>
+</ul>
+<h3>Managing loading indicators</h3>
+<p>By default, when you initiate an AJAX request, LemonStand displays a loading indicator on a gray rectangle overlapping the form. And by default LemonStand does not hides the loading indicator when the request completes.</p>
+<p><img src="../resources/i/wiki/extending/default_loading_indicator.png" alt="" /></p>
+<p>The <strong>loadIndicator</strong> request parameter mentioned above is a JavaScript hash object which can have the following fields:</p>
+<ul>
+<li><strong>show</strong> - a Boolean-type parameter, which indicates whether the indicator should be displayed. The default value is true. You can disable the loading indicator using the following code: <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  loadIndicator: {show: false}
+});
+</pre></div></li>
+<li><strong>hideOnSuccess</strong> - indicates whether the indicator should be hidden in case of the request success. The default value is false. You can use the following code to turn automatic indicator on: <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  loadIndicator: {hideOnSuccess: true}
+});
+</pre></div></li>
+<li><strong>injectInElement</strong> - indicates whether the loading indicator DIV element should be injected inside the FORM element. By default LemonStand creates a DIV element with absolute position and coordinates matching the form element. However in some circumstances, when the form can change it size or position during the request, you may need to inject the indicator into the form: 	<div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  loadIndicator: {injectInElement: true}
+});
+</pre></div> To use this approach you also should wrap the form element into a DIV element with the <strong>relative</strong> CSS class: <div class="codeblock"><pre class="brush:php; collapse: false">&lt;div class=&quot;relative&quot;&gt;
+  &lt;?= Phpr_Form::openTag() ?&gt;
+    &lt;!-- Form content is here --&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</pre></div> </li>
+<li> <strong>element</strong> - allows to specify an HTML element other than the form, to display the loading indicator above it. We sometimes use this approach in LemonStand to display a loading indicator above some form area, instead of the whole form. For example, on the Create/Edit Product page we display a loading indicator above the option list, instead of the whole form:<br /><img src="../resources/i/wiki/extending/specific_indicator_location.png" alt="" /><br /> Code example: <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  loadIndicator: {element: 'some_element_id'}
+});
+</pre></div> </li>
+<li><strong>src</strong> - allows to specify an image URL to display instead of the default loading indicator image. LemonStand includes a number of loading indicators of different size: 30, 40, 50, 70 and 100 pixels. You can use a specific image: <div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  loadIndicator: {src: 'phproad/resources/images/form_load_30x30.gif'}
+});
+</pre></div> Please note that the image URL should not have the slash character in the beginning.</li>
+</ul>
+<h4>Displaying a floating loading indicator</h4>
+<p>In some cases you may want to display a floating loading indicator, which looks like a yellow bar on the top of the screen:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/floating_indicator.png" alt="" /></p>
+<p>The benefit of the floating loading indicator is that it allows a user to continue working without waiting while the request complete. In order to implement a floating indicator you need to disable the standard loading indicator, and use the request events to display a floating indicator:</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  loadIndicator: {show: false},
+  onBeforePost: LightLoadingIndicator.show.pass('Loading...'), 
+  onComplete: LightLoadingIndicator.hide
+});
+</pre></div><h3>Updating page content</h3>
+<p>You can update the page content using the AJAX requests. LemonStand AJAX implementation allows to update a single element or multiple elements at at time.</p>
+<h4>Updating a single element</h4>
+<p>If you need to update a single element on a page, for example a DIV element with known identifier, you can use the following request:</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  update: 'some_element_id'
+});
+</pre></div><p>A value of the <strong>update</strong> parameter should be an identifier (the ID attribute) of a page element which you are going to update. On the server side you need to output HTML content you want to be displayed in the updatable element:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">protected function index_onSomeEvent()
+{
+  echo &quot;Hello!&quot;;
+}</pre></div><p>This request will output the "Hello!" text in the DIV element with "some_element_id" identifier. With partials you can output HTML content in more convenient way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">protected function index_onSomeEvent()
+{
+  $this-&gt;renderPartial('some_partial');
+}
+</pre></div><p>In this case all content of the 'some_partial' partial will be displayed on the page.</p>
+<h4>Updating multiple elements</h4>
+<p>It is possible to update multiple page elements with a single AJAX request. In this case you don't need to use the <strong>update</strong> parameter in the request initialization.</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+});
+</pre></div><p>Imagine that you have 3 DIV (or SPAN - it does not matter) elements with identifiers "tax", "subtotal" and "total". Then you can write the following code in the even handler:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">protected function index_onSomeEvent()
+{
+  $this-&gt;renderMultiple(array(
+    'tax'=&gt;'10',
+    'subtotal'=&gt;'12',
+    'total'=&gt;'22'
+  ));
+}
+</pre></div><p>You can also use partials instead of fixed values. In this case partial names should be prefixed with the @_ symbols:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">protected function index_onSomeEvent()
+{
+  $this-&gt;renderMultiple(array(
+    'tax'=&gt;'@_my_tax_partial',
+    'subtotal'=&gt;'@_my_subtotal_partial',
+    'total'=&gt;'@_my_total_partial'
+  ));
+}</pre></div><p>Sometimes it is more handy to output content separately, especially if you want to pass specific parameters to each partial. You can achieve the same result as in the previous example using the following code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">protected function index_onSomeEvent()
+{
+  $this-&gt;preparePartialRender('tax');
+  $this-&gt;renderPartial('my_tax_partial');
+
+  $this-&gt;preparePartialRender('subtotal');
+  $this-&gt;renderPartial('my_subtotal_partial');
+
+  $this-&gt;preparePartialRender('total');
+  $this-&gt;renderPartial('my_total_partial');
+}</pre></div><h3>Processing server errors</h3>
+<p>LemonStand AJAX implementation requires exceptions to be handled correctly in the server-side AJAX event handlers. Each AJAX event handler code, which could generate an exception, should be wrapped into the try..catch block. The catch block should contain the <strong>Phpr::$response-&gt;ajaxReportException()</strong> method call. Example:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">protected function index_onSomeEvent()
+{
+  try
+  {
+    // Some code which could trigger an exception
+    throw new Phpr_ApplicationException('Oops!');
+  }
+  catch (Exception $ex)
+  {
+    Phpr::$response-&gt;ajaxReportException($ex, true, true);
+  }
+}</pre></div><p>By default errors occurred on the server are displayed above automatically generated forms. If there are no an automatically generated form on the page, the error will not be displayed. You can display errors by handling the onError request event:</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  onFailure: popupAjaxError
+});
+</pre></div><p>The <strong>popupAjaxError()</strong> function is declared in the LemonStand JavaScript framework. It loads the error message received from server and displays a standard alert popup window.</p>
+<p><img src="../resources/i/wiki/extending/standard_error_message.png" alt="" /></p>
+<p>You can also perform extra actions, after displaying an error message, using the onAfterError event handler:</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">$(this).getForm().sendPhpr('index_onSomeEvent', {
+  onFailure: popupAjaxError,
+  onAfterError: function() {
+    //
+    // Do something here
+    // 
+  }
+});
+</pre></div><h3>AJAX buttons</h3>
+<p>Besides the link buttons described in the <a href="standard_page_elements.html">Standard page elements</a>&nbsp;article you can create buttons which trigger an AJAX request when user clicks them. To create an AJAX button use the following code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= backend_ajax_button('Delete', 'index_onSomeAction') ?&gt;</pre></div><p>The <strong>backend_ajax_button()</strong> function can accept 4 parameters:</p>
+<ul>
+<li>Button title text</li>
+<li>An AJAX event handler name</li>
+<li>A list of HTML attributes to apply to the button element. The most common usage is setting the <strong>right</strong> CSS class for moving a button to the right side of a form:  <div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= backend_ajax_button('Delete', 'index_onSomeAction', array('class'=&gt;&quot;right&quot;)) ?&gt;</pre></div></li>
+<li>A list of AJAX request configuration parameters, as a single string. If you need to use quote marks inside the parameter value, use apostrophes. For example: <div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= backend_ajax_button('Delete', 'edit_onDelete', array('class'=&gt;&quot;right&quot;), 
+  &quot;confirm: 'Do you really want to delete this order?'&quot;) ?&gt;</pre></div></li>
+</ul>
+        
+        <p>Next: <a href="lists_in_forms_in_the_administration_area.html">Lists and Forms in the Administration Area</a><br/>Previous: <a href="extending_the_administration_area_menu.html">Extending the Administration Area menu</a><br/>Return to <a href="adding_a_back_end_user_interface.html">Adding a Back-End User Interface</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_184"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/using_ajax/";
+		var disqus_title = "Using AJAX";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

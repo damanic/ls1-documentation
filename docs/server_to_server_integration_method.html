@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Using a Server-to-Server Integration Method</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="extending_lemonstand.html">Extending LemonStand</a></li><li><a href="developing_payment_modules.html">Guide for Developing a Payment Module</a></li><li class="last">Using a Server-to-Server Integration Method</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Using a Server-to-Server Integration Method</h2>
+        
+        <p>This article continues the <a href="developing_payment_modules.html">Developing payment modules</a> article. Please read it before reading this article. Before implementing the server-to-server integration method, please make sure that your payment gateway supports it.</p>
+<p>To begin implementing a new payment module for the server-to-server integration method, create a payment module class as it described in the <a href="developing_payment_modules.html">Developing payment modules</a> article. In this article we will show you which specific methods should be added to the module class.</p>
+<h3>Download payment module template</h3>
+<p>You can download two module archives:</p>
+<ul>
+<li>Payment module as a part of the Shop module - download it if you are not going to distribute the payment module via LemonStand Marketplace and going to use it only in your own store:&nbsp;<a href="http://res.lemonstandapp.com/wiki/files/server2server_payment_template.zip">server2server_payment_template.zip</a>.&nbsp;The archive contains a module class file and a corresponding directory with partials required for the module. You can rename the module file, PHP class and the directory and begin implementing your own payment module, following the description in this article.</li>
+<li>Payment module as a part of a standalone LemonStand module - use it if you are going to distribute the module via LemonStand Marketplace:&nbsp;<a href="http://res.lemonstandapp.com/files/demopayment.zip">demopayment.zip</a>. Please rename the module directory and classes to reflect your company name and avoid possible conflicts with other marketplace modules (read <a href="creating_modules_for_marketplace.html">this article</a> for details).&nbsp;</li>
+</ul>
+<h3>How server-to-server payment methods work</h3>
+<p>With the server-to-server payment method, the payment form is hosted on the store website. Customers enter all required payment information (credit card number, card expiration date and so on) in this form and then click the Pay button. The LemonStand payment module sends a request to the payment gateway and receives a response from it.</p>
+<p>The payment module parses the payment gateway response and checks whether the transaction was successful. In this case the module updates the order status, marks the order as paid and logs the successful payment attempt. If the transaction has been declined by the payment gateway, the payment module triggers an error (throws an exception), which is displayed to the customer.</p>
+<p>The main challenge in developing server-to-server payment modules is sending request to the payment gateway and parsing the response. Usually this process is documented in payment gateway integration guides.</p>
+<h3>Developing a payment form partial template</h3>
+<p>In the <a href="developing_payment_modules.html">Developing payment modules</a> article we explained that each payment module should have payment form partial template files for PHP and Twig templating engines (please see the <strong>Payment form partial templates</strong> section). For server-to-server payment modules, the payment form should contain input fields required by the payment gateway. You can find a list of required form fields in the integration guide of your payment gateway. Below is a screenshot of the Beanstream server-to-server module payment page:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/beanstream_s2s_payment_form.png" alt="" /></p>
+<p>The "Please provide your credit card information." label and form fields are defined in the payment partial files (<strong>front_end_partial.htm</strong> and<strong>&nbsp;<strong>front_end_partial.twig</strong></strong>) of the Beanstream payment module. Below is an excerpt of this file:</p>
+<div class="code-tabs" id="payment_form_partial"><ul><li><a href="server_to_server_integration_method.html#payment_form_partial-php">PHP</a></li><li><a href="server_to_server_integration_method.html#payment_form_partial-twig">Twig</a></li></ul><div id="payment_form_partial-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;p&gt;Please provide your credit card information.&lt;/p&gt;
+
+&lt;?= open_form() ?&gt;
+  &lt;?= flash_message() ?&gt;
+  &lt;ul class=&quot;form&quot;&gt;
+    &lt;li class=&quot;field text left&quot;&gt;
+      &lt;label for=&quot;FIRSTNAME&quot;&gt;Cardholder First Name&lt;/label&gt;
+      &lt;div&gt;&lt;input autocomplete=&quot;off&quot; name=&quot;FIRSTNAME&quot; value=&quot;&quot; id=&quot;FIRSTNAME&quot; type=&quot;text&quot; class=&quot;text&quot;/&gt;&lt;/div&gt;
+    &lt;/li&gt;
+    ....
+  &lt;/ul&gt;
+  &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+  &lt;input type=&quot;button&quot; onclick=&quot;return $(this).getForm().sendRequest('shop:on_pay')&quot; value=&quot;Submit&quot;/&gt;
+&lt;/form&gt;</pre></div></div><div id="payment_form_partial-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;p&gt;Please provide your credit card information.&lt;/p&gt;
+
+{{ open_form() }}
+  {{ flash_message() }}
+  &lt;ul class=&quot;form&quot;&gt;
+    &lt;li class=&quot;field text left&quot;&gt;
+      &lt;label for=&quot;FIRSTNAME&quot;&gt;Cardholder First Name&lt;/label&gt;
+      &lt;div&gt;&lt;input autocomplete=&quot;off&quot; name=&quot;FIRSTNAME&quot; value=&quot;&quot; id=&quot;FIRSTNAME&quot; type=&quot;text&quot; class=&quot;text&quot;/&gt;&lt;/div&gt;
+    &lt;/li&gt;    
+
+    ...
+  &lt;/ul&gt;
+  &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+  &lt;input type=&quot;button&quot; onclick=&quot;return $(this).getForm().sendRequest('shop:on_pay')&quot; value=&quot;Submit&quot;/&gt;
+&lt;/form&gt;</pre></div></div></div><p>Please note that we use the unordered list (UL) for presenting form fields. This is not a requirement of LemonStand, but this HTML markup is compatible with the LemonStand default store, which we distribute with the application installer. If you are going to share you payment module with other LemonStand users, please follow this HTML coding approach.</p>
+<p>The code example above displays only a single form field. The input field element in the code example has the FIRSTNAME name. You can use other field names in your payment modules. In the payment module class you need to define the <strong>process_payment_form()</strong> method (we will describe it later), and inside this method you can access the payment form field values by their names, in order to format a payment gateway request string.</p>
+<p>The FORM HTML element in the payment form partial is declared using the <a href="http://v1.lemonstand.com/docs/function_open_form">open_form()</a> function. Inside the form the <a href="http://v1.lemonstand.com/docs/function_flash_message">flash_message()</a> function called for displaying an error message (if any). Finally, the button element triggers the AJAX request which invokes the <strong>shop:on_pay</strong> event handler. Please follow this technique in all payment forms you develop.</p>
+<h3>Sending a request to the payment gateway</h3>
+<p>When a customer clicks the Submit button on the payment form, LemonStand invokes the <strong>process_payment_form()</strong> method of a corresponding payment method class. This method is a heart of any server-to-server payment module. Inside this method you should send a request to the payment gateway and parse the gateway response.</p>
+<p>The method should be defined in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function process_payment_form($data, $host_obj, $order, $back_end = false)
+{
+  ...
+}</pre></div><p>The method has 4 parameters:</p>
+<ul>
+<li><strong>$data</strong> - an array which contains the payment form field values, provided by the customer.</li>
+<li><strong>$host_obj</strong> - a PHP object which contains all fields defined in the <strong>build_config_ui()</strong> method of the payment module class. We described this method in the <a href="developing_payment_modules.html">Developing payment modules</a> article, in the <strong>Building the payment module configuration form</strong> section. Use this object for loading the payment module configuration parameters.</li>
+<li><strong>$order</strong> - an instance of the <a href="class_shop_order.html">Shop_Order</a> class, containing all order dertails.</li>
+<li><strong>$back_end</strong> - indicates whether the payment action is called from the Administration Area. We will describe this case later in this article.</li>
+</ul>
+<p>Content of the <strong>process_payment_form()</strong> method depends on a specific payment gateway requirements, but basically the method code consists of 3 parts.</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function process_payment_form($data, $host_obj, $order, $back_end = false)
+{
+  /*
+   * Validate input data
+   */
+
+  try
+  {
+    /*
+     * Prepare and send request to the payment gateway, and parse the server response
+     */
+  }
+  catch (Exception $ex)
+  {
+    /*
+     * Log invalid payment attempt
+     */
+  }
+}</pre></div><h4>Validating the user input data</h4>
+<p>Before sending a request to the payment gateway, the form data has to be validated by the payment module. For this purpose we use the handy <a href="../api/class/phpr_validation/index.html">Phpr_Validation</a> class, which allows to define validation rules and then validate any input array. In the <strong>process_payment_form()</strong> method we need to validate elements of the first method parameter (<strong>$data</strong>). Below is a code which is used to validate the input data in the Beanstream payment module:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">$validation = new Phpr_Validation();
+$validation-&gt;add('FIRSTNAME', 'Cardholder first name')-&gt;fn('trim')-&gt;required('Please specify a cardholder first name.');
+$validation-&gt;add('LASTNAME', 'Cardholder last name')-&gt;fn('trim')-&gt;required('Please specify a cardholder last name.');
+$validation-&gt;add('EXPDATE_MONTH', 'Expiration month')-&gt;fn('trim')-&gt;required('Please specify a card expiration month.')-&gt;regexp('/^[0-9]*$/', 'Credit card expiration month can contain only digits.');
+$validation-&gt;add('EXPDATE_YEAR', 'Expiration year')-&gt;fn('trim')-&gt;required('Please specify a card expiration year.')-&gt;regexp('/^[0-9]*$/', 'Credit card expiration year can contain only digits.');
+$validation-&gt;add('PHONE', 'Phone number')-&gt;fn('trim')-&gt;required('Please specify a phone number.');
+
+$validation-&gt;add('ACCT', 'Credit card number')-&gt;fn('trim')-&gt;required('Please specify a credit card number.')-&gt;regexp('/^[0-9]*$/', 'Please specify a valid credit card number. Credit card number can contain only digits.');
+$validation-&gt;add('CVV2', 'CVV2')-&gt;fn('trim')-&gt;required('Please specify CVV2 value.')-&gt;regexp('/^[0-9]*$/', 'Please specify a CVV2 number. CVV2 can contain only digits.');
+
+try
+{
+  if (!$validation-&gt;validate($data))
+    $validation-&gt;throwException();
+} catch (Exception $ex)
+{
+  $this-&gt;log_payment_attempt($order, $ex-&gt;getMessage(), 0, array(), array(), null);
+  throw $ex;
+}</pre></div><p>This code is similar for many payment gateways, you only need to find out which fields are required for your payment gateway and what validation rules should be applied to each field.</p>
+<p>Please note which the try..catch block is used to catch the validation error in order to log the payment attempt. Inside the <strong>catch</strong> block the <strong>log_payment_attempt()</strong> method is called. It allows to save the payment attempt into the database and then display it on the Payment Attempts tab of the Order Preview page in the Administration Area:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/invalid_payment_attempt.png" alt="" /></p>
+<p>The <strong>log_payment_attempt()</strong> method is a built-in method of any payment module class, defined in the Shop_PaymentType class. The method has the following parameters:</p>
+<ul>
+<li><strong>$order</strong> - an order object to log the payment attempt for</li>
+<li><strong>$message</strong> - a message string, describing the attempt result. For successful payments you can use the "Successful payment" string. For error conditions use an error message returned by the payment gateway.</li>
+<li><strong>$is_successful</strong> - indicates whether the attempt was successful.</li>
+<li><strong>$request_array</strong> - a list of fields which the payment module posted to the payment gateway.</li>
+<li><strong>$response_array</strong> - a list of fields received from the payment gateway, as array.</li>
+<li><strong>$response_text</strong> - a raw response text received from the payment gateway. In some cases the response text is not available, and you can pass the NULL value to the parameter.</li>
+<li><strong>$ccv_response_code</strong>&nbsp;-&nbsp;card code verification response code, optional.</li>
+<li><strong>$ccv_response_text&nbsp;</strong>&nbsp;-&nbsp;card code verification response text, optional.</li>
+<li><strong>$avs_response_code</strong>&nbsp;-&nbsp;address verification response code, optional.</li>
+<li><strong>$avs_response_text</strong>&nbsp;-&nbsp;address verification response text, optional.</li>
+</ul>
+<p>Payment attempts which you log using the <strong>log_payment_attempt()</strong> method are displayed on the Order Preview page:</p>
+<p><img src="../resources/i/wiki/extending/payment_attempt_list.png" alt="" /></p>
+<p>LemonStand users can click on a payment attempt record and view all details which you specified in the <strong>log_payment_attempt()</strong> method call:</p>
+<p><img src="../resources/i/wiki/extending/payment_attempt_details.png" alt="" /></p>
+<p class="wiki_note">As payment attempt details can be accessed by LemonStand users, you should remove any credit-card and payment gateway API credentials data from the request and response arrays and from the gateway raw response text.</p>
+<p>We will demonstrate how you can remove specific elements from request and response arrays later in this article. During the form validation phase we do not have the request, response and raw response text available, so we pass the empty arrays to the response and request parameters, and the NULL value to the raw response text parameter.</p>
+<p>Preparing and sending a request to the payment gateway</p>
+<p>The code for preparing and sending the response and parsing the payment gateway request should be wrapped into the try..catch block in order to log invalid payment attempts.</p>
+<p>Each payment gateway requires a specific way of sending a payment request and requires specific format of the request data. Some gateways require request to be sent as POST form data. Others work as a web service and require expect requests in SOAP format. Also, some payment gateways require a XML document to be sent in the request. Please refer to your payment module integration guide for the request implementation details.</p>
+<p>Below is the request implementation from the Beanstream payment module. The Beanstream gateway requires the request to be sent as a POST data.</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$fields = array();
+$fields['requestType'] = 'BACKEND';
+$fields['merchant_id'] = $host_obj-&gt;merchant_id;
+$fields['trnCardOwner'] = $validation-&gt;fieldValues['FIRSTNAME'].' '.$validation-&gt;fieldValues['LASTNAME'];
+$fields['trnCardNumber'] = $validation-&gt;fieldValues['ACCT'];
+$fields['trnCardCvd'] = $validation-&gt;fieldValues['CVV2'];
+...
+$response = $this-&gt;post_data($fields);</pre></div><p>The <strong>post_data()</strong> is defined in the Beanstream payment module in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">private function post_data($fields)
+{
+  $poststring = $this-&gt;format_form_fields($fields);
+  
+  $ch = curl_init(); 
+  curl_setopt( $ch, CURLOPT_POST, 1 );
+  
+  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,0);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_URL, 'https://www.beanstream.com/scripts/process_transaction.asp');
+  curl_setopt( $ch, CURLOPT_POSTFIELDS, $poststring);
+
+  $response = curl_exec($ch);
+  
+  if (curl_errno($ch))
+    throw new Phpr_ApplicationException( &quot;Error connecting the payment gateway: &quot;.curl_error($ch) );
+  else
+    curl_close($ch);
+    
+  return $response;
+}
+</pre></div><p>The <strong>post_data()</strong> method in the Beanstream payment module implementation returns a string received from the payment gateway. Inside the <strong>process_payment_form()</strong> method we parse the server response using the following line of code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$response_fields = $this-&gt;parse_response($response);</pre></div><p>The <strong>parse_response()</strong> method is implemented in the Beanstream payment module class. It parses the response string and returns an array containing all received variables in the following format:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">array(
+  ['trnApproved']=&gt;1,
+  ['messageText']=&gt;''
+  ...</pre></div><p>After parsing the response strong the module determines whether the transaction has been successful. The Beanstream gateway returns the transaction status in the <strong>trnApproved</strong> response field. The 1 value corresponds to successful transactions. The code below tests the field value and throws the exception if the transaction was not successful, of if the field is not presented in the response data.</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">if (!isset($response_fields['trnApproved']))
+  throw new Phpr_ApplicationException('The card was declined by the payment gateway.');
+  
+if (!isset($response_fields['trnApproved']) || ($response_fields['trnApproved'] !== '1'))
+  throw new Phpr_ApplicationException('The card was declined by the payment gateway.');
+</pre></div><p>And finally, if the transaction has been successful, the payment module logs the payment attempt, updates the order status and marks the order as processed:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">/*
+ * Log the successful payment attempt
+ */
+$this-&gt;log_payment_attempt($order, 'Successful payment', 1, $this-&gt;prepare_fields_log($fields), $this-&gt;prepare_fields_log($response_fields), $this-&gt;prepare_response_log($response));
+
+/*
+ * Update the order status
+ */
+Shop_OrderStatusLog::create_record($host_obj-&gt;order_status, $order);
+
+/*
+ * Mark the order as processed
+ */
+$order-&gt;set_payment_processed();</pre></div><p>The <strong>log_payment_attempt()</strong> method has been described earlier in this article. Please note that this time we pass real values to the request, response and raw text response method parameters. Before saving the request and response details, we clean the arrays using the <strong>prepare_fields_log()</strong> method. Inside this method we remove some array elements, which should not be visible on the payment attempt details popup window. Each payment module has its own set of "secret" fields - such as the API user name and password. The credit card parameters should also be removed. In the Beanstream payment module we implemented the data cleaning method in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">private function prepare_fields_log($fields)
+{
+  if (isset($fields['merchant_id']))
+    unset($fields['merchant_id']);
+
+  if (isset($fields['trnCardNumber']))
+    $fields['trnCardNumber'] = '...'.substr($fields['trnCardNumber'], -4);
+  
+  if (isset($fields['trnCardCvd']))
+    unset($fields['trnCardCvd']);
+
+  return $fields;
+}</pre></div><p>It removes the Merchant Id field (this is a payment gateway specific field), the card verification number field, and updates the card number field value, leaving only 4 last digits.</p>
+<p>To the last parameter of the <strong>log_payment_attempt()</strong> method we pass the response string received from the payment gateway. Some gateways return credit card information and API credentials in the response string, and such information should be removed from the response string before saving it to the database. Usually we define the <strong>prepare_response_log()</strong> method which processes the response string. Beanstream does not send any sensitive information in the response, so the method implementation for the Beanstream just returns the input string:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">private function prepare_response_log($response)
+{
+  return $response;
+}
+</pre></div><p>To change the order status the code calls the <strong>Shop_OrderStatusLog::create_record()</strong> method:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">Shop_OrderStatusLog::create_record($host_obj-&gt;order_status, $order);
+</pre></div><p>The <strong>Shop_OrderStatusLog::create_record()</strong> method has 2 parameters - the destination status identifier and the order object. The order status identifier is available through the $host_obj-&gt;order_status field.</p>
+<p>To mark the order as paid the code uses the following call:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$order-&gt;set_payment_processed();
+</pre></div><h4>Logging invalid payment attempts</h4>
+<p>The catch part of the try..catch blog which wraps the request sending and response parsing code, should contain PHP code for logging invalid payment attempts. Below is a code example from the Beanstream payment module:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">...
+catch (Exception $ex)
+{
+  $fields = $this-&gt;prepare_fields_log($fields);
+  
+  $error_message = $ex-&gt;getMessage();
+  if (isset($response_fields['messageText']))
+    $error_message = $response_fields['messageText'];
+  
+  $this-&gt;log_payment_attempt($order, $error_message, 0, $fields, $this-&gt;prepare_fields_log($response_fields), $this-&gt;prepare_response_log($response));
+
+  if (!$back_end)
+    throw new Phpr_ApplicationException($ex-&gt;getMessage());
+  else
+    throw new Phpr_ApplicationException($error_message);
+}
+</pre></div><p>You can use the similar code for all payment gateways, with one exception. The code tries to load the error message, received from the payment gateway, from the <strong>messageText</strong> response field. This field is specific for the Beanstream payment gateway, and you need to refer to your payment gateway integration guide to find out which response field contains the error message.</p>
+<h3>Back-end payment forms</h3>
+<p>All payment modules must provide a form for paying an order from the LemonStand Administration Area. Payment modules which implement the server-to-server integration method must implement the <strong>build_payment_form()</strong> method. This method should contain a PHP code for building the payment form for the Administration Area. This method is similar to the define_form_fields() method of the model class, which we described in the <a href="administration_area_forms.html">Forms</a> article. Below is a method implementation from the Beanstream payment module:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">public function build_payment_form($host_obj)
+{
+  $host_obj-&gt;add_field('FIRSTNAME', 'First Name', 'left')-&gt;renderAs(frm_text)-&gt;comment('Cardholder first name', 'above')-&gt;validation()-&gt;fn('trim')-&gt;required('Please specify a cardholder first name');
+  $host_obj-&gt;add_field('LASTNAME', 'Last Name', 'right')-&gt;renderAs(frm_text)-&gt;comment('Cardholder last name', 'above')-&gt;validation()-&gt;fn('trim')-&gt;required('Please specify a cardholder last name');
+  $host_obj-&gt;add_field('ACCT', 'Credit Card Number', 'left')-&gt;renderAs(frm_text)-&gt;validation()-&gt;fn('trim')-&gt;required('Please specify a credit card number')-&gt;regexp('/^[0-9]+$/', 'Credit card number can contain only digits.');
+  $host_obj-&gt;add_field('CVV2', 'CVV2', 'right')-&gt;renderAs(frm_text)-&gt;validation()-&gt;fn('trim')-&gt;required('Please specify Card Verification Number')-&gt;numeric();
+  $host_obj-&gt;add_field('PHONE', 'Phone number')-&gt;renderAs(frm_text)-&gt;validation()-&gt;fn('trim')-&gt;required('Please specify a customer phone number')-&gt;numeric();
+
+  $host_obj-&gt;add_field('EXPDATE_MONTH', 'Expiration Month', 'left')-&gt;renderAs(frm_text)-&gt;validation()-&gt;fn('trim')-&gt;required('Please specify card expiration month')-&gt;numeric();
+  $host_obj-&gt;add_field('EXPDATE_YEAR', 'Expiration Year', 'right')-&gt;renderAs(frm_text)-&gt;validation()-&gt;fn('trim')-&gt;required('Please specify card expiration year')-&gt;numeric();
+}
+</pre></div><p>It creates the following payment form in the Administration Area:</p>
+<p><img src="../resources/i/wiki/extending/beanstream_aa_payment_form.png" alt="" /></p>
+<p>Please note that you should use same set of fields, and the same form field names in the back-end payment form and in the front-end payment form partial.</p>
+<h3>Formatting XML requests</h3>
+<p>Some payment gateways expect a request to be formatted as a XML document. There is a handy way of formatting XML documents in the payment module classes. The <strong>format_xml_template()</strong> allows you to specify the XML template file, pass required parameters into it and obtain a formatted XML strong. The template file should be placed to the payment module directory. For example:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$request_str = $this-&gt;format_xml_template('request.xml', array('order'=&gt;$order));</pre></div><p>The code processes the request.xml file and returns the XML string ready to be sent to the payment gateway. You can pass any parameters required for formatting the XML document to the template, using the second method parameters.</p>
+<p>Inside the XML template file (request.xml in our example), you can access the passed parameters and use any PHP structures. For example:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;request_data&gt;
+  &lt;order&gt;
+    &lt;id&gt;&lt;?= $order-&gt;id ?&gt;&lt;/id&gt;
+    &lt;total&gt;&lt;?= $order-&gt;total ?&gt;&lt;/total&gt;
+  &lt;/order&gt;
+  &lt;customer&gt;
+    &lt;first_name&gt;&lt;?= h($order-&gt;billing_first_name) ?&gt;&lt;/first_name&gt;
+  &lt;/customer&gt;
+&lt;/request_data&gt;</pre></div><p>For the logging purposes you need to present the request XML document as an array. You can use the <strong>Core_Xml::to_plain_array()</strong> function for converting an XML document into an array. But first you need to create a XML document object from the XML string:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$doc = new DOMDocument('1.0');
+$doc-&gt;loadXML($request_str);</pre></div><p>After that you can obtain the array suitable for passing into the <strong>log_payment_attempt()</strong> method:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$fields = Core_Xml::to_plain_array($doc, true);</pre></div><h3>Conclusion</h3>
+<p>The complexity of implementing of a specific payment module depends on complexity of the payment gateway integration API and on the quality of the payment gateway integration guide. LemonStand API allows to implement almost any payment module. We cannot provide you with all possible solutions and code examples in a single Wiki article. We suggest you to explore existing payment modules and learn how they solve different tasks. Here is a list of some existing server-to-server payment modules:</p>
+<ul>
+<li><strong>HSBC API</strong> - sends the XML request to the payment gateway. In this module we prepare the XML document manually, step by step. The module file name is shop_hsbc_payment.php.</li>
+<li><strong>Authorize.Net AIM</strong> - Authorize.Net Advanced Integration Method implementation. This module sends a POST request to the payment gateway, using the CURL library. The file name is shop_authorize_net_aim_payment.php.</li>
+</ul>
+        
+        <p><br/>Previous: <a href="redirection_integration_method.html">Using a Redirection Integration Method</a><br/>Return to <a href="developing_payment_modules.html">Guide for Developing a Payment Module</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_194"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/server_to_server_integration_method/";
+		var disqus_title = "Using a Server-to-Server Integration Method";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

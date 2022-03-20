@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Creating Modules for LemonStand Marketplace</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="extending_lemonstand.html">Extending LemonStand</a></li><li><a href="authoring_for_lemonstand_marketplace.html">Authoring for LemonStand Marketplace</a></li><li class="last">Creating Modules for LemonStand Marketplace</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Creating Modules for LemonStand Marketplace</h2>
+        
+        <p>Developing modules for the Marketplace applies several requirements to the module code. The requirements are described below.&nbsp;Before you begin developing a new module for the Marketplace, we suggest that you&nbsp;<a href="becoming_an_author.html">become an author</a> and check the module code availability.</p>
+<h3>Checking module code availability</h3>
+<p>As per the <a href="creating_modules_for_marketplace.html#">module development documentation</a>, module codes (also called module identifiers) should match module directory names. The naming convention requires the module code to be used as a prefix in module class names. That is why it is a good idea to check module code availability before you begin working on a public module.&nbsp;</p>
+<p>Module codes can contain only Latin symbols and digits. Underscores and spaces are not allowed. Module codes should begin with a Latin symbol.&nbsp;</p>
+<p class="wiki_note">To avoid conflicts, module codes are <span><strong>required</strong></span> be prefixed with the author name or company name, or part of it. Examples: <strong>acme</strong>blog, <strong>acme</strong>images.</p>
+<p>Log into the <a href="https://lemonstandapp.com/myaccount">My Account</a> section, and click the Author link in the menu. Fill the Author form if you have not done it yet. After filling the form click the Manage Modules link and then click the <strong>Check module code availability</strong> button.&nbsp;Enter the module code you would like to check and click the <strong>Check</strong> button. If the code is available, you can reserve it for one month to complete the development. If you need more time, you can reserve the code again.</p>
+<h3>Marketplace module coding requirements</h3>
+<p>In order to satisfy LemonStand quality standards, public modules should follow the following guides:</p>
+<ul>
+<li>Module PHP code should be clean and contain comments.</li>
+<li>Module should not require any hacks in LemonStand core.</li>
+<li>Modules should not use any store-specific URLs. For example, it is would be wrong to redirect to the /checkout page inside a module because such page could be missing in some LemonStand stores or it could have another URL. To manage redirections use hidden fields to allow store developers to provide correct URL, valid for a specific store. For example see <strong>redirect</strong> supported hidden field in the&nbsp;<a href="http://v1.lemonstand.com/docs/action_shop_change_password/">shop:change_password</a>&nbsp;action.</li>
+<li>To make the module compatible with <a href="system_requirements.html">LemonStand system requirements</a> do not use PHP features which are not supported in PHP 5.2.6.</li>
+<li>Do not use MySQL features which are not supported in version 4.1.</li>
+<li>If your module has settings pages, <a href="creating_module_settings_pages.html">define links to them on the Settings or My Settings pages</a>. Do not add links to settings pages to the main menu.</li>
+<li>Modules should be usable with PHP and Twig themes.</li>
+</ul>
+<h3>Adding a module to the Marketplace</h3>
+<p>To add a module to the Marketplace, log into the <a href="https://lemonstandapp.com/myaccount">My Account</a> area, click the Author link. If you are not an author yet, you will need to fill the form on the Author page. On the Author page click the <strong>Manage Modules</strong> link. On the <strong>My Modules</strong> page click the <strong>Create new module</strong> button. Choose whether you want to create a <strong>marketplace-hosted</strong> or a <strong>self-hosted</strong> module.</p>
+<p>Both marketplace-hosted and self-hosted modules can be paid and sold through the Marketplace.&nbsp;If your module is paid, you will be getting the regular payouts (however, we will withhold a commission fee from every sale). For marketplace-hosted modules the process of purchasing is completely automated by Marketplace. When a customer buys a marketplace-hosted module, he can bind it to any of his LemonStand licenses from the MyAccount area immediately after paying an order. Delivering of self-hosted module products is not automated. You, as a developer, will be receiving notifications from Marketplace, when somebody purchases your theme. The notification contains the order details and the buyer contact information. You're responsible to contact the buyer and to deliver the product.</p>
+<p>Hosting modules on the Marketplace has the following benefits:</p>
+<ul>
+<li>Automatically supported updates. When you publish a module update, customers can update their copies using the LemonStand one-click update feature.</li>
+<li>Automatically supported licensing. When customers purchase modules on Marketplace, they can bind them to a single LemonStand core license. If a customer needs the same module for another license, they will need to purchase another copy.</li>
+<li>Automated purchasing. Marketplace-hosted modules are delivered to a customer automatically, without any participation from your side.</li>
+</ul>
+<p>For self-hosted modules you will need to take care about module updating and licensing.</p>
+<h4>Marketplace Icon</h4>
+<p>An attractive icon is important in the Marketplace. It will attract buyers and provide credibility for your product. We have a icon template you can <a href="../resources/media/module-base.zip">download here</a>. There is an accompanying blog post which includes some additional information on it <a href="../blog/post/anatomy_of_a_marketplace_icon/index.html">here</a>.</p>
+<h3>Updating the module information</h3>
+<p>You can update any parameter of an existing module. Click the&nbsp;<strong>Edit</strong>&nbsp;link on the Module Details page and update the module information. You can also delete or add new module screenshots and update the module icon.&nbsp;</p>
+<h3>Managing modules updates</h3>
+<p>This section applies only to marketplace-hosted modules. To upload the first module version, or update an existing module, click the <strong>Module updates</strong>&nbsp;link on the Module Details page. Upload the module ZIP archive using the form on the page. The module archive should contain the entire module directory, including the directory itself. The module should have the <strong>updates</strong> directory with the <strong>version.dat</strong> file. When you update something in your module, you should also add a version information string to the version.dat file, otherwise the module update will not be recognized by the system.</p>
+<p>After uploading a module archive, the published updates updates become <strong>pending</strong>. This means that the updates are not available for LemonStand customers until you publish them. The <strong>pending</strong> updates status is needed for testing updates before making them public.</p>
+<p class="wiki_note"><strong>Important.</strong>&nbsp;Never change version numbers (in version.dat file) for versions which have already been published.&nbsp;Failure to follow this rule can confuse LemonStand update manager and result in inability to update the application.</p>
+<h3>Testing module updates</h3>
+<p>To test updates you can bind a module to any of your existing LemonStand licenses. To do that, click the <strong>Bind test licenses</strong>&nbsp;link on the module information page. Mark the licenses which you would like to bind the module to with the <strong>Bind</strong> checkbox. Alternatively you can allow installing pending updates for any LemonStand license. This approach allows you to test pending module updates and make sure that they work correctly. If you are not satisfied with results, you can <strong>Cancel pending updates</strong>&nbsp;on the <strong>Manage updates</strong>&nbsp;page, fix the module and upload the updated file.</p>
+<p>When you are satisfied with the testing <strong>Publish pending updates</strong>&nbsp;on the&nbsp;<strong>Manage updates</strong>&nbsp;page. This will make the updates available for customers.</p>
+<p class="wiki_note"><strong>Important.</strong><span>&nbsp;Before publishing new updates always test them with an existing <strong>and new</strong> LemonStand installations. Some updates could work in existing LemonStand copies, but fail during the installation.</span></p>
+<h3>Publishing a module</h3>
+<p>In order for a module to appear in the Marketplace directory, you should publish it. To publish a module, click the&nbsp;<strong>Publish</strong>&nbsp;link on the Module Details page. If you are publishing the module for the first time, you will be offered to fill the Test form and wait until we test your module. We test all products before they are published on Marketplace in order to make sure that they satisfy LemonStand quality standards. After receiving a positive response from Limewheel Inc., you can publish the module. To hide a published module from Marketplace, you can unpublish it by clicking the&nbsp;<strong>Unpublish</strong>&nbsp;link on the Module Details page.</p>
+<!--
+<h3>Certifying a module</h3>
+<p>LemonStand module certification is a paid service of Limewheel Inc. Certified modules are marked with a special badge "Certified by Limewheel Inc." on Marketplace pages and gain more&nbsp;credibility from LemonStand customers. Certification is an interactive process, which can involve multiple iterations.&nbsp;During the certification we perform the detailed module code review and test all module features and can give suggestions about improving the module internal structure.</p>
+<p>To request a module certification, click the <strong>Request certification</strong> link on the Module Details page. Upload the module ZIP archive using the form on the page and click the <strong>Place Order</strong> button and pay the order. We will contact you when we finish the certification or if we need additional information.</p>
+-->
+        
+        <p><br/>Previous: <a href="creating_themes_for_marketplace.html">Creating Themes for LemonStand Marketplace</a><br/>Return to <a href="authoring_for_lemonstand_marketplace.html">Authoring for LemonStand Marketplace</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_362"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/creating_modules_for_marketplace/";
+		var disqus_title = "Creating Modules for LemonStand Marketplace";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

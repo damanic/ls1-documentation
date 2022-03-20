@@ -1,0 +1,342 @@
+.wiki_page_content h2{
+    margin: 15px 0;
+}
+
+ul.wiki_controls{
+    margin-left: 0!important;
+}
+
+ul.wiki_controls li{
+    float: left;
+    list-style-type:none;
+    padding-left: 20px;
+    background-repeat: no-repeat;
+    background-position: left 33%;
+    margin-right: 8px;
+}
+
+ul.wiki_controls li.edit{
+    background-image: url(../i/wiki/page_white_edit.png);
+}
+
+ul.wiki_controls li.edit_examples{
+    background-image: url(../i/wiki/page_white_code.png);
+}
+
+ul.wiki_controls li.create_page{
+    background-image: url(../i/wiki/page_white_add.png);
+}
+
+.wiki_breadcrumbs{
+    float: left;
+}
+
+.wiki_breadcrumbs ul{
+    margin-left: 0!important;
+}
+
+.wiki_breadcrumbs li{
+    float: left;
+    padding-right: 15px;
+    margin-right: 6px;
+    background: transparent url(../i/wiki/breadcrumb.png) no-repeat right 45%;
+    list-style-type:none;
+}
+
+.wiki_breadcrumbs li.last{
+    background: none;
+}
+
+ul.wiki_toc{
+    margin: 0 0 25px 0;
+}
+
+ul.wiki_toc ul{
+    padding-left: 30px;
+    margin-bottom: 0;
+}
+
+#b_help #content h2{
+    clear: both;
+}
+
+#b_help #content ul{
+    list-style-position: outside;
+    line-height: 20px;
+    margin-left: 15px;
+    /* margin-top: 0;
+    */
+;
+}
+
+#b_help #content ul li {
+    margin-bottom: 0;
+    line-height: 170%;
+}
+
+#b_help #content ul.variable_list{
+    margin-left: 0;
+}
+
+#b_help #content ul.variable_list li{
+    list-style-type: none;
+    background: transparent url(../i/wiki/tag_blue.png) no-repeat left 5px;
+    padding-left: 23px;
+}
+
+#b_help #content ul.handler_list{
+    margin-left: 0;
+}
+
+#b_help #content ul.handler_list li{
+    list-style-type: none;
+    background: transparent url(../i/wiki/lightning.png) no-repeat left 5px;
+    padding-left: 23px;
+}
+
+#b_help #content ul ul{
+    padding-left: 20px;
+}
+
+#b_help #content h1 a{
+    color:#FFFFFF;
+    text-decoration:none;
+}
+
+#b_help #content h1 a span{
+    color:#A6C9E0;
+}
+
+#b_help #content h1 a:hover span{
+    color:#FFDD55;
+}
+
+/*#b_help p{
+    margin: 0 0 1em 0;
+}
+
+*/
+#b_help .wiki_page_content h5{
+    padding-bottom: 0;
+}
+
+#b_help .wiki_image_frame{
+    border: 1px solid #ddd;
+}
+
+#b_help .wiki_image_frame_padding{
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#b_help .wiki_page_content h4{
+    font-size: 14px;
+    padding-bottom: 0;
+   color: #333;
+}
+
+#b_help h4 + ul.wiki_toc{
+    padding-top: 5px!important;
+}
+
+#b_help .commentsWrap{
+    clear: left;
+    float: none;
+    padding-top: 1em!important;
+}
+
+#b_help .wiki_comments{
+    float: right;
+    width: auto;
+}
+
+#b_help .wiki_page_content{
+    padding-left: 10px;
+}
+
+#wiki_search{
+    position: relative;
+    height: 44px;
+    margin: 20px 0;
+    background-color: #eee;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#wiki_search label{
+    font-size: 12px;
+    float: left;
+    width: 100px;
+}
+
+#wiki_search_field{
+    position: absolute;
+    left: 10px;
+    width: 834px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0px 1px 2px #eee;
+    -moz-box-shadow: inset 0px 1px 2px #eee;
+    box-shadow: inset 0px 1px 2px #eee;
+    color: #262626;
+    font-size: 1.4em;
+    height: 27px;
+    outline: none;
+    padding: 5px 5px 8px;
+    margin-right: 10px;
+}
+
+#wiki_search_field:focus {
+    border-color: #999;
+}
+
+#btn-doc-search {
+    position: absolute;
+    right: 10px;
+    width: 84px;
+    height: 42px;
+}
+
+#btn-doc-search:active {
+    top: inherit;
+}
+
+.wiki_clear{
+    clear: both;
+}
+
+.wiki_search_entries{
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+    line-height: 150%;
+    list-style-type: none;
+    margin: 0;
+}
+
+.wiki_search_entries h3{
+    font-size: 14px;
+    padding: 0;
+    color: #333;
+    font-weight: normal;
+    line-height: 150%;
+    position: relative;
+}
+
+.wiki_search_entries p{
+    font-size: 14px;
+    padding: 0 0 10px 0;
+    margin: 0;
+    line-height: 150%;
+}
+
+.wiki_search_entries .highlight{
+    font-weight: bold;
+}
+
+.wiki_search_entries p .highlight{
+    color: #444;
+}
+
+.wiki_search_entries .syntaxhighlighter div.lines{
+    border-bottom: none!important;
+    border-top: none!important;
+}
+
+.wiki_search_entries .syntaxhighlighter{
+    margin-top: 0!important;
+    background : transparent!important;
+}
+
+.wiki_note{
+    background: #f9f2bd url(../i/lightbulb.png) no-repeat 10px 10px;
+    padding: 8px 8px 8px 35px;
+    -moz-border-radius:4px;
+    -webkit-border-radius: 4px;
+    border-radius:4px;
+    color: #333;
+}
+
+.wiki_note p:last-child{
+    padding-bottom: 0!important;
+    margin-bottom: 0!important;
+}
+
+#b_help .wiki_page_content strong{
+    color: #000;
+    font-weight: normal;
+}
+
+/* * Data table */
+table.wiki_data_table th,table.wiki_data_table td{
+    font-family: Arial,Verdana,Helvetica,sans-serif!important;
+}
+
+table.wiki_data_table{
+    border-collapse: collapse!important;
+    margin-bottom: 12px!important;
+    border: 1px solid #ccc!important;
+    margin-top: 5px!important;
+    width: 100%;
+}
+
+table.wiki_data_table th,table.wiki_data_table td{
+    font-size: 11px!important;
+    color: #333!important;
+    padding: 3px 5px!important;
+    border-right: 1px solid #ccc!important;
+    vertical-align: top;
+}
+
+table.wiki_data_table td.width-200,
+table.wiki_data_table th.width-200 {
+  width: 200px;
+}
+
+table.wiki_data_table thead{
+    background-color: transparent!important;
+}
+
+table.wiki_data_table thead th{
+    background-color: #eee!important;
+    border-bottom: 1px solid #ccc!important;
+    border-top: 2px solid #666666;
+    font-weight: normal!important;
+    color: #000!important;
+}
+
+table.wiki_data_table th.number,table.wiki_data_table td.number{
+    text-align: right!important;
+}
+
+#b_help #dsq-comments li {
+  margin-bottom: 10px!important;
+}
+
+a.api-marker {
+  position: absolute; 
+  display: block;
+  text-indent: -1000000em;
+  width: 24px;
+  height: 13px;
+  left: -34px;
+  top: 4px;
+  background: transparent url(../i/api-marker.png) no-repeat -24px top;
+}
+
+a.api-marker:hover {
+  background-position: 0 top;
+}
+
+#wiki-cta {
+	background-color: #DDEFFC;
+	border-radius: 5px;
+	padding: 40px;
+	text-align: left;
+	margin: 30px auto;
+}

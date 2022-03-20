@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Guide to Front-End Customization</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="beginners_guide.html">Beginner's Guide</a></li><li class="last">Guide to Front-End Customization</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Guide to Front-End Customization</h2>
+        
+        <p><a name="top"></a></p>
+<p>LemonStand gives you fine grain control over the design and functionality&nbsp;of any page in your ecommerce store.&nbsp;<span>You can use any front-end code you like, without restriction. Save development<span>&nbsp;time </span>by using partials, page actions, and content blocks.&nbsp;</span></p>
+<p class="p1">This guide will give you an overview of how to access and customize each of the components of your ecommerce store:</p>
+<ul>
+<li><a href="cms_pages_overview.html#addlayout"> Adding a Layout</a></li>
+<li><a href="cms_pages_overview.html#createpage"> Creating Your First Page</a></li>
+<li><a href="cms_pages_overview.html#createpartial"> Creating a Partial</a></li>
+<li><a href="cms_pages_overview.html#pagedeclarations"> Using Page Head Declarations</a></li>
+<li><a href="cms_pages_overview.html#pageblocks"> Using Page Blocks</a></li>
+<li><a href="cms_pages_overview.html#editableblocks"> Creating Editable Blocks</a></li>
+<li><a href="cms_pages_overview.html#minifying"> Combining and Minifying Javascript and CSS Files</a></li>
+<li><a href="cms_pages_overview.html#globalblocks"> Using Global Content Blocks</a></li>
+<li><a href="cms_pages_overview.html#resources"> Managing Resources</a></li>
+<li><a href="cms_pages_overview.html#pages"> Programming Pages</a></li>
+<li><a href="cms_pages_overview.html#actions"> Using Page Actions</a></li>
+<li><a href="cms_pages_overview.html#ajax"> Using AJAX</a></li>
+</ul>
+<p class="p1"><span><br /></span></p>
+<h3 class="p1"><strong><a name="addlayout"></a><a href="adding_a_template.html">Adding a Layout</a></strong></h3>
+<p class="p1">When you create multiple pages with LemonStand you will soon find that you repeat the same HTML code in all pages &ndash; the HEAD and BODY tags declarations, page headers and footers. <strong>Layouts</strong> allow you to reuse the common code. <strong>Layouts</strong> act as wrappers for your pages. They usually contain the required HTML tags like HEAD, TITLE and BODY, as well as common blocks of your pages &ndash; website navigation, footer, header, sidebar etc. You can have as many layouts as you need. For simple websites two layouts usually are enough &ndash; for the Home page and for inner pages.</p>
+<p class="p2">&nbsp;</p>
+<p class="p1">&lt;layout&gt;</p>
+<p class="p1">&nbsp; &nbsp; &nbsp; &lt;page&gt;</p>
+<p class="p1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;partial&gt;</p>
+<p class="p1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/partial&gt;</p>
+<p class="p1">&nbsp; &nbsp; &nbsp; &lt;/page&gt;</p>
+<p class="p1">&lt;/layout&gt;</p>
+<p class="p1"><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2">&nbsp;</p>
+<h3 class="p1"><strong><a name="createpage"></a><a href="creating_your_first_page.html">Creating your First Page</a></strong></h3>
+<p class="p1">Go to the CMS/Pages page and click the Add page button. You will see the Page Editor page &ndash; the tool for creating and managing pages. For any page in LemonStand you should specify at least 3 parameters:</p>
+<ul>
+<li>Page Title</li>
+<li>Page URL</li>
+<li>Page Content</li>
+</ul>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2">&nbsp;</p>
+<h3 class="p1"><strong><a name="createpartial"></a><a href="creating_a_partial.html">Creating a Partial</a></strong></h3>
+<p class="p1">Partials are an important component of LemonStand's template engine. <strong>Partials enable you to share code blocks among multiple pages</strong>. Code reusing allows you to save much time when you develop complicated websites. For example, you can create a partial for rendering a product list and use this partial on the Category page and on the Home page. Instead of writing the same code in each page, you can just ask LemonStand to render the partial.</p>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2">&nbsp;</p>
+<h3 class="p1"><strong><a name="pagedeclarations"></a><a href="using_the_head_field.html">Using Page Head Declarations</a></strong></h3>
+<p class="p1">The Head Declarations field on the Create/Edit Page form (the Head &amp; Blocks tab) allows you to separate page-specific HEAD declarations from the common templates code. In this field you can define code which you want to be rendered in the page HEAD element - for example SCRIPT or CSS resource references. Then you can output the content defined in the field using the $this-&gt;render_head() call in your page templates.</p>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2">&nbsp;</p>
+<h3 class="p1"><strong><a name="pageblocks"></a><a href="using_the_page_blocks_feature.html">Using Page Blocks</a></strong></h3>
+<p class="p1">The page blocks feature allows you to inject page-specific code blocks to the page layout. It is helpful, for example, when you have a page which contains a main area and a sidebar, and the sidebar should contain some page-specific data. In this case you can define the sidebar layout markup in the page layout and define a sidebar block in the page. LemonStand will inject the page sidebar content to the layout. It will simplify the page and layout code, because the page code will not contain any layout-specific markup.</p>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2">&nbsp;</p>
+<h3 class="p2"><strong><a name="editableblocks"></a><a href="creating_editable_blocks.html">Creating Editable Blocks</a></strong></h3>
+<p class="p2"><span>Editable content blocks allow you to separate your pages HTML code and pages content. You may add any number of content blocks on a page and then edit them separately from the page code, in WYSIWYG or text mode. The benefit of this approach is that page content can be managed by non-technical people. It protects pages from being corrupted by accident and makes page editing simpler.</span></p>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2"><span><br /></span></p>
+<h3 class="p2"><strong><a name="globalblocks"></a><a href="global_content_blocks.html">Creating Global Content Blocks</a></strong></h3>
+<p class="p2"><span><span>Global content blocks are similar to the&nbsp;</span><a href="creating_editable_blocks.html">regular content blocks</a><span>, but they can be used not only on pages, but also in layouts and partials. Global content blocks are also shared across themes. You can define a single content block and use it in different themes. Its content will be the same in all themes.</span></span></p>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2"><span><span><br /></span></span></p>
+<h3 class="p2"><strong><a name="minifying"></a><a href="combining_and_minifying_javascript_and_css_files.html">Combining and Minifying JavaScript and CSS Files</a></strong></h3>
+<p>The&nbsp;<a href="http://v1.lemonstand.com/docs/class_cms_controller">page controller class</a>&nbsp;has two methods which allow you to combine and minify JavaScript and CSS resources. These methods are&nbsp;<strong>js_combine</strong>&nbsp;and&nbsp;<strong>css_combine</strong>. With these methods you can:</p>
+<ul>
+<li>Combine multiple JavaScript or CSS files into a single file, reducing the number of external requests on a page.</li>
+<li>Minify the resource files. LemonStand automatically minifies and compresses resource files with GZIP.</li>
+</ul>
+<p>These methods allow you to include both local and remote files. LemonStand automatically processes relative URLs in CSS combined files.&nbsp;</p>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2">&nbsp;</p>
+<h3 class="p2"><strong><a name="resources"></a><a href="managing_resources.html">Managing Resources</a></strong></h3>
+<p>LemonStand has an integrated resource manager which allows you to upload, modify and organize resource files. LemonStand's directory structure includes a special directory&nbsp;/resources, designed for keeping resource files. With resource manager you can create subdirectories in this directory and upload your files to them.</p>
+<p>&nbsp;<a href="cms_pages_overview.html#top">Back to top</a></p>
+<p>&nbsp;</p>
+<h3 class="p1"><strong><a name="pages"></a><a href="programming_pages.html">Programming Pages</a></strong></h3>
+<p class="p1">Programming LemonStand pages is a simple process due to the API and programming techniques built into the system. The main component of the LemonStand page programming API is the Action. Another important component is the LemonStand AJAX implementation.</p>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2">&nbsp;</p>
+<p class="p1"><a name="actions"></a><a href="actions.html"><strong>Action</strong></a> - is a PHP code written by you or provided by LemonStand modules, executed before a page is displayed. Actions are used for preparing data to be displayed on a page and for processing page forms.</p>
+<p class="p1"><a name="ajax"></a><a href="ajax.html"><strong>AJAX</strong></a> - allows you to process forms and update page content without reloading the whole page.</p>
+<p><a href="cms_pages_overview.html#top">Back to top</a></p>
+<p class="p2">&nbsp;</p>
+<p class="p2">&nbsp;</p>
+<p class="p2"><a href="../resources/media/CMS&#32;Pages&#32;Overview.pdf">&nbsp;PDF VERSION</a></p>
+        
+        <p>Next: <a href="installing_a_theme.html">Installing A Theme</a><br/>Previous: <a href="adding_or_editing_a_product.html">Adding or Editing a Product</a><br/>Return to <a href="beginners_guide.html">Beginner's Guide</a></p>
+        
+              </div>
+      
+             
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

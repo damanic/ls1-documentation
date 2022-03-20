@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - LemonStand Configuration Options</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="system_configuration_and_maintenance.html">Installation, Configuration and Maintenance</a></li><li class="last">LemonStand Configuration Options</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>LemonStand Configuration Options</h2>
+        
+        <p>This page contains a list of parameters which you can use for configuring your LemonStand copy. All parameters listed here can be declared in the config/config.php file. Example: <div class="codeblock"><pre class="brush:php; collapse: false">$CONFIG['BACKEND_URL'] = '/backdoor';</pre></div></p>
+<h3>Security</h3>
+<ul>
+<li><strong>BACKEND_URL</strong> - specifies an URL of the Administration Area. <a href="setting_the_administration_area_and_configuration_tool_urls.html">Read more</a>.</li>
+<li><strong>CONFIG_URL</strong> - specifies an URL of the Configuration Tool.&nbsp;<a href="setting_the_administration_area_and_configuration_tool_urls.html">Read more</a>.</li>
+<li><strong>EDITABLE_FILES</strong> - specifies a list of text-based files which you can edit in the Resource Manager on the CMS/Resources page. By default you can edit JavaScript and CSS files.</li>
+<li><strong>SECURE_CONFIG_PATH</strong> - specifies a path to the secure config file (config.dat). Please use an absolute path in this parameter. If the config.dat file is in the /config directory, you can omit (comment out) this parameter. Default path is the <strong>config</strong>&nbsp;directory in your LemonStand installation root.</li>
+<li><strong>FILE_PERMISSIONS</strong> - specifies a permission mask to apply to when LemonStand overrides files. The mask should start with the 0 (zero) symbol: 0777. Default is 0777.</li>
+<li><strong>FOLDER_PERMISSIONS</strong> - specifies a permission mask to apply to when LemonStand overrides directories. The mask should start with the 0 (zero) symbol: 0777.&nbsp;Default is 0777.</li>
+<li><strong>CRON_ALLOWED_IPS</strong> - specifies a list of IP addresses allowed for executing scheduled tasks (like updating the <a href="lemonstand_configuration_options.html#">catalog price rules</a>).</li>
+<li><strong>FRONTEND_AUTH_COOKIE_LIFETIME</strong> - defines the lifetime for the front-end customer session cookies. The parameter value should be an integer number, specifying the number of days. Set the 0 value to remove cookies automatically when a visitor closes the browser.</li>
+<li><strong>AUTH_COOKIE_LIFETIME</strong> -&nbsp;defines the lifetime for the Administration Area user session cookies. The parameter value should be an integer number, specifying the number of days.&nbsp;Set the 0 value to remove cookies automatically when a user closes the browser.</li>
+<li><strong>USER_DISABLE_IP_CHECK</strong> - allows to disable the IP check for user authentication (based on cookies). This may be useful if you are randomly being logged out. This parameter is <strong>obsolete</strong> and not used since Core version&nbsp;1.5.4.</li>
+<li><strong>SESSION_PARAM_NAME</strong> - name of the GET parameter used for passing the session identifier during the HTTP=&gt;HTTPS redirections. The default value is&nbsp;<strong>ls_session_id</strong>.</li>
+<li><strong>ALLOWED_RESOURCE_EXTENSIONS</strong> -&nbsp;allows you to customize the allowed file extensions for resources. All files which do not have an extension in the list will be ignored. When requesting minified resources, this value is checked to verify it is allowed. The default is only CSS and JavaScript files (css and js, respectively). For example: <div class="codeblock"><pre class="brush:php; collapse: false">$CONFIG['ALLOWED_RESOURCE_EXTENSIONS'] = array('js', 'css');</pre></div></li>
+<li><strong>ALLOWED_RESOURCE_PATHS</strong>&nbsp;-&nbsp;allows you to customize the <span>allowed&nbsp;</span>base directories for resources. All files below this folder will be allowed (files of sub-directories). When requesting minified resources, this value is checked to verify the resource is not outside of the allowed directories. It is to prevent local file inclusion (LFI). The default is only the LemonStand installation directory. For example:&nbsp;<div class="codeblock"><pre class="brush:php; collapse: false">$CONFIG['ALLOWED_RESOURCE_PATHS'] = array(PATH_APP);</pre></div></li>
+<li><strong>TICKET_PARAM_NAME</strong>&nbsp;&nbsp;- name of the GET parameter used for passing the security ticket value during the HTTP=&gt;HTTPS redirections. The default value is&nbsp;<strong>ls_frontend_ticket</strong>.</li>
+<li><strong>SEARCH_MAX_RECORDS</strong> - allows to limit the maximum number of products displayed by the search page. Default value is NULL (unlimited).</li>
+<li><strong>SECURE_COOKIES</strong> - determines if secure cookies should be used in the HTTPS mode. The default value is TRUE (enabled).&nbsp;The secure cookies feature can have undesirable effects in some cases. Secure cookies are not accessible in the HTTP mode. LemonStand handles HTTP/HTTPS redirection automatically, but this works only when visitors use links for navigating between pages. If they use the back/forward browser buttons the session information could be lost. This could be solved with disabling the secure cookies or with requiring the HTTPS mode for all website pages.</li>
+<li><strong>SECURITY_AUTO_REDIRECT</strong> - cleans up the page URL after the redirect between HTTP and HTTPS protocols by removing the GET parameters (ls_session_id and&nbsp;ls_frontend_ticket). Default value is TRUE (redirect).</li>
+<li><strong>FORCE_ADMIN_SSL</strong> - forces the HTTPS protocol in the Administration Area. The default value is FALSE (do not force).</li>
+</ul>
+<h3>Database</h3>
+<ul>
+<li><strong>MYSQL_PERSISTENT</strong> - allows to disable MySQL Persistent mode. We noticed that persistent connection sometimes fails on some servers. Default is TRUE.</li>
+<li><strong>OPTIMIZE_FRONTEND_QUERIES</strong> - enables the front-end queries optimization.&nbsp;Default value is FALSE.&nbsp;Read the&nbsp;<a href="performance_tuning.html">Performance tuning</a> article&nbsp;for details.</li>
+<li><strong>ALLOW_DB_DESCRIBE_CACHE</strong> - enables the database structure caching. The caching reduces the number of DESCRIBE SQL requests and increases the overall system performance. Default value is FALSE. Read the <a href="performance_tuning.html">Performance tuning</a> article&nbsp;for details.</li>
+<li><strong>USE_PROXY_MODELS</strong>&nbsp;- enables the proxy models feature explained in the <a href="performance_tuning.html">Perfrmance tuning</a> article. Default value is FALSE.</li>
+<li><strong>driver</strong> - specifies MySQL driver. The default value is <strong>Db_MySQL. </strong>Use the&nbsp;<strong>Db_MySQLi</strong>&nbsp;value if PHP MySQL functions are deprecated on your server.</li>
+</ul>
+<h3>Updates</h3>
+<ul>
+<li><strong>FREEZE_UPDATES</strong> - allows to freeze LemonStand updates. <a href="freezing_updates.html">Read more</a>. Default is FALSE.</li>
+<li><strong>AUTO_CHECK_UPDATES</strong> - allows to disable the automatic update checking. Default value is TRUE.</li>
+</ul>
+<h3>Image processing</h3>
+<ul>
+<li><strong>IMAGEMAGICK_ENABLED</strong> - determines whether ImageMagick is enabled or not. Default is FALSE.</li>
+<li><strong>IMAGEMAGICK_PATH</strong> - if ImageMagick is enabled, the parameter should contain a path to a directory containing the <strong>convert</strong> script. Often the convert script is accessible from anywhere and you can leave the parameter empty.</li>
+<li><strong>IMAGE_JPEG_QUALITY</strong> - integer value (0-100), determining the quality of generated JPEG images. Default is 70.</li>
+<li><strong>IMAGE_JPEG_COLORSPACE</strong> - sets colorspace for processing JPEG images with ImageMagick. Default value is RGB. You can find a list of available color spaces in <a href="http://www.imagemagick.org/script/command-line-options.php#colorspace">ImageMagick documentation</a>.</li>
+</ul>
+<h3>Networking and HTTP request handling</h3>
+<ul>
+<li><strong>REMOVE_GPC_SLASHES</strong> - forces LemonStand to remove slash characters from POST, GET and COOKIE input arrays. Usually LemonStand can automatically detect whether the PHP Magic Quotes feature is enabled, but on some servers the automatic detection fails and this flag is required. If you find that LemonStand adds slashes before quotes in your pages, templates or partials source code, set with parameter to TRUE. Default value is FALSE.</li>
+<li><strong>STANDARD_HTTP_PORTS</strong> - disables the automatic port guessing feature. Enabling this option could be helpful if the web server is behind a proxy server. When this feature is enabled, the system never uses port specifiers in URLs, assuming the default HTTP port is 80 and the default HTTPS port is 443. Default value is FALSE.</li>
+<li><strong>REMOTE_IP_HEADERS</strong> - defines the sequence of HTTP headers to read the client IP address from. Array value. Default value is&nbsp;<br />array( 'REMOTE_ADDR', 'HTTP_CLIENT_ip', 'HTTP_X_FORWARDED_FOR' )</li>
+<li><strong>DISABLE_HTTP_SUBREQUESTS</strong> - allows to disable the HTTP subrequests in some operations (like applying the catalog price rules). The default value is FALSE.&nbsp;</li>
+<li><strong>ENABLE_REMOTE_RESOURCES</strong> - allows to disable the remote resources in the <a href="combining_and_minifying_javascript_and_css_files.html">js_combine() and css_combine()</a> calls.The default value is TRUE. The parameter should be declared before the following lines in the config.php file: <div class="codeblock"><pre class="brush:php; collapse: false">if ( !defined('PATH_APP') )
+  return;</pre></div></li>
+<li><strong>REQUEST_PARAM_NAME</strong> - allows to rename the default LemonStand query parameter. The default parameter name is <strong>q</strong>. It can interfere with Google Search (if you implement Google site search in your store). To rename the query parameter, declare the REQUEST_PARAM_NAME option in the config.php file and assign a new query parameter value, for example: <div class="codeblock"><pre class="brush:php; collapse: false">$CONFIG['REQUEST_PARAM_NAME'] = 'lsq';</pre></div> After that replace all occurrences of the <strong>q=</strong> string in the .htaccess file with <strong>lsq=</strong></li>
+</ul>
+<h3>eCommerce settings</h3>
+<ul>
+<li><strong>CATALOG_RULES_PROCESS_BATCH_SIZE</strong> - number of products to process in each HTTP subrequest during the Apply Catalog Price Rules operation. The default value is 50. Greater numbers mean more memory required for each request.</li>
+<li id="NESTED-CATEGORY-URLS"><strong>NESTED_CATEGORY_URLS</strong> - determines whether the nested category URLs support is enabled. Defaults to false. When the feature is enabled, you can use category URLs like "men/jumpers". Please note that this feature requires a minor update of the category pagination code, described in <a href="../wiki/displaying_a_list_of_products/index.html#nested-urls">this article</a>. This parameter is <strong>obsolete</strong> since Shop module version 1.17.0. &nbsp;You can enable category nesting on System/Settings/eCommerce Settings page.</li>
+<li id="NESTED-CATEGORY-URLS"><strong>DISABLE_GROUPED_PRODUCTS</strong> - disables the <a href="understanding_grouped_products.html">Grouped Products</a> feature. The default parameter value is TRUE (grouped products are disabled) in new LemonStand instsallations &nbsp;since July 10, 2012 in favor of the <a href="understanding_option_matrix.html">Option Matrix</a> feature. The parameter hides grouped products user interface elements in the Administration Area.</li>
+<li id="NESTED-CATEGORY-URLS"><strong>CACHE_SHIPPING_METHODS</strong> -&nbsp;The parameter enables the shipping options caching in cases when the cart contents and shipping address have not been changed. It increases the store performance by removing unnecessary HTTP requests to shipping providers from the checkout processing. The default parameter value is TRUE in LemonStand copies installed after April 04 2013. The value is FALSE in installations created before this date.</li>
+<li id="NESTED-CATEGORY-URLS"><strong>DISABLE_ATTR_CONDITIONS</strong> - allows to disable the product attribute (ATTR) discount conditions. Default value is FALSE (enabled).&nbsp;</li>
+<li id="NESTED-CATEGORY-URLS"><strong>LOWERCASE_ORDER_ITEM_OPTIONS</strong> - determines whether option values should be displayed in the lower case in the order item list. The default value is TRUE (lower case).</li>
+<li id="NESTED-CATEGORY-URLS"><strong>OM_SALE_PRICE_FALLBACK</strong> - determines if the Option Matrix record should use the product sale price if the record doesn't have it's own price.&nbsp;<span>The default value is FALSE (do not fallback).</span></li>
+</ul>
+<h3>Error handling</h3>
+<ul>
+<li><strong>ERROR_IGNORE</strong> - allows to specify a list of exception classes which should be ignored in the error log. The value should be an array of strings (exception class names).</li>
+<li><strong>HIDE_ERROR_DETAILS</strong>&nbsp;- allows to disable the default detailed error page. Default value is FALSE. <a href="lemonstand_configuration_options.html#">Read more</a>.</li>
+<li><strong>LOG_TO_DB</strong> - determines whether error messages should be saved to the database. Default value is FALSE.</li>
+<li><strong>ENABLE_ERROR_STRING</strong> - determines whether encrypted error details string should be added to the text error log. Default value is TRUE. You can decode error strings on the System/Settings/View error log/Decoder page.</li>
+<li><strong>DISPLAY_ERROR_LOG_ID</strong> - determines whether error log record identifier should be visible on the default error page. Default value is FALSE.</li>
+<li><strong>DISPLAY_ERROR_LOG_STRING</strong> - determines whether encrypted error details string should be visible on the default error page. Default value is FALSE.</li>
+<li><strong>ENABLE_DB_ERROR_DETAILS </strong> - determines whether encrypted error details string should be saved to the database. Default value is TRUE. When this feature is enabled you can see the error details on System/Settings/View error log/Error Preview page.</li>
+<li><strong>ERROR_LOG_TTL</strong> - determines how many days the error details should remain in the database. The value should be an integer greater than 0, set it to FALSE to never delete error log records from the database.&nbsp;<span>Default value is 14.</span></li>
+</ul>
+<h3>Other settings</h3>
+<ul>
+<li><strong>TIMEZONE</strong> - specifies the time zone to use for displaying date/time values. You can find a list of supported time zones on this page: <a href="http://php.net/manual/en/timezones.php" target="_blank">http://php.net/manual/en/timezones.php</a></li>
+<li><strong>URL_SEPARATOR</strong> - allows to set a default URL separator symbol. <a href="using_the_minus_sign_instead_of_the_underscore_in_page_urls.html">Read more</a>. Default is <strong>- </strong>(dash).</li>
+<li><strong>CACHING</strong> - allows to configure the built-in caching system. Please read the&nbsp;<a href="caching_pages_and_partials.html">Caching Pages and Partials</a> and&nbsp;<a href="caching_api.html">Caching API</a> articles for details.</li>
+<li><strong>DISABLE_USAGE_STATISTICS</strong> - disables the anonymous usage statistics feature. This feature anonymously sends usage statistics to help us improve LemonStand. Statistics are never tied to your account and are completely anonymous. Default value is FALSE.&nbsp;</li>
+<li><strong>ENABLE_DEVELOPER_TOOLS</strong> - enables some development features. At the moment it includes only the&nbsp;<a href="http://v1.lemonstand.com/docs/core_onbeforedatabasequery_event">core:onBeforeDatabaseQuery</a> and&nbsp;<a href="http://v1.lemonstand.com/docs/core_onafterdatabasequery_event">core:onAfterDatabaseQuery</a> events. Default value is FALSE.</li>
+<li><strong>DISABLE_MODULES</strong> - allows to disable LemonStand modules. The parameter should be declared before the following lines in the config.php file: <div class="codeblock"><pre class="brush:php; collapse: false">if ( !defined('PATH_APP') )
+  return;</pre></div> The parameter value should be an array of module identifiers, in lower case. If a module identifier is listed in the DISABLE_MODULE parameter, LemonStand completely ignores the module. This includes any event handlers declared in the module, module classes and any Administration Area extensions. Please note, that disabling a module can break existing front-end pages if they refer to classes defined in the disabled module. Example:&nbsp;&nbsp;<div class="codeblock"><pre class="brush:php; collapse: false">$CONFIG['DISABLE_MODULES'] = array('mymodule');</pre></div></li>
+<li><strong>TEMPLATE_PATH</strong> - allows to specify a path to templates directory for <a href="using_file_based_templates.html">file-based templates feature</a>.</li>
+<li id="TINYMCE_ENTITY_ENCODING"><strong>TINYMCE_ENTITY_ENCODING</strong> -&nbsp;this option controls how entities/characters get processed by TinyMCE. Default value is "named". See <a href="http://www.tinymce.com/wiki.php/Configuration:entity_encoding">TinyMCE documentation</a> for details.</li>
+<li id="TINYMCE_ENTITY_ENCODING"><strong>RESOURCE_SYMLINKS</strong> -&nbsp;if CSS files are stored in&nbsp;a symlink-ed directory, provide an array of link paths to&nbsp;target paths, where the link paths are within the document root.&nbsp;Because&nbsp;paths need to be normalized for this to work, use "//" to substitute&nbsp;the doc root in the link paths (the array keys). Example: <div class="codeblock"><pre class="brush:php; collapse: false">$CONFIG['RESOURCE_SYMLINKS'] = array(
+  '//themes'=&gt;'/home/web/sites/mystore/repos/themes'
+);</pre></div></li>
+<li id="TINYMCE_ENTITY_ENCODING"><strong>DISABLE_CSV_CURRENCY_FORMATTING</strong> - disables currency formatting in the exported CSV files (reports and lists).</li>
+<li id="TINYMCE_ENTITY_ENCODING"><strong>GRID_MAX_ROW_NUMBER</strong> - sets the maximum number of rows the grid editor on the Edit Table Rate Shipping Option and Edit Tax pages can handle. If the number of rows in the grid exceeds the specified value, the system hides the grid editor, but you still can manage the grid contents with the CSV operations and external applications (Excel, Open Office, etc). The default value is 300.</li>
+</ul>
+        
+        <p>Next: <a href="moving_lemonstand_installation_to_another_server.html">Moving LemonStand installation to another server</a><br/>Previous: <a href="using_the_maintenance_mode.html">Using the Maintenance Mode</a><br/>Return to <a href="system_configuration_and_maintenance.html">Installation, Configuration and Maintenance</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_243"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/lemonstand_configuration_options/";
+		var disqus_title = "LemonStand Configuration Options";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

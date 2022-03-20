@@ -1,0 +1,684 @@
+::-webkit-input-placeholder  {color:#aaa!important;}
+:-moz-placeholder {color:#aaa!important;}
+input.placeholder {color:#aaa!important;}
+
+.offset_top
+{
+  margin-top: 10px;
+}
+
+.hidden
+{
+  display: none!important;
+}
+
+.clear
+{
+  clear: both;
+}
+
+.clear_left
+{
+  clear: left;
+}
+
+.form_control_link
+{
+  float: right;
+  margin: 0;
+}
+
+.invisible_submit
+{
+  font-size: 1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  visibility: hidden;
+}
+
+ul.form li
+{
+  float: left;
+  width: 100%;
+  padding: 0;
+  background: none;
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+ul.form
+{
+  margin: 0!important;
+}
+
+ul.form li.left,
+ul.form li.right
+{
+  width: 48%;
+}
+
+ul.form li.right
+{
+  float: right;
+}
+
+ul.margin_top
+{
+  margin-top: 15px!important;
+}
+
+ul.form li label
+{
+  display: block;
+  font: bold 12px/130% Arial,Tahoma,Verdana,sans-serif;
+  margin-bottom: 0.2em;
+  color: #333;
+}
+
+fieldset.ie_fix
+{
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+ul.form li.error label
+{
+  color: #AD120D;
+}
+
+ul.form input.date,
+ul.form input.numeric
+{
+  text-align: right;
+}
+
+ul.form input.example
+{
+  color: #999!important;
+}
+
+ul.form input.text,
+ul.form textarea,
+ul.form select {
+  box-sizing: border-box;  
+  -moz-box-sizing: border-box; 
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box; 
+  -khtml-box-sizing: border-box;
+}
+
+ul.form input.text,
+ul.form textarea,
+.text_field
+{
+  font: normal 12px/130% Arial,Tahoma,Verdana,sans-serif;
+  border: 1px solid #bbb;
+  background: white;
+  padding: 4px 4px;
+  color: #333333;
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+}
+
+.webkit ul.form input.text
+{
+  line-height: 100%;
+}
+
+ul.form input.text.search,
+.search_field
+{
+  background: transparent url('../i/input-search.png') no-repeat 8px 6px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding-left: 23px;
+  border: 1px solid #bbb!important;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+ul.form input.text
+{
+  height: 28px;
+}
+
+ul.form select
+{
+  width: 100%;
+  font: normal 12px/100% Arial,Tahoma,Verdana,sans-serif;
+  color: #333333;
+}
+
+ul.form textarea.small
+{
+  height: 30px;
+}
+
+ul.form textarea.height_40
+{
+  height: 40px;
+}
+
+ul.form textarea.medium
+{
+  height: 100px;
+}
+
+ul.form textarea.large
+{
+  height: 250px;
+}
+
+ul.form .required
+{
+  color: #AD120D;
+  font-weight: bold;
+}
+
+ul.form .field_comment
+{
+  font: normal 11px/130% Tahoma,Arial,Verdana,sans-serif;
+  color: #666666;
+  margin: 1px 0 0 0;
+  padding-bottom: 3px;
+}
+
+ul.form li.section
+{
+  font: bold 12px/130% Arial,Tahoma,Verdana,sans-serif;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  color: #333;
+  border-bottom: #999 1px dotted;
+  padding-bottom: 3px;
+}
+
+ul.form label.section_field
+{
+  font-weight: normal;
+}
+
+ul.form li.checkbox,
+ul.form li.radio_set
+{
+  margin-top: 5px;
+}
+
+ul.form li.no_top_margin
+{
+  margin-top: 0;
+}
+
+ul.form li.checkbox input,
+ul.form li.radio_set input
+{
+  float: left;
+}
+
+ul.form li.checkbox label,
+ul.form li.radio_set label,
+ul.form li.checkbox p.field_comment,
+ul.form li.radio_set p.field_comment
+{
+  margin-left: 20px;
+  font-weight: normal;
+}
+
+ul.form li.radio_set .radio_set_label
+{
+  font-weight: bold;
+  margin-left: 0;
+  margin-bottom: 7px;
+}
+
+ul.form li.radio_set.horizontal div
+{
+  clear: none;
+  float: left;
+  margin-right: 20px;
+}
+
+ul.form div.cb_align
+{
+  padding-left: 20px;
+}
+
+@-moz-document url-prefix()
+{
+  ul.form li.checkbox input
+  {
+    margin-left: -1px;
+  }
+  
+  ul.form li.radio_set input
+  {
+    margin-top: 1px;
+  }
+}
+
+body ul.form li.checkbox input
+{
+  _margin-left: -5px;
+  _margin-right: 0;
+  position: relative;
+  border: none;
+}
+
+html > body ul.form li.checkbox input
+{
+  *margin-top: -1px;
+  *margin-left: -4px;
+}
+
+body ul.form li.checkbox p.field_comment
+{
+  _margin-left: 23px;
+}
+
+body ul.form li.radio_set input
+{
+  _margin-left: -5px;
+}
+
+body ul.form li.radio_set input
+{
+  _margin-top: 2px;
+}
+
+* html body ul.form li.radio_set input
+{
+  margin-top: -1px;
+}
+
+html > body ul.form li.radio_set input
+{
+  *margin-left: -4px;
+  *margin-top: -1px;
+}
+
+ul.form li.radio_set div
+{
+  margin-bottom: 10px;
+  clear: both;
+}
+
+li.button {
+  margin-top: 20px;
+}
+
+input.awesome {
+    border: 0;
+}
+
+/*
+ * Input file list
+ */
+
+ul.file_input_list 
+{
+  margin: 0;
+}
+
+a.attach_files
+{
+  background: url(../i/page_white_add.png) no-repeat left 4px;
+  padding-left: 23px;
+  display: inline-block;
+  color: #999;
+}
+
+a.attach_files:hover
+{
+  color: #319BDC;
+}
+
+/* Quantity control
+------------------------------------------------------------------------ */ 
+  
+div.qty_controls  {
+  position: relative;
+}
+
+.qty_controls .text {
+  height: 26px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  display: block;
+}
+
+.qty_controls .arrow {
+  position: absolute;
+  width: 17px;
+  height: 13px;
+  text-indent: -100000px;
+  text-align: left;
+  right: 0;
+  background: #ccc;
+  outline: none;
+  border: 1px solid #999;
+}
+
+.qty_controls .up {
+  top: 0;
+  border-bottom: none;
+  background: #D1A100 url(../i/qty_up.png) no-repeat left bottom;
+}
+
+.qty_controls .down {
+  border-top: none;
+  top: 14px;
+  background: #D1A100 url(../i/qty_down.png) no-repeat left top;
+}
+
+/* Width specifiers
+------------------------------------------------------------------------ */ 
+
+ul.form li.width_200
+{
+  width: 200px;
+}
+
+/* ---------------- Previously forms.css ---------------- */
+/*------------------------------------------ */
+
+.formField {
+  height: 32px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-top-color: #727272;
+  border-right-color: #C7C7C7;
+  border-bottom-color: #DFDFDF;
+  border-left-color: #C7C7C7;
+  box-shadow: 0 4px 0 0 #555;
+  outline: none;
+}
+
+  .formField:focus {
+    border-top-color: #444;   
+  }
+
+/* ---- Email Subscription Form ---- */
+
+form.emailForm {
+  display: block;
+  position: relative;
+  width: 300px;
+  margin: 10px 0 10px 0;
+}
+
+form.emailForm input {
+  display: block;
+  float: left;
+}
+
+form.emailForm input.formField {
+  width: 182px;
+  height: 16px;
+  font-size: 1.4em;
+  color: #999;
+  margin: 0 6px 0 0;
+  padding: 8px 5px 5px 5px;
+}
+
+form.emailForm input.formField:focus {
+  color: #262626;
+}
+
+form.emailForm input#subscribeButton {
+  float: left;
+  width: 90px;
+  height: 35px;
+  background: transparent url(http://v1.lemonstand.com/resources/i/button_subscribe.png) 0 0 no-repeat;
+  border: none;
+}
+
+  form.emailForm input#subscribeButton:hover {
+    background-position: left bottom;
+    cursor: pointer;
+  }
+
+
+
+dl.dlform dt {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #32617D;
+  margin-bottom: 2px;
+}
+
+dl.dlform dd {
+  margin-bottom: 10px;
+}
+
+dl.dlform input {
+  height: 32px;
+  width: 320px;
+  background: transparent url(../i/formfield_bg.gif) repeat-x;
+  border: 1px solid;
+  border-top-color: #727272;
+  border-right-color: #C7C7C7;
+  border-bottom-color: #DFDFDF;
+  border-left-color: #C7C7C7;
+  font-size: 1.4em;
+  color: #262626;
+}
+
+dl.dlform input:focus {
+  border-top-color: #277ea7;
+  border-right-color: #5bb4de;
+  border-bottom-color: #c6f0fd;
+  border-left-color: #5bb4de;
+}
+
+dl.dlform textarea {
+  width: 400px;
+  font: normal 1.4em/1.6em "myriad pro", Helvetica, Calibri, Arial, sans-serif;
+  color: #262626;
+  background: #F2F2F2 url(../i/formfield_bg.gif) repeat-x;
+  border: 1px solid;
+  border-top-color: #727272;
+  border-right-color: #C7C7C7;
+  border-bottom-color: #DFDFDF;
+  border-left-color: #C7C7C7;
+}
+
+dl.dlform textarea:focus {
+  background-color: #E6F9FE;
+}
+
+#contactForm .formbutton {
+  height: auto;
+  width: 100px;
+  font-size: 1.4em;
+  color: #000;
+  text-shadow: 1px 1px 0 #fff;
+  background: #ffc702 url(../i/button_gen_bg.png) 0 0 repeat-x;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid #ffefa4;
+  padding: 5px;
+}
+
+
+
+.generalform {
+  background-color: #F3F9FA;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #c3edfc;
+  padding: 20px 10px;
+}
+
+.generalform ul {
+  list-style-type: none;
+}
+
+.generalform label {
+  display: block;
+  float: left;
+  height: 32px;
+  color: #333;
+  font-size: .85em;
+  text-align: right;
+  line-height: 32px;
+  padding-right: 5px;
+}
+
+
+.select label {
+  height: 18px;
+  line-height: 18px;
+}
+
+.generalform input {
+  height: 27px;
+  background: transparent url(../i/formfield_bg.gif) repeat-x;
+  font-size: 1em;
+  color: #777;
+  border: 1px solid;
+  border-top-color: #727272;
+  border-right-color: #C7C7C7;
+  border-bottom-color: #DFDFDF;
+  border-left-color: #C7C7C7;
+  padding: 5px 5px 0 5px;
+}
+
+.generalform input:focus {
+  color: #262626;
+  border-top-color: #277ea7;
+  border-right-color: #5bb4de;
+  border-bottom-color: #c6f0fd;
+  border-left-color: #5bb4de;
+}
+
+.generalform li.left {
+  float: left;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+  .generalform li.left input, .generalform li.left select {
+    float: left;
+    width: 60%;
+  }
+
+.generalform li.right {
+  float: right;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+  .generalform li.right input, .generalform li.right select {
+    float: left;
+    width: 60%;
+  }
+  
+.generalform li.right label, .generalform li.left label {
+  width: 30%;
+}
+
+.generalform li.checkboxes input {
+  float: left;
+  width: 18px;
+  height: 18px;
+  margin: 0 5px 0 10px;
+}
+
+.generalform li.checkboxes label {
+  float: left;
+  width: 260px;
+  line-height: 18px;
+  text-align: left;
+  margin: 0;
+}
+  
+.generalform li.full {
+  float: left;
+  width: 100%;
+}
+
+.generalform .left input.button {
+  height: auto;
+  width: 100px;
+  font-size: 1.4em;
+  color: #000;
+  text-shadow: 1px 1px 0 #fff;
+  background: #ffc702 url(../i/button_gen_bg.png) 0 0 repeat-x;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid #ffefa4;
+  padding: 5px;
+  margin: 0 0 0 94px;
+}
+
+form .left input.button:active {
+  background-position: 0 -5px;
+  border: 2px solid #333;
+}
+
+
+form#sendtofriend {
+  background-color: #FFFDBF;
+}
+
+#sendtofriend li {
+  width: 580px;
+  margin-bottom: 20px;
+}
+
+#sendtofriend label {
+  width: 140px;
+  font-size: 1.2em
+}
+
+#sendtofriend input {
+  width: 380px;
+}
+
+#sendtofriend textarea {
+  width: 380px;
+  height: 200px;
+  resize: none;
+  font: normal 1.4em/1.6em "myriad pro", Helvetica, Calibri, Arial, sans-serif;
+  color: #262626;
+  background: #F2F2F2 url(../i/formfield_bg.gif) repeat-x;
+  border: 1px solid;
+  border-top-color: #727272;
+  border-right-color: #C7C7C7;
+  border-bottom-color: #DFDFDF;
+  border-left-color: #C7C7C7;
+}
+
+#sendtofriend input.button {
+  height: auto;
+  width: 100px!important;
+  font-size: 1.4em;
+  color: #000;
+  text-shadow: 1px 1px 0 #fff;
+  background: #ffc702 url(../i/button_gen_bg.png) 0 0 repeat-x;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid #ffefa4;
+  padding: 5px;
+  margin-left: 145px;
+}
+
+ul.form .text label {
+	text-align: left!important;
+}

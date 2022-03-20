@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - LemonStand</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="index.html" id="headerLogo"><img src="resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="docs.html">Documentation</a></li>
+			  <li><a href="docs/api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="partners.html">Certified Partners</a></li>
+				<li class="last"><a href="hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	          <h2>LemonStand Documentation</h2>
+        <p>Everything you Need to Build a Custom Online Store</p>
+            <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>LemonStand</h2>
+        
+        <ul class="wiki_toc"><li><a href="docs/full_wiki_toc.html">Table Of Contents</a> - contains the complete documentation listing.</li><li><a href="docs/system_configuration_and_maintenance.html">Installation, Configuration and Maintenance</a> - explains how to configure email settings, backup feature, Google Analytics integration, manage users and other administration-related things.<ul class="wiki_toc"><li><a href="docs/installing_lemonstand.html">Installing LemonStand</a> - this section describes the installation process.<ul class="wiki_toc"><li><a href="docs/system_requirements.html">System requirements</a> - describes LemonStand system requirements.<li><a href="docs/checking_system_requirements.html">Checking system requirements</a> - explains how to check system requirements using the Evaluation Tool.<li><a href="docs/installing_lemonstand_trial_copies.html">Installing LemonStand trial copies</a> - explains how to configure and install a trial copy.<li><a href="docs/command_line_or_web_installer.html">Command-line or web installer?</a> - describes the difference between the command-line and web installers.<li><a href="docs/installing_lemonstand_in_command_line_mode.html">Installing LemonStand in command-line mode</a> - describes how to install LemonStand using the command-line installer.<li><a href="docs/installing_lemonstand_using_the_web_installer.html">Installing LemonStand using the web installer</a> - explains how to install LemonStand using the web installer.<li><a href="docs/troubleshooting_a_server_error_500_after_installation.html">Troubleshooting a 500 Internal Server Error after installation</a> - explains possible reasons for a Internal Server Error 500 and describes how to fix it.<li><a href="docs/troubleshooting_image_and_file_uploading_issues.html">Troubleshooting image and file uploading issues</a> - explains possible reasons why the file uploader may not be working.<li><a href="docs/troubleshooting_page_not_found_after_installation.html">Troubleshooting Page Not Found after installation</a> - explains possible reasons for a Page Not Found and describes how to fix it.<li><a href="docs/troubleshooting_unable_to_save_templates_pages_or_partials.html">Troubleshooting unable to save templates, pages, or partials</a> - explains possible reasons why the saving CMS pages may not be working.</ul></li><li><a href="docs/configuring_the_google_analytics_integration.html">Configuring the Google Analytics integration</a> - explains how to enable the Google Analytics tracking.</li><li><a href="docs/managing_lemonstand_users.html">Managing LemonStand users</a> - explains how to create, modify or disable user accounts.</li><li><a href="docs/configuring_the_email_system.html">Configuring the email system</a> - explains how to configure the outgoing email parameters.</li><li><a href="docs/configuring_and_using_the_backup_system.html">Configuring and using the backup system</a> - explains how to setup the backup schedule and how to restore the system from an archive.</li><li><a href="docs/updating_your_lemonstand_copy.html">Updating your LemonStand copy</a> - explains how to get the latest versions of LemonStand core and modules.</li><li><a href="docs/managing_html_editor_configurations.html">Managing HTML Editor configurations</a> - explains how to enable or disable toolbar buttons in HTML editors across the system.</li><li><a href="docs/setting_the_administration_area_and_configuration_tool_urls.html">Setting the administration area and Configuration Tool URLs</a> - explains how to set URLs for the LemonStand administration area and Configuration Tool.</li><li><a href="docs/using_the_minus_sign_instead_of_the_underscore_in_page_urls.html">Using dash separators instead of underscores in URLs</a> - explains how to configure LemonStand to use dashes in URLs.</li><li><a href="docs/lemonstand_configuration_tool.html">LemonStand Configuration Tool</a> - contains articles about the LemonStand Configuration Tool.<ul class="wiki_toc"><li><a href="docs/configuring_the_database_connection.html">Configuring the database connection</a> - explains how to setup MySQL database connection parameters.<li><a href="docs/setting_the_configuration_tool_account.html">Setting the Configuration Tool account</a> - explains how to set the user name and password for logging into the Configuration Tool.<li><a href="docs/setting_the_encryption_key.html">Setting the encryption key</a> - explains how to set the database encryption key.</ul></li><li><a href="docs/freezing_updates.html">Freezing updates</a> - explains how you can prevent future updates of your LemonStand copy.</li><li><a href="docs/using_the_maintenance_mode.html">Using the Maintenance Mode</a> - explains how to enable maintenance mode and display a special maintenance page to visitors.</li><li><a href="docs/lemonstand_configuration_options.html">LemonStand Configuration Options</a> - contains a list of parameters which you can use to configure your LemonStand copy.</li><li><a href="docs/moving_lemonstand_installation_to_another_server.html">Moving LemonStand installation to another server</a> - explains the process of transferring the LemonStand installation to another server.</li><li><a href="docs/performance_tuning.html">Performance tuning</a> - explains how to configure the application to get maximum performance.</li></ul></li><li><a href="docs/ecommerce_guide.html">Merchant Guide</a> - learn how to manage products, how to configure your shop and how to use reports efficiently.<ul class="wiki_toc"><li><a href="docs/managing_product_categories.html">Managing product categories</a> - explains how to create or modify product categories.</li><li><a href="docs/managing_products.html">Managing products</a> - Explains how to manage products and product properties.<ul class="wiki_toc"><li><a href="docs/how_to_display_a_group_of_products_as_one_product.html">How to Display a Group of Products as One Product</a> - explains how to display a group of similar product options as a single product with a drop-down list</ul></li><li><a href="docs/how_to_create_a_product_bundle.html">How to Create a Product Bundle</a> - describes the process of creating bundle products.</li><li><a href="docs/understanding_grouped_products.html">Understanding grouped products</a> - a small tutorial explaining how to use the grouped products feature for a t-shirt product.</li><li><a href="docs/understanding_option_matrix.html">Understanding Option Matrix</a> - explains Option Matrix feature.</li><li><a href="docs/managing_customers.html">Managing customers</a> - explains how to create or modify customers.</li><li><a href="docs/managing_orders.html">Managing orders</a> - explains how to preview, create and modify orders.<ul class="wiki_toc"><li><a href="docs/how_to_manually_change_order_status.html">How to Manually Change Order Status</a> - describes how to manually change the order status<li><a href="docs/creating_a_return_merchandise_authorization_template.html">Creating a Return Merchandise Authorization Template</a></ul></li><li><a href="docs/tracking_payment_attempts.html">Tracking payment attempts</a> - explains how to find details about order payment attempts.</li><li><a href="docs/managing_payment_transactions.html">Managing payment transactions</a> - explains how you can void, refund or submit for settlement payment transactions from the Administration Area.</li><li><a href="docs/paying_an_order_from_the_administration_area.html">Paying an order from the Administration Area</a> - explains how to pay an existing order from the back-end user interface.</li><li><a href="docs/understanding_the_payment_processed_order_field.html">Understanding the Payment Processed order field</a> - explains how to determine whether an order has been processed by a payment gateway.</li><li><a href="docs/creating_custom_product_groups.html">Creating custom product groups</a> - explains how to create or modify custom groups, for example the Featured Products group.</li><li><a href="docs/managing_tax_classes.html">Managing tax classes</a> - explains how to manage product and shipping tax classes and how to setup tax rates.<ul class="wiki_toc"><li><a href="docs/how_to_manage_multiple_tax_classes.html">How to Manage Multiple Tax Classes</a> - describes how to define and manage multiple tax classes</ul></li><li><a href="docs/managing_shipping_options.html">Managing shipping options</a> - explains how to create or modify shipping options.<ul class="wiki_toc"><li><a href="docs/how_to_configure_table_rate_shipping_options.html">How to Configure Table Rate Shipping Options</a> - describes how to configure table rate shipping options</ul></li><li><a href="docs/managing_payment_methods.html">Managing payment methods</a> - explains how to create or modify payment methods.<ul class="wiki_toc"><li><a href="docs/supported_payment_gateways.html">Supported payment gateways</a></ul></li><li><a href="docs/managing_countries_and_states.html">Managing countries and states</a> - explains how to setup a list of countries your store works with.</li><li><a href="docs/configuring_the_order_route_and_user_roles.html">Configuring the order route and user roles</a> - explains how to setup possible order statuses, transitions and user roles.</li><li><a href="docs/understanding_the_paid_order_status.html">Understanding the Paid order status</a> - explains the Paid order status.</li><li><a href="docs/configuring_the_currency_and_currency_converter.html">Configuring the currency and currency converter</a> - explains how to setup currency formatting rules and configure the currency converter.</li><li><a href="docs/configuring_the_shipping_parameters.html">Configuring the shipping parameters</a> - explains how to define shipping origin location, default shipping location, dimension and weight units.<ul class="wiki_toc"><li><a href="docs/configuring_the_per_product_shipping_cost.html">Configuring the per-product shipping cost</a> - explains how to specify shipping cost for individual products.</ul></li><li><a href="docs/printing_shipping_labels.html">Printing shipping labels</a> - explains how to generate and print shipping labels.</li><li><a href="docs/managing_order_shipping_tracking_codes.html">Managing order shipping tracking codes</a> - explains how to assign a shipping tracking code(s) to orders.<ul class="wiki_toc"><li><a href="docs/how_to_automatically_notify_customers_with_tracking_codes.html">How to Automatically Notify Customers with Tracking Codes</a> - describes how to automatically notify customers with tracking codes</ul></li><li><a href="docs/managing_discounts.html">Managing discounts</a> - explains how to setup the catalog level and shopping cart level price rules.<ul class="wiki_toc"><li><a href="docs/managing_catalog_level_price_rules.html">Managing catalog level price rules</a> - explains how to manage discounts on a product catalog level.<li><a href="docs/shopping_cart_price_rules.html">Shopping cart price rules (discounts)</a> - explains how to apply discounts to shopping cart items and how to use coupon codes.</ul></li><li><a href="docs/importing_products_and_customers_from_csv_files.html">Importing products, customers and orders from CSV files</a> - explains how you can import data from CSV files.</li><li><a href="docs/printing_invoices_and_packing_slips.html">Printing invoices and packing slips</a> - explains how to configure and print order invoices and packing slips.</li><li><a href="docs/configuring_the_product_search_feature.html">Configuring the Product Search feature</a> - explains you can enable searching products by SKU, manufacturer and other parameters.</li><li><a href="docs/configuring_lemonstand_for_tax_inclusive_environments.html">Configuring LemonStand for tax inclusive environments</a> - explains how you can configure LemonStand to display product prices with tax included</li></ul></li><li><a href="docs/developer_guide.html">Developer Guide</a> - Guide for website developers<ul class="wiki_toc"><li><a href="docs/creating_pages.html">Getting Started</a> - explains how to create pages, and how to build an eCommerce website<ul class="wiki_toc"><li><a href="docs/themes.html">Understanding Themes</a><li><a href="docs/creating_pages_basics.html">The Page Basics</a> - learn the basics about page anatomy in LemonStand<li><a href="docs/combining_and_minifying_javascript_and_css_files.html">Combining and Minifying JavaScript and CSS files</a> - explains how you can reduce the number of JavaScript and CSS resource requests on your pages<li><a href="docs/creating_editable_blocks.html">Creating Editable Blocks</a> - explains how to create editable content blocks on a page<li><a href="docs/global_content_blocks.html">Global Content Blocks</a><li><a href="docs/managing_resources.html">Managing Resources</a> - explains how to manage a website's CSS, image and JavaScript files.<li><a href="docs/ecommerce_security.html">Ecommerce Security</a> - explains how to protect your website pages and force HTTPS protocol for specific pages.</ul></li><li><a href="docs/advanced_features.html">Advanced Features for your Online Store</a> - explains how to implement special features for your online store<ul class="wiki_toc"><li><a href="docs/customer_orders_page.html">How to Display a Customer Order History Page</a> - learn how to output a list of customer orders and their statuses.<li><a href="docs/integrating_option_matrix.html">Integrating Option Matrix</a> - explains how to implement Option Matrix support.<li><a href="docs/creating_the_search_page.html">Creating the Search page</a> - explains how to create the product search page.<li><a href="docs/implementing_the_compare_products_feature.html">Implementing the Compare Products feature</a> - explains how to add the Add to Compare links to your products and how to create a Compare Products page.<li><a href="docs/manufacturer_list_page.html">Manufacturer List page</a> - explains how to build a page displaying all manufacturers created in your store.<li><a href="docs/manufacturer_details_page.html">Manufacturer Details page</a> - explains how to build a page displaying all manufacturers details and a list of manufacturer's products.<li><a href="docs/caching_pages_and_partials.html">Caching Pages and Partials</a> - explains how you can cache pages and partials using the built-in caching system.</ul></li><li><a href="docs/checkout_process.html">Checkout Process</a> - explains how to implement the checkout process.<ul class="wiki_toc"><li><a href="docs/single_page_checkout.html">AJAX-driven single-page checkout</a> - explains how to implement a single-page AJAX-driven checkout process.<li><a href="docs/customer_order_notes_in_checkout.html">Adding a Field for Customer Order Notes in Checkout</a> - explains how to create a text field for entering customer order notes during the checkout process.<li><a href="docs/implementing_the_step_by_step_checkout.html">Implementing the Step-By-Step Checkout</a> - explains how to implement a checkout process with one page per one checkout step.<li><a href="docs/implementing_one_step_checkout.html">Implementing a One-Step Checkout</a> - explains how to create a one-step checkout, where the customer does not need to enter the most part of the usual checkout information.</ul></li><li><a href="docs/api_function_and_class_reference.html">Reference</a> - learn about PHP Classes which work behind the scenes on LemonStand-driven websites<ul class="wiki_toc"></ul></li><li><a href="docs/extending_lemonstand.html">Extending LemonStand</a> - learn how to develop modules, payment and shipping methods, dashboard indicators and reports.<ul class="wiki_toc"><li><a href="docs/understanding_lemonstand_modules.html">Understanding LemonStand Modules</a> - describes the module anatomy and explains what tasks you solve with custom modules<li><a href="docs/working_with_the_database.html">Working with the Database</a> - describes methods of working with database tables and creating model classes<li><a href="docs/handling_lemonstand_events.html">Handling LemonStand Events</a> - explains how you can customize LemonStand by handling system events<li><a href="docs/developing_payment_modules.html">Guide for Developing a Payment Module</a> - explains how you can implement integration with payment gateways not supported by native LemonStand payment modules<li><a href="docs/extending_existing_models.html">Extending Existing Models</a> - explains how you can add new fields to the customer, product and order models<li><a href="docs/developing_shipping_modules.html">Guide to Developing Shipping Modules</a> - explains how you can implement integration with shipping services not supported by native LemonStand shipping modules.<li><a href="docs/lemonstand_module_templates.html">LemonStand Module Templates</a> - this section contains some module templates which you can use as a basement for your own modules<li><a href="docs/accessing_lemonstand_api_from_third_party_scripts.html">Accessing LemonStand API from third-party scripts</a> - explain how you can access any LemonStand class and function from a third-party PHP script<li><a href="docs/extending_the_discount_engine.html">Extending the Discount Engine</a> - explains the process of developing new discount engine conditions and actions.<li><a href="docs/authoring_for_lemonstand_marketplace.html">Authoring for LemonStand Marketplace</a> - explains the process of becoming an author and developing themes and modules for the Marketplace.<li><a href="docs/creating_module_settings_pages.html">Creating a Module Settings Page</a> - explains how to add new links to the System/Settings and My Settings pages and how to implement settings forms.</ul></li><li><a href="docs/shop_tips_and_tricks.html">Tips and Tricks</a> - demonstrates some Shop API tricks which you may want to implement on your website.<ul class="wiki_toc"><li><a href="docs/displaying_products_on_sale.html">How to Display Sale Products</a> - explains how you can output a list of discounted products.<li><a href="docs/allowing_customers_to_provide_order_item_specific_information.html">How to Allow Customers to Provide Item Specific Information</a> - explains how you can add form fields to the Cart page, allowing your customers to enter item-specific information.<li><a href="docs/allowing_visitors_to_customize_products.html">How to Enable Customers to Customize Products</a> - explains how to allow visitors to customize products before adding them to the cart.<li><a href="docs/supporting_file_uploads_on_the_product_page.html">How to Support File Uploads on the Product Page</a> - explains how you can allow buyers to customize your products with their own files.<li><a href="docs/using_partials_instead_of_flash_messages.html">How to Use Partials Instead of Flash Messages</a> - explains how you can display partials with rich HTML formatting instead if standard flash messages.<li><a href="docs/implementing_ship_to_same_billing_address.html">Implementing a Ship to Same Billing Address Feature</a> - explains how you can add the &quot;Ship to the billing address&quot; checkbox to the Billing Information page to skip the checkout Shipping Information step.<li><a href="docs/simplifying_the_checkout_process.html">How to Simplify the Checkout Process</a> - explains how you can combine the Payment Method, Pay and Order Review checkout steps.<li><a href="docs/displaying_a_list_of_active_product_discounts.html">Displaying a List of Active Product Catalog Price Rules</a> - explains how to display a list of catalog price rules applied to a specific product.<li><a href="docs/storing_cart_content_after_placing_the_order.html">Storing Cart Content After Customer Places Order</a> - explains how you can leave the cart content non-emptied when a customer places the order.<li><a href="docs/implementing_downloadable_products.html">How to Integrate Downloadable Products</a> - explains how to integrate the downloadable products feature.</ul></li><li><a href="docs/categories.html">Categories</a> - understanding how categories work in LemonStand<ul class="wiki_toc"><li><a href="docs/displaying_a_list_of_categories.html">Displaying a List of Categories</a> - explains how to output a list of product categories.<li><a href="docs/how_to_create_a_category_page.html">Creating a Category Page</a> - learn how to create a page to output a category name, description and contents.</ul></li><li><a href="docs/products.html">Products</a> - understanding how products work in LemonStand<ul class="wiki_toc"><li><a href="docs/displaying_a_list_of_products.html">Displaying a List of Products</a> - explains how to output a list of category products, custom group products or related products.<li><a href="docs/creating_a_product_page.html">Creating a Product Page</a> - explains how to create a product page and display its attributes, options, related products and images<li><a href="docs/creating_a_product_rss_feed.html">Creating a Product RSS Feed</a> - explains how to add the RSS channel representing a list of recently added products.<li><a href="docs/displaying_product_rating_and_reviews.html">Displaying Product Ratings and Reviews</a> - explains how you can display product rating and reviews and how to implement the Post a Review form.<li><a href="docs/creating_a_write_a_review_form.html">Creating a Write a Review Form</a> - explains how to create a &quot;write a review&quot; form</ul></li><li><a href="docs/shopping_cart.html">Shopping Cart</a> - understanding how to create, customize, and configure the shopping cart<ul class="wiki_toc"><li><a href="docs/creating_a_shopping_cart_page.html">Creating a Shopping Cart Page</a> - learn how to create a shopping cart page and allow customers to manage the cart content.<li><a href="docs/creating_a_checkout_button_with_a_coupon_field.html">Creating a Checkout Button with a Coupon Field</a> - explains how to create a checkout button with a coupon field<li><a href="docs/displaying_bundle_items_in_the_shopping_cart.html">Displaying Bundle Items in the Shopping Cart</a> - explains how to display bundle items in the shopping cart<li><a href="docs/displaying_a_list_of_shopping_cart_items.html">Displaying a List of Shopping Cart Items</a> - explains how to display a list of shopping cart items</ul></li><li><a href="docs/payment.html">Payment</a> - understanding how payment methods and tax systems work<ul class="wiki_toc"><li><a href="docs/creating_a_payment_page.html">Creating a Payment Page</a> - explains how to create a Pay page to accept credit cards or redirect to an external payment page.<li><a href="docs/payment_receipt_page.html">Creating a Payment Receipt Page</a> - explains how to create an order payment receipt page.<li><a href="docs/custom_payment_methods_and_bank_transfers.html">Custom Payment Methods and Bank Transfers</a> - explains how to create payment methods which should display some textual information instead of a payment form.<li><a href="docs/implementing_customer_payment_profiles.html">Implementing Customer Payment Profiles</a> - explains how to create user interface allowing customers to store and reuse credit card data.</ul></li><li><a href="docs/order_management.html">Order History, Status, and Details</a> - understanding how to display and manage order details<ul class="wiki_toc"><li><a href="docs/displaying_individual_order_details.html">Displaying Individual Order Details</a> - learn how to display details about a specific order.<li><a href="docs/order_details_page_for_inclusive_tax_environments.html">Order Details Page for Inclusive Tax Environments</a> - explains how to modify the order details page to work in inclusive tax environments.<li><a href="docs/customizing_invoice_templates.html">Customizing Invoices Templates</a> - explains how you can create invoices, packing slips and shipping labels consistent with your company identity.<li><a href="docs/creating_a_new_shipping_label_template.html">Creating a New Shipping Label Template</a> - explains how to create a new shipping label template<li><a href="docs/creating_a_new_packing_slip_template.html">Creating a New Packing Slip Template</a> - explains how to create a new packing slip template</ul></li><li><a href="docs/customer_accounts_and_registration.html">Customer Accounts and Registration</a><ul class="wiki_toc"><li><a href="docs/customer_login_and_logout.html">Enabling Customer Login and Logout</a> - explains how to organize customer login and logout process.<li><a href="docs/customer_registration_page.html">Creating a Customer Registration Page</a> - explains how to create a customer registration page.<li><a href="docs/password_restore_page.html">Creating a Customer Account Password Restore Page</a> - explains how to create a page where customers can restore forgotten passwords.<li><a href="docs/change_password_page.html">Creating a Customer Account Change Password Page</a> - learn how to create a page where your customers can change a password.<li><a href="docs/automatic_customer_registration.html">Automatic customer registration</a> - explains how you can extend the checkout process with automatic customer registration and signing in.</ul></li><li><a href="docs/notifications_and_emails.html">Notifications and Emails</a> - understanding how to generate email notifications<ul class="wiki_toc"><li><a href="docs/creating_custom_email_templates.html">Creating Custom Email Templates</a> - explains how to create or edit templates of email messages which LemonStand sends to customers.<li><a href="docs/managing_compound_email_variables.html">Managing Compound Email Variables</a> - explains how to create new or manage existing email variables.<li><a href="docs/sending_email_messages.html">How to Manually Send Email Messages</a> - explains how you can send email messages to LemonStand customers or system administrators.</ul></li><li><a href="docs/lemonstand_back_end.html">LemonStand Back-End</a> - understanding the code, infrastructure, and logic of LemonStand<ul class="wiki_toc"><li><a href="docs/using_file_based_templates.html">Using File-Based Templates</a> - explains how to enable and use file-based templates.<li><a href="docs/programming_pages.html">Programming Pages</a> - explains how to program your pages and the simple programming model behind LemonStand pages.<li><a href="docs/lemonstand_front_end_javascript_framework.html">LemonStand Front-End JavaScript Framework</a> - Describes the AJAX framework features<li><a href="docs/caching_api.html">Caching API</a> - describes LemonStand caching features.<li><a href="docs/using_third_party_software_with_lemonstand.html">Third-Party Integrations</a> - explains how to install a third-party software, like a forum, on a same domain with LemonStand.<li><a href="docs/handling_errors.html">Handling errors</a> - explains how to handle form validation errors on pages.<li><a href="docs/troubleshooting.html">Troubleshooting</a> - describes the detailed error information page and how to disable it.<li><a href="docs/page_not_found_404_page.html">Page Not Found (404) page</a> - explains how to create a 404 error (Page Not Found) page.<li><a href="docs/managing_page_navigation_and_hierarchy.html">Managing Page Navigation and Hierarchy</a> - explains methods of creating dynamic website navigation.<li><a href="docs/using_twig_in_themes.html">Using Twig Templating Engine</a> - explains how to use Twig in LemonStand themes.<li><a href="docs/generating_site_maps.html">Generating Site Maps</a> - describes how to generate a site map<li><a href="docs/generating_breadcrumbs.html">Generating Breadcrumbs</a> - describes how to generate breadcrumbs</ul></li><li><a href="docs/administrative_dashboard.html">Administrative Dashboard</a><ul class="wiki_toc"><li><a href="docs/adding_a_back_end_user_interface.html">Adding a Back-End User Interface</a> - describes the process of adding new pages to the Administration Area<li><a href="docs/customizing_the_administration_area.html">Customizing the Administration Area</a> - explains how you can customize the look of LemonStand back-end area.</ul></li></ul></li><li><a href="docs/additional_modules.html">Additional modules</a> - contains descriptions about additional LemonStand modules developed by Limewheel Creative Inc.<ul class="wiki_toc"><li><a href="docs/blog_module.html">Blog module</a> - explains how to add blog features to your store.<ul class="wiki_toc"><li><a href="docs/implementing_the_blog_archive_page.html">Implementing the blog archive page</a> - explains how to implement a page for displaying all published posts from all categories.<li><a href="docs/displaying_a_blog_category_list.html">Displaying a blog category list</a> - explains how you can display a list of blog post categories.<li><a href="docs/blog_category_page.html">Category page</a> - explains how to create a page for displaying a list of blog posts belonging to a specific category.<li><a href="docs/blog_post_page.html">Blog post page</a> - explains how to build the blog post page.<li><a href="docs/adding_the_comment_form.html">Adding the comment form</a> - explains how to implement a comment form form on the blog post page.<li><a href="docs/implementing_rss_channels.html">Implementing RSS channels</a> - explains how you can add the posts and comments RSS channels.<li><a href="docs/configuring_the_new_comment_notifications.html">Configuring the new comment notifications</a> - explains how to create and configure the new comment notification email template and how to create the Unsubscribe page.<li><a href="docs/tips_and_tricks.html">Tips and Tricks</a> - demonstrates some API tricks which you may want to implement on your website.<li><a href="docs/enabling_the_recent_comments_dashboard_report.html">Enabling the recent comments dashboard report</a> - explains how to add the recent comments mini-report to the Dashboard.<li><a href="docs/blog_api.html">Blog API</a> - contains a list of blog module classes with detailed descriptions.</ul></li><li><a href="docs/subscriptions_module.html">Subscriptions module</a> - describes the Subscriptions module features and API.<ul class="wiki_toc"><li><a href="docs/what_is_a_subscription_and_a_subscription_plan.html">What is a subscription and a subscription plan</a> - describes subscriptions and subscription plans and explains how to create a subscription product.<li><a href="docs/how_the_subscriptions_engine_works.html">How the subscriptions engine works</a> - explains how subscription invoices are generated and other logic behind subscriptions.<li><a href="docs/subscriptions_and_discounts.html">Subscriptions and discounts</a> - explains how Discount Engine can affect the subscriptions cost.<li><a href="docs/understanding_the_subscription_chart.html">Understanding the Subscription Chart</a> - explains the Subscription Chart features.<li><a href="docs/subcriptions_csv_support.html">CSV support</a> - describes how to update subscription-related product fields.<li><a href="docs/website_membership_areas.html">Website membership areas</a> - explains how you can organize membership-only access to the website pages.<li><a href="docs/implementation_approaches.html">Implementation approaches</a> - in this section we describe customer experience customization approaches suitable for subscription websites.<li><a href="docs/subscriptions_api_extensions.html">API extensions</a> - describes API extensions which the Subscriptions Module introduces to the system.</ul></li><li><a href="docs/giveaway_module.html">Giveaway module</a> - describes features of the Giveaway module.<ul class="wiki_toc"><li><a href="docs/getting_started_with_the_giveaway_module.html">Getting started with the Giveaway module</a> - explains how to configure the module.<li><a href="docs/creating_a_giveaway.html">Creating a giveaway</a> - explains how to create a giveaway.<li><a href="docs/creating_the_giveaway_page.html">Creating the giveaway page</a> - explains how to create and customize the giveaway page.<li><a href="docs/managing_entrants_and_entries.html">Managing entrants and entries</a> - explains how to view and delete entrant and entries.<li><a href="docs/picking_winners.html">Picking winners</a> - explains how to pick giveaway winners.<li><a href="docs/giveaway_api.html">Giveaway API</a> - explains how to extend the entrant and giveaway models and handle module events.</ul></li></ul></li><li><a href="docs/beginners_guide.html">Beginner's Guide</a> - Beginner's Guide to LemonStand<ul class="wiki_toc"><li><a href="docs/installation_steps.html">Installation Steps</a> - Installing LemonStand</li><li><a href="docs/settings.html">Settings</a> - How to setup LemonStand after installation</li><li><a href="docs/system_users.html">System Users</a> - Creating and managing system users</li><li><a href="docs/modules_and_updates.html">Modules and Updates</a> - How to update and install new modules to your LemonStand store</li><li><a href="docs/adding_or_editing_a_product.html">Adding or Editing a Product</a> - Setting up your first product</li><li><a href="docs/cms_pages_overview.html">Guide to Front-End Customization</a> - How to create pages in your store</li><li><a href="docs/installing_a_theme.html">Installing A Theme</a> - From the LemonStand Marketplace</li><li><a href="docs/installing_a_module.html">Installing A Module</a> - From the LemonStand Marketplace<ul class="wiki_toc"><li><a href="docs/recommended_starting_modules.html">Recommended Starting Modules</a> - a list of some recommended starting modules for any ecommerce store</ul></li></ul></li><li><a href="docs/articles.html">Articles</a> - This section contains articles on advanced functionalities, features, and integrations for LemonStand.<ul class="wiki_toc"><li><a href="docs/how_to_add_product_sorting_to_search_results.html">How to Add Product Sorting to Search Results</a></li><li><a href="docs/how_to_associate_country_state_codenames.html">How to Associate Country and State Codenames</a></li><li><a href="docs/how_to_add_pre_order_functionality.html">How to Add Pre-Order Functionality</a> - describes how to add pre-order functionality to oyur store</li><li><a href="docs/how_to_set_up_minimum_order_quantity.html">How to Set up Minimum Order Quantity (MOQ)</a> - describes how to set minimum order quantities</li><li><a href="docs/how_to_set_minimum_order_amount.html">How to Set Minimum Order Amount</a> - describes how to set up minimum order amount</li><li><a href="docs/how_to_create_a_customer_profile_page.html">How to Create a Customer Profile Page</a> - describes how to create a customer profile page</li></ul></li></ul>
+        
+        <p>Next: <a href="docs/full_wiki_toc.html">Table Of Contents</a></p>
+        
+              </div>
+      
+             
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="docs/ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="docs/developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="tos/index.html">Terms &amp; Conditions</a> | <a href="privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

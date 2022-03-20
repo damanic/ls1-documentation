@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Importing products, customers and orders from CSV files</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="ecommerce_guide.html">Merchant Guide</a></li><li class="last">Importing products, customers and orders from CSV files</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Importing products, customers and orders from CSV files</h2>
+        
+        <p>LemonStand has built-in features for importing products and customers from CSV files. You can find corresponding buttons on the Products and Customers pages.&nbsp;</p>
+<p class="wiki_note">Note: The CSV file format should be plain text (UTF-8 encoding) to avoid special characters breaking the CSV import.&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="../resources/i/wiki/csv_import_ui.png" alt="" /></p>
+<p>The Product and Customer import pages have similar user interface with some data-specific options. For example, the Product Import page allows you to upload a ZIP archive containing product images. The CSV Import user interface is intuitive, and the form controls are well described, but there are some hints, that could be useful when you prepare and import a CSV file.</p>
+<ul>
+<li>If you enable the <strong>"I want LemonStand to update products with existing SKU"</strong> checkbox, LemonStand will update all products in your database, which have a matching SKU in the CSV file. All product parameters will be overridden by information from the CSV file and options specified on the CSV Import page.&nbsp;</li>
+<li>As grouped products in LemonStand have different SKU values, the CSV import process do not interfere with grouped products. It will not remove any grouped products from updated products, and it will not add any grouped products to existing products. But it will update all products, including grouped products, if you checked the <strong>"I want LemonStand to update products with existing SKU"</strong> checkbox and if there are products with existing SKU values in the CSV file.</li>
+<li>For on/off columns, like the product Enabled, Track Inventory and Hide if Out Of Stock columns the following values in a CSV file column will be considered as ON: <strong>1</strong>,<strong> enabled</strong>, <strong>y</strong>, <strong>yes</strong>, <strong>active, true</strong>. All other values will be considered as OFF.&nbsp;</li>
+<li>Multiple product categories must be separated with the <strong>pipe</strong> (|) symbol.&nbsp;</li>
+<li>Multiple images must be separated with the <strong>comma</strong> symbol.</li>
+<li>Multiple files for downloadable products must be separated with the&nbsp;<strong>comma</strong>&nbsp;symbol.</li>
+<li>Data in the product groups column should be separated with the&nbsp;<strong>pipe</strong>&nbsp;(|) symbol.</li>
+<li>Nested product categories must be separated with the&nbsp;<strong>=&gt;</strong>&nbsp;character sequence: &nbsp;<div class="codeblock"><pre class="brush:html; collapse: false">Men's=&gt;Jackets</pre></div></li>
+<li>Data in the product options column should have the following format: <div class="codeblock"><pre class="brush:html; collapse: false">Color: Red|Green|Blue
+Size: Small|Large|Giant</pre></div></li>
+<li>Data in the per-product Shipping Cost column could be specified as a single numeric value or in tabular format. A single numeric value will interpreted as "use this shipping cost for all customer locations". Tabular data format allows to specify different shipping cost values for different locations. Tabular data should be multi-line (one line per one location) and cells should be separated with the <strong>pipe</strong> (|) symbol. Cells should be specified in the following sequence: country code, state code, ZIP, cost. Use the wildcard (*) character in the country, state and ZIP columns to indicate the "any value" condition. The following example defines 3 values for the shipping cost - for Canada, for Washington, USA and for all other locations: <div class="codeblock"><pre class="brush:html; collapse: false">CA|*|*|10
+US|WA|*|20
+*|*|*|30</pre></div></li>
+<li>Data in the extra options column should be specified in tabular format. Tabular data should be multi-line (one line per one extra option). Columns should be separated with the <strong>pipe</strong> (|) symbol. Each line could contain up to 4 columns: option name, price, group and images. Images should be separated with the comma symbol. If you need multi-line option names, please separate lines with the <strong>\n</strong> symbol. Only two first columns (name and price) are required. Example: <div class="codeblock"><pre class="brush:html; collapse: false">Extra Cable|3.00|Printer|cable.png
+Extra cartridge|29.99|Printer|cartridge.png
+Paper|3.00</pre></div></li>
+<li>Data in the tier pricing column should be specified in tabular format.&nbsp;Tabular data should be multi-line (one line per tier). Columns should be separated with the&nbsp;<strong>pipe</strong>&nbsp;(|) symbol. Each line could contain 3 columns: customer group name, quantity and price. Use the <strong>asterisk</strong> (*) symbol for the "Any customer group" condition. Example: <div class="codeblock"><pre class="brush:html; collapse: false">*|1|122.00
+Wholesale|5|100.00</pre></div></li>
+<li>You can bind global extra option sets to products. First you need to create global extra option sets in the Administration Area (Shop/Products/Manage extra option sets) and assign them API codes. After that you can list extra option set API codes in the CSV file, separating them the <strong>pipe</strong>&nbsp;(|) symbol.</li>
+<li>To import product attributes you first need to create property sets containing attributes you want to import. You can save a property set on the&nbsp;Attributes tab of the&nbsp;Create/Edit Product page. LemonStand scans all property sets and creates corresponding columns in the&nbsp;LemonStand Product Columns list on the CSV Import page. If you need to import multiple attribute values, separate values with the <strong>pipe</strong> (|) symbol.</li>
+</ul>
+<p class="wiki_note">You should apply <a href="importing_products_and_customers_from_csv_files.html#">Catalog Price Rules</a> after you add or update products from a CSV file.</p>
+<h3 id="importing-om-records">Importing Option Matrix records</h3>
+<p>CSV operations have full support for Option Matrix records. You can use a single CSV file to import regular products and their Option Matrix records. To distinguish regular products and Option Matrix records your file should have 2 extra columns - <strong>Option Matrix Record Flag</strong> and <strong>Option Matrix Parent Product SKU</strong>. Option Matrix Record Flag value should be "<strong>1</strong>" for Option Matrix records. The Parent Product SKU value should refer to the base Option Matrix product. When you configure CSV import you should match those columns with LemonStand Product columns as you usually do.</p>
+<p>If you import Option Matrix records the file should also have the <strong>Options</strong> column. Option Matrix records are identified by options, so this parameter should not be empty for all Option Matrix records. Options for Option Matrix records should be specified in the following format: <div class="codeblock"><pre class="brush:html; collapse: false">Color: Red
+Size: Small</pre></div></p>
+<p>It is similar to the regular product Options column format, but does not allow multiple option values, because each option of Option Matrix record could have only a single value.</p>
+<p>Other cell value formats are similar to the regular products - you can import plain fields like dimensions, tier price configuration, images, etc. Please note that some product parameters, like Categories, are not supported by Option Matrix records and will be ignored.</p>
+<h3 id="order-information">Importing order information</h3>
+<p>You can update orders' tracking codes with a CSV file. The CSV file should contain 2 columns - the order identifier and the tracking codes column. You can import multiple tracking codes for a single order. Shipping methods are identified with their API codes, which you can assign on the Edit Shipping Method form in the Administration Area.&nbsp;The tracking codes column format is following: shipping_method_api_code1:tracking_code_1,shipping_method_api_code2:tracking_code_2. Example:&nbsp;&nbsp;<div class="codeblock"><pre class="brush:html; collapse: false">Order ID;Tracking codes
+100001;default:xxxxxxxxxxxxxxxxx,usps:xxxxxxxxxxxxxxxxx
+100001;usps:xxxxxxxxxxxxxxxxx</pre></div></p>
+<h3>Importing customers</h3>
+<p>Customer CSV import supports the password field which you can use to import customer accounts with unencrypted passwords. Passwords will be automatically encrypted before storing to LemonStand database. The Password column works in the following way:</p>
+<ul>
+<li>If the column is not empty, the password will be applied to the customer account.</li>
+<li>If the column is empty and the customer record does exist in LemonStand database, the column is ignored (thus the existing customer password will not be changed).</li>
+<li>If the column is empty and the customer record does not exist in LemonStand database, a new random password will be generated.</li>
+</ul>
+<h3>Product import tutorial</h3>
+<p>For the demonstration proposes we created a simple CSV file, containing a single product. Please download the following files:</p>
+<ul>
+<li><a href="http://res.lemonstandapp.com/files/import_example.csv">import_example.csv</a> - contains the example product (use the right-click/Save File As menu to download the file).</li>
+<li><a href="http://res.lemonstandapp.com/files/images.zip">images.zip</a> - contains an image for the example product</li>
+<li><a href="http://res.lemonstandapp.com/files/example_products.icf">example_products.icf</a> - column configuration file&nbsp;(use the right-click/Save File As&nbsp;menu&nbsp;to download the file).</li>
+</ul>
+<p>The CSV file contains two rows of data. The first row contains column names, and the second row contains column data. The images.zip archive contains a directory images with a single JPG file inside. The Images column in the CSV file refers to this file. In order to import the CSV file you will need to follow the simple instructions:</p>
+<ol>
+<li>Open the Shop/Products page and click the<strong> Import CSV</strong> button.</li>
+<li>Click the <strong>Upload a file</strong> link and select the import_example.csv file.</li>
+<li>Click the <strong>Load column configuration</strong> link and select the&nbsp;example_products.icf file.&nbsp;</li>
+<li>Select a product type in the drop-down menu below the column lists.</li>
+<li>Click the <strong>"I have a ZIP archive containing product images and I want LemonStand to import them</strong><strong>"</strong> checkbox and then click the <strong>Upload a file</strong> link.&nbsp;Select the images.zip file.</li>
+<li>As the images in the ZIP file are inside the "<strong>images"</strong> directory, you also need to specify the <strong>images</strong>&nbsp;value in the&nbsp;<strong>Path to the images directory in the ZIP file</strong> field. This will allow LemonStand to find images the CSV file refers to.</li>
+<li>Click the <strong>Import products</strong> button.</li>
+</ol>
+<p>After that you can return to the product list and find the imported product named "Example product". You may need to use the list search field, if you have many products in your store. Make sure that the imported product has an image assigned and that it belongs to the CSV and Examples categories, which were created during the import.</p>
+<h4>See also</h4>
+<ul>
+<li><a href="subcriptions_csv_support.html"><span>CSV support in the Subscriptions module</span></a></li>
+</ul>
+        
+        <p>Next: <a href="printing_invoices_and_packing_slips.html">Printing invoices and packing slips</a><br/>Previous: <a href="managing_discounts.html">Managing discounts</a><br/>Return to <a href="ecommerce_guide.html">Merchant Guide</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_170"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/importing_products_and_customers_from_csv_files/";
+		var disqus_title = "Importing products, customers and orders from CSV files";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

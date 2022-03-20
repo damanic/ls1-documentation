@@ -1,0 +1,667 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Creating the Search page</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="advanced_features.html">Advanced Features for your Online Store</a></li><li class="last">Creating the Search page</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Creating the Search page</h2>
+        
+        <p>The <a href="shop_search.html">shop:search</a> action allows you to create a product search page. The action loads search parameters from the page URL and creates the $products PHP variable which contains a list of products which match the search parameters. The search feature allows to search products by the following parameters.</p>
+<ul>
+<li>The <strong>basic search</strong>, with a query string, looks into product names, short description, long description, product category name(s), product manufacturer name, product SKU. You can configure the basic search parameters on the <strong>System/Settings/eCommerceSettings</strong> page in the LemonStand Administration Area.</li>
+<li>Product <strong>categories</strong> - allows to limit the search results with products which belong to specific categories.</li>
+<li>Product <strong>manufacturers</strong> - allows to limit the search results with products produced by specific manufacturers.</li>
+<li>Product <strong>groups</strong> - allows to limit the search results to products belonging to specific product groups.</li>
+<li>Product <strong>options</strong> - allows to perform search in specific product options, for example in the Size, or Color options. Visitors can enter (or select) a value for a specific product option.</li>
+<li>Product <strong>attributes</strong> - allows to search products by specific attribute parameters. Visitors can enter (or select) a value for a specific product attribute.</li>
+<li><strong>Price range</strong> - allows to limit the search results with minimum and/or maximum price. The price range search takes into account currently active catalog price rules and product tier price settings.</li>
+<li>Product <strong>sorting</strong>&nbsp;- allows to sort the search result by the relevance, product name, price, date or rating.</li>
+</ul>
+<h3>Creating the search form</h3>
+<p>The search page requires a search form. The basic search feature requires only the query string input field on the Search form. Other search features require more controls. This is a good idea to place the search form into a partial, because you may want to display the search form on all pages of your store. Below is an example of a simple search form partial. In our Demo store this partial has name 'shop:search_form', but you can assign it any name..</p>
+<div class="code-tabs" id="search_partial"><ul><li><a href="creating_the_search_page.html#search_partial-php">PHP</a></li><li><a href="creating_the_search_page.html#search_partial-twig">Twig</a></li></ul><div id="search_partial-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;form method=&quot;get&quot; action=&quot;/search&quot;&gt;
+    &lt;input name=&quot;query&quot; type=&quot;text&quot; value=&quot;&lt;?= isset($query) ? $query : null ?&gt;&quot;/&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Find Products&quot;/&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;records&quot; value=&quot;6&quot;/&gt;
+&lt;/form&gt;</pre></div></div><div id="search_partial-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">&lt;form method=&quot;get&quot; action=&quot;/search&quot;&gt;
+    &lt;input name=&quot;query&quot; type=&quot;text&quot; value=&quot;{{ query|unescape }}&quot;/&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Find Products&quot;/&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;records&quot; value=&quot;6&quot;/&gt;
+&lt;/form&gt;</pre></div></div></div><p>Please note that the form uses the GET method for sending the search request to the server. This is necessary, because the shop:search action reads the search query from the URL. The ACTION attribute of the search form should point to your search page. In our Demo store the Search page has the '/search' URL assigned.&nbsp;</p>
+<p>The INPUT element with the <strong>query</strong> name is required. This is field for entering a search query.&nbsp;The hidden input named <strong>records</strong>&nbsp;is optional. You can use it for specifying how many records you want to see on a single page of the search result page.</p>
+<p>After creating the partial, you can display it on other pages, using the simple render_partial call:</p>
+<div class="code-tabs" id="search_partial_render"><ul><li><a href="creating_the_search_page.html#search_partial_render-php">PHP</a></li><li><a href="creating_the_search_page.html#search_partial_render-twig">Twig</a></li></ul><div id="search_partial_render-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? $this-&gt;render_partial('shop:search_form') ?&gt;</pre></div></div><div id="search_partial_render-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{{ render_partial('shop:search_form') }}</pre></div></div></div><p>You can place this call into your Templates, then you will not need to render the search form on each page.</p>
+<h3>Creating the search page</h3>
+<p>Start with creating a new page and assign it some URL, for example /search. Select the&nbsp;<a href="shop_search.html">shop:search</a>&nbsp;action on the Actions tab. Below is an example of a simple Search page. The example assumes that you followed the&nbsp;<a href="displaying_a_list_of_products.html">Displaying a list of products</a>&nbsp;tutorial and that you have partials for displaying the product list (shop:product_list in our example). Please note that the&nbsp;<strong>paginate</strong>&nbsp;parameter in the partial call is FALSE. In this case we are going to display the pagination markup separately, because the search feature already paginated the search result.</p>
+<div class="code-tabs" id="search_page"><ul><li><a href="creating_the_search_page.html#search_page-php">PHP</a></li><li><a href="creating_the_search_page.html#search_page-twig">Twig</a></li></ul><div id="search_page-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;h2&gt;Product search&lt;/h2&gt;
+
+&lt;? $this-&gt;render_partial('shop:search_form') ?&gt;
+
+&lt;p&gt;Products found: &lt;?= $pagination-&gt;getRowCount() ?&gt;&lt;/p&gt;
+
+&lt;? $this-&gt;render_partial('shop:product_list', array('products'=&gt;$products, 'paginate'=&gt;false)) ?&gt;
+
+&lt;? $this-&gt;render_partial('pagination', array(
+  'pagination'=&gt;$pagination, 
+  'base_url'=&gt;root_url('/search'), 
+  'suffix'=&gt;$search_params_str)) ?&gt;</pre></div></div><div id="search_page-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;h2&gt;Product search&lt;/h2&gt;
+
+{{ render_partial('shop:search_form') }}
+
+&lt;p&gt;Products found: {{ pagination.getRowCount() }}&lt;/p&gt;
+
+{{ render_partial('shop:product_list', {'products': products, 'paginate': false}) }}
+{{ render_partial(
+    'pagination', {
+      'pagination': pagination, 
+      'base_url': root_url('/search'), 
+      'suffix': '?query='~query|url_encode~'&amp;records='~records|url_encode}
+) }}</pre></div></div></div><p>Below the product list partial we render the pagination partial. Please note that we used the&nbsp;<strong>suffix</strong>&nbsp;parameter of the pagination partial for passing the query string and other search parameters to other pages through the URL. The&nbsp;<strong>$search_params_str&nbsp;</strong>variable is generated by the shop:search action. This string variable contains all search parameters.</p>
+<p>In the following section we will explain how you can implement form controls allowing to select specific categories, manufacturers, options, attributes and price ranges.</p>
+<h3>Creating controls for selecting categories</h3>
+<p>Category identifiers should be posted through the <strong>categories[]</strong> parameter. Depending on your needs, you can create a drop-down menu, allowing to select a single category, or a checkbox set, allowing to select multiple categories. We will demonstrate the both approaches.</p>
+<h4>Implementing checkboxes for selecting multiple categories</h4>
+<p>As categories can contain subcategories, we need a partial for implementing the recursive category rendering. Below is an example of the <strong>category_checkboxes</strong> partial (you can use another name), which displays categories as nested lists. Each category has a checkbox.</p>
+<div class="code-tabs" id="category_checkboxes_partial"><ul><li><a href="creating_the_search_page.html#category_checkboxes_partial-php">PHP</a></li><li><a href="creating_the_search_page.html#category_checkboxes_partial-twig">Twig</a></li></ul><div id="category_checkboxes_partial-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?  
+  $categories = isset($parent_category) ?
+    $parent_category-&gt;list_children('front_end_sort_order') :
+    Shop_Category::create()-&gt;list_root_children('front_end_sort_order');
+  
+  $selected_categories = isset($selected_categories) ? $selected_categories : array();
+
+  if ($categories-&gt;count): 
+?&gt;
+  &lt;ul&gt;
+  &lt;? foreach ($categories as $category):  ?&gt;
+  &lt;li&gt;
+    &lt;input 
+      &lt;?= checkbox_state(in_array($category-&gt;id, $selected_categories)) ?&gt; 
+      type=&quot;checkbox&quot; 
+      id=&quot;&lt;?= 'category_'.$category-&gt;id ?&gt;&quot; 
+      name=&quot;categories[]&quot; 
+      value=&quot;&lt;?= $category-&gt;id ?&gt;&quot;/&gt;
+
+    &lt;label for=&quot;&lt;?= 'category_'.$category-&gt;id ?&gt;&quot;&gt;&lt;?= $category-&gt;name ?&gt;&lt;/label&gt;
+    &lt;? $this-&gt;render_partial('category_checkboxes', array('parent_category'=&gt;$category)) ?&gt;
+  &lt;/li&gt;
+  &lt;? endforeach; ?&gt;
+  &lt;/ul&gt;
+&lt;?  endif ?&gt;</pre></div></div><div id="category_checkboxes_partial-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{% set categories = parent_category ? 
+    parent_category.list_children('front_end_sort_order') : 
+    method('Shop_Category', 'create').list_root_children('front_end_sort_order') %}  
+{% set selected_categories = selected_categories ? selected_categories : [] %}
+{% if categories.count %}
+  &lt;ul&gt;
+  {% for category in categories %}
+  &lt;li&gt;
+    &lt;input 
+      {{ checkbox_state(category.id in selected_categories) }}
+      type=&quot;checkbox&quot; 
+      id=&quot;{{ 'category_'~category.id }}&quot;
+      name=&quot;categories[]&quot; 
+      value=&quot;{{ category.id }}&quot;/&gt;
+
+    &lt;label for=&quot;{{ 'category_'~category.id }}&quot;&gt;{{ category.name }}&lt;/label&gt;
+    {{ render_partial('category_checkboxes', {'parent_category': category}) }}
+  &lt;/li&gt;
+  {% endfor %}
+  &lt;/ul&gt;
+{% endif %}</pre></div></div></div><p>After creating the partial you can render it in your search form with the following code:</p>
+<div class="code-tabs" id="category_checkboxes_partial_render"><ul><li><a href="creating_the_search_page.html#category_checkboxes_partial_render-php">PHP</a></li><li><a href="creating_the_search_page.html#category_checkboxes_partial_render-twig">Twig</a></li></ul><div id="category_checkboxes_partial_render-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? $this-&gt;render_partial('category_checkboxes') ?&gt;</pre></div></div><div id="category_checkboxes_partial_render-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{{ render_partial('category_checkboxes') }}</pre></div></div></div><h4>Implementing a drop-down list for selecting a single category</h4>
+<p>This approach allows you to create a drop-down menu for selecting a single category. As with the checkboxes case described above, you will need to create a partial for displaying OPTION elements for the drop-down menu. In the code below the partial name is <strong>category_options</strong>.</p>
+<div class="code-tabs" id="category_options_partial"><ul><li><a href="creating_the_search_page.html#category_options_partial-php">PHP</a></li><li><a href="creating_the_search_page.html#category_options_partial-twig">Twig</a></li></ul><div id="category_options_partial-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?  
+  $categories = isset($parent_category) ?
+    $parent_category-&gt;list_children('front_end_sort_order') :
+    Shop_Category::create()-&gt;list_root_children('front_end_sort_order');
+
+  $selected_categories = isset($selected_categories) ? $selected_categories : array();
+
+  if (!isset($level))
+    $level = 0;
+
+  if (!isset($selected_categories))
+    $selected_categories = array();
+
+  if ($categories-&gt;count): 
+?&gt;
+  &lt;? foreach ($categories as $category): ?&gt;
+      &lt;option 
+        &lt;?= in_array($category-&gt;id, $selected_categories) ? 'selected=&quot;selected&quot;' : null ?&gt; 
+        value=&quot;&lt;?= $category-&gt;id ?&gt;&quot;&gt;&lt;?= str_repeat('&amp;nbsp;', $level*4).h($category-&gt;name) ?&gt;&lt;/option&gt;
+        &lt;? $this-&gt;render_partial('category_options', array('parent_category'=&gt;$category, 'level'=&gt;$level+1)) ?&gt;
+  &lt;? endforeach; ?&gt;
+&lt;?  endif ?&gt;</pre></div></div><div id="category_options_partial-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{% set categories = parent_category ? 
+    parent_category.list_children('front_end_sort_order') : 
+    method('Shop_Category', 'create').list_root_children('front_end_sort_order') %}  
+{% set selected_categories = selected_categories ? selected_categories : [] %}
+{% set level = level ? level : 0 %}
+{% if categories.count %} 
+  {% for category in categories %}
+    &lt;option
+      {{ category.id in selected_categories ? 'selected=&quot;selected&quot;' : null }}
+      value=&quot;{{ category.id }}&quot;&gt;{{ '&amp;nbsp;'|repeat(level*4)|unescape }}{{ category.name }}&lt;/option&gt;
+      
+    {{ render_partial('category_options', {'parent_category': category, 'level': level+1}) }}
+  {% endfor %}
+{% endif %}</pre></div></div></div><p>After creating the partial you can define a SELECT element in your search form and render the category options partial inside it:</p>
+<div class="code-tabs" id="category_options_partial_render"><ul><li><a href="creating_the_search_page.html#category_options_partial_render-php">PHP</a></li><li><a href="creating_the_search_page.html#category_options_partial_render-twig">Twig</a></li></ul><div id="category_options_partial_render-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;select name=&quot;categories[]&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;&amp;lt;please select a category&amp;gt;&lt;/option&gt;
+  &lt;? $this-&gt;render_partial('category_options') ?&gt;
+&lt;/select&gt;</pre></div></div><div id="category_options_partial_render-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">&lt;select name=&quot;categories[]&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;&amp;lt;please select a category&amp;gt;&lt;/option&gt;
+  {{ render_partial('category_options') }}
+&lt;/select&gt;</pre></div></div></div><h3>Adding controls for selecting manufacturers</h3>
+<p>Manufacturer identifiers should be posted through the <strong>manufacturers[]</strong> parameter. Depending on your needs, you can create a drop-down menu, allowing to select a single manufacturer, or a checkbox set, allowing to select multiple manufacturers.</p>
+<h4>Implementing checkboxes for selecting multiple manufacturers</h4>
+<p>The following code example demonstrates how you can create checkboxes for selecting multiple manufacturers. You can include this code directly into your search form, or create a separate partial and then render it from inside the search form.</p>
+<div class="code-tabs" id="manufacturers_multiple"><ul><li><a href="creating_the_search_page.html#manufacturers_multiple-php">PHP</a></li><li><a href="creating_the_search_page.html#manufacturers_multiple-twig">Twig</a></li></ul><div id="manufacturers_multiple-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  $manufacturers = Shop_Manufacturer::create()-&gt;order('name')-&gt;find_all();
+  $selected_manufacturers = isset($selected_manufacturers) ? $selected_manufacturers : array();
+
+  foreach ($manufacturers as $manufacturer):
+?&gt;
+  &lt;input &lt;?= in_array($manufacturer-&gt;id, $selected_manufacturers) ? 'checked=&quot;checked&quot;' : null ?&gt; 
+    type=&quot;checkbox&quot; 
+    value=&quot;&lt;?= $manufacturer-&gt;id ?&gt;&quot; 
+    name=&quot;manufacturers[]&quot;
+    id=&quot;&lt;?= 'manufacturer_'.$manufacturer-&gt;id ?&gt;&quot;
+  /&gt;
+  &lt;label for=&quot;&lt;?= 'manufacturer_'.$manufacturer-&gt;id ?&gt;&quot;&gt;&lt;?= h($manufacturer-&gt;name) ?&gt;&lt;/label&gt;
+&lt;? endforeach ?&gt;</pre></div></div><div id="manufacturers_multiple-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{% set manufacturers = method('Shop_Manufacturer', 'create').order('name').find_all() %}
+{% set selected_manufacturers = selected_manufacturers ? selected_manufacturers : [] %}
+{% for manufacturer in manufacturers %}
+  &lt;input {{ manufacturer.id in selected_manufacturers ? 'checked=&quot;checked&quot;' : null }}
+    type=&quot;checkbox&quot; 
+    value=&quot;{{ manufacturer.id }}&quot;
+    name=&quot;manufacturers[]&quot;
+    id=&quot;{{ 'manufacturer_'~manufacturer.id }}&quot;
+  /&gt;
+  &lt;label for=&quot;{{ 'manufacturer_'.manufacturer.id }}&quot;&gt;{{ manufacturer.name }}&lt;/label&gt;
+{% endfor %}</pre></div></div></div><h4>Implementing a drop-down menu for selecting a single manufacturer</h4>
+<p>The code below creates a drop-down menu which contains all manufacturers. You can include the code directly to the search form, or create a separate partial.</p>
+<div class="code-tabs" id="manufacturers_single"><ul><li><a href="creating_the_search_page.html#manufacturers_single-php">PHP</a></li><li><a href="creating_the_search_page.html#manufacturers_single-twig">Twig</a></li></ul><div id="manufacturers_single-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;select name=&quot;manufacturers[]&quot;&gt;
+  &lt;?
+    $manufacturers = Shop_Manufacturer::create()-&gt;order('name')-&gt;find_all();
+    $selected_manufacturers = isset($selected_manufacturers) ? $selected_manufacturers : array();
+
+    foreach ($manufacturers as $manufacturer):
+  ?&gt;
+    &lt;option
+      &lt;?= in_array($manufacturer-&gt;id, $selected_manufacturers) ? 'selected=&quot;selected&quot;' : null ?&gt; 
+      value=&quot;&lt;?= $manufacturer-&gt;id ?&gt;&quot;&gt;&lt;?= h($manufacturer-&gt;name) ?&gt;&lt;/option&gt;
+  &lt;? endforeach ?&gt;
+&lt;/select&gt;</pre></div></div><div id="manufacturers_single-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">&lt;select name=&quot;manufacturers[]&quot;&gt;
+  {% set manufacturers = method('Shop_Manufacturer', 'create').order('name').find_all() %}
+  {% set selected_manufacturers = selected_manufacturers ? selected_manufacturers : [] %}
+  {% for manufacturer in manufacturers %}
+    &lt;option
+      {{ manufacturer.id in selected_manufacturers ? 'selected=&quot;selected&quot;' : null }}
+      value=&quot;{{ manufacturer.id }}&quot;&gt;{{ manufacturer.name }}&lt;/option&gt;
+  {% endfor %}
+&lt;/select&gt;</pre></div></div></div><h3>Adding controls for selecting custom product groups</h3>
+<p>To limit the search to specific product groups, you can post the product group codes with the <strong>custom_groups[]</strong> parameter. Unlike manufacturers[] and categories[], the expected product group identifier is the product group code (ie featured_products), not the product group id.</p>
+<p>A code example of implementing the product group selection as checkboxes, allowing the user to select multiple product groups to search in:</p>
+<p><span><div class="code-tabs" id="custom_groups_multiple"><ul><li><a href="creating_the_search_page.html#custom_groups_multiple-php">PHP</a></li><li><a href="creating_the_search_page.html#custom_groups_multiple-twig">Twig</a></li></ul><div id="custom_groups_multiple-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?  
+  $custom_groups = Shop_CustomGroup::create()-&gt;order('name')-&gt;find_all();
+  
+  $selected_custom_groups = isset($selected_custom_groups) ? $selected_custom_groups : array();
+
+  if ($custom_groups-&gt;count): 
+?&gt;
+  &lt;ul&gt;
+  &lt;? foreach ($custom_groups as $custom_group):  ?&gt;
+  &lt;li&gt;
+    &lt;input 
+      &lt;?= checkbox_state(in_array($custom_group-&gt;code, $selected_custom_groups)) ?&gt; 
+      type=&quot;checkbox&quot; 
+      id=&quot;&lt;?= 'custom_group_'.$custom_group-&gt;id ?&gt;&quot; 
+      name=&quot;custom_groups[]&quot; 
+      value=&quot;&lt;?= $custom_group-&gt;code ?&gt;&quot;/&gt;
+
+    &lt;label for=&quot;&lt;?= 'custom_group_'.$custom_group-&gt;id ?&gt;&quot;&gt;&lt;?= $custom_group-&gt;name ?&gt;&lt;/label&gt;
+  &lt;/li&gt;
+  &lt;? endforeach; ?&gt;
+  &lt;/ul&gt;
+&lt;?  endif ?&gt;</pre></div></div><div id="custom_groups_multiple-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{% set custom_groups = method('Shop_CustomGroup', 'create').order('name').find_all() %}
+{% set selected_custom_groups = selected_custom_groups ? selected_custom_groups : [] %}
+{% for custom_group in custom_groups %}
+  &lt;input {{ custom_group.code in selected_custom_groups ? 'checked=&quot;checked&quot;' : null }}
+    type=&quot;checkbox&quot; 
+    value=&quot;{{ custom_group.code }}&quot;
+    name=&quot;custom_groups[]&quot;
+    id=&quot;{{ 'custom_group_'~custom_group.id }}&quot;
+  /&gt;
+  &lt;label for=&quot;{{ 'custom_group_'.custom_group.id }}&quot;&gt;{{ custom_group.name }}&lt;/label&gt;
+{% endfor %}</pre></div></div></div></span></p>
+<p><span><span><span>A code example of</span>&nbsp;implementing the product group selection as a drop-down menu, allowing the user to select a single product group to search in:</span></span></p>
+<p><span><span><span><div class="code-tabs" id="custom_groups_single"><ul><li><a href="creating_the_search_page.html#custom_groups_single-php">PHP</a></li><li><a href="creating_the_search_page.html#custom_groups_single-twig">Twig</a></li></ul><div id="custom_groups_single-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;select name=&quot;custom_groups[]&quot;&gt;
+  &lt;?
+    $custom_groups = Shop_CustomGroup::create()-&gt;order('name')-&gt;find_all();
+    $selected_custom_groups = isset($selected_custom_groups) ? $selected_custom_groups : array();
+
+    foreach ($custom_groups as $custom_group):
+  ?&gt;
+    &lt;option
+      &lt;?= in_array($custom_group-&gt;code, $selected_custom_groups) ? 'selected=&quot;selected&quot;' : null ?&gt; 
+      value=&quot;&lt;?= $custom_group-&gt;code ?&gt;&quot;&gt;&lt;?= h($custom_group-&gt;name) ?&gt;&lt;/option&gt;
+  &lt;? endforeach ?&gt;
+&lt;/select&gt;</pre></div></div><div id="custom_groups_single-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">&lt;select name=&quot;custom_groups[]&quot;&gt;
+  {% set custom_groups = method('Shop_CustomGroup', 'create').order('name').find_all() %}
+  {% set selected_custom_groups = selected_custom_groups ? selected_custom_groups : [] %}
+  {% for custom_group in custom_groups %}
+    &lt;option
+      {{ custom_group.code in selected_custom_groups ? 'selected=&quot;selected&quot;' : null }}
+      value=&quot;{{ custom_group.code }}&quot;&gt;{{ custom_group.name }}&lt;/option&gt;
+  {% endfor %}
+&lt;/select&gt;</pre></div></div></div></span></span></span></p>
+<h3>Adding controls for entering a maximum and minimum price</h3>
+<p>The price range search takes into account currently active <a href="creating_the_search_page.html#">catalog price rules</a>, price tires, a current user customer group, and whether catalog product prices <a href="configuring_lemonstand_for_tax_inclusive_environments.html">include tax</a> or not. In other words, the price range search is applied to actual prices which a current visitor sees in the catalog.&nbsp;Use the code form the example below to add input fields for entering a minimum and maximum product price.</p>
+<div class="code-tabs" id="price_controls"><ul><li><a href="creating_the_search_page.html#price_controls-php">PHP</a></li><li><a href="creating_the_search_page.html#price_controls-twig">Twig</a></li></ul><div id="price_controls-php"><div class="codeblock"><pre class="brush:php; collapse: false">Min price: &lt;input type=&quot;text&quot; value=&quot;&lt;?= isset($min_price) ? h($min_price) : null ?&gt;&quot; name=&quot;min_price&quot;/&gt;&lt;br/&gt;
+Max price: &lt;input type=&quot;text&quot; value=&quot;&lt;?= isset($max_price) ? h($max_price) : null ?&gt;&quot; name=&quot;max_price&quot;/&gt;&lt;br/&gt;</pre></div></div><div id="price_controls-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">Min price: &lt;input type=&quot;text&quot; value=&quot;{{ min_price }}&quot; name=&quot;min_price&quot;/&gt;&lt;br/&gt;
+Max price: &lt;input type=&quot;text&quot; value=&quot;{{ max_price }}&quot; name=&quot;max_price&quot;/&gt;&lt;br/&gt;</pre></div></div></div><h3>Adding controls for searching by product options</h3>
+<p>Depending on your needs you can organize search by all product options defined in your store, or only by specific options. Also, you can allow visitors to enter option values manually, or select them from a drop-down menu. To enable the search by options feature, you should post the <strong>option_names[]</strong> and <strong>option_values[] </strong>parameters. To do that you need to define form controls with the corresponding names.</p>
+<h4>Creating controls allowing to search by specific options</h4>
+<p>The following code creates two text fields allowing website visitors to enter text they want to be found in the Color and Size product attributes. Please note that the option_names[] input fields are declared as hidden fields. The option_names[] and option_values[] fields should always be declared in pairs. The option_names[] field should contain an option name, and the option_vales[] field should be a text filed or a drop-down menu for entering the option value.</p>
+<div class="code-tabs" id="color_size_options"><ul><li><a href="creating_the_search_page.html#color_size_options-php">PHP</a></li><li><a href="creating_the_search_page.html#color_size_options-twig">Twig</a></li></ul><div id="color_size_options-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;? $selected_options = isset($selected_options) ? $selected_options : array(); ?&gt;
+
+Color: 
+&lt;input type=&quot;hidden&quot; name=&quot;option_names[]&quot; value=&quot;Color&quot;/&gt;
+&lt;input type=&quot;text&quot; 
+  value=&quot;&lt;?= isset($selected_options['Color']) ? h($selected_options['Color']) : null ?&gt;&quot; 
+  name=&quot;option_values[]&quot;/&gt;
+
+Size: 
+&lt;input type=&quot;hidden&quot; name=&quot;option_names[]&quot; value=&quot;Size&quot;/&gt;
+&lt;input type=&quot;text&quot; 
+  value=&quot;&lt;?= isset($selected_options['Size']) ? h($selected_options['Size']) : null ?&gt;&quot; 
+  name=&quot;option_values[]&quot;/&gt;</pre></div></div><div id="color_size_options-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{% set selected_options = selected_options ? selected_options : [] %}
+Color: 
+&lt;input type=&quot;hidden&quot; name=&quot;option_names[]&quot; value=&quot;Color&quot;/&gt;
+&lt;input type=&quot;text&quot; 
+  value=&quot;{{ attribute(selected_options, 'Color') ? selected_options.Color : null }}&quot; 
+  name=&quot;option_values[]&quot;/&gt;
+
+Size: 
+&lt;input type=&quot;hidden&quot; name=&quot;option_names[]&quot; value=&quot;Size&quot;/&gt;
+&lt;input type=&quot;text&quot; 
+  value=&quot;{{ attribute(selected_options, 'Size') ? selected_options.Size : null }}&quot; 
+  name=&quot;option_values[]&quot;/&gt;</pre></div></div></div><h4>Creating controls allowing to search by all options</h4>
+<p>The following code outputs all product options defined in your store and creates text elements, allowing website visitors to enter values they want option to contain.</p>
+<div class="code-tabs" id="all_options"><ul><li><a href="creating_the_search_page.html#all_options-php">PHP</a></li><li><a href="creating_the_search_page.html#all_options-twig">Twig</a></li></ul><div id="all_options-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  $options = Shop_CustomAttribute::list_unique_names();
+  $selected_options = isset($selected_options) ? $selected_options : array();
+  
+  foreach ($options as $option):
+  $option_values = Shop_CustomAttribute::list_unique_values($option);
+?&gt;
+  &lt;?= h($option) ?&gt;:
+  &lt;input type=&quot;hidden&quot; name=&quot;option_names[]&quot; value=&quot;&lt;?= h($option) ?&gt;&quot;/&gt;
+  &lt;input type=&quot;text&quot; 
+    value=&quot;&lt;?= isset($selected_options[$option]) ? h($selected_options[$option]) : null ?&gt;&quot; 
+    name=&quot;option_values[]&quot;/&gt;
+&lt;? endforeach ?&gt;</pre></div></div><div id="all_options-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% set options = method('Shop_CustomAttribute', 'list_unique_names') %}
+{% set selected_options = selected_options ? selected_options : [] %}
+{% for option in options %}
+  {% set option_values = method('Shop_CustomAttribute', 'list_unique_values', option) %}
+  {{ option }}
+  &lt;input type=&quot;hidden&quot; name=&quot;option_names[]&quot; value=&quot;{{ option }}&quot;/&gt;
+  &lt;input type=&quot;text&quot; 
+    value=&quot;{{ attribute(selected_options, option) }}&quot; 
+    name=&quot;option_values[]&quot;/&gt;
+{% endfor %}</pre></div></div></div><h4>Displaying drop-down menus instead of input fields</h4>
+<p>You can replace text input fields with drop-down menus, allowing visitors to choose option values instead of typing them. The menu contents will depend on option values you defined for products in your store. For example, if you have the Size product option with the Small and Large values defined in some product, and the Size option with the Small and Huge values defined in another product, the Size drop-down menu on the Search form will contain the Small, Huge and Large values.</p>
+<p>To load a unique set of available option values for a specific value use the <strong>Shop_CustomAttribute::list_unique_values($option_name)</strong> call. The code below demonstrates how you can replace the input text element for the Color option with a drop-down list.</p>
+<div class="code-tabs" id="color_drop_down"><ul><li><a href="creating_the_search_page.html#color_drop_down-php">PHP</a></li><li><a href="creating_the_search_page.html#color_drop_down-twig">Twig</a></li></ul><div id="color_drop_down-php"><div class="codeblock"><pre class="brush:php; collapse: true">Color: 
+&lt;input type=&quot;hidden&quot; name=&quot;option_names[]&quot; value=&quot;Color&quot;/&gt;
+&lt;? $option_values = Shop_CustomAttribute::list_unique_values('Color'); ?&gt;
+&lt;select name=&quot;option_values[]&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;&amp;lt;please select&amp;gt;&lt;/option&gt;
+  &lt;? foreach ($option_values as $value): ?&gt;
+    &lt;option 
+      &lt;?= option_state($value, isset($selected_options['Color']) ? h($selected_options['Color']) : null) ?&gt; 
+      value=&quot;&lt;?= h($value) ?&gt;&quot;&gt;&lt;?= h($value) ?&gt;&lt;/option&gt;
+  &lt;? endforeach ?&gt;
+&lt;/select&gt;</pre></div></div><div id="color_drop_down-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">Color: 
+&lt;input type=&quot;hidden&quot; name=&quot;option_names[]&quot; value=&quot;Color&quot;/&gt;
+{% set option_values = method('Shop_CustomAttribute', 'list_unique_values', 'Color') %}
+&lt;select name=&quot;option_values[]&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;&amp;lt;please select&amp;gt;&lt;/option&gt;
+  {% for value in option_values %}
+    &lt;option
+      {{ option_state(value, attribute(selected_options, 'Color')) }}
+      value=&quot;{{ value }}&quot;&gt;{{ value }}&lt;/option&gt;
+  {% endfor %}
+&lt;/select&gt;</pre></div></div></div><p>To replace the text input elements with drop-down menus in the all options code example demonstrated above, use the dynamic option name (the $option variable) instead of the fixed option name:</p>
+<div class="code-tabs" id="all_options_drop_down"><ul><li><a href="creating_the_search_page.html#all_options_drop_down-php">PHP</a></li><li><a href="creating_the_search_page.html#all_options_drop_down-twig">Twig</a></li></ul><div id="all_options_drop_down-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;select name=&quot;option_values[]&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;&amp;lt;please select&amp;gt;&lt;/option&gt;
+  &lt;? foreach ($option_values as $value): ?&gt;
+    &lt;option 
+      &lt;?= option_state($value, isset($selected_options[$option]) ? h($selected_options[$option]) : null) ?&gt; 
+      value=&quot;&lt;?= h($value) ?&gt;&quot;&gt;&lt;?= h($value) ?&gt;&lt;/option&gt;
+  &lt;? endforeach ?&gt;
+&lt;/select&gt;</pre></div></div><div id="all_options_drop_down-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">&lt;select name=&quot;option_values[]&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;&amp;lt;please select&amp;gt;&lt;/option&gt;
+  {% for value in option_values %}
+    &lt;option 
+      {{ option_state(value, attribute(selected_options, option)) }}
+      value=&quot;{{ value }}&quot;&gt;{{ value }}&lt;/option&gt;
+  {% endfor %}
+&lt;/select&gt;</pre></div></div></div><h3>Adding controls for searching by product attributes</h3>
+<p>The code for controls allowing visitors to search products by their attributes is very similar to the code for the option search described in the previous section. To search in attributes use the code from the previous section and replace some variables and API calls as follows:</p>
+<ul>
+<li>Use <strong>attribute_names[]</strong> input element name instead of the <strong>option_names[]</strong></li>
+<li>Use <strong>attribute_values[]</strong> input element name instead of the <strong>option_values[]</strong></li>
+<li>Load identifiers of selected attributes from the <strong>$selected_attributes</strong> variable instead of the <strong>$selected_options</strong></li>
+<li>Use the <strong>Shop_ProductProperty::list_unique_names()</strong> call to load a list of all attributes defined in your store, instead of the <strong>Shop_CustomAttribute::list_unique_names()</strong> call</li>
+<li>Use the <strong>Shop_ProductProperty::list_unique_values($attribtue_name)</strong> API call to load a list of all values of a specific attribute (for creating attribute drop-downs)</li>
+</ul>
+<h3>Adding controls for managing the search result sorting</h3>
+<p>The search function supports the product sorting management. By default the search result is sorted by the relevance. You can specify another sorting option with the <strong>sorting</strong> hidden field&nbsp;or add a drop-down menu allowing visitors to manage the sorting manually. Example:</p>
+<div class="code-tabs" id="sorting"><ul><li><a href="creating_the_search_page.html#sorting-php">PHP</a></li><li><a href="creating_the_search_page.html#sorting-twig">Twig</a></li></ul><div id="sorting-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;select name=&quot;sorting&quot;&gt;
+  &lt;?
+    $sorting_options = array(
+      'relevance'=&gt;'Relevance',
+      'name'=&gt;'Name',
+      'name desc'=&gt;'Name desc',
+      'price'=&gt;'Price',
+      'price desc'=&gt;'Price desc',
+      'created_at'=&gt;'Oldest first',
+      'created_at desc'=&gt;'Newest first',
+      'product_rating'=&gt;'Rating approved',
+      'product_rating desc'=&gt;'Rating approved desc',
+      'product_rating_all'=&gt;'Rating all',
+      'product_rating_all desc'=&gt;'Rating all desc'
+    );
+    
+    $current_sorting = isset($sorting) ? $sorting : null;
+    foreach ($sorting_options as $sorting_col=&gt;$sorting_name):
+  ?&gt;
+    &lt;option &lt;?= option_state($current_sorting, $sorting_col) ?&gt; 
+      value=&quot;&lt;?= $sorting_col ?&gt;&quot;&gt;&lt;?= h($sorting_name) ?&gt;&lt;/option&gt;
+  &lt;? endforeach ?&gt;
+&lt;/select&gt;</pre></div></div><div id="sorting-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;select name=&quot;sorting&quot;&gt;
+  {% set sorting_options = {
+      'relevance': 'Relevance',
+      'name': 'Name',
+      'name desc': 'Name desc',
+      'price': 'Price',
+      'price desc': 'Price desc',
+      'created_at': 'Oldest first',
+      'created_at desc': 'Newest first',
+      'product_rating': 'Rating approved',
+      'product_rating desc': 'Rating approved desc',
+      'product_rating_all': 'Rating all',
+      'product_rating_all desc': 'Rating all desc' } %}
+  {% set current_sorting = sorting %}
+  {% for sorting_col, sorting_name in sorting_options %}
+    &lt;option {{ option_state(current_sorting, sorting_col) }} 
+      value=&quot;{{ sorting_col }}&quot;&gt;{{ sorting_name }}&lt;/option&gt;
+  {% endfor %}
+&lt;/select&gt;</pre></div></div></div>
+        
+        <p>Next: <a href="implementing_the_compare_products_feature.html">Implementing the Compare Products feature</a><br/>Previous: <a href="integrating_option_matrix.html">Integrating Option Matrix</a><br/>Return to <a href="advanced_features.html">Advanced Features for your Online Store</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_156"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/creating_the_search_page/";
+		var disqus_title = "Creating the Search page";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Displaying Individual Order Details</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="order_management.html">Order History, Status, and Details</a></li><li class="last">Displaying Individual Order Details</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Displaying Individual Order Details</h2>
+        
+        <p>The Order Details page displays details of a specific order. You can create links to the Order Details page from the <a href="customer_orders_page.html">Customer Orders</a> page described in the previous article. On the Order Details page you can output the order number, order date, totals, order status and a list of order items. Also, if an order is not yet paid, you can output a link to the <a href="displaying_individual_order_details.html#">Pay page</a>.</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/creating_pages_customer_order_page_01.png" alt="" /></p>
+<p>Start with creating a new page and assign it a name and URL. As the page should be accessible only for logged in customers, you need to go to the <strong>Security</strong> tab and select the <strong>Customers only</strong> in the Access section. Click the <strong>Action</strong> tab and select the <a href="action_shop_order.html">shop:order</a> action in the drop-down menu.</p>
+<p>The <a href="action_shop_order.html">shop:order</a> action loads an order with the ID specified in the URL and creates the <strong>$order</strong> and <strong>$items</strong> variables which you can access in the page code. A value of the <strong>$order</strong>&nbsp;variable can be null in case if the requested order was not found in the database. Always check a value of the variable before displaying the order details.</p>
+<p>The following code outputs the order details and a list of order items.</p>
+<div class="code-tabs" id="page_code"><ul><li><a href="displaying_individual_order_details.html#page_code-php">PHP</a></li><li><a href="displaying_individual_order_details.html#page_code-twig">Twig</a></li></ul><div id="page_code-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;h2&gt;Order&lt;/h2&gt;
+&lt;? if (!$order): ?&gt;
+  &lt;h3&gt;Order not found&lt;/h3&gt;
+&lt;? else: ?&gt;  
+  &lt;p&gt;
+    Order # &lt;?= $order-&gt;id ?&gt;&lt;br/&gt;
+    Order Date: &lt;?= h($order-&gt;order_datetime-&gt;format('%x')) ?&gt;&lt;br/&gt;
+    Total: &lt;?= format_currency($order-&gt;total) ?&gt;&lt;br/&gt;
+    Status: &lt;?= h($order-&gt;status-&gt;name) ?&gt;
+  &lt;/p&gt;
+  
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Items&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+        &lt;th&gt;Discount&lt;/th&gt;
+        &lt;th&gt;Quantity&lt;/th&gt;
+        &lt;th&gt;Total&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;?
+        foreach ($items as $item):
+          $image_url = $item-&gt;product-&gt;image_url(0, 60, 'auto');
+      ?&gt;
+        &lt;tr&gt;
+          &lt;td&gt;
+            &lt;? if ($image_url): ?&gt;&lt;img src=&quot;&lt;?= $image_url ?&gt;&quot;/&gt;&lt;? endif ?&gt;
+            &lt;?= $item-&gt;output_product_name() ?&gt;
+            &lt;? if ($item-&gt;product-&gt;product_type-&gt;files &amp;&amp; $order-&gt;is_paid() &amp;&amp; $item-&gt;product-&gt;files-&gt;count): ?&gt;
+              Download:
+              &lt;ul&gt;
+                &lt;? foreach ($item-&gt;product-&gt;files as $file): ?&gt;
+                  &lt;li&gt;&lt;a href=&quot;&lt;?= $file-&gt;download_url($order) ?&gt;&quot;&gt;&lt;?= h($file-&gt;name) ?&gt;&lt;/a&gt; (&lt;?= $file-&gt;size_str ?&gt;)&lt;/li&gt;
+                &lt;? endforeach ?&gt;
+              &lt;/ul&gt;
+            &lt;? endif ?&gt;
+          &lt;/td&gt;
+          &lt;td&gt;&lt;?= format_currency($item-&gt;single_price) ?&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;?= format_currency($item-&gt;discount) ?&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;?= $item-&gt;quantity ?&gt;&lt;/td&gt;
+          &lt;th&gt;&lt;?= format_currency($item-&gt;subtotal) ?&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;? endforeach ?&gt;
+    &lt;tbody&gt;
+  &lt;/table&gt;
+  
+  &lt;p&gt;
+    Subtotal: &lt;?= format_currency($order-&gt;subtotal) ?&gt;&lt;br/&gt;
+    Discount: &lt;?= format_currency($order-&gt;discount) ?&gt;&lt;br/&gt;
+    Goods tax: &lt;?= format_currency($order-&gt;goods_tax) ?&gt;&lt;br/&gt;
+    Shipping: &lt;?= format_currency($order-&gt;shipping_quote) ?&gt;
+    &lt;? if ($order-&gt;shipping_tax): ?&gt;
+      &lt;br/&gt;Shipping tax: &lt;?= format_currency($order-&gt;shipping_tax) ?&gt;
+    &lt;? endif ?&gt;
+  &lt;/p&gt;
+  
+  &lt;p&gt;Total: &lt;?= format_currency($order-&gt;total) ?&gt;&lt;/p&gt;
+  &lt;p&gt;
+    &lt;a href=&quot;/orders&quot;&gt;Return to the order list&lt;/a&gt;
+    &lt;? if($order-&gt;payment_method-&gt;has_payment_form() &amp;&amp; !$order-&gt;payment_processed()): ?&gt;
+      &lt;a href=&quot;/pay/&lt;?= $order-&gt;order_hash ?&gt;&quot;&gt;Pay&lt;/a&gt;
+    &lt;? endif ?&gt;
+  &lt;/p&gt;
+&lt;? endif ?&gt;</pre></div></div><div id="page_code-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;h2&gt;Order&lt;/h2&gt;
+{% if not order %}
+  &lt;h3&gt;Order not found&lt;/h3&gt;
+{% else %}
+  &lt;p&gt;
+    Order # {{ order.id }}&lt;br/&gt;
+    Order Date: {{ order.order_datetime.format('%x') }}&lt;br/&gt;
+    Total: {{ order.total|currency }}&lt;br/&gt;
+    Status: {{ order.status.name }}
+  &lt;/p&gt;
+  
+  &lt;table class=&quot;simple_table&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Items&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+        &lt;th&gt;Discount&lt;/th&gt;
+        &lt;th&gt;Quantity&lt;/th&gt;
+        &lt;th&gt;Total&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      {% for item in items %}
+        {% set image_url = item.product.image_url(0, 60, 'auto') %}
+        &lt;tr&gt;
+          &lt;td&gt;
+            {% if image_url %}&lt;img class=&quot;product_image&quot; src=&quot;{{ image_url }}&quot; alt=&quot;Mac mini&quot;/&gt;{% endif %}
+            &lt;div class=&quot;product_description&quot;&gt;
+              {{ item.output_product_name()|unescape }}
+              {% if item.product.product_type.files and order.is_paid() and item.product.files.count %}
+                Download:
+                &lt;ul&gt;
+                {% for file in  item.product.files %}
+                  &lt;li&gt;&lt;a href=&quot;{{ file.download_url(order) }}&quot;&gt;{{ file.name }}&lt;/a&gt; ({{ file.size_str }})&lt;/li&gt;
+                {% endfor %}
+                &lt;/ul&gt;
+              {% endif %}
+            &lt;/div&gt;
+          &lt;/td&gt;
+          &lt;td&gt;{{ field(item, 'single_price')|currency }}&lt;/td&gt;
+          &lt;td&gt;{{ item.discount|currency }}&lt;/td&gt;
+          &lt;td&gt;{{ item.quantity }}&lt;/td&gt;
+          &lt;th&gt;{{ field(item, 'subtotal')|currency }}&lt;/th&gt;
+        &lt;/tr&gt;
+      {% endfor %}
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+  
+  &lt;p&gt;
+    Subtotal: {{ order.subtotal|currency }}&lt;br/&gt;
+    Discount: {{ order.discount|currency }}&lt;br/&gt;
+    Goods tax: {{ order.goods_tax|currency }}&lt;br/&gt;
+    Shipping: {{ order.shipping_quote|currency }}&lt;br/&gt;
+    {% for tax in order.list_shipping_taxes() %}
+      Shipping tax ({{ tax.name }}): {{ tax.total|currency }}&lt;br/&gt;
+    {% endfor %} 
+  &lt;/p&gt;
+ 
+  &lt;p&gt;Total: {{ order.total|currency }}&lt;/p&gt;
+  &lt;p&gt;
+    &lt;a href=&quot;/orders&quot;&gt;Return to the order list&lt;/a&gt;
+    {% if order.payment_method.has_payment_form() and not order.payment_processed() %}
+      &lt;a href=&quot;/pay/{{ order.order_hash }}&quot;&gt;Pay&lt;/a&gt;
+    {% endif %}
+  &lt;/p&gt;
+{% endif %}</pre></div></div></div><p>Please note that the code outputs links to downloadable files assigned to a product. This is needed when you sell downloadable products. The list of files is displayed only if the order is paid. To determine whether the order is paid, the <strong>is_paid</strong> method of the <strong>$order</strong> object is used. The order is considered as paid if there is a <strong>Paid</strong> status in the order status history. Please read&nbsp;<a href="implementing_downloadable_products.html">Integrating downloadable products</a> article for details.</p>
+<p>The Pay button outputs only if the order payment is not processed. To check whether the payment is processed, the <strong>payment_processed</strong> method of the <strong>$order</strong> object is used. The <strong>is_paid</strong> and <strong>payment_processed</strong> methods could return opposite results in case a customer has paid an order (the <strong>payment_processed</strong> method will return TRUE), but you (a merchant) have not checked the payment and have not sent the order into the Paid status (the <strong>is_paid</strong> method will return false).&nbsp;</p>
+<h3>Displaying bundle items</h3>
+<p>Displaying bundle items on the order details page is similar to displaying bundle items in the <a href="displaying_individual_order_details.html#">cart</a>. In the code snippet below we updated the code from the previous section in order to display bundle items in the same way as we explained on the Cart page <div class="code-tabs" id="bundles"><ul><li><a href="displaying_individual_order_details.html#bundles-php">PHP</a></li><li><a href="displaying_individual_order_details.html#bundles-twig">Twig</a></li></ul><div id="bundles-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Items&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+      &lt;th&gt;Discount&lt;/th&gt;
+      &lt;th&gt;Quantity&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;?
+      $last_index = $items-&gt;count-1;  
+      foreach ($items as $index=&gt;$item):
+        $image_url = $item-&gt;product-&gt;image_url(0, 60, 'auto');
+    ?&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;? if ($image_url): ?&gt;&lt;img src=&quot;&lt;?= $image_url ?&gt;&quot;/&gt;&lt;? endif ?&gt;
+          &lt;?= $item-&gt;output_product_name() ?&gt;
+          &lt;? if ($item-&gt;product-&gt;product_type-&gt;files &amp;&amp; $order-&gt;is_paid() &amp;&amp; $item-&gt;product-&gt;files-&gt;count): ?&gt;
+            Download:
+            &lt;ul&gt;
+              &lt;? foreach ($item-&gt;product-&gt;files as $file): ?&gt;
+                &lt;li&gt;
+                  &lt;a href=&quot;&lt;?= $file-&gt;download_url($order) ?&gt;&quot;&gt;&lt;?= h($file-&gt;name) ?&gt;&lt;/a&gt; (&lt;?= $file-&gt;size_str ?&gt;)
+                &lt;/li&gt;
+              &lt;? endforeach ?&gt;
+            &lt;/ul&gt;
+          &lt;? endif ?&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;?= format_currency($item-&gt;single_price) ?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;?= format_currency($item-&gt;discount) ?&gt;&lt;/td&gt;
+        &lt;!-- Use get_bundle_item_quantity() method for bundle items to display
+             a correct number of items in each base product --&gt;
+        &lt;td&gt;&lt;?= $item-&gt;bundle_master_order_item_id ? $item-&gt;get_bundle_item_quantity() : $item-&gt;quantity ?&gt;&lt;/td&gt;
+        &lt;th&gt;
+          &lt;? if (!$item-&gt;bundle_master_order_item_id): ?&gt;
+            &lt;?= format_currency($item-&gt;total_price) ?&gt;
+          &lt;? else: 
+            // For bundle items use the bundle_item_total_price() method 
+            // to get the total item price per single base product
+            // and display the multiplier.
+            $master_item = $item-&gt;get_master_bundle_order_item();
+            $multiplier = ($master_item &amp;&amp; $master_item-&gt;quantity &gt; 1) ? ' x '.$master_item-&gt;quantity : null;
+          ?&gt;
+            &lt;?= format_currency($item-&gt;bundle_item_total).$multiplier ?&gt;
+          &lt;? endif?&gt;
+        &lt;/th&gt;
+      &lt;/tr&gt;
+  
+      &lt;!-- Display the bundle total row --&gt;
+  
+      &lt;? if (
+              ($item-&gt;bundle_master_order_item_id &amp;&amp; $index == $last_index) 
+              || ($item-&gt;bundle_master_order_item_id &amp;&amp; !$items[$index+1]-&gt;bundle_master_order_item_id)): 
+          $master_item = $item-&gt;get_master_bundle_order_item();
+          if ($master_item):
+      ?&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;?= h($master_item-&gt;product-&gt;name) ?&gt; bundle totals&lt;/td&gt;
+            &lt;td&gt;&lt;?= format_currency($master_item-&gt;get_bundle_single_price()) ?&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;?= format_currency($master_item-&gt;get_bundle_discount()) ?&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;?= $master_item-&gt;quantity ?&gt;&lt;/td&gt;
+            &lt;th&gt;&lt;?= format_currency($master_item-&gt;get_bundle_total_price()) ?&gt;&lt;/th&gt;
+          &lt;/tr&gt;
+      &lt;? 
+          endif;
+        endif 
+      ?&gt;
+    &lt;? endforeach ?&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre></div></div><div id="bundles-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;table class=&quot;simple_table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Items&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+      &lt;th&gt;Discount&lt;/th&gt;
+      &lt;th&gt;Quantity&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    {% for index, item in items %}
+      {% set image_url = item.product.image_url(0, 60, 'auto') %}
+      &lt;tr&gt;
+        &lt;td&gt;
+          {% if image_url %}&lt;img class=&quot;product_image&quot; src=&quot;{{ image_url }}&quot; alt=&quot;Mac mini&quot;/&gt;{% endif %}
+          &lt;div class=&quot;product_description&quot;&gt;
+            {{ item.output_product_name()|unescape }}
+            {% if item.product.product_type.files and order.is_paid() and item.product.files.count %}
+              Download:
+              &lt;ul&gt;
+              {% for file in  item.product.files %}
+                &lt;li&gt;&lt;a href=&quot;{{ file.download_url(order) }}&quot;&gt;{{ file.name }}&lt;/a&gt; ({{ file.size_str }})&lt;/li&gt;
+              {% endfor %}
+              &lt;/ul&gt;
+            {% endif %}
+          &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td&gt;{{ field(item, 'single_price')|currency }}&lt;/td&gt;
+        &lt;td&gt;{{ item.discount|currency }}&lt;/td&gt;
+        &lt;!-- Use get_bundle_item_quantity() method for bundle items to display
+          a correct number of items in each base product --&gt;
+        &lt;td&gt;{{ item.bundle_master_order_item_id ? item.get_bundle_item_quantity() : item.quantity }}&lt;/td&gt;
+        &lt;th&gt;
+          {% if not item.bundle_master_order_item_id %}
+            {{ field(item, 'subtotal')|currency }}
+          {% else %}
+            {# For bundle items use the bundle_item_total_price() method
+                to get the total item price per single base product
+                and display the multiplier. #}
+                
+            {% set master_item = item.get_master_bundle_order_item() %}
+            {% set multiplier = (master_item and master_item.quantity &gt; 1) ? ' x '~master_item.quantity : null %}
+            {{ field(item, 'bundle_item_total')|currency~multiplier }}
+          {% endif %}
+        &lt;/th&gt;
+      &lt;/tr&gt;
+      
+      &lt;!-- Display the bundle total row --&gt;
+      
+      {% if (item.bundle_master_order_item_id and index == last_index) or
+             (item.bundle_master_order_item_id and 
+             not attribute(items, index+1).bundle_master_order_item_id) %}
+        {% set master_item = item.get_master_bundle_order_item() %}          
+        {% if master_item %}
+          &lt;tr&gt;
+            &lt;td&gt;{{ master_item.product.name }} bundle totals&lt;/td&gt;
+            &lt;td&gt;{{ master_item.get_bundle_single_price()|currency }}&lt;/td&gt;
+            &lt;td&gt;{{ master_item.get_bundle_discount()|currency }}&lt;/td&gt;
+            &lt;td&gt;{{ master_item.quantity }}&lt;/td&gt;
+            &lt;th&gt;{{ master_item.get_bundle_total_price()|currency }}&lt;/th&gt;
+          &lt;/tr&gt;
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre></div></div></div></p>
+<h4>See also:</h4>
+<ul>
+<li><a href="class_shop_order.html">Shop_Order class</a></li>
+<li><a href="class_shop_product.html">Shop_Product class</a></li>
+<li><a href="class_shop_orderitem.html">Shop_OrderItem class</a></li>
+<li><a href="implementing_downloadable_products.html">Integrating downloadable products</a></li>
+</ul>
+        
+        <p>Next: <a href="order_details_page_for_inclusive_tax_environments.html">Order Details Page for Inclusive Tax Environments</a><br/>Previous: <a href="order_management.html">Order History, Status, and Details</a><br/>Return to <a href="order_management.html">Order History, Status, and Details</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_95"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/displaying_individual_order_details/";
+		var disqus_title = "Displaying Individual Order Details";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

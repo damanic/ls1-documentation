@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Settings</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="beginners_guide.html">Beginner's Guide</a></li><li class="last">Settings</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Settings</h2>
+        
+        <p>This section will take your through the settings page in the backend of your LemonStand store.</p>
+<p>We will guide you through most of the important settings you will want to configure to get your LemonStand Store running.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_dashboard_menu.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_dashboard_menu.png" alt="" width="100%" /></a></p>
+<p>&nbsp;To get to the setting page, click on the down arrow to access the navigation menu. Next under System, click the settings link.</p>
+<p><span><br /></span></p>
+<p><span><br /></span></p>
+<p><span><a href="../resources/i/wiki/settings_page_intro.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_page_intro.png" alt="" width="100%" /></a></span></p>
+<p><span>This is how the settings page is looks like. There may be more options available depending on what modules you have installed. Lets look at the first setting page, Statistics and Dashboard.</span></p>
+<p>&nbsp;</p>
+<h1><span>CMS</span></h1>
+<h2>Statistics and Dashboard</h2>
+<p><span><a href="../resources/i/wiki/settings_google_analytics.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_google_analytics.png" alt="" width="100%" /></a></span></p>
+<p>The first tab is Google Analytics Integration. We recommend you setup a Google Analytics account for your Lemonstand store because it provides a more indepth reporting than Lemonstand's built in statistics.</p>
+<p>To configure Google Analytics please follow this documentation:&nbsp;<a href="configuring_the_google_analytics_integration.html">/docs/configuring_the_google_analytics_integration/</a></p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_builtin_statistics.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_builtin_statistics.png" alt="" width="100%" /></a></p>
+<p>The built-in statistics will keep track of the traffic information and store the pageviews per ip address in the database. The IP filters allow you to filter out your own IP address so as to not skew the pageviews with your own while developing.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_dashboard_tab.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_dashboard_tab.png" alt="" width="100%" /></a></p>
+<p>Under the dashboard tab you can specify if you want only paid orders to show up and whether you want the current date to be included in reports and charts.</p>
+<p>Google Analytics only reports statistics after 24hrs so if you include the current date in reports it may be inaccurate.</p>
+<p>&nbsp;</p>
+<h2>CMS Settings</h2>
+<p><a href="../resources/i/wiki/settings_template_engine.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_template_engine.png" alt="" width="100%" /></a></p>
+<p>The template engine allows you to save the CMS pages as individual files instead of to the database. This is useful if you want to use an external file editor to manage and edit your CMS pages and partials.</p>
+<p>For help setting up file-based templates refer to this documentation:&nbsp;<a href="using_file_based_templates.html">/docs/using_file_based_templates/</a></p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_resources_directory.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_resources_directory.png" alt="" width="100%" /></a></p>
+<p>In the resource directory tab you can manage where you would like the external resources for your project like css, javascript and image files are stored.</p>
+<p>&nbsp;</p>
+<h2>Maintenance Configuration<span>&nbsp;</span></h2>
+<p><a href="../resources/i/wiki/settings_maintenance_mode.png" target="_blank">&nbsp;<img class="wiki_image_frame" src="../resources/i/wiki/settings_maintenance_mode.png" alt="" width="100%" /></a></p>
+<p>While you are working on your LemonStand store, you can enable maintenance mode. This allows people who visit your site to see a splash page, which you can create to let them know that the site is under construction or maintenance. You can create your own page under CMS-&gt;pages.</p>
+<p>When you are logged into the backend of your LemonStand store, this will bypass the maintenance page allowing you to freely work on your site.</p>
+<p>&nbsp;</p>
+<h1><span>System</span></h1>
+<h2>Email Settings</h2>
+<p><a href="../resources/i/wiki/settings_email_general_parameters2.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_email_general_parameters2.png" alt="" width="100%" /></a></p>
+<p>In the email settings you can specify the outgoing mail sender name and email. You can also choose which method you wish to use to send the mail, <strong>PHP mail, Sendmail, or SMTP.</strong></p>
+<p>You can also choose whether your email templates use <strong>PHP or Twig</strong> with the templating engine dropdown.</p>
+<p>&nbsp;</p>
+<h2>Email Templates</h2>
+<p><a href="../resources/i/wiki/settings_email_templates.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_email_templates.png" alt="" width="100%" />&nbsp;</a></p>
+<p>Here you can customize the email templates that get sent out with various functions such as new orders and low stock notifications. The layouts are customizable and you can add your own variables</p>
+<p>using the Manage compound variables button. For more info check out <a href="managing_email_templates/index.html">Managing Email Templates</a></p>
+<p>&nbsp;</p>
+<h2>Customize</h2>
+<p><a href="../resources/i/wiki/settings_customize_logo.png" target="_blank">&nbsp;<img class="wiki_image_frame" src="../resources/i/wiki/settings_customize_logo.png" alt="" width="100%" /></a></p>
+<p>You can customize the backend portion of Lemonstand by uploading a logo image, and changing the header text. These will replace the LemonStand logo in the image above.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_customize_theme.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_customize_theme.png" alt="" width="100%" /></a></p>
+<p>Under the Theme tab, you can choose different themes and colors to match your stores style.</p>
+<p>You can <a href="customizing_the_administration_area.html">create your own themes</a> as well.&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_customize_footer.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_customize_footer.png" alt="" width="100%" /></a></p>
+<p>In the Footer tab, you can include text or HTML code that will appear on the bottom left of the backend pages of your LemonStand store.</p>
+<p>&nbsp;</p>
+<h1><span>eCommerce</span></h1>
+<h2>Currency</h2>
+<p><a href="../resources/i/wiki/settings_currency.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_currency.png" alt="" width="100%" /></a></p>
+<p>Here you can set the currency of your store. These settings will be used by shipping and payment modules for currency conversion.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_currency_formatting.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_currency_formatting.png" alt="" width="100%" /></a></p>
+<p>In the Formatting tab you can determine how you would like your currency to look. You can change the decimal point, thousands separator, and dollar sign.</p>
+<p>This will affect the backend and frontend of your LemonStand store.</p>
+<p><span>&nbsp;</span></p>
+<h2>Currency Converter</h2>
+<p><a href="../resources/i/wiki/settings_currency_converter.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_currency_converter.png" alt="" width="100%" /></a></p>
+<p>You can choose between the <strong>European Central Bank and Yahoo</strong> to handle the currency conversion when a customer purchases products from your store and are located in a different country that uses a different currency. You can also specify the update interval of how often your store grabs the most up to date currency rates.</p>
+<p>&nbsp;</p>
+<h2>Countries and States</h2>
+<p><a href="../resources/i/wiki/settings_countries.png"><img class="wiki_image_frame" src="../resources/i/wiki/settings_countries.png" alt="" width="100%" /></a></p>
+<p>In the Countries and States option you can manage the list of countries that you cater to. Only the countries that are enabled will show up in your LemonStand store.</p>
+<p>You can also add a country or state if it is missing from the list.</p>
+<p>&nbsp;</p>
+<h2>Shipping Configuration</h2>
+<p><a href="../resources/i/wiki/settings_shipping_settings_origin.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_shipping_settings_origin.png" alt="" width="100%" /></a></p>
+<p>The origin tab is where you specify the location that your products are being shipped from. This will be used by shipping methods to determine the cost of shipping to the customer.</p>
+<p><a href="configuring_the_shipping_parameters.html">/docs/configuring_the_shipping_parameters/</a></p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_shipping_settings_sender.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_shipping_settings_sender.png" alt="" width="100%" /></a></p>
+<p>The Sender tab information will be used when printing out shipping labels.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_shipping_settings_units.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_shipping_settings_units.png" alt="" width="100%" /></a></p>
+<p>The Units tab is where you can select how you would like to specify weigth and dimensions that you will use for your products. For weight you can choose between <strong>Pounds</strong> or <strong>Kilograms</strong>, and for dimension you can choose between <strong>Inches</strong> and <strong>Centimeters.</strong></p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_shipping_settings_default_location.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_shipping_settings_default_location.png" alt="" width="100%" /></a></p>
+<p>The default shipping location can be used as a placeholder for when a guest goes through the checkout of your site for the first time. The shipping location will already be filled in with this information.</p>
+<p>Also by setting the default shipping location Lemonstand will use your specified tax for that location to display tax inclusive pricing on the frontend of your store.</p>
+<p>&nbsp;</p>
+<h2>User Roles</h2>
+<p><a href="../resources/i/wiki/settings_user_roles.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_user_roles.png" alt="" width="100%" /></a></p>
+<p><a href="../resources/i/wiki/settings_user_roles_edit.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_user_roles_edit.png" alt="" width="500" /></a></p>
+<p>User roles are useful when you need to have different users responsible for specific order statuses. Such as having one user responsible for keeping track of orders being paid and one user responsible for getting paid orders shipped. An example is when an order has it's status changed to paid, you can set it up so that only the people responsible for shipping the product and changing the status from paid to shipped get notified.</p>
+<p><a href="configuring_the_order_route_and_user_roles.html">/docs/configuring_the_order_route_and_user_roles/</a></p>
+<p>&nbsp;</p>
+<h2>Order Route</h2>
+<p><a href="../resources/i/wiki/settings_order_routes.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_order_routes.png" alt="" width="100%" /></a></p>
+<p><span>Order route helps you to distribute responsibilities between the store workers. The order route can be configured in a way that only users with specific roles can send an order from one status to another. LemonStand can send notifications to users who are responsible for sending an order to a next status in the order route. Also LemonStand can send notifications to a customer when an order gets to a specific status.</span></p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_order_routes_status2.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_order_routes_status2.png" alt="" width="500" /></a></p>
+<p>When adding or editing an order route you can define it's name and color under the Order Status tab.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_order_routes_transitions.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_order_routes_transitions.png" alt="" width="500" /></a></p>
+<p>In the Transitions tab you can define which user roles are responsible for handling the order when it becomes this particular status and to which status it can be changed to.</p>
+<p>In this example the Order Status is <strong>New</strong> and can be set to <strong>Paid</strong> by the Default user roles.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_order_routes_notifications.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_order_routes_notifications.png" alt="" width="500" /></a></p>
+<p>In the Notification tab you can choose whether to send an email to the customer and/or the transition recipients when an order becomes the status (in this case New).</p>
+<p>You can also set which email templates you would like to use for the notification.</p>
+<p>For the transition recipients you can alternatively specify which user role you would like to nofity. This is useful when you want multiple roles to be allowed to change the order status but only a select number of user roles to actually recieve an email notification.</p>
+<p>&nbsp;</p>
+<h2>Company Information</h2>
+<p><a href="../resources/i/wiki/settings_company.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_company.png" alt="" width="500" /></a></p>
+<p><a href="../resources/i/wiki/settings_company_logo.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_company_logo.png" alt="" width="500" /></a></p>
+<p>The company information and settings are used when generating out invoices, packing slips or shipping labels. You can set your Company Name and Company Address and Contact info, and a logo.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_company_invoices.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_company_invoices.png" alt="" width="500" /></a></p>
+<p><a href="../resources/i/wiki/settings_company_packing_slips.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_company_packing_slips.png" alt="" width="500" /></a></p>
+<p><a href="../resources/i/wiki/settings_company_shipping_labels.png"><img class="wiki_image_frame" src="../resources/i/wiki/settings_company_shipping_labels.png" alt="" width="500" /></a></p>
+<p>You can create your own custom invoices, packing slips or shipping labels by following this tutorial.</p>
+<p><a href="customizing_invoices_and_packing_slips/index.html">/docs/customizing_invoices_and_packing_slips/</a></p>
+<p>&nbsp;</p>
+<h2>eCommerce Settings</h2>
+<p><a href="../resources/i/wiki/settings_ecommerce_cart.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_ecommerce_cart.png" alt="" width="500" /></a></p>
+<p>In the Cart Settings tab you can determine how you would like to handle the items already in a Guests cart if they decide to log in to their registered account.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_ecommerce_tax.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_ecommerce_tax.png" alt="" width="500" /></a></p>
+<p>The Tax tab is used for setting tax inclusive pricing in your store. For more info please read</p>
+<p><a href="configuring_lemonstand_for_tax_inclusive_environments.html">/docs/configuring_lemonstand_for_tax_inclusive_environments/</a></p>
+<p><a href="order_details_page_for_inclusive_tax_environments.html">/docs/order_details_page_for_inclusive_tax_environments/</a></p>
+<p><a href="payment_receipt_for_inclusive_tax_environments.html">/docs/payment_receipt_for_inclusive_tax_environments/</a></p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_ecommerce_product_search.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_ecommerce_product_search.png" alt="" width="500" /></a></p>
+<p>You can define where you would like the product search function to look for keywords.&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_ecommerce_product_details.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_ecommerce_product_details.png" alt="" width="500" /></a></p>
+<p>The product details page allows you to choose whether a specific product should be used when going to a product page, or just showthe first available grouped product.</p>
+<p>&nbsp;</p>
+<p><a href="../resources/i/wiki/settings_ecommerce_catagories.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_ecommerce_catagories.png" alt="" width="500" /></a></p>
+<p><a href="../resources/i/wiki/settings_ecommerce_catagories2.png" target="_blank"><img class="wiki_image_frame" src="../resources/i/wiki/settings_ecommerce_catagories2.png" alt="" width="500" /></a></p>
+<p>The Categories tab has the option to enable nested categories. How Lemonstand's default functionality works with categories is that the URL is composed of the word category and then the category name.</p>
+<p><strong>eg. /category/men</strong></p>
+<p>WIth nested categories you can add more parameters to the URL such as</p>
+<p><strong>eg. /category/men/jumpers</strong></p>
+<p>Now going to /category/men could be one page, and /category/men/jumpers would be another page, instead of just /category/jumpers.</p>
+<p>&nbsp;</p>
+<p>The other option once you enable category nesting is to automatically prepend the parent category URL. When creating categories you can specify the parent category, which can be used to have seperate URLs for men and women clothing for example.</p>
+<p>&nbsp;</p>
+<p>The next tutorial will teach you how to setup system user accounts</p>
+<p>&nbsp;</p>
+<p><a href="../resources/media/Settings.pdf">PDF VERSION</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+        
+        <p>Next: <a href="system_users.html">System Users</a><br/>Previous: <a href="installation_steps.html">Installation Steps</a><br/>Return to <a href="beginners_guide.html">Beginner's Guide</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_492"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/settings/";
+		var disqus_title = "Settings";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

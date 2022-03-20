@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Implementing Customer Payment Profiles</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="payment.html">Payment</a></li><li class="last">Implementing Customer Payment Profiles</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Implementing Customer Payment Profiles</h2>
+        
+        <p>Customer payment profiles is a LemonStand feature which enables customers to store and reuse their credit card information. Credit card information is safely stored on the payment gateway side. The option of storing customer credit card data is supported by many modern payment gateways. The common name for this option is the <strong>tokenization</strong>, but different payment gateways have different name for this feature. For example, Braintree Payment Solution offer the <a href="http://www.braintreepaymentsolutions.com/gateway/vault">Vault</a> service and Authorize.Net has the <a href="http://developer.authorize.net/api/cim/">Customer Information Manager API</a>.</p>
+<p>Regardless of the name, the purpose of the tokenization is saving customer credit card with the option of reusing this data for the future payments. This enables LemonStand customers to implement the "Save my credit card" and "Pay with my stored credit card" options. At the time of writing this article, tokenization is supported by the following LemonStand payment modules:</p>
+<ul>
+<li>Authorize.Net Advanced Integration Method</li>
+<li>Braintree Transparent Redirect</li>
+</ul>
+<p>Please <a href="http://v1.lemonstand.com/contact/">contact us</a> if you want we to add this feature for other payment modules.&nbsp;</p>
+<h3>Implementing the Save my Credit Card checkbox</h3>
+<p>The Save my Credit Card checkbox should be added to the payment form partial of a specific payment method. The name of the payment form partial depends on the payment method and have the following format:&nbsp;payment:<strong>payment_method_name</strong>. For example, for Authorize.Net AIM payment method the payment form partial name is&nbsp;payment:authorize_net_aim.</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/save_my_cc.png" alt="" /></p>
+<p class="wiki_note">Please note that some payment gateways create a test transaction with the amount up to $0.01 in order to validate a credit card. This transaction is automatically voided immediately by the gateway after the validation.</p>
+<p>For server-to-server (no redirection)&nbsp;payment methods, like Authorize.NET APM. you can add this checkbox in the following way (please note that the checkbox should have the <strong>create_customer_profile</strong> name):</p>
+<div class="code-tabs" id="server_to_server_save_card"><ul><li><a href="implementing_customer_payment_profiles.html#server_to_server_save_card-php">PHP</a></li><li><a href="implementing_customer_payment_profiles.html#server_to_server_save_card-twig">Twig</a></li></ul><div id="server_to_server_save_card-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? if ($payment_method-&gt;supports_payment_profiles() &amp;&amp; $this-&gt;customer): ?&gt;
+  &lt;input type=&quot;checkbox&quot; value=&quot;1&quot; name=&quot;create_customer_profile&quot; id=&quot;create_customer_profile&quot;/&gt;
+  &lt;label for=&quot;create_customer_profile&quot;&gt;Save my credit card&lt;/label&gt;
+&lt;? endif ?&gt;</pre></div></div><div id="server_to_server_save_card-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% if payment_method.supports_payment_profiles() and this.customer %}
+  &lt;input type=&quot;checkbox&quot; value=&quot;1&quot; name=&quot;create_customer_profile&quot; id=&quot;create_customer_profile&quot;/&gt;
+  &lt;label for=&quot;create_customer_profile&quot;&gt;Save my credit card&lt;/label&gt;
+{% endif %}</pre></div></div></div><p>For redirection payment methods, like Braintree Transparent Redirect the checkbox implementation depends on a payment gateway. Usually payment form partials of payment modules which support payment profiles contain a commented out code snippet for adding the checkbox. Below is a code for adding the checkbox to the Braintree Transparent Redirect payment form partial (payment:braintree_transpredirect):&nbsp;</p>
+<div class="code-tabs" id="braintree_save_card"><ul><li><a href="implementing_customer_payment_profiles.html#braintree_save_card-php">PHP</a></li><li><a href="implementing_customer_payment_profiles.html#braintree_save_card-twig">Twig</a></li></ul><div id="braintree_save_card-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? if ($payment_method-&gt;supports_payment_profiles() &amp;&amp; $this-&gt;customer): ?&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;transaction[options][store_in_vault]&quot; value=&quot;true&quot; id=&quot;create_customer_profile&quot; /&gt;
+  &lt;label for=&quot;create_customer_profile&quot;&gt;Save my credit card&lt;/label&gt;
+&lt;? endif ?&gt;</pre></div></div><div id="braintree_save_card-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% if payment_method.supports_payment_profiles() and this.customer %}
+  &lt;input type=&quot;checkbox&quot; name=&quot;transaction[options][store_in_vault]&quot; value=&quot;true&quot; id=&quot;create_customer_profile&quot; /&gt;
+  &lt;label for=&quot;create_customer_profile&quot;&gt;Save my credit card&lt;/label&gt;
+{% endif %}</pre></div></div></div><h3>Creating the Pay With My Saved Card button</h3>
+<p>This button should be added to the Pay page. It should be visible only if the payment module supports payment profiles, if there is a logged in customer and if a payment profile exists for the current customer.</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/pay_with_my_card.png" alt="" /></p>
+<p>To add the button, define a new form with the credit card information and the Pay button inside. The form can work on both AJAX and regular POST modes. Regular POST form example:&nbsp;</p>
+<div class="code-tabs" id="pay_with_card_post"><ul><li><a href="implementing_customer_payment_profiles.html#pay_with_card_post-php">PHP</a></li><li><a href="implementing_customer_payment_profiles.html#pay_with_card_post-twig">Twig</a></li></ul><div id="pay_with_card_post-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? if ($payment_profile = $payment_method-&gt;find_customer_profile($order-&gt;customer)): ?&gt;
+  &lt;?= open_form() ?&gt;
+    Pay using my stored credit card: (&lt;?= 'xxxx'.h($payment_profile-&gt;cc_four_digits_num) ?&gt;)
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; name=&quot;submit_payment&quot;/&gt;
+    &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;pay_from_profile&quot;/&gt;
+  &lt;/form&gt;
+&lt;? endif ?&gt;
+</pre></div></div><div id="pay_with_card_post-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% set profile = method.find_customer_profile(this.customer) %}
+{% if profile %}
+  {{ open_form() }}
+    Pay using my stored credit card: ({{ 'xxxx'~payment_profile.cc_four_digits_num }})
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; name=&quot;submit_payment&quot;/&gt;
+    &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;pay_from_profile&quot;/&gt;
+  &lt;/form&gt;
+{% endif %}</pre></div></div></div><p>AJAX form example:&nbsp;</p>
+<div class="code-tabs" id="pay_with_card_ajax"><ul><li><a href="implementing_customer_payment_profiles.html#pay_with_card_ajax-php">PHP</a></li><li><a href="implementing_customer_payment_profiles.html#pay_with_card_ajax-twig">Twig</a></li></ul><div id="pay_with_card_ajax-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? if ($payment_profile = $payment_method-&gt;find_customer_profile($order-&gt;customer)): ?&gt;
+  &lt;?= open_form() ?&gt;
+    Pay using my stored credit card: (&lt;?= 'xxxx'.h($payment_profile-&gt;cc_four_digits_num) ?&gt;)
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; name=&quot;submit_payment&quot; onclick=&quot;return
+      $(this).getForm().sendRequest('shop:on_pay')&quot;/&gt;
+    &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;pay_from_profile&quot;/&gt;
+  &lt;/form&gt;
+&lt;? endif ?&gt;</pre></div></div><div id="pay_with_card_ajax-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% set profile = method.find_customer_profile(this.customer) %}
+{% if profile %}
+  {{ open_form() }}
+    Pay using my stored credit card: ({{ 'xxxx'~payment_profile.cc_four_digits_num }})
+    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; name=&quot;submit_payment&quot; onclick=&quot;return
+      $(this).getForm().sendRequest('shop:on_pay')&quot;/&gt;
+    &lt;input type=&quot;hidden&quot; value=&quot;1&quot; name=&quot;pay_from_profile&quot;/&gt;
+  &lt;/form&gt;
+{% endif %}</pre></div></div></div><h3>Creating the Payment Profiles page</h3>
+<p>The Payment Profiles page displays a list of payment methods which support payment profiles and allows a customer to create, modify or delete a payment profile associated with a specific payment method. The payment profile page security configuration should not allow guest visitors to see it. The page should only be available for logged in customers, in HTTPS mode.</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/payment_profiles.png" alt="" /></p>
+<p>Please use the <a href="http://v1.lemonstand.com/docs/action_shop_payment_profiles">shop:payment_profiles</a> action as a base CMS action for the page. The action creates the <strong>$payment_methods</strong> array, which contains a list of payment methods which support customer payment profiles. Use a simple <strong>foreach</strong>&nbsp;loop to display payment method names and links to the customer profile page.&nbsp;</p>
+<div class="code-tabs" id="payment_profiles"><ul><li><a href="implementing_customer_payment_profiles.html#payment_profiles-php">PHP</a></li><li><a href="implementing_customer_payment_profiles.html#payment_profiles-twig">Twig</a></li></ul><div id="payment_profiles-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?= flash_message() ?&gt;
+&lt;? if (!$payment_methods): ?&gt;
+  &lt;p&gt;Payment profiles not found&lt;/p&gt;
+&lt;? else: ?&gt;
+  &lt;ul&gt;
+    &lt;? foreach ($payment_methods as $method): ?&gt;
+      &lt;li&gt;
+         &lt;h4&gt;&lt;?= h($method-&gt;name) ?&gt;&lt;/h4&gt;
+         &lt;?
+           $profile = $method-&gt;find_customer_profile($this-&gt;customer);
+           if ($profile):
+         ?&gt;
+          &lt;p&gt;Stored credit card: &lt;?= 'xxxx'.$profile-&gt;cc_four_digits_num ?&gt;
+          - &lt;a href=&quot;&lt;?= root_url('/payment_profile/'.$method-&gt;id) ?&gt;&quot;&gt;Update or delete&lt;/a&gt;&lt;/p&gt;
+        &lt;? else: ?&gt;
+          &lt;p&gt;&lt;a href=&quot;&lt;?= root_url('/payment_profile/'.$method-&gt;id) ?&gt;&quot;&gt;Enter credit card details&lt;/a&gt;&lt;/p&gt;
+         &lt;? endif ?&gt;        
+      &lt;/li&gt;
+    &lt;? endforeach ?&gt;
+  &lt;/ul&gt;
+&lt;? endif ?&gt;</pre></div></div><div id="payment_profiles-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{{ flash_message() }}
+{% if not payment_methods %}
+  &lt;p&gt;Payment profiles not found&lt;/p&gt;
+{% else %}
+  &lt;ul&gt;
+    {% for method in payment_methods %}
+      &lt;li&gt;
+         &lt;h4&gt;{{ method.name }}&lt;/h4&gt;
+         {% set profile = method.find_customer_profile(this.customer) %}
+         {% if profile %}
+          &lt;p&gt;Stored credit card: {{ 'xxxx'~profile.cc_four_digits_num }}
+          - &lt;a href=&quot;{{ root_url('/payment_profile/'~method.id) }}&quot;&gt;Update or delete&lt;/a&gt;&lt;/p&gt;
+         {% else %}
+          &lt;p&gt;&lt;a href=&quot;{{ root_url('/payment_profile/'~method.id) }}&quot;&gt;Enter credit card details&lt;/a&gt;&lt;/p&gt;
+         {% endif %}
+      &lt;/li&gt;
+    {% endfor %}
+  &lt;/ul&gt;
+{% endif %}</pre></div></div></div><h3>Implementing the Payment Profile page</h3>
+<p>The&nbsp;Payment Profile page displays an existing customer payment profile information and a form for creating or updating the payment profile. The page security configuration should not allow guest customers to access the payment profile page. The page should be available only for logged in customers, in HTTPS mode.</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/payment_profile_page.png" alt="" /></p>
+<p>Use the <a href="http://v1.lemonstand.com/docs/action_shop_payment_profile">shop:payment_profile</a> action as a base CMS action for the page. Use the following code snippet for the payment profile page:&nbsp;<div class="code-tabs" id="payment_profile"><ul><li><a href="implementing_customer_payment_profiles.html#payment_profile-php">PHP</a></li><li><a href="implementing_customer_payment_profiles.html#payment_profile-twig">Twig</a></li></ul><div id="payment_profile-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;? if (!$payment_method): ?&gt;
+  &lt;p&gt;Payment method not found.&lt;/p&gt;
+&lt;? else: ?&gt;
+  &lt;? if ($payment_profile): ?&gt;
+    &lt;?= open_form() ?&gt;
+      &lt;p&gt;
+        Stored credit card: &lt;?= 'xxxx'.h($payment_profile-&gt;cc_four_digits_num) ?&gt;
+        &lt;input type=&quot;submit&quot; name=&quot;delete_profile&quot; value=&quot;Delete card&quot;/&gt;
+      &lt;/p&gt;
+      &lt;input type=&quot;hidden&quot; name=&quot;redirect&quot; value=&quot;&lt;?= root_url('payment_profiles') ?&gt;&quot;&gt;
+     &lt;/form&gt;
+  &lt;? endif ?&gt;
+
+  &lt;? $payment_method-&gt;render_payment_profile_form($this) ?&gt;
+&lt;? endif ?&gt;</pre></div></div><div id="payment_profile-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{% if not payment_method %}
+  &lt;p&gt;Payment method not found.&lt;/p&gt;
+{% else %}
+  {% if payment_profile %}
+    {{ open_form() }}
+      &lt;p&gt;
+        Stored credit card: {{ 'xxxx'~payment_profile.cc_four_digits_num }}
+        &lt;input type=&quot;submit&quot; name=&quot;delete_profile&quot; value=&quot;Delete card&quot;/&gt;
+      &lt;/p&gt;
+      &lt;input type=&quot;hidden&quot; name=&quot;redirect&quot; value=&quot;{{ root_url('payment_profiles') }}&quot;&gt;
+     &lt;/form&gt;
+  {% endif %}
+
+  {{ payment_method.render_payment_profile_form(this) }}
+{% endif %}</pre></div></div></div></p>
+        
+        <p><br/>Previous: <a href="custom_payment_methods_and_bank_transfers.html">Custom Payment Methods and Bank Transfers</a><br/>Return to <a href="payment.html">Payment</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_373"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/implementing_customer_payment_profiles/";
+		var disqus_title = "Implementing Customer Payment Profiles";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - How the subscriptions engine works</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="additional_modules.html">Additional modules</a></li><li><a href="subscriptions_module.html">Subscriptions module</a></li><li class="last">How the subscriptions engine works</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>How the subscriptions engine works</h2>
+        
+        <p>The subscriptions engine uses orders and invoices to determine whether a specific subscription is active for a given customer at a given moment. When somebody orders a subscription, LemonStand creates an regular order. The order contains an order item, which refers to the subscription product. The order item has two fields, which determine the time interval - subscription start day and subscription end date.</p>
+<p>Once the customer pays the order, she can use the subscription during the interval defined in the order item. You can find subscription start and end dates on the Order Preview page, in the order item list.</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/subscriptions/order_subscription_items.png" alt="" /></p>
+<p>When the subscription expires, LemonStand can generate a new invoice, with an order item having the subscription start and end dates shifted to a number of days corresponding the subscription renewal interval defined in the subscription plan.</p>
+<p>Thus, a subscription is considered as active if there is a paid order or invoice containing the subscription products and with the start and end subscription dates which include the current date. Also, a subscription activity can affected by other subscription plan parameters - the grace period and trial period.</p>
+<p>Please note that an order can have multiple subscriptions (if your store front-end pages allow customer to subscribe to multiple subscription products simultaneously).</p>
+<h3>Grace and trial periods</h3>
+<p>For newly ordered subscriptions the subscription start date is undefined (open), until the order is paid. Thus, if somebody places a 10-day subscription on October 15 and pays it on October 20, he can use the subscription from October 20 to October 30. However if you have a grace period defined in the subscription plan, the subscription start date will match the order date, because the grace period allows customers to begin using a subscription before they paid the order. Using the previous example, if there is a grace period defined, the customer can begin using the membership starting from October 15 (right away after placing the order), but if he pay on October 20, he will have only 5 days before the subscription expires, because he already used 5 days of the grace period.</p>
+<p>Trial periods are considered as periods of free usage and do not affect the subscription start date. If you have a trial period defined, the customer can place the order on October 15, and start using the membership right away. If he pay the order on October 20, he can use the subscription 10 days more, i.e. until October 30.</p>
+<h3>What are invoices</h3>
+<p>In LemonStand invoices are orders which are bound to the original order. When a customers' subscription ends, LemonStand generates a new invoice, and bind it to the original order. You can find invoices generated for a specific original order on the Order Preview page, on the Invoices tab. This tab is visible only if an order contains any subscription products.</p>
+<p><img src="../resources/i/wiki/subscriptions/order_invoices.png" alt="" /></p>
+<p>If you click an invoice in the list, you will get to the invoice preview page. This page is a regular order preview page, but in the left top corner you will see a link to the parent order:</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/subscriptions/parent_order.png" alt="" /></p>
+<p>By default LemonStand does not show invoices in the order list. When invoices are supported by the system (for example, when the Subscriptions Module is installed), LemonStand displays the Show Invoices checkbox in the order list filters area.</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/subscriptions/display_invoices_cb.png" alt="" /></p>
+<h3>Generating subscription invoices</h3>
+<p>There are two ways to generate subscription invoices - manually or automatically. To work properly, the subscriptions engine requires you to run the invoice generating script every day, so the automatic invoice generating is preferred.</p>
+<p>To generate invoices automatically, you should access the following URL in your LemonStand store: <strong>/ls_generate_subscription_invoices</strong>. The exact script location depends on your LemonStand installation URL. If you installed LemonStand to http://www.example.com, than the script URL would be http://www.example.com/ls_generate_subscription_invoices. You can setup a cron job to invoke the script daily. You can use CURL application for invoking the URL. Example cron job command:</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">curl http://www.example.com/ls_generate_subscription_invoices</pre></div><p>To use the automatic invoice generating, you need to add the IP address of the server you run the cron job on, to the list of allowed IP addresses in your LemonStand installation. Please define the&nbsp;<a href="lemonstand_configuration_options.html">CRON_ALLOWED_IPS</a> parameter in your config/config.php file. Example:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">/*
+ * Cron access 
+ */
+  
+$CONFIG['CRON_ALLOWED_IPS'] = array('127.0.0.1');
+</pre></div><p>When the subscription engine generates new invoices, it analyzes all subscription products in each order and includes to new invoices only expiring subscriptions. If an order contains two subscriptions - monthly and yearly membership, the monthly subscription product will be included into a new invoice each month, while the yearly subscription will be included into an invoice only once an year.</p>
+<p>LemonStand logs the invoice generating process with a special trace log listener called <strong>INVOICE_GENERATING</strong>. By default there is no log file for this listener. If you want the invoice generating process to be logged to a file you should configure the listener in the config.php file:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">/*
+ * Save the invoice generating log to /logs/invoice_generating.txt
+ */
+
+$CONFIG['TRACE_LOG']['INVOICE_GENERATING'] = PATH_APP.'/logs/invoice_generating.txt';
+</pre></div><p>Also LemonStand sends the invoice generating report to the system administrators. You can customize the message template with altering the email template with code&nbsp;<strong>subscriptions:invoice_generating_report</strong>. Do not remove the&nbsp;{invoice_gen_report} variable from the template text.</p>
+<h4>Creating invoices manually</h4>
+<p>You can force automatic invoice generating for a specific order by clicking the <strong>Generate subscription invoice</strong> button on the Invoices tab of a parent order. This action will generate new invoices only in case if the order contains expiring subscriptions.</p>
+<p><img src="../resources/i/wiki/subscriptions/generate_order_invoices.png" alt="" /></p>
+<p>Alternatively you can create an invoice manually, even if the subscription is not expired. To create an invoice manually, click the <strong>Create invoice</strong> button on the Invoices tab.</p>
+<p><img src="../resources/i/wiki/subscriptions/create_order_invoice.png" alt="" /></p>
+<p>This opens the Edit Order page, where you can define subscription start and end dates for each subscription-type order item. To edit the subscription start or end date, click an item in the order item list and go to the Subscriptions tab.</p>
+<p><img src="../resources/i/wiki/subscriptions/subscription_item_edit.png" alt="" /></p>
+<h3>Configurable Paid order status</h3>
+<p>On the System/Settings/Subscriptions Settings page you can set another order status to be considered as Paid status by the Subscriptions engine.&nbsp;</p>
+<h3>Configuring the automated billing</h3>
+<p>LemonStand Shop module includes the automated billing feature which utilizes the <a href="implementing_customer_payment_profiles.html">customer payment profiles</a> feature internally. The automated billing feature can bill customer saved credit cards for each invoice. The automated billing processes only invoices - the initial subscription orders still should be paid manually.</p>
+<p>To configure the automated billing feature, open the System/Settings page and click the Automated Billing Settings link.</p>
+<p><img src="../resources/i/wiki/auto_billing_config.png" alt="" /></p>
+<p>In the configuration form you can enable the feature and choose a payment method which should be used for the automated billing. Only payment methods which support the customer payment profiles can be used. Also you can choose email templates to be sent to customers in case of successful or failed credit card billing. In the email template you can use any order or customer template variable. Below is the example content for the automatic billing success notification:</p>
+<div class="codeblock"><pre class="brush:html; collapse: true">We would like to notify you that your credit card payment for services you purchased has been processed and approved.
+Please see the invoice details below.
+
+Invoice #: {order_id}
+Invoice date: {order_date}
+Amount paid: {order_total}
+
+{order_content}
+
+If you believe you have been incorrectly billed, would like to change your credit card details or have any
+other questions regarding your account with us, you may open a ticket at our Support Helpdesk.</pre></div><p>Please note that the automated billing feature requires the cron job to be configured for invoking the /ls_shop_auto_billing URL daily.&nbsp;Define the&nbsp;<a href="lemonstand_configuration_options.html">CRON_ALLOWED_IPS</a>&nbsp;parameter in your config/config.php file as it is described above in the&nbsp;<strong>Generating subscription invoices</strong> section.</p>
+<p>When LemonStand processes automated billing it&nbsp;logs the process with a special trace log listener called&nbsp;<strong>AUTO_BILLING</strong>. By default there is no log file for this listener. If you want the automatic billing to be logged to a file you should configure the listener in the config.php file:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">/*
+ * Save the automated billing log to /logs/auto_billing.txt
+ */
+
+$CONFIG['TRACE_LOG']['AUTO_BILLING'] = PATH_APP.'/logs/auto_billing.txt';</pre></div><p>Also LemonStand sends the automated billing report to the system administrators. You can customize the message template with altering the email template with code&nbsp;<strong>shop:auto_billing_report</strong>. Do not remove the&nbsp;{shop:autobilling_report} variable from the template text.</p>
+<p>If the automated billing fails, the customer should visit the store and enter the credit card details to the payment form, and optionally - save the updated credit card information to be used next time.</p>
+<h3>Pausing and resuming subscriptions</h3>
+<p>The <a href="understanding_the_subscription_chart.html">Subscription Chart</a> allows you to pause and resume subscriptions. When a subscription is paused, it is considered as inactive even if there is a paid invoice which includes a current date. Also, LemonStand does not generate invoices for paused subscriptions.</p>
+<h3>Cancelling subscriptions</h3>
+<p>You can cancel a subscription from the Edit Order page. Click a subscription order item and then check&nbsp;<strong>Subscription cancelled</strong>&nbsp;checkbox on the Subscription tab. Cancelled subscriptions do not renew. Alternatively you can mark an order containing a subscription deleted. This effectively cancels all subscriptions in the order.</p>
+        
+        <p>Next: <a href="subscriptions_and_discounts.html">Subscriptions and discounts</a><br/>Previous: <a href="what_is_a_subscription_and_a_subscription_plan.html">What is a subscription and a subscription plan</a><br/>Return to <a href="subscriptions_module.html">Subscriptions module</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_253"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/how_the_subscriptions_engine_works/";
+		var disqus_title = "How the subscriptions engine works";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

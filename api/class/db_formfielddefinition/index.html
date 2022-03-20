@@ -1,0 +1,3468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>LemonStand Version 1 - Class Db_FormFieldDefinition</title>
+  <link rel="shortcut icon" href="../../../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../../../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="LemonStand API documentation: Db_FormFieldDefinition class." />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+      <meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Class Db_FormFieldDefinition"/>
+<meta property="og:description" content="LemonStand API documentation: Db_FormFieldDefinition class."/>
+<meta property="og:image" content="http://v1.lemonstand.com/uploaded/public/5131b2accbf273.83665238.png"/>
+<meta property="og:image" content="http://v1.lemonstand.com/uploaded/public/5131b2d9d35414.27253766.png"/>
+<meta property="og:url" content="http://v1.lemonstand.com/api/class/db_formfielddefinition/"/>
+<meta property="og:site_name" content="LemonStand"/>
+
+    <link type="text/css" rel="stylesheet" href="../../../resources/shl/styles/shCore.css" />
+    <link type="text/css" rel="stylesheet" href="../../../resources/shl/styles/shThemeRDark.css" />
+    
+    <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushPhp.js&amp;file[]=%252Fresources%252Fshl%252Fs"></script>
+  
+    
+    <script type="text/javascript">
+      SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+      SyntaxHighlighter.all();
+      SyntaxHighlighter.defaults.gutter = false;
+      SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+    </script>  
+    
+    <script type="text/javascript" src="../../../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Ftreeview%252Fjquery.treeview.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.apidox.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.ui.core.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.ui.po"></script>
+    
+    <link rel="stylesheet" type="text/css" href="../../../ls_css_combine/index.html@file[]=ls_styles&amp;file[]=%252Fresources%252Fcss%252Fstyles.css&amp;file[]=%252Fresources%252Fjs%252Ftreeview%252Fjquery.treeview.css&amp;file[]=%252Fresources%252Fjs%252Fautocomplete%252Fjquery.ui.autocomplete.css&amp;file[]=%252.css" />  </head>
+  <body id="b_help" class="mac api-page">
+    <div id="wrapper">
+      <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the API docs for LemonStand V1, which has been discontinued. LemonStand is now a cloud based platform, available at <a href="https://lemonstand.com">lemonstand.com</a>.</p>
+	  	</div>
+         <div id="header">
+	         <a href="../../../index.html" id="headerLogo"><img src="../../../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+	         	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../../../docs.html">Documentation</a></li>
+			  <li><a href="../../../docs/api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../../../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../../../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      		     </div><!--/header-->
+      </div><!-- /headerWrapper -->    
+      <div id="topContentWrapper">  
+        <div id="topContent">
+          <div id="topCol1">
+            <h1>LemonStand <span>API</span></h1>
+          </div><!--/topCol1-->
+        </div><!--/topContent-->
+      </div><!-- /topContentWrapper -->  
+      <div id="contentWrapper">  
+        <div id="content" class="clearfix">
+          <div class="wrap12">
+            <table class="api-layout">
+              <tr>
+                <td class="tree">
+<div class="api-search-form ">
+  <form action="http://v1.lemonstand.com/api/search/core/" method="get">
+    <input type="text" id="api-search-query" class="text_field with-placeholder search_field" placeholder="Find class, event or function" name="term" value=""/>
+  </form>
+</div>
+
+<div class="api-tree-area">
+  <ul id="api-tree-view-list" class="filetree">
+    <li class="root"><a href="../../../docs/api_function_and_class_reference/index.html">API Table of Contents</a></li>
+  
+          <li>
+        <span class="folder">backend.events</span>
+      
+        <ul>
+                      <li><a href="../../event/backend%253Aonaddadditionalcmsfiles/index.html">backend:onAddAdditionalCmsFiles</a></li>
+                      <li><a href="../../event/backend%253Aonafterfilebrowserupload/index.html">backend:onAfterFileBrowserUpload</a></li>
+                      <li><a href="../../event/backend%253Aonafterremoteevent/index.html">backend:onAfterRemoteEvent</a></li>
+                      <li><a href="../../event/backend%253Aonbeforeremoteevent/index.html">backend:onBeforeRemoteEvent</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderlayout/index.html">backend:onBeforeRenderLayout</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderpage/index.html">backend:onBeforeRenderPage</a></li>
+                      <li><a href="../../event/backend%253Aonbeforerenderpartial/index.html">backend:onBeforeRenderPartial</a></li>
+                      <li><a href="../../event/backend%253Aoncontrollerinit/index.html">backend:onControllerInit</a></li>
+                      <li><a href="../../event/backend%253Aoncontrollerready/index.html">backend:onControllerReady</a></li>
+                      <li><a href="../../event/backend%253Aonextendfooter/index.html">backend:onExtendFooter</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.classes</span>
+      
+        <ul>
+                      <li><a href="../cms_controller/index.html">Cms_Controller</a></li>
+                      <li><a href="../cms_exportmanager/index.html">Cms_ExportManager</a></li>
+                      <li><a href="../cms_pagenavigationnode/index.html">Cms_PageNavigationNode</a></li>
+                      <li><a href="../cms_visitorpreferences/index.html">Cms_VisitorPreferences</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.events</span>
+      
+        <ul>
+                      <li><a href="../../event/cms%253Aonafterdisplay/index.html">cms:onAfterDisplay</a></li>
+                      <li><a href="../../event/cms%253Aonafterevalpagecontent/index.html">cms:onAfterEvalPageContent</a></li>
+                      <li><a href="../../event/cms%253Aonafterhandleajax/index.html">cms:onAfterHandleAjax</a></li>
+                      <li><a href="../../event/cms%253Aonafterpageduplicate/index.html">cms:onAfterPageDuplicate</a></li>
+                      <li><a href="../../event/cms%253Aonafterrenderpartial/index.html">cms:onAfterRenderPartial</a></li>
+                      <li><a href="../../event/cms%253Aonafterresourcefileupload/index.html">cms:onAfterResourceFileUpload</a></li>
+                      <li><a href="../../event/cms%253Aonapplypagesecurity/index.html">cms:onApplyPageSecurity</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedataexport/index.html">cms:onBeforeDataExport</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedataimport/index.html">cms:onBeforeDataImport</a></li>
+                      <li><a href="../../event/cms%253Aonbeforedisplay/index.html">cms:onBeforeDisplay</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeevalpagecontent/index.html">cms:onBeforeEvalPageContent</a></li>
+                      <li><a href="../../event/cms%253Aonbeforehandleajax/index.html">cms:onBeforeHandleAjax</a></li>
+                      <li><a href="../../event/cms%253Aonbeforerenderpartial/index.html">cms:onBeforeRenderPartial</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeresourcecombine/index.html">cms:onBeforeResourceCombine</a></li>
+                      <li><a href="../../event/cms%253Aonbeforeroute/index.html">cms:onBeforeRoute</a></li>
+                      <li><a href="../../event/cms%253Aonbeforetrackingcodeinclude/index.html">cms:onBeforeTrackingCodeInclude</a></li>
+                      <li><a href="../../event/cms%253Aoncmspageimport/index.html">cms:onCmsPageImport</a></li>
+                      <li><a href="../../event/cms%253Aonconfigurepagespage/index.html">cms:onConfigurePagesPage</a></li>
+                      <li><a href="../../event/cms%253Aondeletepage/index.html">cms:onDeletePage</a></li>
+                      <li><a href="../../event/cms%253Aondeletepartial/index.html">cms:onDeletePartial</a></li>
+                      <li><a href="../../event/cms%253Aondeletetemplate/index.html">cms:onDeleteTemplate</a></li>
+                      <li><a href="../../event/cms%253Aondisplaypageform/index.html">cms:onDisplayPageForm</a></li>
+                      <li><a href="../../event/cms%253Aonevaluatecode/index.html">cms:onEvaluateCode</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagecontenttoolbar/index.html">cms:onExtendPageContentToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendpageform/index.html">cms:onExtendPageForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagemodel/index.html">cms:onExtendPageModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagescontextmenu/index.html">cms:onExtendPagesContextMenu</a></li>
+                      <li><a href="../../event/cms%253Aonextendpagestoolbar/index.html">cms:onExtendPagesToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialform/index.html">cms:onExtendPartialForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialmodel/index.html">cms:onExtendPartialModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendpartialstoolbar/index.html">cms:onExtendPartialsToolbar</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplateform/index.html">cms:onExtendTemplateForm</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplatemodel/index.html">cms:onExtendTemplateModel</a></li>
+                      <li><a href="../../event/cms%253Aonextendtemplatestoolbar/index.html">cms:onExtendTemplatesToolbar</a></li>
+                      <li><a href="../../event/cms%253Aongetactivetheme/index.html">cms:onGetActiveTheme</a></li>
+                      <li><a href="../../event/cms%253Aongetcustomergroupid/index.html">cms:onGetCustomerGroupId</a></li>
+                      <li><a href="../../event/cms%253Aongetpageblockcontent/index.html">cms:onGetPageBlockContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpagecontent/index.html">cms:onGetPageContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpagefieldoptions/index.html">cms:onGetPageFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aongetpagenavigationvisibility/index.html">cms:onGetPageNavigationVisibility</a></li>
+                      <li><a href="../../event/cms%253Aongetpartialcontent/index.html">cms:onGetPartialContent</a></li>
+                      <li><a href="../../event/cms%253Aongetpartialfieldoptions/index.html">cms:onGetPartialFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aongettemplatecontent/index.html">cms:onGetTemplateContent</a></li>
+                      <li><a href="../../event/cms%253Aongettemplatefieldoptions/index.html">cms:onGetTemplateFieldOptions</a></li>
+                      <li><a href="../../event/cms%253Aonlistpageeditorsidebartabs/index.html">cms:onListPageEditorSidebarTabs</a></li>
+                      <li><a href="../../event/cms%253Aonpagenotfound/index.html">cms:onPageNotFound</a></li>
+                      <li><a href="../../event/cms%253Aonpreparepagelistdata/index.html">cms:onPreparePageListData</a></li>
+                      <li><a href="../../event/cms%253Aonpreparepartiallistdata/index.html">cms:onPreparePartialListData</a></li>
+                      <li><a href="../../event/cms%253Aonpreparetemplatelistdata/index.html">cms:onPrepareTemplateListData</a></li>
+                      <li><a href="../../event/cms%253Aonsetdefaulttheme/index.html">cms:onSetDefaultTheme</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.helpers</span>
+      
+        <ul>
+                      <li><a href="../../function/close_form/index.html">close_form()</a></li>
+                      <li><a href="../../../docs/function_content_block.html">content_block()</a></li>
+                      <li><a href="../../function/flash_message/index.html">flash_message()</a></li>
+                      <li><a href="../../function/global_content_block/index.html">global_content_block()</a></li>
+                      <li><a href="../../function/include_resources/index.html">include_resources()</a></li>
+                      <li><a href="../../function/open_form/index.html">open_form()</a></li>
+                      <li><a href="../../function/resource_url/index.html">resource_url()</a></li>
+                      <li><a href="../../function/root_url/index.html">root_url()</a></li>
+                      <li><a href="../../function/site_url/index.html">site_url()</a></li>
+                      <li><a href="../../function/text_content_block/index.html">text_content_block()</a></li>
+                      <li><a href="../../function/theme_resource_url/index.html">theme_resource_url()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">cms.models</span>
+      
+        <ul>
+                      <li><a href="../cms_page/index.html">Cms_Page</a></li>
+                      <li><a href="../cms_partial/index.html">Cms_Partial</a></li>
+                      <li><a href="../cms_template/index.html">Cms_Template</a></li>
+                      <li><a href="../cms_theme/index.html">Cms_Theme</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.classes</span>
+      
+        <ul>
+                      <li><a href="../core_cachebase/index.html">Core_CacheBase</a></li>
+                      <li><a href="../db_activerecord/index.html">Db_ActiveRecord</a></li>
+                      <li><a href="../db_act_as_tree/index.html">Db_Act_As_Tree</a></li>
+                      <li><a href="../db_columndefinition/index.html">Db_ColumnDefinition</a></li>
+                      <li><a href="../db_datacollection/index.html">Db_DataCollection</a></li>
+                      <li><a href="../db_file/index.html">Db_File</a></li>
+                      <li><a href="../db_filterbehavior/index.html">Db_FilterBehavior</a></li>
+                      <li><a href="../db_formbehavior/index.html">Db_FormBehavior</a></li>
+                      <li><a href="../db_formcustomarea/index.html">Db_FormCustomArea</a></li>
+                      <li><a href="../db_formelement/index.html">Db_FormElement</a></li>
+                      <li><a href="index.html">Db_FormFieldDefinition</a></li>
+                      <li><a href="../db_formpartial/index.html">Db_FormPartial</a></li>
+                      <li><a href="../db_formsection/index.html">Db_FormSection</a></li>
+                      <li><a href="../db_listbehavior/index.html">Db_ListBehavior</a></li>
+                      <li><a href="../phpr_datetime/index.html">Phpr_DateTime</a></li>
+                      <li><a href="../phpr_pagination/index.html">Phpr_Pagination</a></li>
+                      <li><a href="../phpr_request/index.html">Phpr_Request</a></li>
+                      <li><a href="../phpr_response/index.html">Phpr_Response</a></li>
+                      <li><a href="../phpr_validation/index.html">Phpr_Validation</a></li>
+                      <li><a href="../phpr_validationrules/index.html">Phpr_ValidationRules</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.events</span>
+      
+        <ul>
+                      <li><a href="../../event/core%253Aonafterarchivecreate/index.html">core:onAfterArchiveCreate</a></li>
+                      <li><a href="../../event/core%253Aonafterdatabasequery/index.html">core:onAfterDatabaseQuery</a></li>
+                      <li><a href="../../event/core%253Aonafteremailsendtocustomer/index.html">core:onAfterEmailSendToCustomer</a></li>
+                      <li><a href="../../event/core%253Aonafteremailsendtoteam/index.html">core:onAfterEmailSendToTeam</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecordcreate/index.html">core:onAfterFormRecordCreate</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecorddelete/index.html">core:onAfterFormRecordDelete</a></li>
+                      <li><a href="../../event/core%253Aonafterformrecordupdate/index.html">core:onAfterFormRecordUpdate</a></li>
+                      <li><a href="../../event/core%253Aonafterrenderlistpagination/index.html">core:onAfterRenderListPagination</a></li>
+                      <li><a href="../../event/core%253Aonafterrenderlisttable/index.html">core:onAfterRenderListTable</a></li>
+                      <li><a href="../../event/core%253Aonaftersoftwareupdate/index.html">core:onAfterSoftwareUpdate</a></li>
+                      <li><a href="../../event/core%253Aonaftersoftwareupdaterequest/index.html">core:onAfterSoftwareUpdateRequest</a></li>
+                      <li><a href="../../event/core%253Aonbeforearchivecreate/index.html">core:onBeforeArchiveCreate</a></li>
+                      <li><a href="../../event/core%253Aonbeforearchiverestore/index.html">core:onBeforeArchiveRestore</a></li>
+                      <li><a href="../../event/core%253Aonbeforedatabaseconnect/index.html">core:onBeforeDatabaseConnect</a></li>
+                      <li><a href="../../event/core%253Aonbeforedatabasequery/index.html">core:onBeforeDatabaseQuery</a></li>
+                      <li><a href="../../event/core%253Aonbeforeemailsendtocustomer/index.html">core:onBeforeEmailSendToCustomer</a></li>
+                      <li><a href="../../event/core%253Aonbeforeemailsendtoteam/index.html">core:onBeforeEmailSendToTeam</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecordcreate/index.html">core:onBeforeFormRecordCreate</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecorddelete/index.html">core:onBeforeFormRecordDelete</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrecordupdate/index.html">core:onBeforeFormRecordUpdate</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrender/index.html">core:onBeforeFormRender</a></li>
+                      <li><a href="../../event/core%253Aonbeforeformrenderpreview/index.html">core:onBeforeFormRenderPreview</a></li>
+                      <li><a href="../../event/core%253Aonbeforelistexport/index.html">core:onBeforeListExport</a></li>
+                      <li><a href="../../event/core%253Aonbeforelistrecorddisplay/index.html">core:onBeforeListRecordDisplay</a></li>
+                      <li><a href="../../event/core%253Aonbeforesoftwareupdate/index.html">core:onBeforeSoftwareUpdate</a></li>
+                      <li><a href="../../event/core%253Aonbeforesoftwareupdaterequest/index.html">core:onBeforeSoftwareUpdateRequest</a></li>
+                      <li><a href="../../event/core%253Aonextendemailtemplateform/index.html">core:onExtendEmailTemplateForm</a></li>
+                      <li><a href="../../event/core%253Aonextendemailtemplatemodel/index.html">core:onExtendEmailTemplateModel</a></li>
+                      <li><a href="../../event/core%253Aonextenduserform/index.html">core:onExtendUserForm</a></li>
+                      <li><a href="../../event/core%253Aonextendusermodel/index.html">core:onExtendUserModel</a></li>
+                      <li><a href="../../event/core%253Aonfilebeforecreate/index.html">core:onFileBeforeCreate</a></li>
+                      <li><a href="../../event/core%253Aongetemailtemplatefieldoptions/index.html">core:onGetEmailTemplateFieldOptions</a></li>
+                      <li><a href="../../event/core%253Aongetuserfieldoptions/index.html">core:onGetUserFieldOptions</a></li>
+                      <li><a href="../../event/core%253Aoninitialize/index.html">core:onInitialize</a></li>
+                      <li><a href="../../event/core%253Aonprocessimage/index.html">core:onProcessImage</a></li>
+                      <li><a href="../../event/core%253Aonsendemail/index.html">core:onSendEmail</a></li>
+                      <li><a href="../../event/core%253Aonuninitialize/index.html">core:onUninitialize</a></li>
+                      <li><a href="../../event/core%253Aonuserbeforesave/index.html">core:onUserBeforeSave</a></li>
+                      <li><a href="../../event/onafterfrontendlogin/index.html">onAfterFrontEndLogin</a></li>
+                      <li><a href="../../event/ondeleteemailtemplate/index.html">onDeleteEmailTemplate</a></li>
+                      <li><a href="../../event/onfrontendlogin/index.html">onFrontEndLogin</a></li>
+                      <li><a href="../../event/onfrontendlogout/index.html">onFrontEndLogout</a></li>
+                      <li><a href="../../event/onlogin/index.html">onLogin</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.functions</span>
+      
+        <ul>
+                      <li><a href="../../function/url/index.html">url()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.helpers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/function_checkbox_state.html">checkbox_state()</a></li>
+                      <li><a href="../../function/h/index.html">h()</a></li>
+                      <li><a href="../../function/option_state/index.html">option_state()</a></li>
+                      <li><a href="../../function/post/index.html">post()</a></li>
+                      <li><a href="../../function/post_array_item/index.html">post_array_item()</a></li>
+                      <li><a href="../../function/radio_state/index.html">radio_state()</a></li>
+                      <li><a href="../../function/tracelog/index.html">traceLog()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.models</span>
+      
+        <ul>
+                      <li><a href="../users_user/index.html">Users_User</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig filters</span>
+      
+        <ul>
+                      <li><a href="../../function/repeat/index.html">repeat</a></li>
+                      <li><a href="../../function/unescape/index.html">unescape</a></li>
+                      <li><a href="../../function/unset/index.html">unset</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig functions</span>
+      
+        <ul>
+                      <li><a href="../../function/field/index.html">field()</a></li>
+                      <li><a href="../../function/method/index.html">method()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">core.twig tests</span>
+      
+        <ul>
+                      <li><a href="../../function/array/index.html">array</a></li>
+                      <li><a href="../../function/instance_of/index.html">instance_of</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.actions</span>
+      
+        <ul>
+                      <li><a href="../../../docs/action_shop_cart.html">shop:cart</a></li>
+                      <li><a href="../../../docs/action_shop_category.html">shop:category</a></li>
+                      <li><a href="../../action/shop%253Achange_password/index.html">shop:change_password</a></li>
+                      <li><a href="../../action/shop%253Acheckout/index.html">shop:checkout</a></li>
+                      <li><a href="../../../docs/shop_checkout_billing_info.html">shop:checkout_billing_info</a></li>
+                      <li><a href="../../../docs/shop_checkout_order_review.html">shop:checkout_order_review</a></li>
+                      <li><a href="../../../docs/shop_checkout_payment_method.html">shop:checkout_payment_method</a></li>
+                      <li><a href="../../../docs/shop_checkout_shipping_info.html">shop:checkout_shipping_info</a></li>
+                      <li><a href="../../../docs/shop_checkout_shipping_method.html">shop:checkout_shipping_method</a></li>
+                      <li><a href="../../../docs/action_shop_compare.html">shop:compare</a></li>
+                      <li><a href="../../action/shop%253Acustomer_profile/index.html">shop:customer_profile</a></li>
+                      <li><a href="../../../docs/action_shop_login.html">shop:login</a></li>
+                      <li><a href="../../../docs/action_shop_manufacturer.html">shop:manufacturer</a></li>
+                      <li><a href="../../../docs/action_shop_manufacturers.html">shop:manufacturers</a></li>
+                      <li><a href="../../../docs/action_shop_order.html">shop:order</a></li>
+                      <li><a href="../../../docs/action_shop_orders.html">shop:orders</a></li>
+                      <li><a href="../../../docs/action_shop_password_restore.html">shop:password_restore</a></li>
+                      <li><a href="../../action/shop%253Apassword_restore_request/index.html">shop:password_restore_request</a></li>
+                      <li><a href="../../../docs/action_shop_pay.html">shop:pay</a></li>
+                      <li><a href="../../../docs/shop_payment_information.html">shop:payment_information</a></li>
+                      <li><a href="../../action/shop%253Apayment_profile/index.html">shop:payment_profile</a></li>
+                      <li><a href="../../action/shop%253Apayment_profiles/index.html">shop:payment_profiles</a></li>
+                      <li><a href="../../../docs/action_shop_payment_receipt.html">shop:payment_receipt</a></li>
+                      <li><a href="../../../docs/action_shop_product.html">shop:product</a></li>
+                      <li><a href="../../../docs/shop_search.html">shop:search</a></li>
+                      <li><a href="../../action/shop%253Asignup/index.html">shop:signup</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.ajax handlers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/habdler_shop_on_addproductreview.html">shop:on_addProductReview</a></li>
+                      <li><a href="../../ajax/shop%253Aon_addtocart/index.html">shop:on_addToCart</a></li>
+                      <li><a href="../../../docs/handler_shop_on_addtocompare.html">shop:on_addToCompare</a></li>
+                      <li><a href="../../ajax/shop%253Aon_changepassword/index.html">shop:on_changePassword</a></li>
+                      <li><a href="../../ajax/shop%253Aon_clearcomparelist/index.html">shop:on_clearCompareList</a></li>
+                      <li><a href="../../ajax/shop%253Aon_deletecartitem/index.html">shop:on_deleteCartItem</a></li>
+                      <li><a href="../../ajax/shop%253Aon_evalshippingrate/index.html">shop:on_evalShippingRate</a></li>
+                      <li><a href="../../ajax/shop%253Aon_removefromcompare/index.html">shop:on_removeFromCompare</a></li>
+                      <li><a href="../../ajax/shop%253Aon_setcouponcode/index.html">shop:on_setCouponCode</a></li>
+                      <li><a href="../../ajax/shop%253Aon_updatestatelist/index.html">shop:on_updateStateList</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.classes</span>
+      
+        <ul>
+                      <li><a href="../../../docs/class_shop_cart.html">Shop_Cart</a></li>
+                      <li><a href="../../../docs/class_shop_cartitem.html">Shop_CartItem</a></li>
+                      <li><a href="../../../docs/class_shop_checkoutaddressinfo.html">Shop_CheckoutAddressInfo</a></li>
+                      <li><a href="../../../docs/shop_checkoutdata.html">Shop_CheckoutData</a></li>
+                      <li><a href="../../../docs/class_shop_comparisonlist.html">Shop_ComparisonList</a></li>
+                      <li><a href="../shop_optionmatrixmanager/index.html">Shop_OptionMatrixManager</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.events</span>
+      
+        <ul>
+                      <li><a href="../../event/shop%253Aonafteraddtocart/index.html">shop:onAfterAddToCart</a></li>
+                      <li><a href="../../event/shop%253Aonaftercategoryrecordfetch/index.html">shop:onAfterCategoryRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvcustomercreated/index.html">shop:onAfterCsvCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvcustomerupdated/index.html">shop:onAfterCsvCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvoptionmatriximport/index.html">shop:onAfterCsvOptionMatrixImport</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvproductcreated/index.html">shop:onAfterCsvProductCreated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercsvproductupdated/index.html">shop:onAfterCsvProductUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonaftercustomermerged/index.html">shop:onAfterCustomerMerged</a></li>
+                      <li><a href="../../event/shop%253Aonafteroptionmatrixrecordfound/index.html">shop:onAfterOptionMatrixRecordFound</a></li>
+                      <li><a href="../../event/shop%253Aonafterorderrecordfetch/index.html">shop:onAfterOrderRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonafterproductfileadded/index.html">shop:onAfterProductFileAdded</a></li>
+                      <li><a href="../../event/shop%253Aonafterproductrecordfetch/index.html">shop:onAfterProductRecordFetch</a></li>
+                      <li><a href="../../event/shop%253Aonafterremovefromcart/index.html">shop:onAfterRemoveFromCart</a></li>
+                      <li><a href="../../event/shop%253Aonaftersetcartquantity/index.html">shop:onAfterSetCartQuantity</a></li>
+                      <li><a href="../../event/shop%253Aonauthenticatecustomer/index.html">shop:onAuthenticateCustomer</a></li>
+                      <li><a href="../../event/shop%253Aonautomatedbillingsupported/index.html">shop:onAutomatedBillingSupported</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeaddtocart/index.html">shop:onBeforeAddToCart</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecsvcustomercreated/index.html">shop:onBeforeCsvCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecsvcustomerupdated/index.html">shop:onBeforeCsvCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonbeforecustomermerged/index.html">shop:onBeforeCustomerMerged</a></li>
+                      <li><a href="../../event/shop%253Aonbeforedeleteshippingtrackingcode/index.html">shop:onBeforeDeleteShippingTrackingCode</a></li>
+                      <li><a href="../../event/shop%253Aonbeforegeneratecustomerpassword/index.html">shop:onBeforeGenerateCustomerPassword</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeordercustomerstatusmessagesent/index.html">shop:onBeforeOrderCustomerStatusMessageSent</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderinternalstatusmessagesent/index.html">shop:onBeforeOrderInternalStatusMessageSent</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderitemsaved/index.html">shop:onBeforeOrderItemSaved</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeorderrecordcreate/index.html">shop:onBeforeOrderRecordCreate</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeordersrssexport/index.html">shop:onBeforeOrdersRssExport</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeproductfileadded/index.html">shop:onBeforeProductFileAdded</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeremovefromcart/index.html">shop:onBeforeRemoveFromCart</a></li>
+                      <li><a href="../../event/shop%253Aonbeforesetcartquantity/index.html">shop:onBeforeSetCartQuantity</a></li>
+                      <li><a href="../../event/shop%253Aonbeforeshippingquote/index.html">shop:onBeforeShippingQuote</a></li>
+                      <li><a href="../../event/shop%253Aonconfigurecustomerspage/index.html">shop:onConfigureCustomersPage</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureorderspage/index.html">shop:onConfigureOrdersPage</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureproductscontroller/index.html">shop:onConfigureProductsController</a></li>
+                      <li><a href="../../event/shop%253Aonconfigureproductspage/index.html">shop:onConfigureProductsPage</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerafterdelete/index.html">shop:onCustomerAfterDelete</a></li>
+                      <li><a href="../../event/shop%253Aoncustomercreated/index.html">shop:onCustomerCreated</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerprofilesave/index.html">shop:onCustomerProfileSave</a></li>
+                      <li><a href="../../event/shop%253Aoncustomerupdated/index.html">shop:onCustomerUpdated</a></li>
+                      <li><a href="../../event/shop%253Aondisplaycustomerspage/index.html">shop:onDisplayCustomersPage</a></li>
+                      <li><a href="../../event/shop%253Aondisplayorderspage/index.html">shop:onDisplayOrdersPage</a></li>
+                      <li><a href="../../event/shop%253Aondisplayproductform/index.html">shop:onDisplayProductForm</a></li>
+                      <li><a href="../../event/shop%253Aondisplayproductlist/index.html">shop:onDisplayProductList</a></li>
+                      <li><a href="../../event/shop%253Aonextendattributeform/index.html">shop:onExtendAttributeForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendattributemodel/index.html">shop:onExtendAttributeModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcategoryform/index.html">shop:onExtendCategoryForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcategorymodel/index.html">shop:onExtendCategoryModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcompanyinformationform/index.html">shop:onExtendCompanyInformationForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcompanyinformationmodel/index.html">shop:onExtendCompanyInformationModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerform/index.html">shop:onExtendCustomerForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomergroupform/index.html">shop:onExtendCustomerGroupForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomergroupmodel/index.html">shop:onExtendCustomerGroupModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomermodel/index.html">shop:onExtendCustomerModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerpreviewtabs/index.html">shop:onExtendCustomerPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerpreviewtoolbar/index.html">shop:onExtendCustomerPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomerstoolbar/index.html">shop:onExtendCustomersToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomgroupform/index.html">shop:onExtendCustomGroupForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendcustomgroupmodel/index.html">shop:onExtendCustomGroupModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendextraoptionform/index.html">shop:onExtendExtraOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendextraoptionmodel/index.html">shop:onExtendExtraOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendmanufacturerform/index.html">shop:onExtendManufacturerForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendmanufacturermodel/index.html">shop:onExtendManufacturerModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionform/index.html">shop:onExtendOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmatrix/index.html">shop:onExtendOptionMatrix</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmatrixrecordmodel/index.html">shop:onExtendOptionMatrixRecordModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendoptionmodel/index.html">shop:onExtendOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderform/index.html">shop:onExtendOrderForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderinvoicestoolbar/index.html">shop:onExtendOrderInvoicesToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderitemform/index.html">shop:onExtendOrderItemForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderitemmodel/index.html">shop:onExtendOrderItemModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendordermodel/index.html">shop:onExtendOrderModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpaymenttransactionstoolbar/index.html">shop:onExtendOrderPaymentTransactionsToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewheader/index.html">shop:onExtendOrderPreviewHeader</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewtabs/index.html">shop:onExtendOrderPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderpreviewtoolbar/index.html">shop:onExtendOrderPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstatusform/index.html">shop:onExtendOrderStatusForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstatusmodel/index.html">shop:onExtendOrderStatusModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendorderstoolbar/index.html">shop:onExtendOrdersToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendpaymentmethodform/index.html">shop:onExtendPaymentMethodForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendpaymentmethodmodel/index.html">shop:onExtendPaymentMethodModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductform/index.html">shop:onExtendProductForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductmodel/index.html">shop:onExtendProductModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewheader/index.html">shop:onExtendProductPreviewHeader</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewtabs/index.html">shop:onExtendProductPreviewTabs</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductpreviewtoolbar/index.html">shop:onExtendProductPreviewToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductreviewform/index.html">shop:onExtendProductReviewForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductreviewmodel/index.html">shop:onExtendProductReviewModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendproductstoolbar/index.html">shop:onExtendProductsToolbar</a></li>
+                      <li><a href="../../event/shop%253Aonextendproducttypeform/index.html">shop:onExtendProductTypeForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendproducttypemodel/index.html">shop:onExtendProductTypeModel</a></li>
+                      <li><a href="../../event/shop%253Aonextendreportfilters/index.html">shop:onExtendReportFilters</a></li>
+                      <li><a href="../../event/shop%253Aonextendshippingoptionform/index.html">shop:onExtendShippingOptionForm</a></li>
+                      <li><a href="../../event/shop%253Aonextendshippingoptionmodel/index.html">shop:onExtendShippingOptionModel</a></li>
+                      <li><a href="../../event/shop%253Aonfilterpaymentmethods/index.html">shop:onFilterPaymentMethods</a></li>
+                      <li><a href="../../event/shop%253Aonfiltershippingoptions/index.html">shop:onFilterShippingOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetattributefieldoptions/index.html">shop:onGetAttributeFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcartitemprice/index.html">shop:onGetCartItemPrice</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryfieldoptions/index.html">shop:onGetCategoryFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryfieldstate/index.html">shop:onGetCategoryFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcategoryproductsortingquery/index.html">shop:onGetCategoryProductSortingQuery</a></li>
+                      <li><a href="../../event/shop%253Aongetcompanyinformationfieldoptions/index.html">shop:onGetCompanyInformationFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcompanyinformationfieldstate/index.html">shop:onGetCompanyInformationFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomerfieldoptions/index.html">shop:onGetCustomerFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomerfieldstate/index.html">shop:onGetCustomerFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomergroupfieldoptions/index.html">shop:onGetCustomerGroupFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetcustomgroupfieldoptions/index.html">shop:onGetCustomGroupFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetendreportingdate/index.html">shop:onGetEndReportingDate</a></li>
+                      <li><a href="../../event/shop%253Aongetextraoptionfieldoptions/index.html">shop:onGetExtraOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetmanufacturerfieldoptions/index.html">shop:onGetManufacturerFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetmanufacturerfieldstate/index.html">shop:onGetManufacturerFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetoptionfieldoptions/index.html">shop:onGetOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderfieldoptions/index.html">shop:onGetOrderFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderfieldstate/index.html">shop:onGetOrderFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetorderitemdisplaydetails/index.html">shop:onGetOrderItemDisplayDetails</a></li>
+                      <li><a href="../../event/shop%253Aongetorderitemfieldoptions/index.html">shop:onGetOrderItemFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderstatusfieldoptions/index.html">shop:onGetOrderStatusFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetorderstatusfieldstate/index.html">shop:onGetOrderStatusFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetpaymentmethodfieldoptions/index.html">shop:onGetPaymentMethodFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetpaymentmethodfieldstate/index.html">shop:onGetPaymentMethodFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetproductextraprice/index.html">shop:onGetProductExtraPrice</a></li>
+                      <li><a href="../../event/shop%253Aongetproductfieldoptions/index.html">shop:onGetProductFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetproductfieldstate/index.html">shop:onGetProductFieldState</a></li>
+                      <li><a href="../../event/shop%253Aongetproductpricenotax/index.html">shop:onGetProductPriceNoTax</a></li>
+                      <li><a href="../../event/shop%253Aongetproductreviewfieldoptions/index.html">shop:onGetProductReviewFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsaleprice/index.html">shop:onGetProductSalePrice</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsearchsortcolumns/index.html">shop:onGetProductSearchSortColumns</a></li>
+                      <li><a href="../../event/shop%253Aongetproductsortcolumns/index.html">shop:onGetProductSortColumns</a></li>
+                      <li><a href="../../event/shop%253Aongetproducttypefieldoptions/index.html">shop:onGetProductTypeFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetshippingoptionfieldoptions/index.html">shop:onGetShippingOptionFieldOptions</a></li>
+                      <li><a href="../../event/shop%253Aongetshippingparams/index.html">shop:onGetShippingParams</a></li>
+                      <li><a href="../../event/shop%253Aongetstartreportingdate/index.html">shop:onGetStartReportingDate</a></li>
+                      <li><a href="../../event/shop%253Aoninvoicesystemsupported/index.html">shop:onInvoiceSystemSupported</a></li>
+                      <li><a href="../../event/shop%253Aonnewinvoiceitemcopy/index.html">shop:onNewInvoiceItemCopy</a></li>
+                      <li><a href="../../event/shop%253Aonneworder/index.html">shop:onNewOrder</a></li>
+                      <li><a href="../../event/shop%253Aonorderafterdelete/index.html">shop:onOrderAfterDelete</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforecreate/index.html">shop:onOrderBeforeCreate</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforestatuschanged/index.html">shop:onOrderBeforeStatusChanged</a></li>
+                      <li><a href="../../event/shop%253Aonorderbeforeupdate/index.html">shop:onOrderBeforeUpdate</a></li>
+                      <li><a href="../../event/shop%253Aonordercopybillingaddress/index.html">shop:onOrderCopyBillingAddress</a></li>
+                      <li><a href="../../event/shop%253Aonordererror/index.html">shop:onOrderError</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemadded/index.html">shop:onOrderItemAdded</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemdeleted/index.html">shop:onOrderItemDeleted</a></li>
+                      <li><a href="../../event/shop%253Aonorderitemupdated/index.html">shop:onOrderItemUpdated</a></li>
+                      <li><a href="../../event/shop%253Aonordermarkeddeleted/index.html">shop:onOrderMarkedDeleted</a></li>
+                      <li><a href="../../event/shop%253Aonorderrestored/index.html">shop:onOrderRestored</a></li>
+                      <li><a href="../../event/shop%253Aonorderstatuschanged/index.html">shop:onOrderStatusChanged</a></li>
+                      <li><a href="../../event/shop%253Aonorderstockchange/index.html">shop:onOrderStockChange</a></li>
+                      <li><a href="../../event/shop%253Aonordersupportsinvoices/index.html">shop:onOrderSupportsInvoices</a></li>
+                      <li><a href="../../event/shop%253Aonoverrideproductcategorycsvimportdata/index.html">shop:onOverrideProductCategoryCsvImportData</a></li>
+                      <li><a href="../../event/shop%253Aonprepareproductlistdata/index.html">shop:onPrepareProductListData</a></li>
+                      <li><a href="../../event/shop%253Aonpreprocessproductcustomdata/index.html">shop:onPreProcessProductCustomData</a></li>
+                      <li><a href="../../event/shop%253Aonproductduplicated/index.html">shop:onProductDuplicated</a></li>
+                      <li><a href="../../event/shop%253Aonproductoutofstock/index.html">shop:onProductOutOfStock</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewaftercreate/index.html">shop:onProductReviewAfterCreate</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewapproved/index.html">shop:onProductReviewApproved</a></li>
+                      <li><a href="../../event/shop%253Aonproductreviewbeforecreate/index.html">shop:onProductReviewBeforeCreate</a></li>
+                      <li><a href="../../event/shop%253Aonregisterproductsearchevent/index.html">shop:onRegisterProductSearchEvent</a></li>
+                      <li><a href="../../event/shop%253Aonupdatecartitemprice/index.html">shop:onUpdateCartItemPrice</a></li>
+                      <li><a href="../../event/shop%253Aonupdateshippingquote/index.html">shop:onUpdateShippingQuote</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.helpers</span>
+      
+        <ul>
+                      <li><a href="../../../docs/class_shop_bundlehelper.html">Shop_BundleHelper</a></li>
+                      <li><a href="../../../docs/class_shop_producthelper.html">Shop_ProductHelper</a></li>
+                      <li><a href="../../function/customer_logout/index.html">customer_logout()</a></li>
+                      <li><a href="../../function/format_currency/index.html">format_currency()</a></li>
+                      <li><a href="../../function/tax_incl_label/index.html">tax_incl_label()</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.models</span>
+      
+        <ul>
+                      <li><a href="../shop_bundleitemproduct/index.html">Shop_BundleItemProduct</a></li>
+                      <li><a href="../../../docs/class_shop_category.html">Shop_Category</a></li>
+                      <li><a href="../shop_companyinformation/index.html">Shop_CompanyInformation</a></li>
+                      <li><a href="../../../docs/class_shop_country.html">Shop_Country</a></li>
+                      <li><a href="../../../docs/class_shop_countrystate.html">Shop_CountryState</a></li>
+                      <li><a href="../shop_customattribute/index.html">Shop_CustomAttribute</a></li>
+                      <li><a href="../../../docs/class_shop_customer.html">Shop_Customer</a></li>
+                      <li><a href="../../../docs/shop_customergroup.html">Shop_CustomerGroup</a></li>
+                      <li><a href="../shop_customerpaymentprofile/index.html">Shop_CustomerPaymentProfile</a></li>
+                      <li><a href="../../../docs/class_shop_customgroup.html">Shop_CustomGroup</a></li>
+                      <li><a href="../../../docs/class_shop_extraoption.html">Shop_ExtraOption</a></li>
+                      <li><a href="../../../docs/class_shop_manufacturer.html">Shop_Manufacturer</a></li>
+                      <li><a href="../shop_optionmatrixrecord/index.html">Shop_OptionMatrixRecord</a></li>
+                      <li><a href="../../../docs/class_shop_order.html">Shop_Order</a></li>
+                      <li><a href="../../../docs/class_shop_orderitem.html">Shop_OrderItem</a></li>
+                      <li><a href="../shop_orderstatus/index.html">Shop_OrderStatus</a></li>
+                      <li><a href="../shop_orderstatuslog/index.html">Shop_OrderStatusLog</a></li>
+                      <li><a href="../../../docs/class_shop_paymentmethod.html">Shop_PaymentMethod</a></li>
+                      <li><a href="../../../docs/class_shop_product.html">Shop_Product</a></li>
+                      <li><a href="../shop_productbundleitem/index.html">Shop_ProductBundleItem</a></li>
+                      <li><a href="../shop_productfile/index.html">Shop_ProductFile</a></li>
+                      <li><a href="../shop_productproperty/index.html">Shop_ProductProperty</a></li>
+                      <li><a href="../../../docs/class_shop_productreview.html">Shop_ProductReview</a></li>
+                      <li><a href="../shop_producttype/index.html">Shop_ProductType</a></li>
+                      <li><a href="../../../docs/class_shop_shippingoption.html">Shop_ShippingOption</a></li>
+                      <li><a href="../shop_shippingparams/index.html">Shop_ShippingParams</a></li>
+                      <li><a href="../shop_transactionupdate/index.html">Shop_TransactionUpdate</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.twig filters</span>
+      
+        <ul>
+                      <li><a href="../../function/categories/index.html">categories</a></li>
+                      <li><a href="../../function/currency/index.html">currency</a></li>
+                  </ul>
+      </li>
+          <li>
+        <span class="folder">shop.twig functions</span>
+      
+        <ul>
+                      <li><a href="../../function/cart_items/index.html">cart_items()</a></li>
+                      <li><a href="../../function/company_information/index.html">company_information()</a></li>
+                      <li><a href="../../function/shipping_method_selected/index.html">shipping_method_selected()</a></li>
+                      <li><a href="../../function/total_cart_items/index.html">total_cart_items()</a></li>
+                      <li><a href="../../function/total_cart_price/index.html">total_cart_price()</a></li>
+                  </ul>
+      </li>
+      </ul>
+
+  <script type="text/javascript">
+    jQuery("#api-tree-view-list").treeview({
+      animated: "fast",
+      collapsed: true,
+      unique: true,
+      persist: "location"
+    });
+  </script>
+</div></td>
+                <td class="details">  <h2><span>Db_FormFieldDefinition</span> class</h2>
+  
+  <table class="api-summary-table">
+  <tr>
+    <th>Defined in</th>
+    <td>/phproad/modules/db/classes/db_formfielddefinition.php, lines 40-1278</td>
+  </tr>
+      <tr>
+      <th>Inheritance</th>
+      <td><a href="../db_formelement/index.html">Db_FormElement</a> » Db_FormFieldDefinition</td>
+    </tr>
+          <tr>
+      <th>Author</th>
+      <td>LemonStand eCommerce Inc.</td>
+    </tr>
+  </table>
+
+
+<div class="api-description">
+  Represents a model form field definition. 
+Objects of this class are used for defining form field properties in models.
+List Behavior use data from 
+form definition objects to display fields in forms.
+<br/><div class="api-separator"></div>
+Almost every class property has a method with a matching name and usually properties are not used directly.
+Class methods can be called as a chain:
+<div class="codeblock"><pre class="brush:php; collapse:false">$this-&gt;add_form_field('price_tiers')-&gt;tab('Pricing')-&gt;renderAs('price_tiers');</pre></div></div>
+
+  
+  <div class="api-property-summary api-toggle-parent">
+      <h3 class="api-section-header">Public properties</h3>
+    
+          <p><a href="index.html#" class="api-toggle">Show</a> inherited properties.</p>
+    
+    <table class="api-summary-table">
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Defined By</th>
+      </tr>
+              <tr class="">
+          <td><a href="index.html#addAttachmentLabel-property">addAttachmentLabel</a></td>
+          <td>string</td>
+          <td>specifies prompt message for a file attachment field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#checkboxOnState-property">checkboxOnState</a></td>
+          <td>string</td>
+          <td>specifies value corresponding the <em>on</em> state of a checkbox field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#collapsable-property">collapsable</a></td>
+          <td>boolean</td>
+          <td>determines whether the element should be placed to the collapsable form area.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#comment-property">comment</a></td>
+          <td>string</td>
+          <td>specifies the element comment.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#commentHTML-property">commentHTML</a></td>
+          <td>boolean</td>
+          <td>determines whether the comment contains HTML tags.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#commentPosition-property">commentPosition</a></td>
+          <td>string</td>
+          <td>specifies the comment position.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#commentTooltip-property">commentTooltip</a></td>
+          <td>string</td>
+          <td>specifies a tooltip text for the field comment.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#cssClasses-property">cssClasses</a></td>
+          <td>string</td>
+          <td>specifies CSS class to be applied to the field container element.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#cssClassName-property">cssClassName</a></td>
+          <td>string</td>
+          <td>specifies CSS class to be applied to the field LI element.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#dbName-property">dbName</a></td>
+          <td>string</td>
+          <td>specifies the database column or relation name.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#disabled-property">disabled</a></td>
+          <td>boolean</td>
+          <td>determines whether the field is disabled on the form.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#emptyOption-property">emptyOption</a></td>
+          <td>string</td>
+          <td>specifies a label corresponding an empty option for drop-down elements.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#fileDownloadBaseUrl-property">fileDownloadBaseUrl</a></td>
+          <td>string</td>
+          <td>sets a base URL for file links for a file attachments field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#formElementPartial-property">formElementPartial</a></td>
+          <td>string</td>
+          <td>specifies name of a partial to render instead of the normal form field markup.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#formSide-property">formSide</a></td>
+          <td>string</td>
+          <td>specifies the form side the element should be placed to.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#gridColumns-property">gridColumns</a></td>
+          <td>array</td>
+          <td>defines column configuration for a grid field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#gridSettings-property">gridSettings</a></td>
+          <td>array</td>
+          <td>defines configuration of a grid field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#hideContent-property">hideContent</a></td>
+          <td>boolean</td>
+          <td>determines a text area content should be hidden in a form.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlAllowMoreColors-property">htmlAllowMoreColors</a></td>
+          <td>boolean</td>
+          <td>specifies whether TinyMCE "more colors" feature is available for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlBackgroundColors-property">htmlBackgroundColors</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE background colors for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlBlockFormats-property">htmlBlockFormats</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE block formats for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlButtons1-property">htmlButtons1</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE toolbar #1 buttons for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlButtons2-property">htmlButtons2</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE toolbar #2 buttons for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlButtons3-property">htmlButtons3</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE toolbar #3 buttons for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlContentCss-property">htmlContentCss</a></td>
+          <td>string</td>
+          <td>specifies URL of a CSS file to style content of a TinyMCE editor for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlCustomStyles-property">htmlCustomStyles</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE custom styles for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlFontColors-property">htmlFontColors</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE font colors for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlFontSizes-property">htmlFontSizes</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE font sizes for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlFullWidth-property">htmlFullWidth</a></td>
+          <td>boolean</td>
+          <td>determines whether the HTML field should be full-width.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlPlugins-property">htmlPlugins</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE plugins for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlValidChildElements-property">htmlValidChildElements</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE valid child elements for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlValidElements-property">htmlValidElements</a></td>
+          <td>string</td>
+          <td>specifies a list of TinyMCE valid elements for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#imageThumbSize-property">imageThumbSize</a></td>
+          <td>integer</td>
+          <td>specifies thumbnail size (both width and height) for an image field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#language-property">language</a></td>
+          <td>string</td>
+          <td>specifies language for a code editor field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#nl2br-property">nl2br</a></td>
+          <td>string</td>
+          <td>specifies whether new lines in the field value should be converted to line breaks in a form preview.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#noAttachmentsLabel-property">noAttachmentsLabel</a></td>
+          <td>string</td>
+          <td>specifies a message to display in a file attachment field if there are no files attached.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#noForm-property">noForm</a></td>
+          <td>boolean</td>
+          <td>hides the element from forms.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#noLabel-property">noLabel</a></td>
+          <td>boolean</td>
+          <td>determines whether the element form label is invisible.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#noOptions-property">noOptions</a></td>
+          <td>string</td>
+          <td>specifies a text to display in multi-relation fields in case if no options were selected.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#noPreview-property">noPreview</a></td>
+          <td>boolean</td>
+          <td>makes the element invisible in the form preview.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#optionsHtmlEncode-property">optionsHtmlEncode</a></td>
+          <td>boolean</td>
+          <td>determines where options in a drop-down field should be HTML-encoded before they are displayed.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#optionsMethod-property">optionsMethod</a></td>
+          <td>string</td>
+          <td>specifies the common model's method name responsible for returning a list of options for a multi-option field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#optionStateMethod-property">optionStateMethod</a></td>
+          <td>string</td>
+          <td>specifies the common model's method name responsible for returning option state for a multi-option field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewComment-property">previewComment</a></td>
+          <td>string</td>
+          <td>specifies the element comment for the form preview.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewHelp-property">previewHelp</a></td>
+          <td>string</td>
+          <td>specifies HTML help string to be displayed in a form preview.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewLink-property">previewLink</a></td>
+          <td>string</td>
+          <td>specifies an URL for the field preview link.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewNoRelation-property">previewNoRelation</a></td>
+          <td>boolean</td>
+          <td>determines whether the relation preview is available for a relation field on the preview form.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#referenceDescriptionField-property">referenceDescriptionField</a></td>
+          <td>string</td>
+          <td>specifies a SQL expression for fetching option descriptions in reference-type fields.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#referenceFilter-property">referenceFilter</a></td>
+          <td>string</td>
+          <td>specifies a SQL expression for filtering reference-type fields.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#referenceSort-property">referenceSort</a></td>
+          <td>string</td>
+          <td>specifies a SQL expression for ordering options in reference-type fields.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#relationPreviewNoOptions-property">relationPreviewNoOptions</a></td>
+          <td>string</td>
+          <td>specifies a text to be displayed for a relation field on the preview form when the field has no related records.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#renderFilesAs-property">renderFilesAs</a></td>
+          <td>string</td>
+          <td>specifies a render mode for a file attachment field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#renderMode-property">renderMode</a></td>
+          <td>string</td>
+          <td>specifies the field render mode.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#renderOptions-property">renderOptions</a></td>
+          <td>array</td>
+          <td>specifies rendering options for complex fields and widgets.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#saveCallback-property">saveCallback</a></td>
+          <td>string</td>
+          <td>specifies JavaScript function name to be executed when Save button is clicked in a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#size-property">size</a></td>
+          <td>string</td>
+          <td>specifies a size of textarea fields.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#sortOrder-property">sortOrder</a></td>
+          <td>integer</td>
+          <td>specifies the element position in a form.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#tab-property">tab</a></td>
+          <td>string</td>
+          <td>specifies the form tab name.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#titlePartial-property">titlePartial</a></td>
+          <td>string</td>
+          <td>specifies name of a partial to render below the form field caption.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+          </table>
+  </div>  <div class="api-property-summary api-toggle-parent">
+  </div>  
+  <div class="api-method-summary api-toggle-parent">
+      <h3 class="api-section-header">Public methods</h3>
+    
+          <p><a href="index.html#" class="api-toggle">Show</a> inherited methods.</p>
+    
+    <table class="api-summary-table">
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Defined By</th>
+      </tr>
+              <tr class="">
+          <td><a href="index.html#addDocumentLabel()">addDocumentLabel()</a></td>
+          <td>sets prompt message for a file attachment field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#checkboxOnState()">checkboxOnState()</a></td>
+          <td>sets value corresponding the <em>on</em> state of a checkbox field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#collapsable()">collapsable()</a></td>
+          <td>places the element to the form or tab collapsable area.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#comment()">comment()</a></td>
+          <td>sets the element comment.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#commentTooltip()">commentTooltip()</a></td>
+          <td>specifies a tooltip text for the field comment.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#cssClasses()">cssClasses()</a></td>
+          <td>sets CSS class to be applied to the field container element.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#cssClassName()">cssClassName()</a></td>
+          <td>sets a CSS class name to apply to the field LI element.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#disabled()">disabled()</a></td>
+          <td>disables the form field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#emptyOption()">emptyOption()</a></td>
+          <td>specifies a label corresponding an empty option for drop-down elements.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#fileDownloadBaseUrl()">fileDownloadBaseUrl()</a></td>
+          <td>sets a base URL for file links for a file attachments field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#formElementPartial()">formElementPartial()</a></td>
+          <td>allows to render a specific partial instead of the standard field type specific partial.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#getColDefinition()">getColDefinition()</a></td>
+          <td>returns the model column definition corresponding the form field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#gridColumns()">gridColumns()</a></td>
+          <td>defines column configuration for a grid field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#gridSettings()">gridSettings()</a></td>
+          <td>defines configuration of a grid field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#hideContent()">hideContent()</a></td>
+          <td>hides a text area content in a form.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlAllowMoreColors()">htmlAllowMoreColors()</a></td>
+          <td>this option enables you to disable the "more colors" link in a HTML field for text and background color menus.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlBackgroundColors()">htmlBackgroundColors()</a></td>
+          <td>sets a list of TinyMCE background colors for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlBlockFormats()">htmlBlockFormats()</a></td>
+          <td>sets a list of TinyMCE block formats for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlButtons1()">htmlButtons1()</a></td>
+          <td>sets a list of buttons to be displayed in the 1st row of HTML field toolbar.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlButtons2()">htmlButtons2()</a></td>
+          <td>sets a list of buttons to be displayed in the 2nd row of HTML field toolbar.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlButtons3()">htmlButtons3()</a></td>
+          <td>sets a list of buttons to be displayed in the 3rd row of HTML field toolbar.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlContentCss()">htmlContentCss()</a></td>
+          <td>sets a custom CSS file to be used to style HTML field content.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlCustomStyles()">htmlCustomStyles()</a></td>
+          <td>sets a list of TinyMCE custom styles for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlFontColors()">htmlFontColors()</a></td>
+          <td>specifies a list of TinyMCE font colors for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlFontSizes()">htmlFontSizes()</a></td>
+          <td>sets a list of TinyMCE font sizes for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlFullWidht()">htmlFullWidht()</a></td>
+          <td>determines whether the HTML field should be full-width.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlFullWidth()">htmlFullWidth()</a></td>
+          <td>determines whether the HTML field should be full-width.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlPlugins()">htmlPlugins()</a></td>
+          <td>adds a list of TinyMCE plugins for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlValidChildElements()">htmlValidChildElements()</a></td>
+          <td>sets a list of TinyMCE valid child elements for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#htmlValidElements()">htmlValidElements()</a></td>
+          <td>sets a list of TinyMCE valid elements for a HTML field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#imageThumbSize()">imageThumbSize()</a></td>
+          <td>sets thumbnail size (both width and height) for an image field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#language()">language()</a></td>
+          <td>sets a language for code editor fields syntax highlighting.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#nl2br()">nl2br()</a></td>
+          <td>determines whether new lines in the field value should be converted to line breaks in a form preview.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#noAttachmentsLabel()">noAttachmentsLabel()</a></td>
+          <td>sets a message to display in a file attachment field if there are no files attached.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#noForm()">noForm()</a></td>
+          <td>hides the element from the form.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#noLabel()">noLabel()</a></td>
+          <td>hides the element form label.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#noOptions()">noOptions()</a></td>
+          <td>sets a text to display in multi-relation fields in case if no options were selected.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#noPreview()">noPreview()</a></td>
+          <td>hides the element from the form preview.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#optionsHtmlEncode()">optionsHtmlEncode()</a></td>
+          <td>determines where options in a drop-down field should be HTML-encoded before they are displayed.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#optionsMethod()">optionsMethod()</a></td>
+          <td>sets the common model's method name responsible for returning a list of options for a multi-option field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#optionStateMethod()">optionStateMethod()</a></td>
+          <td>sets the common model's method name responsible for returning option state for a multi-option field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#placeholder()">placeholder()</a></td>
+          <td>sets the placeholder for the form field. Use the second parameter when setting the placeholder for multi-field form fields like datetime.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewComment()">previewComment()</a></td>
+          <td>sets the element comment for the form preview.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewHelp()">previewHelp()</a></td>
+          <td>specifies HTML help string to be displayed in a form preview.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewLink()">previewLink()</a></td>
+          <td>sets an URL for the field preview link.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewNoOptionsMessage()">previewNoOptionsMessage()</a></td>
+          <td>sets a text to be displayed for a relation field on the preview form when the field has no related records.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#previewNoRelation()">previewNoRelation()</a></td>
+          <td>determines whether the relation preview is hidden for a relation field on the preview form.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#referenceDescriptionField()">referenceDescriptionField()</a></td>
+          <td>sets a SQL expression for fetching option descriptions in reference-type fields.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#referenceFilter()">referenceFilter()</a></td>
+          <td>sets SQL expression for filtering reference-type fields.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#referenceSort()">referenceSort()</a></td>
+          <td>sets a SQL expression for ordering options in reference-type fields.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#renderAs()">renderAs()</a></td>
+          <td>specifies the field render mode.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#renderFilesAs()">renderFilesAs()</a></td>
+          <td>sets a render mode for a file attachment field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#saveCallback()">saveCallback()</a></td>
+          <td>sets a JavaScript function name to be executed when a user clicks Save button on the HTML editor toolbar.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#side()">side()</a></td>
+          <td>sets the form side the field should be placed to.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#size()">size()</a></td>
+          <td>sets a size of textarea fields.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#sortOrder()">sortOrder()</a></td>
+          <td>sets the element position on the form.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="api-hidden">
+          <td><a href="../db_formelement/index.html#tab()">tab()</a></td>
+          <td>specifies a caption of the tab to place the field to.</td>
+          <td><a href="../db_formelement/index.html">Db_FormElement</a></td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#titlePartial()">titlePartial()</a></td>
+          <td>specifies name of a partial to render below the form field caption.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+              <tr class="">
+          <td><a href="index.html#validation()">validation()</a></td>
+          <td>returns the validation rule set object corresponding to the form field.</td>
+          <td>Db_FormFieldDefinition</td>
+        </tr>
+          </table>
+  </div>  <div class="api-method-summary api-toggle-parent">
+  </div>
+  <div class="api-property-summary api-toggle-parent">
+  </div>
+    <h3>Property details</h3>
+  
+      <h4 class="api-object-name">
+      <a href="index.html#addAttachmentLabel-property" name="addAttachmentLabel-property">¶</a>
+      <span>addAttachmentLabel</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$addAttachmentLabel</b>;</div>
+    
+    <div class="api-description">Specifies prompt message for a file attachment field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#checkboxOnState-property" name="checkboxOnState-property">¶</a>
+      <span>checkboxOnState</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$checkboxOnState</b>;</div>
+    
+    <div class="api-description">Specifies value corresponding the <em>on</em> state of a checkbox field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#comment-property" name="comment-property">¶</a>
+      <span>comment</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$comment</b>;</div>
+    
+    <div class="api-description">Specifies the element comment.
+Comments are displayed on the form below or above the element.
+See <a href="index.html#comment()">comment() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#commentHTML-property" name="commentHTML-property">¶</a>
+      <span>commentHTML</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$commentHTML</b>;</div>
+    
+    <div class="api-description">Determines whether the comment contains HTML tags.
+See <a href="index.html#comment()">comment() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#commentPosition-property" name="commentPosition-property">¶</a>
+      <span>commentPosition</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$commentPosition</b>;</div>
+    
+    <div class="api-description">Specifies the comment position.
+Supported values are <em>above</em> or <em>below</em>.
+See <a href="index.html#comment()">comment() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#commentTooltip-property" name="commentTooltip-property">¶</a>
+      <span>commentTooltip</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$commentTooltip</b>;</div>
+    
+    <div class="api-description">Specifies a tooltip text for the field comment.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#cssClasses-property" name="cssClasses-property">¶</a>
+      <span>cssClasses</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$cssClasses</b>;</div>
+    
+    <div class="api-description">Specifies CSS class to be applied to the field container element.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#cssClassName-property" name="cssClassName-property">¶</a>
+      <span>cssClassName</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$cssClassName</b>;</div>
+    
+    <div class="api-description">Specifies CSS class to be applied to the field LI element.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#dbName-property" name="dbName-property">¶</a>
+      <span>dbName</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$dbName</b>;</div>
+    
+    <div class="api-description">Specifies the database column or relation name.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#disabled-property" name="disabled-property">¶</a>
+      <span>disabled</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$disabled</b>;</div>
+    
+    <div class="api-description">Determines whether the field is disabled on the form.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#emptyOption-property" name="emptyOption-property">¶</a>
+      <span>emptyOption</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$emptyOption</b>;</div>
+    
+    <div class="api-description">Specifies a label corresponding an empty option for drop-down elements. 
+See <a href="index.html#emptyOption()">emptyOption() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#fileDownloadBaseUrl-property" name="fileDownloadBaseUrl-property">¶</a>
+      <span>fileDownloadBaseUrl</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$fileDownloadBaseUrl</b>;</div>
+    
+    <div class="api-description">Sets a base URL for file links for a file attachments field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#formElementPartial-property" name="formElementPartial-property">¶</a>
+      <span>formElementPartial</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$formElementPartial</b>;</div>
+    
+    <div class="api-description">Specifies name of a partial to render instead of the normal form field markup.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#formSide-property" name="formSide-property">¶</a>
+      <span>formSide</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$formSide</b>;</div>
+    
+    <div class="api-description">Specifies the form side the element should be placed to.
+Supported values are <em>left</em>, <em>right</em>, <em>full</em>.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#gridColumns-property" name="gridColumns-property">¶</a>
+      <span>gridColumns</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$gridColumns</b>;</div>
+    
+    <div class="api-description">Defines column configuration for a grid field.
+See <a href="index.html#gridColumns()">gridColumns() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#gridSettings-property" name="gridSettings-property">¶</a>
+      <span>gridSettings</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$gridSettings</b>;</div>
+    
+    <div class="api-description">Defines configuration of a grid field.
+See <a href="index.html#gridSettings()">gridSettings() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#hideContent-property" name="hideContent-property">¶</a>
+      <span>hideContent</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$hideContent</b>;</div>
+    
+    <div class="api-description">Determines a text area content should be hidden in a form.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlAllowMoreColors-property" name="htmlAllowMoreColors-property">¶</a>
+      <span>htmlAllowMoreColors</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$htmlAllowMoreColors</b>;</div>
+    
+    <div class="api-description">Specifies whether TinyMCE "more colors" feature is available for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlBackgroundColors-property" name="htmlBackgroundColors-property">¶</a>
+      <span>htmlBackgroundColors</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlBackgroundColors</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE background colors for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlBlockFormats-property" name="htmlBlockFormats-property">¶</a>
+      <span>htmlBlockFormats</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlBlockFormats</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE block formats for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlButtons1-property" name="htmlButtons1-property">¶</a>
+      <span>htmlButtons1</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlButtons1</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE toolbar #1 buttons for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlButtons2-property" name="htmlButtons2-property">¶</a>
+      <span>htmlButtons2</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlButtons2</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE toolbar #2 buttons for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlButtons3-property" name="htmlButtons3-property">¶</a>
+      <span>htmlButtons3</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlButtons3</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE toolbar #3 buttons for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlContentCss-property" name="htmlContentCss-property">¶</a>
+      <span>htmlContentCss</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlContentCss</b>;</div>
+    
+    <div class="api-description">Specifies URL of a CSS file to style content of a TinyMCE editor for a HTML field.
+The URL should be relative to LemonStand application root.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlCustomStyles-property" name="htmlCustomStyles-property">¶</a>
+      <span>htmlCustomStyles</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlCustomStyles</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE custom styles for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlFontColors-property" name="htmlFontColors-property">¶</a>
+      <span>htmlFontColors</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlFontColors</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE font colors for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlFontSizes-property" name="htmlFontSizes-property">¶</a>
+      <span>htmlFontSizes</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlFontSizes</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE font sizes for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlFullWidth-property" name="htmlFullWidth-property">¶</a>
+      <span>htmlFullWidth</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$htmlFullWidth</b>;</div>
+    
+    <div class="api-description">Determines whether the HTML field should be full-width.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlPlugins-property" name="htmlPlugins-property">¶</a>
+      <span>htmlPlugins</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlPlugins</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE plugins for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlValidChildElements-property" name="htmlValidChildElements-property">¶</a>
+      <span>htmlValidChildElements</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlValidChildElements</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE valid child elements for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlValidElements-property" name="htmlValidElements-property">¶</a>
+      <span>htmlValidElements</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$htmlValidElements</b>;</div>
+    
+    <div class="api-description">Specifies a list of TinyMCE valid elements for a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#imageThumbSize-property" name="imageThumbSize-property">¶</a>
+      <span>imageThumbSize</span> property
+    </h4>
+    
+    <div class="api-signature">public integer <b>$imageThumbSize</b>;</div>
+    
+    <div class="api-description">Specifies thumbnail size (both width and height) for an image field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#language-property" name="language-property">¶</a>
+      <span>language</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$language</b>;</div>
+    
+    <div class="api-description">Specifies language for a code editor field.
+See <a href="index.html#language()">language() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#nl2br-property" name="nl2br-property">¶</a>
+      <span>nl2br</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$nl2br</b>;</div>
+    
+    <div class="api-description">Specifies whether new lines in the field value should be converted to line breaks in a form preview.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#noAttachmentsLabel-property" name="noAttachmentsLabel-property">¶</a>
+      <span>noAttachmentsLabel</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$noAttachmentsLabel</b>;</div>
+    
+    <div class="api-description">Specifies a message to display in a file attachment field if there are no files attached.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#noLabel-property" name="noLabel-property">¶</a>
+      <span>noLabel</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$noLabel</b>;</div>
+    
+    <div class="api-description">Determines whether the element form label is invisible.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#noOptions-property" name="noOptions-property">¶</a>
+      <span>noOptions</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$noOptions</b>;</div>
+    
+    <div class="api-description">Specifies a text to display in multi-relation fields in case if no options were selected.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#optionsHtmlEncode-property" name="optionsHtmlEncode-property">¶</a>
+      <span>optionsHtmlEncode</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$optionsHtmlEncode</b>;</div>
+    
+    <div class="api-description">Determines where options in a drop-down field should be HTML-encoded before they are displayed.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#optionsMethod-property" name="optionsMethod-property">¶</a>
+      <span>optionsMethod</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$optionsMethod</b>;</div>
+    
+    <div class="api-description">Specifies the common model's method name responsible for returning a list of options for a multi-option field. 
+See <a href="index.html#optionsMethod()">optionsMethod() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#optionStateMethod-property" name="optionStateMethod-property">¶</a>
+      <span>optionStateMethod</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$optionStateMethod</b>;</div>
+    
+    <div class="api-description">Specifies the common model's method name responsible for returning option state for a multi-option field. 
+See <a href="index.html#optionStateMethod()">optionStateMethod() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewComment-property" name="previewComment-property">¶</a>
+      <span>previewComment</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$previewComment</b>;</div>
+    
+    <div class="api-description">Specifies the element comment for the form preview.
+By default the preview comment matches the regular form comment.
+See <a href="index.html#previewComment()">previewComment() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewHelp-property" name="previewHelp-property">¶</a>
+      <span>previewHelp</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$previewHelp</b>;</div>
+    
+    <div class="api-description">Specifies HTML help string to be displayed in a form preview.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewLink-property" name="previewLink-property">¶</a>
+      <span>previewLink</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$previewLink</b>;</div>
+    
+    <div class="api-description">Specifies an URL for the field preview link.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewNoRelation-property" name="previewNoRelation-property">¶</a>
+      <span>previewNoRelation</span> property
+    </h4>
+    
+    <div class="api-signature">public boolean <b>$previewNoRelation</b>;</div>
+    
+    <div class="api-description">Determines whether the relation preview is available for a relation field on the preview form.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#referenceDescriptionField-property" name="referenceDescriptionField-property">¶</a>
+      <span>referenceDescriptionField</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$referenceDescriptionField</b>;</div>
+    
+    <div class="api-description">Specifies a SQL expression for fetching option descriptions in reference-type fields.
+See <a href="index.html#referenceDescriptionField()">referenceDescriptionField() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#referenceFilter-property" name="referenceFilter-property">¶</a>
+      <span>referenceFilter</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$referenceFilter</b>;</div>
+    
+    <div class="api-description">Specifies a SQL expression for filtering reference-type fields.
+See <a href="index.html#referenceFilter()">referenceFilter() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#referenceSort-property" name="referenceSort-property">¶</a>
+      <span>referenceSort</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$referenceSort</b>;</div>
+    
+    <div class="api-description">Specifies a SQL expression for ordering options in reference-type fields.
+See <a href="index.html#referenceSort()">referenceSort() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#relationPreviewNoOptions-property" name="relationPreviewNoOptions-property">¶</a>
+      <span>relationPreviewNoOptions</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$relationPreviewNoOptions</b>;</div>
+    
+    <div class="api-description">Specifies a text to be displayed for a relation field on the preview form when the field has no related records.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#renderFilesAs-property" name="renderFilesAs-property">¶</a>
+      <span>renderFilesAs</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$renderFilesAs</b>;</div>
+    
+    <div class="api-description">Specifies a render mode for a file attachment field.
+See <a href="index.html#renderFilesAs()">renderFilesAs() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#renderMode-property" name="renderMode-property">¶</a>
+      <span>renderMode</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$renderMode</b>;</div>
+    
+    <div class="api-description">Specifies the field render mode.
+See <a href="index.html#renderAs()">renderAs() method</a> for details
+about supported render modes.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#renderOptions-property" name="renderOptions-property">¶</a>
+      <span>renderOptions</span> property
+    </h4>
+    
+    <div class="api-signature">public array <b>$renderOptions</b>;</div>
+    
+    <div class="api-description">Specifies rendering options for complex fields and widgets.
+See documentation for a specific field for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#saveCallback-property" name="saveCallback-property">¶</a>
+      <span>saveCallback</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$saveCallback</b>;</div>
+    
+    <div class="api-description">Specifies JavaScript function name to be executed when Save button is clicked in a HTML field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#size-property" name="size-property">¶</a>
+      <span>size</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$size</b>;</div>
+    
+    <div class="api-description">Specifies a size of textarea fields. 
+See <a href="index.html#size()">size() method</a> for details.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#titlePartial-property" name="titlePartial-property">¶</a>
+      <span>titlePartial</span> property
+    </h4>
+    
+    <div class="api-signature">public string <b>$titlePartial</b>;</div>
+    
+    <div class="api-description">Specifies name of a partial to render below the form field caption.</div>
+
+          <h3>Method details</h3>
+  
+      <h4 class="api-object-name">
+      <a href="index.html#addDocumentLabel()" name="addDocumentLabel()">¶</a>
+      <span>addDocumentLabel()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>addDocumentLabel</b>(string $label)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$label</th>
+            <td>string</td>
+            <td>specifies the label text.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets prompt message for a file attachment field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#checkboxOnState()" name="checkboxOnState()">¶</a>
+      <span>checkboxOnState()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>checkboxOnState</b>(string $value)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$value</th>
+            <td>string</td>
+            <td>specifies the value.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets value corresponding the <em>on</em> state of a checkbox field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#comment()" name="comment()">¶</a>
+      <span>comment()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>comment</b>(string $text, string $position='below', bool $commentHTML=false)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$text</th>
+            <td>string</td>
+            <td>specifies the comment text.</td>
+          </tr>
+                  <tr>
+            <th>$position</th>
+            <td>string</td>
+            <td>specifies a comment position. Supported values are: <em>above</em>, <em>below</em>.</td>
+          </tr>
+                  <tr>
+            <th>$commentHTML</th>
+            <td>bool</td>
+            <td>determines whether the comment contains HTML tags which should be preserved.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets the element comment.
+Comments are displayed on the form below or above the element.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#commentTooltip()" name="commentTooltip()">¶</a>
+      <span>commentTooltip()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>commentTooltip</b>(string $help_string)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$help_string</th>
+            <td>string</td>
+            <td>specifies the tooltip string.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Specifies a tooltip text for the field comment.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#cssClasses()" name="cssClasses()">¶</a>
+      <span>cssClasses()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>cssClasses</b>(string $classes)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$classes</th>
+            <td>string</td>
+            <td>specifies a string containing CSS class name(s);</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets CSS class to be applied to the field container element.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#cssClassName()" name="cssClassName()">¶</a>
+      <span>cssClassName()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>cssClassName</b>(string $classes)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$classes</th>
+            <td>string</td>
+            <td>specifies a string containing CSS class name(s);</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a CSS class name to apply to the field LI element.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#disabled()" name="disabled()">¶</a>
+      <span>disabled()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>disabled</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Disables the form field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#emptyOption()" name="emptyOption()">¶</a>
+      <span>emptyOption()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>emptyOption</b>(string $text)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$text</th>
+            <td>string</td>
+            <td>specifies the option text.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Specifies a label corresponding an empty option for drop-down elements
+Use this method for the default empty option like <em>&lt;please select color&gt;</em>.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#fileDownloadBaseUrl()" name="fileDownloadBaseUrl()">¶</a>
+      <span>fileDownloadBaseUrl()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>fileDownloadBaseUrl</b>(string $url)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$url</th>
+            <td>string</td>
+            <td>specifies the base URL.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a base URL for file links for a file attachments field.
+Usual value for this method is <em>url('ls_backend/files/get/')</em>.</div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="../db_file/index.html">Db_File</a></li>
+            
+        </ul>
+</div>      <h4 class="api-object-name">
+      <a href="index.html#formElementPartial()" name="formElementPartial()">¶</a>
+      <span>formElementPartial()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>formElementPartial</b>(string $partial_name)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$partial_name</th>
+            <td>string</td>
+            <td>specifies the partial name or an absolute partial's file path.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Allows to render a specific partial instead of the standard field type specific partial
+The partial file should be placed to the views directory of the controller
+which renders the form. Alternatively you can specify the absolute pat to the 
+partial.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#getColDefinition()" name="getColDefinition()">¶</a>
+      <span>getColDefinition()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../db_columndefinition/index.html">Db_ColumnDefinition</a> <b>getColDefinition</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../db_columndefinition/index.html">Db_ColumnDefinition</a></td>
+            <td>returns the column definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Returns the model column definition corresponding the form field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#gridColumns()" name="gridColumns()">¶</a>
+      <span>gridColumns()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>gridColumns</b>(array $columns)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$columns</th>
+            <td>array</td>
+            <td>the column configuration array.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Defines column configuration for a grid field.
+Grid control requires the corresponding model column to contain an array with the grid data. 
+Usually the data is contained in a text filed and serialized before the model data is saved to the database.
+Column configuration is defined as an associative array with column identifiers in the array keys and 
+column settings in the values. Example of the configuration array:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+array(
+ 'country'=&gt;array('title'=&gt;'Country Code', 'align'=&gt;'left'), 
+ 'state'=&gt;array('title'=&gt;'State Code', 'align'=&gt;'left', 'width'=&gt;'100'), 
+ 'read_only_col'=&gt;array('title'=&gt;'Read only', 'read_only'=&gt;true)
+)
+</pre></div></div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="index.html#gridSettings()">gridSettings()</a></li>
+            
+        </ul>
+</div>      <h4 class="api-object-name">
+      <a href="index.html#gridSettings()" name="gridSettings()">¶</a>
+      <span>gridSettings()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>gridSettings</b>(array $settings)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$settings</th>
+            <td>array</td>
+            <td>specifies the grid settings.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Defines configuration of a grid field.
+The grid control configuration is defined as an array. Example configuration:
+<div class="codeblock"><pre class="brush:php; collapse:false">array(
+  'no_toolbar'=&gt;true, 
+  'allow_adding_rows'=&gt;false, 
+  'allow_deleting_rows'=&gt;false, 
+  'no_sorting'=&gt;false
+)</pre></div></div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="index.html#gridColumns()">gridColumns()</a></li>
+            
+        </ul>
+</div>      <h4 class="api-object-name">
+      <a href="index.html#hideContent()" name="hideContent()">¶</a>
+      <span>hideContent()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>hideContent</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Hides a text area content in a form.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlAllowMoreColors()" name="htmlAllowMoreColors()">¶</a>
+      <span>htmlAllowMoreColors()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlAllowMoreColors</b>(string $allow)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$allow</th>
+            <td>string</td>
+            <td>indicates whether the more colors link should be enabled.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">This option enables you to disable the "more colors" link in a HTML field for text and background color menus.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlBackgroundColors()" name="htmlBackgroundColors()">¶</a>
+      <span>htmlBackgroundColors()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlBackgroundColors</b>(string $colors)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$colors</th>
+            <td>string</td>
+            <td>specifies a comma-separated list of colors: "FF00FF,FFFF00,000000".</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of TinyMCE background colors for a HTML field.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about background colors.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlBlockFormats()" name="htmlBlockFormats()">¶</a>
+      <span>htmlBlockFormats()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlBlockFormats</b>(string $formats)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$formats</th>
+            <td>string</td>
+            <td>specifies a comma-separated list of formats</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of TinyMCE block formats for a HTML field.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about block formats.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlButtons1()" name="htmlButtons1()">¶</a>
+      <span>htmlButtons1()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlButtons1</b>(string $buttons)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$buttons</th>
+            <td>string</td>
+            <td>a list of buttons to display.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of buttons to be displayed in the 1st row of HTML field toolbar.
+Please refer to <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about buttons.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlButtons2()" name="htmlButtons2()">¶</a>
+      <span>htmlButtons2()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlButtons2</b>(string $buttons)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$buttons</th>
+            <td>string</td>
+            <td>a list of buttons to display.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of buttons to be displayed in the 2nd row of HTML field toolbar.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about buttons.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlButtons3()" name="htmlButtons3()">¶</a>
+      <span>htmlButtons3()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlButtons3</b>(string $buttons)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$buttons</th>
+            <td>string</td>
+            <td>a list of buttons to display.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of buttons to be displayed in the 3rd row of HTML field toolbar.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about buttons.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlContentCss()" name="htmlContentCss()">¶</a>
+      <span>htmlContentCss()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlContentCss</b>(string $url)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$url</th>
+            <td>string</td>
+            <td>specifies an URL of CSS file</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a custom CSS file to be used to style HTML field content.
+The URL should be relative to LemonStand application root.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlCustomStyles()" name="htmlCustomStyles()">¶</a>
+      <span>htmlCustomStyles()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlCustomStyles</b>(string $styles)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$styles</th>
+            <td>string</td>
+            <td>specifies a semicolon-separated list of styles</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of TinyMCE custom styles for a HTML field.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about custom styles.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlFontColors()" name="htmlFontColors()">¶</a>
+      <span>htmlFontColors()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlFontColors</b>(string $colors)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$colors</th>
+            <td>string</td>
+            <td>specifies a comma-separated list of colors: "FF00FF,FFFF00,000000"</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Specifies a list of TinyMCE font colors for a HTML field.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about font colors.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlFontSizes()" name="htmlFontSizes()">¶</a>
+      <span>htmlFontSizes()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlFontSizes</b>(string $sizes)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$sizes</th>
+            <td>string</td>
+            <td>specifies a comma-separated list of sizes</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of TinyMCE font sizes for a HTML field.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about font sizes.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlFullWidht()" name="htmlFullWidht()">¶</a>
+      <span>htmlFullWidht()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlFullWidht</b>(boolean $full_width)</div>
+    
+          <p class="api-deprecated">This method is deprecated. Use <a href="index.html#htmlFullWidth()">htmlFullWidth()</a> method instead.</p>
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$full_width</th>
+            <td>boolean</td>
+            <td>determines whether the field should be full-width.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Determines whether the HTML field should be full-width.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlFullWidth()" name="htmlFullWidth()">¶</a>
+      <span>htmlFullWidth()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlFullWidth</b>(boolean $full_width)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$full_width</th>
+            <td>boolean</td>
+            <td>determines whether the field should be full-width.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Determines whether the HTML field should be full-width.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlPlugins()" name="htmlPlugins()">¶</a>
+      <span>htmlPlugins()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlPlugins</b>(string $plugins)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$plugins</th>
+            <td>string</td>
+            <td>a list of plugins to load.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Adds a list of TinyMCE plugins for a HTML field.
+Please refer to <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about plugins. By default the following plugins
+are loaded: <em>paste</em>, <em>searchreplace</em>, <em>advlink</em>, <em>inlinepopups</em>.
+This method adds plugin to the existing list.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlValidChildElements()" name="htmlValidChildElements()">¶</a>
+      <span>htmlValidChildElements()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlValidChildElements</b>(string $value)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$value</th>
+            <td>string</td>
+            <td>specifies a list of valid child elements, as text</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of TinyMCE valid child elements for a HTML field.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about valid child elements.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#htmlValidElements()" name="htmlValidElements()">¶</a>
+      <span>htmlValidElements()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>htmlValidElements</b>(string $value)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$value</th>
+            <td>string</td>
+            <td>specifies a list of valid elements, as text.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a list of TinyMCE valid elements for a HTML field.
+Please refer <a href="http://www.tinymce.com/">TinyMCE</a> documentation for details about valid elements.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#imageThumbSize()" name="imageThumbSize()">¶</a>
+      <span>imageThumbSize()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>imageThumbSize</b>(integer $size)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$size</th>
+            <td>integer</td>
+            <td>specifies the size.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets thumbnail size (both width and height) for an image field.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#language()" name="language()">¶</a>
+      <span>language()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>language</b>(string $language)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$language</th>
+            <td>string</td>
+            <td>specifies the language name.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a language for code editor fields syntax highlighting. 
+Supported languages are: <em>css</em>, <em>html</em>, <em>javascript</em>, <em>json</em>, <em>php</em>, <em>xml</em>.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#nl2br()" name="nl2br()">¶</a>
+      <span>nl2br()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>nl2br</b>(boolean $convert)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$convert</th>
+            <td>boolean</td>
+            <td>determines whether new lines should be converted to line breaks.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Determines whether new lines in the field value should be converted to line breaks in a form preview.
+This method works only with text areas.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#noAttachmentsLabel()" name="noAttachmentsLabel()">¶</a>
+      <span>noAttachmentsLabel()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>noAttachmentsLabel</b>(string $text)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$text</th>
+            <td>string</td>
+            <td>specifies the message text.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a message to display in a file attachment field if there are no files attached.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#noLabel()" name="noLabel()">¶</a>
+      <span>noLabel()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>noLabel</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Hides the element form label.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#noOptions()" name="noOptions()">¶</a>
+      <span>noOptions()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>noOptions</b>(string $text)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$text</th>
+            <td>string</td>
+            <td>specifies the text to display.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a text to display in multi-relation fields in case if no options were selected.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#optionsHtmlEncode()" name="optionsHtmlEncode()">¶</a>
+      <span>optionsHtmlEncode()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>optionsHtmlEncode</b>(boolean $encode)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$encode</th>
+            <td>boolean</td>
+            <td>determines whether options should be encoded.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Determines where options in a drop-down field should be HTML-encoded before they are displayed.
+By default options are always encoded, but you can disable this feature if you need
+the option to contain HTML tags which should be outputted as is.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#optionsMethod()" name="optionsMethod()">¶</a>
+      <span>optionsMethod()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>optionsMethod</b>(string $name)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$name</th>
+            <td>string</td>
+            <td>specifies the method name.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets the common model's method name responsible for returning a list of options for a multi-option field. 
+Allows to define a single method responsible for returning options for different drop-down, checkbox list and radio button form fields.
+The method should be defined as follows:
+<div class="codeblock"><pre class="brush:php; collapse:false">public method method_name($db_name, $key_value = -1) 
+{
+  if ($db_name == 'color')
+    return array(33=&gt;'Red', 34=&gt;'Blue');
+
+  return false;
+}</pre></div>
+The parameter passed to the method is the column name. The method should return options for the specified column
+or FALSE if the column should use default options. The second method parameter is the key value. Please see
+<a href="index.html#renderAs()">renderAs()</a> method description for details about this parameter.
+The method must return an array of record identifiers and values.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#optionStateMethod()" name="optionStateMethod()">¶</a>
+      <span>optionStateMethod()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>optionStateMethod</b>(string $name)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$name</th>
+            <td>string</td>
+            <td>specifies the method name.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets the common model's method name responsible for returning option state for a multi-option field. 
+Allows to define a single method responsible for returning option state for different checkbox list and radio button form fields.
+The method should be defined as follows:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public method method_name($db_name, $value)
+{
+  if ($db_value == 'color')
+    return $this-&gt;color == $value;
+}
+</pre></div>
+The method must return a boolean value determining the option state.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#placeholder()" name="placeholder()">¶</a>
+      <span>placeholder()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>placeholder</b>(mixed $placeholder, string $field_section=NULL)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$placeholder</th>
+            <td>mixed</td>
+            <td>specifies the placeholder (can be string or boolean, set to false to hide default date/datetime placeholders).</td>
+          </tr>
+                  <tr>
+            <th>$field_section</th>
+            <td>string</td>
+            <td>specifies the field section the placeholder is for (used values: 'time' for time section of a datetime field).</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets the placeholder for the form field. Use the second parameter when setting the placeholder for multi-field form fields like datetime.
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public function define_form_fields($context = null)
+{
+  //set placeholder for a text, textarea or date field
+  $this-&gt;add_form_field('test_field')-&gt;placeholder('placeholder text here');
+  //set placeholders for a datetime field
+  $this-&gt;add_form_field('test_datetime')-&gt;placeholder('03/31/2012')-&gt;placeholder-&gt;('15:30:00', 'time');
+}
+</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewComment()" name="previewComment()">¶</a>
+      <span>previewComment()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>previewComment</b>(string $text)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$text</th>
+            <td>string</td>
+            <td>specifies the comment text.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets the element comment for the form preview.
+By default the preview comment matches the regular form comment.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewHelp()" name="previewHelp()">¶</a>
+      <span>previewHelp()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>previewHelp</b>(string $help_string)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$help_string</th>
+            <td>string</td>
+            <td>specifies the help string.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Specifies HTML help string to be displayed in a form preview.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewLink()" name="previewLink()">¶</a>
+      <span>previewLink()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>previewLink</b>(string $url)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$url</th>
+            <td>string</td>
+            <td>specifies the link URL.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets an URL for the field preview link. 
+If the URL is specified, the field value on the preview form turns into a link.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewNoOptionsMessage()" name="previewNoOptionsMessage()">¶</a>
+      <span>previewNoOptionsMessage()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>previewNoOptionsMessage</b>(string $message)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$message</th>
+            <td>string</td>
+            <td>specifies the message text.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a text to be displayed for a relation field on the preview form when the field has no related records.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#previewNoRelation()" name="previewNoRelation()">¶</a>
+      <span>previewNoRelation()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>previewNoRelation</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Determines whether the relation preview is hidden for a relation field on the preview form.
+Relations on preview forms have a link for previewing the related record. This method
+allows to disable this feature.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#referenceDescriptionField()" name="referenceDescriptionField()">¶</a>
+      <span>referenceDescriptionField()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>referenceDescriptionField</b>(string $expression)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$expression</th>
+            <td>string</td>
+            <td>specifies the SQL expression.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a SQL expression for fetching option descriptions in reference-type fields.
+Option descriptions are supported by the radio button and checkbox list fields.
+Specify the expression the parameter. The expression can be a table name or any SQL expression
+returning a scalar value, for example CONCAT: <em>concat(login_name, ' (', first_name, ' ', last_name, ')')</em></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#referenceFilter()" name="referenceFilter()">¶</a>
+      <span>referenceFilter()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>referenceFilter</b>(string $expression)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$expression</th>
+            <td>string</td>
+            <td>specifies an SQL expression. Example: <em>status is not null and status = 1</em></td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets SQL expression for filtering reference-type fields.
+Use this method to filter options for relation-based multi-value fields.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#referenceSort()" name="referenceSort()">¶</a>
+      <span>referenceSort()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>referenceSort</b>(string $expression)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$expression</th>
+            <td>string</td>
+            <td>specifies an SQL sorting expression.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a SQL expression for ordering options in reference-type fields.
+Usually you can use the referred table name as the SQL expression, for example:
+<div class="codeblock"><pre class="brush:php; collapse:false">$this-&gt;add_form_field('customer_group')-&gt;referenceSort('name asc');</pre></div></div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#renderAs()" name="renderAs()">¶</a>
+      <span>renderAs()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>renderAs</b>(string $render_mode, array $options=array())</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$render_mode</th>
+            <td>string</td>
+            <td>specifies the render mode.</td>
+          </tr>
+                  <tr>
+            <th>$options</th>
+            <td>array</td>
+            <td>a list of render mode specific options.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Specifies the field render mode. 
+By default render modes are guessed automatically basing in the database column or relation types:
+<ul>
+  <li><em>tinyint</em> columns are rendered as checkboxes.</li>
+  <li><em>float</em>, <em>numeric</em> and <em>varchar</em> columns are rendered as input TEXT elements.</li>
+  <li><em>textarea</em> columns are rendered as input TEXT elements.</li>
+  <li><em>datetime</em> columns are rendered as the datetime widget.</li>
+  <li><em>db_date</em> columns are rendered as the date widget.</li>
+  <li><em>belongs_to</em> relations are rendered as drop-down fields.</li> 
+  <li><em>has_and_belongs_to_many</em> relations are rendered as checkbox lists.</li> 
+</ul>
+You can override the default render mode by passing a required mode constant to the first argument of this method.
+List of supported render mode constants:
+<ul>
+  <li><em>frm_text</em> - creates a text element.</li>
+  <li><em>frm_password</em> - creates a password element.</li>
+  <li><em>frm_dropdown</em> - creates a drop-down element.</li>
+  <li><em>frm_radio</em> - creates radio buttons.</li>
+  <li><em>frm_checkbox</em> - creates a checkbox.</li>
+  <li><em>frm_checkboxlist</em> - creates a checkbox list.</li>
+  <li><em>frm_textarea</em> - creates a textarea element.</li>
+  <li><em>frm_html</em> - creates WYSIWYG editor field.</li>
+  <li><em>frm_code_editor</em> - creates a code editor field.</li>
+  <li><em>frm_grid</em> - creates a grid element. See <a href="index.html#gridColumns()">gridColumns()</a>, <a href="index.html#gridSettings()">gridSettings()</a> methods for details.</li>
+  <li><em>frm_datetime</em> - creates a date/time field.</li>
+  <li><em>frm_date</em> - creates a date field.</li>
+  <li><em>frm_onoffswitcher</em> - creates a switcher element.</li>
+  <li><em>frm_record_finder</em> - creates a record finder element.</li>
+  <li><em>frm_file_attachments</em> - creates a file attachments widget. Note that you should use <a href="index.html#renderFilesAs()">renderFilesAs()</a> to specify how exactly the files should be displayed - as images, as a single image, or as a list of files.</li>
+  <li><em>frm_widget</em> - creates a form widget.</li>
+</ul>
+Options for multi-option fields (drop-down menu, checkbox list, or radio-button list) based on relation columns generate the list of options
+automatically. If you want a non-relation column to be rendered as a multi-value field you should define
+additional public methods in the model class. First method is <em>get_[column_name]_options()</em>. It should return the list of available
+options. If this method is defined in the model, it will be used for fetching the available options even for relation columns.
+The method should return an associative array.
+<div class="codeblock"><pre class="brush:php; collapse:true">
+public function define_form_fields($context = null)
+{
+  $this-&gt;add_form_field('notification_mode')-;
+}
+
+public function get_notification_mode_options($key_index=-1)
+{
+  $options = array(
+    'nobody'=&gt;'Nobody',
+    'authors'=&gt;'Authors only',
+    'all'=&gt;'All users'
+  );
+
+  if ($key_index == -1)
+   return $options;
+
+  return isset($options[$key_index]) ? $options[$key_index] : null;
+}
+</pre></div>
+The method should accept the parameter specifying the key value. It is used for the preview form feature. If the value is <em>-1</em>
+the method returns full list of options. If the value is not <em>-1,</em> it should return a label for the option corresponding the key value.
+If you are not going to use preview forms for the model, implementing this feature is not required and you can just
+return all options from the method. This method executes before the method specified in <a href="index.html#optionsMethod()">optionsMethod()</a>
+method and overrides its result.
+<br/><div class="api-separator"></div>
+For radio-button and checkbox lists the method can also return item descriptions:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public function get_notification_mode_options($key_index=-1)
+{
+  return array(
+    'nobody'=&gt;array('Nobody'=&gt;'Do not send new comment notifications.'),
+    'authors'=&gt;array('Authors only'=&gt;'Send new comment notifications only to post author.'),
+    'all'=&gt;array('All users'=&gt;'Notify all users who have permissions to receive blog notifications.')
+  );
+}
+</pre></div>
+Radio-button and checkbox list fields require the <em>get_[column_name]_option_state()</em> method, which determines whether an option is checked.
+The method should accept a single argument - the option value and return a boolean value:
+<div class="codeblock"><pre class="brush:php; collapse:false">
+public function get_notification_mode_option_state($value)
+{
+  return $this-&gt;notification_mode == $value;
+}
+</pre></div>
+This method executes before the method specified in <a href="index.html#optionStateMethod()">optionStateMethod()</a>
+method and overrides its result.</div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="index.html#renderFilesAs()">renderFilesAs()</a></li>
+                <li><a href="index.html#optionsMethod()">optionsMethod()</a></li>
+                <li><a href="index.html#optionStateMethod()">optionStateMethod()</a></li>
+            
+        </ul>
+</div>      <h4 class="api-object-name">
+      <a href="index.html#renderFilesAs()" name="renderFilesAs()">¶</a>
+      <span>renderFilesAs()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>renderFilesAs</b>(string $renderMode)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$renderMode</th>
+            <td>string</td>
+            <td>specifies the file list render mode value.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a render mode for a file attachment field.
+Supported render modes for file attachments are: 
+<ul>
+ <li><em>single_file</em> - allows to upload a single file.</li>
+ <li><em>single_image</em> - allows to upload a single image.</li>
+ <li><em>file_list</em> - allows to upload multiple files.</li>
+ <li><em>image_list</em> - allows to upload multiple images.</li>
+</ul>
+Example:
+<div class="codeblock"><pre class="brush:php; collapse:false">$this-&gt;add_form_field('files')-&gt;renderAs(frm_file_attachments)-&gt;renderFilesAs('file_list');</pre></div>
+File columns should have a corresponding <em>has_many</em> relation referring to the <a href="../db_file/index.html">Db_File</a> class. 
+See <a href="../db_file/index.html">Db_File</a> class for details about creating model file fields.</div>
+
+    <div class="api-see-also">
+  <h4>See Also</h4>
+    <ul>
+                <li><a href="../db_file/index.html">Db_File</a></li>
+            
+        </ul>
+</div>      <h4 class="api-object-name">
+      <a href="index.html#saveCallback()" name="saveCallback()">¶</a>
+      <span>saveCallback()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>saveCallback</b>(string $callback)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$callback</th>
+            <td>string</td>
+            <td>a JavaScript function name</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a JavaScript function name to be executed when a user clicks Save button on the HTML editor toolbar.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#side()" name="side()">¶</a>
+      <span>side()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>side</b>($side $side='full')</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$side</th>
+            <td>$side</td>
+            <td>specifies the form side side.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets the form side the field should be placed to.
+Supported values are <em>left</em>, <em>right</em>, <em>full</em>. The form side can be specified
+in <a href="../db_activerecord/index.html#add_form_field()">add_form_field()</a> method.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#size()" name="size()">¶</a>
+      <span>size()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>size</b>(string $size)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$size</th>
+            <td>string</td>
+            <td>specifies a size selector. Supported values are <em>tiny</em>, <em>small</em>, <em>large</em>, <em>huge</em>, <em>giant</em>.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Sets a size of textarea fields.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#titlePartial()" name="titlePartial()">¶</a>
+      <span>titlePartial()</span> method
+    </h4>
+    
+    <div class="api-signature">public Db_FormFieldDefinition <b>titlePartial</b>(string $partial_name)</div>
+    
+        
+          <table class="api-summary-table">
+                  <tr>
+            <th>$partial_name</th>
+            <td>string</td>
+            <td>specifies the partial name or an absolute partial's file path.</td>
+          </tr>
+                          <tr>
+            <th>{return}</th>
+            <td>Db_FormFieldDefinition</td>
+            <td>returns the updated form field definition object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Specifies name of a partial to render below the form field caption.
+The partial file should be placed to the views directory of the controller
+which renders the form. Alternatively you can specify the absolute pat to the 
+partial.</div>
+
+          <h4 class="api-object-name">
+      <a href="index.html#validation()" name="validation()">¶</a>
+      <span>validation()</span> method
+    </h4>
+    
+    <div class="api-signature">public <a href="../phpr_validationrules/index.html">Phpr_ValidationRules</a> <b>validation</b>()</div>
+    
+        
+          <table class="api-summary-table">
+                          <tr>
+            <th>{return}</th>
+            <td><a href="../phpr_validationrules/index.html">Phpr_ValidationRules</a></td>
+            <td>returns the validation rule set object.</td>
+          </tr>
+              </table>
+        
+    <div class="api-description">Returns the validation rule set object corresponding to the form field.</div>
+
+      
+  
+<div class="commentsWrap">
+  <div id="thread"></div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_identifier = "api-class-Db_FormFieldDefinition";
+    var disqus_url = "http://v1.lemonstand.com/api/class/db_formfielddefinition//";
+    var disqus_title = "API class Db_FormFieldDefinition";
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://lemonstand.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+</div><!--/commentsWrap--></td>
+              </tr>
+            </table>
+          </div>
+        </div><!--/content-->
+      </div><!-- /contentWrapper -->
+  </div><!--/wrapper-->
+  <div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../../../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../../../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../../../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="../../../docs/ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="../../../docs/developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../../../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../../../tos/index.html">Terms &amp; Conditions</a> | <a href="../../../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+  </body>
+</html>

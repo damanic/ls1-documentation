@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - List Filters</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="administrative_dashboard.html">Administrative Dashboard</a></li><li><a href="adding_a_back_end_user_interface.html">Adding a Back-End User Interface</a></li><li><a href="lists_in_forms_in_the_administration_area.html">Lists and Forms in the Administration Area</a></li><li class="last">List Filters</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>List Filters</h2>
+        
+        <p>LemonStand programming framework allows to bind any number of filters to a list. Filters are presented with a special user interface on a page and allow to limit the list content by specific record parameters. For example, filters on the Order List page allow to limit the order list by order status, coupon code, products ordered and some other parameters.</p>
+<p>The filters user interface has two elements - the filter panel, which is usually placed above a list, and the filter configuration popup form. The filter panel on the Order List page:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/orders_filter_panel.png" alt="" /></p>
+<p>The Current Order Status filter configuration form:</p>
+<p><img src="../resources/i/wiki/extending/orders_filters_config.png" alt="" /></p>
+<p>In this section we will continue extending a simple blog module which we started in the <a href="developing_a_simple_module.html">Developing a simple module</a> article. In the <a href="administration_area_lists.html">previous article</a> we created a blog post list. In this article we will demonstrate how you can add a filter for limiting the post list by specific categories.</p>
+<h3>Developing the filter class</h3>
+<p>Filters are presented with special classes. We need to develop a class for the category filter. Filter class names, as any other module class names, should follow the naming convention described in the <a href="list_filters.html#">Developing LemonStand modules</a> article. There are no other special requirements for filter class names, but we recommend to add the "_filter" suffix to filter class names in order to distinguish filter classes from other classes.</p>
+<p>A suitable name for our category filter class is AbcBlog_Category_Filter. This class should be defined in the modules/abcblog/classes/abcblog_category_filter.php script. Filter classes should extend the <strong>Db_DataFilter</strong> class. A simplest filter class can contain only the single method - <strong>applyToModel()</strong>. This method receives a model object and a list of selected primary key values, corresponding records selected by a user in the filter configuration popup form. The method should use the <strong>where()</strong> method of a passed model object in order to limit the result data set. Here is a full code of the category filter class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class AbcBlog_Category_Filter extends Db_DataFilter
+  {
+    public $model_class_name = 'AbcBlog_Category';
+    public $list_columns = array('name');
+
+    public function applyToModel($model, $keys, $context = null)
+    {
+      $model-&gt;where('(
+        select 
+          count(*) 
+        from 
+          abcblog_posts_categories 
+        where 
+          category_id in (?) and 
+          post_id=abcblog_posts.id) &gt; 0', 
+      array($keys));
+    }
+  }
+?&gt;</pre></div><p>The class declaration has two fields: <strong>$model_class_name</strong> and <strong>$list_columns</strong>. The <strong>$model_class_name</strong> field specifies which data model class represents an entity we are going to filter records by. In our case we are going to filter the post list by categories. Categories are presented by the AbcBlog_Category class, and therefore we specified this class name in the $model_class_name field. The <strong>$list_columns </strong> fields specifies which columns of the filtering data model should be visible in the filter configuration popup form. We want to display only the category name column. The category name is presented with the <strong>name</strong> column in the database <strong>abcblog_categories</strong> table.</p>
+<p>The <strong>applyToModel()</strong> method is complicated a bit in our case, because posts and categories are connected using the many-to-many relation and we need to use a subquery in order to find whether a blog post belongs to specific categories. If the category_id field belonged to the abcblog_posts table, the filtering query would be much simpler:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function applyToModel($model, $keys, $context = null)
+{
+  $model-&gt;where('category_id in (?)', array($keys));
+}
+</pre></div><p>But in our case we need to refer to the join table (abcblog_posts_categories) and build a subquery.</p>
+<p>The <strong>$model</strong> variable which is passed to the method is an object of the AbcBlog_Post class (in this specific case). The <strong>where()</strong> method we use in the code example is a feature of the Active Record engine, which allows to add conditions to the WHERE clause of a resulting SQL query. The first parameter is required - the condition SQL string. The string can contain the question mark, which represents a parameter placeholder. Its value should be passed using the second method parameter. You can find more details about the Db_ActiveRecord class in the <a href="api_function_and_class_reference.html">Class Reference</a>.</p>
+<p>The <strong>$keys</strong> parameter contains a list of identifiers corresponding filter records selected by a the user. In our case the keys parameter contains a list of category identifiers.</p>
+<h3>Defining fields in the categories model</h3>
+<p>Our filter configuration popup form will contain a list of categories. We need to define list columns in the AbcBlog_Category class, in the same way as we did it for the AbcBlog_Post class in the <a href="administration_area_lists.html">previous article</a>. Below is the full code of the AbcBlog_Category class after adding the column definition code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class AbcBlog_Category extends Db_ActiveRecord
+  {
+    public $table_name = 'abcblog_categories';
+    
+    public function define_columns($context = null)
+    {
+      $this-&gt;define_column('name', 'Name');
+    }
+  }
+?&gt;
+</pre></div><h3>Updating the posts controller and view</h3>
+<p>Now, when we have the filter class defined, we can extend the blog posts controller and add the filtering features to it. The filtering features are implemented in the <a href="../api/class/db_filterbehavior/index.html">Db_FilterBehavior</a> behavior. Also, the <a href="../api/class/db_formbehavior/index.html">Db_FormBehavior</a> behavior, which provides form features, is required for the filter behavior. We need to add both behaviors to the <strong>$implement</strong> filed of the controller class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">class AbcBlog_Posts extends Backend_Controller
+{
+  public $implement = 'Db_ListBehavior, Db_FilterBehavior, Db_FormBehavior';
+  ...</pre></div><p>The filter behavior interacts (and uses) with the list behavior, and we need to define two more list parameters in the controller class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public $list_options = array();
+public $list_custom_prepare_func = null;</pre></div><p>These parameters have default values, but they must be defined in the controller in order the filter behavior to be able to configure the list behavior for its own needs.</p>
+<p>Also, we need to define the filter configuration fields:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public $filter_list_title = 'Filter posts';
+public $filter_onApply = 'listReload();';
+public $filter_onRemove = 'listReload();';
+public $filter_filters = array(
+  'category'=&gt;array(
+    'name'=&gt;'Category', 
+    'class_name'=&gt;'AbcBlog_Category_Filter', 
+    'prompt'=&gt;'Please choose post categories you want to include to the list. Posts with other categories will be hidden.', 
+    'added_list_title'=&gt;'Added Categories')
+);</pre></div><p>The <strong>$filter_list_title</strong> field sets a title for the filters panel. The <strong>$filter_onApply</strong> and <strong>$filter_onRemove</strong> fields contain JavaScript code which will be executed when a user applies or removes a filter. The <strong>listReload()</strong> JavaScript function is added by the list behavior and it is always available on pages containing a list.</p>
+<p>The <strong>$filter_filters</strong> field contains a list (array) of filters available on the page. Each element of this array should have a unique index ('category' in our case) and contain a list of filter configuration options:</p>
+<ul>
+<li><strong>name</strong> - a filter name to display on the filter panel.</li>
+<li><strong>class_name</strong> - a filter class name.</li>
+<li><strong>prompt</strong> - a message to display above a list of available filter records in the filter configuration popup form.</li>
+<li><strong>added_list_title</strong> - a title to display above the list of selected filter records.</li>
+</ul>
+<p>The filter behavior does not limit list records automatically, because in some cases you may want to apply extra conditions to a list content. The list behavior contains the <strong>listPrepareData()</strong> which could be overridden in the controller class. This method must return a pre-configured model object and thus allows to apply filtering conditions to the model object. In the blog posts controller we implemented the method in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function listPrepareData()
+{
+  $obj = new AbcBlog_Post();
+  $this-&gt;filterApplyToModel($obj);
+
+  return $obj;
+}</pre></div><p>The method creates an instance of the AbcBlog_Post class and applies filters to it using the <strong>filterApplyToModel()</strong> controller's method. This method is added to the controller class by the filter behavior. After that the method returns the pre-configured model object.</p>
+<p>Finally we need to update the post list view document (index.htm). The view document contains the <strong>listRender()</strong> method call. By default the list behavior does not display the filter panel. We need to use the <strong>list_render_filters</strong> parameter in order to force the behavior to render the filters:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= $this-&gt;listRender(array('list_render_filters'=&gt;true)) ?&gt;</pre></div><p>Now our post list contains the filter panel:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/posts_filter_panel.png" alt="" /></p>
+<p>If you click the category link, the filter configuration form will popup. The form contains a list of existing category records:</p>
+<p><img src="../resources/i/wiki/extending/posts_filter_form.png" alt="" /></p>
+<p>You can download the updated blog module <a href="http://res.lemonstandapp.com/wiki/files/abcblog-04.zip">here</a>.</p>
+        
+        <p>Next: <a href="administration_area_forms.html">Forms</a><br/>Previous: <a href="administration_area_lists.html">Lists</a><br/>Return to <a href="lists_in_forms_in_the_administration_area.html">Lists and Forms in the Administration Area</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_187"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/list_filters/";
+		var disqus_title = "List Filters";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Displaying a List of Products</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="products.html">Products</a></li><li class="last">Displaying a List of Products</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Displaying a List of Products</h2>
+        
+        <p>There are at least 3 cases when you may want to display a list of products - a list of a categories products, a list of a custom group's products and a list of related products. That's why it is a good idea to place the code displaying a product list into a <strong>partial</strong> and render this partial when it is needed, passing a product collection as a parameter.</p>
+<p>Start with creating a new partial. It doesn't matter what name you assign to it, but it is better if you assign some meaningful name, like <strong>shop:product_list</strong>.</p>
+<p>To display a list of products, you should pass a variable, containing a list of products from outside page to the partial, as a parameter (please see the <strong>Displaying a full list of the category products</strong>&nbsp;section below for example of passing a list of products to the partial). In the partial code we assume what the variable <strong>$products</strong> is defined and passed to the partial. To output a list of products, use the standard <strong>foreach</strong> loop:</p>
+<div class="code-tabs" id="product_loop"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#product_loop-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#product_loop-twig">Twig</a></li></ul><div id="product_loop-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;ul&gt;
+  &lt;? foreach ($products as $product): ?&gt;
+    &lt;li&gt;
+      &lt;h3&gt;&lt;a href=&quot;&lt;?=  $product-&gt;page_url('/product') ?&gt;&quot;&gt;&lt;?= h($product-&gt;name) ?&gt;&lt;/a&gt;&lt;/h3&gt;
+      &lt;p&gt;&lt;?= h($product-&gt;short_description) ?&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;? endforeach ?&gt;
+&lt;/ul&gt;
+</pre></div></div><div id="product_loop-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">&lt;ul&gt;
+  {% for product in products %}
+    &lt;li&gt;
+      &lt;h3&gt;&lt;a href=&quot;{{ product.page_url('/product') }}&quot;&gt;{{ product.name }}&lt;/a&gt;&lt;/h3&gt;
+      &lt;p&gt;{{ product.short_description }}&lt;/p&gt;
+    &lt;/li&gt;
+  {% endfor %}
+&lt;/ul&gt;
+</pre></div></div></div><p>The code creates links to the product page, using the <strong>page_url</strong> method of the <a href="class_shop_product.html">Shop_Product</a> class. In the example we suppose that products on your website have URLs like these: /product/product_1, /product/product_2. The base part of the URL (/product) - is what you pass to the <strong>page_url</strong> method as a method parameter. The remaining part (product_1, product_2) is added by the method and equals to a product's URL name.</p>
+<p>You can also output a product image in the list. As products can have multiple images assigned to them and we need to output only a single image, we just display the first image, the one with with index 0 (zero). Also, it is always a good idea to check whether image exists, because you can forget to assign an image to some products. The following code snippet outputs a thumbnail, with width or height not greater than 130 pixels, of the first image of a product.</p>
+<div class="code-tabs" id="product_images"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#product_images-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#product_images-twig">Twig</a></li></ul><div id="product_images-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;?
+  $image_url = $product-&gt;image_url(0, 130, 130);
+  if ($image_url):
+?&gt;
+  &lt;img src=&quot;&lt;?= $image_url ?&gt;&quot; alt=&quot;&lt;?= h($product-&gt;name) ?&gt;&quot;/&gt;
+&lt;? endif ?&gt;</pre></div></div><div id="product_images-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% set image_url = product.image_url(0, 130, 130) %}
+{% if image_url %}
+  &lt;img src=&quot;{{ image_url }}&quot; alt=&quot;{{ product.name }}&quot;/&gt;
+{% endif %}</pre></div></div></div><p>The final product list code:</p>
+<div class="code-tabs" id="final_code"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#final_code-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#final_code-twig">Twig</a></li></ul><div id="final_code-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;ul&gt;
+  &lt;? foreach ($products as $product): ?&gt;
+    &lt;li&gt;
+      &lt;h3&gt;&lt;a href=&quot;&lt;?=  $product-&gt;page_url('/product') ?&gt;&quot;&gt;&lt;?= h($product-&gt;name) ?&gt;&lt;/a&gt;&lt;/h3&gt;
+      
+      &lt;?
+        $image_url = $product-&gt;image_url(0, 130, 130);
+        if ($image_url):
+      ?&gt;
+        &lt;img src=&quot;&lt;?= $image_url ?&gt;&quot; alt=&quot;&lt;?= h($product-&gt;name) ?&gt;&quot;/&gt;
+      &lt;? endif ?&gt;
+      
+      &lt;p&gt;&lt;?= h($product-&gt;short_description) ?&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;? endforeach ?&gt;
+&lt;/ul&gt;
+</pre></div></div><div id="final_code-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">&lt;ul&gt;
+  {% for product in products %}
+    &lt;li&gt;
+      &lt;h3&gt;&lt;a href=&quot;product.page_url('/product')&quot;&gt;{{ product.name }}&lt;/a&gt;&lt;/h3&gt;
+      
+      {% set image_url = product.image_url(0, 130, 130) %}
+      {% if image_url %}
+        &lt;img src=&quot;{{ image_url }}&quot; alt=&quot;{{ product.name }}&quot;/&gt;
+      {% endif %}
+      
+      &lt;p&gt;{{ product.short_description }}&lt;/p&gt;
+    &lt;/li&gt;
+  {% endfor %}
+&lt;/ul&gt;</pre></div></div></div><h3>Displaying a full list of the category products</h3>
+<p>To output a list of category products, you can place the following code to the category page.</p>
+<div class="code-tabs" id="category_products"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#category_products-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#category_products-twig">Twig</a></li></ul><div id="category_products-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? $this-&gt;render_partial('shop:product_list', array(
+  'products'=&gt;$category-&gt;list_products()-&gt;find_all()
+)) ?&gt;</pre></div></div><div id="category_products-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{{ render_partial('shop:product_list', {
+  'products': category.list_products().find_all()
+}) }}</pre></div></div></div><p>The&nbsp;list_products() method of the <a href="class_shop_category.html">Shop_Category</a> class returns a list of category products. The method accepts a number of parameters, which you can use for sorting a list of the category products. The result of this method is the <a href="class_shop_product.html">Shop_Product</a> object, which, in turns is a successor of the <a href="http://v1.lemonstand.com/docs/class_db_activerecord">Db_ActiveRecord</a> class. Thus the result can be used for further processing, for example for the paginating the product list, or for obtaining a collection of all products in the category. For displaying a full list of the category products we call the find_all() method, which returns a collection of the Shop_Product objects. Please read the <a href="class_shop_category.html">Shop_Category</a> class documentation for details about the list_products() method parameters.&nbsp;</p>
+<h3>Displaying content of a custom product group</h3>
+<p>To display content of a <a href="class_shop_customgroup.html">custom product group</a>&nbsp;you first should load the product group from the database. The best way to reffer a custom group is using its API code. Assuming you have a custom product group with API code "featured_products" you can find it with the following line of code: <div class="code-tabs" id="find_custom_group"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#find_custom_group-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#find_custom_group-twig">Twig</a></li></ul><div id="find_custom_group-php"><div class="codeblock"><pre class="brush:php; collapse: false">$group = Shop_CustomGroup::create()-&gt;find_by_code('featured_products');</pre></div></div><div id="find_custom_group-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% set group = method('Shop_CustomGroup', 'create').find_by_code(group_code) %}</pre></div></div></div></p>
+<p>After loading the group object, you can access its products by calling the&nbsp;<strong>list_products()</strong> method and passing its result to the partial. Example:&nbsp;<div class="code-tabs" id="display_custom_group_content"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#display_custom_group_content-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#display_custom_group_content-twig">Twig</a></li></ul><div id="display_custom_group_content-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;?
+  $group = Shop_CustomGroup::create()-&gt;find_by_code($group_code);
+  if ($group)
+    $this-&gt;render_partial('shop:product_list', array('products'=&gt;$group-&gt;list_products()));
+  else 
+    echo &quot;&lt;p&gt;The product group &quot;.$group_code.&quot; not found. Please create this group on the Shop/Products/Manage Product Groups page.&lt;/p&gt;&quot;;
+?&gt;</pre></div></div><div id="display_custom_group_content-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% set group = method('Shop_CustomGroup', 'create').find_by_code(group_code) %}
+{% if group %}
+  {{ render_partial('shop:product_list', {'products': group.list_products}) }}
+{% else %}
+  &lt;p&gt;The product group {{ group_code }} not found. Please create this group on the Shop/Products/Manage Product Groups page.&lt;/p&gt;
+{% endif %}</pre></div></div></div></p>
+<h3>Paginating a product list</h3>
+<p>Product pagination allows you to split a large product list into pages. To output a single page of products, you need to know the following:</p>
+<ul>
+<li>What is current page index? Page index determines an zero-based index of a currently opened page.</li>
+<li>How many products each page should contain?</li>
+<li>What is base URL of a page?</li>
+</ul>
+<p>All these parameters will be passed to the product list partial from outside, because it is a good practice to develop universal partials which could be used in different places of your website. To prepare a paginated list of products, place the following code to the top of the product list partial code:</p>
+<div class="code-tabs" id="product_pagination"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#product_pagination-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#product_pagination-twig">Twig</a></li></ul><div id="product_pagination-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  if (isset($paginate) &amp;&amp; $paginate)
+  {
+    $page_index = isset($page_index) ? $page_index-1 : 0;
+    $records_per_page = isset($records_per_page) ? $records_per_page : 3;
+    $pagination = $products-&gt;paginate($page_index, $records_per_page);
+  }
+  else
+    $pagination = null;
+
+  $products = $products instanceof Db_ActiveRecord ? $products-&gt;find_all() : $products;
+?&gt;</pre></div></div><div id="product_pagination-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% if paginate %}
+  {% set page_index = page_index is null ? 0 : page_index-1 %}
+  {% set records_per_page = records_per_page is null ? 3 : records_per_page %}
+  {% set pagination = products.paginate(page_index, records_per_page) %}
+{% else %}
+  {% set pagination = null %}
+{% endif %}
+
+{% set products = products is instance_of('Shop_Product')  ? products.find_all() : products %}</pre></div></div></div><p>This code snippet check whether the <strong>$paginate</strong> variable exists and if its value is true. If so, the code initializes the <strong>$page_index</strong>, <strong>$records_per_page</strong> variables and $pagination object. The <strong>$paginate </strong>variable is reserved for turning the pagination feature on and off.</p>
+<p>The tricky code in the end of the snippet makes the code more dynamic. If the&nbsp;<strong>$products</strong> variable passed to the partial is an instance of the <a href="http://v1.lemonstand.com/docs/class_db_activerecord">Db_ActiveRecord</a> class, the code calls its <strong>find_all()</strong> method, which returns a product collection.</p>
+<p>Now, we need to customize the product list displaying code on the category page:</p>
+<div class="code-tabs" id="category_render"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#category_render-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#category_render-twig">Twig</a></li></ul><div id="category_render-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? $this-&gt;render_partial('shop:product_list', array(
+  'products'=&gt;$category-&gt;list_products(),
+  'records_per_page'=&gt;5,
+  'paginate'=&gt;true,
+  'pagination_base_url'=&gt;$category-&gt;page_url('category'),
+  'page_index'=&gt;$this-&gt;request_param(1, 0)
+)) ?&gt;
+</pre></div></div><div id="category_render-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{{ render_partial('shop:product_list', {
+  'products': category.list_products(),
+  'records_per_page': 5,
+  'paginate': true,
+  'pagination_base_url': category.page_url('category'),
+  'page_index': request_param(1, 0)
+}) }}</pre></div></div></div><p>First, notice the value passed to the <strong>proaducts</strong> parameter. We do not call the find_all() method on the result of the category list_products() method this time, because now we want the product list partial to paginate the product list before displaying it.</p>
+<p>The <strong>page_index</strong> parameter represents an index of a currently open page. Page index is passed through the URL. To read values from URL you use method <a href="http://v1.lemonstand.com/docs/class_cms_controller">request_param()</a> of the controller object. This method has 2 parameters - an index of the URL segment to return and a default value to return if the index does not exist. For category pages, page index follows the category URL name, like this: http://yoursite.com/category/computers/2 - the category URL name is "computers", the page is <strong>2</strong>. To load the page index value from the URL you need to use the following code: <strong>$this-&gt;request_param(1, 0)</strong>. This code returns a value of the URL parameter with index 1. If the index is not present, the code return 0. Indexes are zero-based. For category pages a parameter with index 0 represents the category URL name, so we need to load a parameter with index 1.</p>
+<p>The <strong>pagination_base_url</strong> parameter will be used in the following chapter.</p>
+<h3 id="nested-urls">Using nested category URLs</h3>
+<p>The nested category URLs support is disabled by default. <span>You can enable category nesting on System/Settings/eCommerce Settings page.</span>&nbsp;When the feature is enabled, category page URLs can have different number of segments (parameters) and loading the page index from the second URL parameter will not work for categories which have URLs with more than one segment, like&nbsp;men/jumpers. The request_param() method supports negative values of the first parameters, allowing you to load parameters from the <strong>end</strong> of the URL. If you need to get the last URL parameter, call <strong>$this-&gt;request_param(-1, 0)</strong>. Updated pagination setup for nested category URLs:&nbsp;<div class="code-tabs" id="pagination_nested"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#pagination_nested-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#pagination_nested-twig">Twig</a></li></ul><div id="pagination_nested-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;? $this-&gt;render_partial('shop:product_list', array(
+  'products'=&gt;$category-&gt;list_products(),
+  'records_per_page'=&gt;5,
+  'paginate'=&gt;true,
+  'pagination_base_url'=&gt;$category-&gt;page_url('category'),
+  'page_index'=&gt;$this-&gt;request_param(-1, 0)
+)) ?&gt;</pre></div></div><div id="pagination_nested-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{{ render_partial('shop:product_list', {
+  'products': category.list_products(),
+  'records_per_page': 5,
+  'paginate': true,
+  'pagination_base_url': category.page_url('category'),
+  'page_index': request_param(-1, 0)
+}) }}</pre></div></div></div></p>
+<h3>Displaying links to other pages</h3>
+<p>Obviously, you will want to output a list of links to other pages. You can do it, using the <strong>$pagination</strong> object obtained with $products-&gt;paginate() method call. $pagination object is an instance of the <a href="http://v1.lemonstand.com/docs/class_phpr_pagination">Phpr_Pagination</a> class and it contains all pagination-related information. The way you output the page list is not limited with any restrictions. Let's output the page list in format like this:</p>
+<p><img class="wiki_image_frame_padding" src="../resources/i/wiki/creating_pages_pagination.png" alt="" /></p>
+<p>It is better if you create a separate partial for displaying the pagination markup, because you may need to use pagination not only on a products page, but also on any other page (a list of customer orders, for example). Create a new partial and assign some name to it, for example "pagination". To output a list of links the partial will accept 2 parameters - the pagination object and a base URL of pages. Base URL is a page URL without a page index in the end. For example, if you display a list of a category products, your base URL could be <strong>/category/computers</strong>. An URL of a specific page could be /category/computers/2.</p>
+<p>The following code outputs a pagination markup exactly like displayed on the image above. You can customize the code if it is needed.</p>
+<div class="code-tabs" id="other_pages_links"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#other_pages_links-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#other_pages_links-twig">Twig</a></li></ul><div id="other_pages_links-php"><div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  $curPageIndex = $pagination-&gt;getCurrentPageIndex();
+  $pageNumber = $pagination-&gt;getPageCount();
+  $suffix = isset($suffix) ? $suffix : null;
+?&gt;
+&lt;p&gt;
+  Showing  &lt;strong&gt;&lt;?= ($pagination-&gt;getFirstPageRowIndex()+1).'-'.($pagination-&gt;getLastPageRowIndex()+1) ?&gt;&lt;/strong&gt;
+  of &lt;strong&gt;&lt;?= $pagination-&gt;getRowCount() ?&gt;&lt;/strong&gt; records.
+  Page:
+  &lt;? for ($i = 1; $i &lt;= $pageNumber; $i++): ?&gt;
+    &lt;? if ($i != $curPageIndex+1): ?&gt;&lt;a href=&quot;&lt;?= $base_url.'/'.$i.$suffix ?&gt;&quot;&gt;&lt;? endif ?&gt;
+      &lt;?= $i ?&gt;
+    &lt;? if ($i != $curPageIndex+1): ?&gt;&lt;/a&gt;&lt;? endif ?&gt;
+  &lt;? endfor ?&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;? if ($curPageIndex): ?&gt;&lt;a href=&quot;&lt;?= $base_url.'/'.$curPageIndex.$suffix ?&gt;&quot;&gt;&lt;? endif ?&gt;
+    &amp;#x2190; Previous page
+  &lt;? if ($curPageIndex): ?&gt;&lt;/a&gt;&lt;? endif ?&gt;
+  |
+  &lt;? if ($curPageIndex &lt; $pageNumber-1): ?&gt;&lt;a href=&quot;&lt;?= $base_url.'/'.($curPageIndex+2).$suffix ?&gt;&quot;&gt;&lt;? endif ?&gt;
+    Next page &amp;#x2192;
+  &lt;? if ($curPageIndex &lt; $pageNumber-1):  ?&gt;&lt;/a&gt;&lt;? endif ?&gt;
+&lt;/p&gt;</pre></div></div><div id="other_pages_links-twig"><div class="codeblock"><pre class="brush:twig; collapse: true">{% set curPageIndex = pagination.getCurrentPageIndex() %}
+{% set pageNumber = pagination.getPageCount() %}
+
+&lt;p&gt;
+  Showing  &lt;strong&gt;{{ pagination.getFirstPageRowIndex()+1 }} - {{ pagination.getLastPageRowIndex()+1 }} &lt;/strong&gt;
+  of &lt;strong&gt;{{ pagination.getRowCount() }}&lt;/strong&gt; records. 
+  Page: 
+  {% for i in 1..pageNumber %}
+    {% if i != curPageIndex+1 %}&lt;a href=&quot;{{ base_url~'/'~i~suffix }}&quot;&gt;{% endif %}
+    {{ i }}
+    {% if i != curPageIndex+1 %}&lt;/a&gt;{% endif %}
+  {% endfor %}
+&lt;/p&gt;
+
+&lt;p&gt;
+  {% if curPageIndex &gt; 0 %}&lt;a href=&quot;{{ base_url~'/'~curPageIndex~suffix }}&quot;&gt;{% endif %}
+  &amp;#x2190; Previous page  
+  {% if curPageIndex %}&lt;/a&gt;{% endif %}
+  |
+  {% if curPageIndex &lt; pageNumber-1 %}&lt;a href=&quot;{{ base_url~'/'~(curPageIndex+2)~suffix }}&quot;&gt;{% endif %}
+  Next page &amp;#x2192;
+  {% if curPageIndex &lt; pageNumber-1 %}&lt;/a&gt;{% endif %}
+&lt;/p&gt;</pre></div></div></div><p>The optional $suffix parameter can be used for cases when you need to pass some extra parameters in the URL after the page index. In the Demo website we use the $suffix parameter for passing the search string through the URL.</p>
+<p>Now you can output the pagination markup below the product list in the product list partial. Just render the partial we just created:</p>
+<div class="code-tabs" id="pagination_partial"><ul><li><a href="../wiki/displaying_a_list_of_products/index.html#pagination_partial-php">PHP</a></li><li><a href="../wiki/displaying_a_list_of_products/index.html#pagination_partial-twig">Twig</a></li></ul><div id="pagination_partial-php"><div class="codeblock"><pre class="brush:php; collapse: false">&lt;?
+if ($pagination)
+  $this-&gt;render_partial('pagination', array('pagination'=&gt;$pagination, 'base_url'=&gt;$pagination_base_url));
+?&gt;</pre></div></div><div id="pagination_partial-twig"><div class="codeblock"><pre class="brush:twig; collapse: false">{% if pagination %}
+  render_partial('pagination', {'pagination': pagination, 'base_url': pagination_base_url})
+{% endif %}</pre></div></div></div><h4>See also:</h4>
+<ul>
+<li><a href="class_shop_product.html">Shop_Product class</a></li>
+<li><a href="http://v1.lemonstand.com/docs/class_cms_controller">Cms_Controller class</a></li>
+<li><a href="http://v1.lemonstand.com/docs/class_db_datacollection">Db_DataCollection class</a></li>
+<li><a href="http://v1.lemonstand.com/docs/class_db_activerecord">Db_ActiveRecord class</a></li>
+<li><a href="http://v1.lemonstand.com/docs/class_phpr_pagination">Phpr_Pagination class</a></li>
+</ul>
+        
+        <p>Next: <a href="displaying_a_list_of_grouped_products.html">Displaying a List of Grouped Products</a><br/>Previous: <a href="products.html">Products</a><br/>Return to <a href="products.html">Products</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_74"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/displaying_a_list_of_products/";
+		var disqus_title = "Displaying a List of Products";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

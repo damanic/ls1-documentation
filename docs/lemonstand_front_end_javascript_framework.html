@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - LemonStand Front-End JavaScript Framework</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="lemonstand_back_end.html">LemonStand Back-End</a></li><li class="last">LemonStand Front-End JavaScript Framework</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>LemonStand Front-End JavaScript Framework</h2>
+        
+        <p>The LemonStand front-end JavaScript framework is a set of JavaScript libraries which enables you to send AJAX requests to the server and update page content without reloading the page.&nbsp;There are two implementations of LemonStand JavaScript framework - MooTools-based and jQuery-based. To include required libraries to your pages, you need to include minimum required JavaScript libraries described in the <a href="combining_and_minifying_javascript_and_css_files.html">Combining and minifying JavaScript and CSS files</a> article.</p>
+<p>LemonStand front-end JavaScript library extends the DOM <strong>element</strong> class with new method: <strong>sendRequest</strong>.</p>
+<h3>element.sendRequest method</h3>
+<p>The <strong>element.sendRequest</strong> method sends an AJAX request to a server. This method should be called on HTML FORM elements. Use the element.<strong>getForm</strong> method to find a FORM element wrapping the element.</p>
+<h4>Syntax</h4>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">element.sendRequest(handler_name, options)</pre></div><h4>Arguments</h4>
+<ol>
+<li>handler_name, string. A name of a function to call on the server.</li>
+<li>options, JavaScript object. The request options object. This argument is optional.</li>
+</ol>
+<h4>Return value</h4>
+<p>Returns false</p>
+<h4>Example</h4>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">&lt;input value=&quot;Add To Cart&quot; onclick=&quot;return
+  $(this).getForm().sendRequest('shop:on_addToCart', 
+    {update: {'mini_cart': 'shop:mini_cart','product_page': 'product_partial'}}
+  )&quot;
+type=&quot;button&quot; /&gt;
+</pre></div><p>In the <strong>handler_name</strong> argument you can specify either a function defined in the page Action code, or a handler name defined in LemonStand modules. For example, the Shop module defines the <strong>shop:on_addToCart</strong> AJAX request handler.</p>
+<p>The <strong>options</strong> argument can have the following elements:</p>
+<ul>
+<li>update &ndash; a set of page element Ids and corresponding LemonStand partials to update the elements.</li>
+<li>loadIndicator &ndash; an object for managing the loading indicator behavior: loadIndicator{show: true, hideOnSuccess: true}</li>
+<li>onComplete &ndash; a function to execute when the request is complete</li>
+<li>onAfterUpdate - a function to execute when the request finished updating the page&nbsp;</li>
+<li>onFailure &ndash; a function to execute in case of the request's failure</li>
+<li>onSuccess -&nbsp;<span>&nbsp;a function to execute i<span>n case of the request's success</span></span></li>
+<li>onBeforePost &ndash; a function to execute before data is sent to the server</li>
+<li>confirm &ndash; a text of a confirmation message to display before sending data to the server. If the visitor click the Cancel button in the confirmation message, the request will be cancelled.</li>
+<li>extraFields - a JavaScript object, containing additional POST fields which you want to send to the AJAX handler. For example: <div class="codeblock"><pre class="brush:javascript; collapse: false">&lt;a href=&quot;#&quot; onclick=&quot;
+return $(this).getForm().sendRequest(
+'shop:on_addToCart', {
+extraFields: {no_flash: 1},
+update: {
+  'mini_cart': 'shop:mini_cart', 
+  'product_page': 'product_partial'
+}})&quot;&gt;Add to cart&lt;/a&gt;</pre></div></li>
+<li>preCheckFunction - function to execute before sending data to the server. Inside the function you can validate the form fields. The function should return TRUE if posting data is allowed. Example: <div class="codeblock"><pre class="brush:javascript; collapse: true">&lt;input value=&quot;Add To Cart&quot; onclick=&quot;return
+  $(this).getForm().sendRequest('shop:on_addToCart', 
+    {
+      preCheckFunction: function()
+      {
+        if (!$('#some_field').val().trim().length)
+        {
+          alert('Please enter something!');
+          $('#some_field').focus();
+          return false;
+        }
+  
+        return true;
+      }
+    }
+  )&quot;
+type=&quot;button&quot; /&gt;
+</pre></div></li>
+<li>loadIndicator - options for the load indicator. Use the 'html' field to set the load indicator text. The default text is "&lt;span&gt;Loading...&lt;/span&gt;". Example:&nbsp;<span><div class="codeblock"><pre class="brush:javascript; collapse: false">&lt;a href=&quot;#&quot; onclick=&quot;
+return $(this).getForm().sendRequest(
+'shop:on_addToCart', {
+extraFields: {no_flash: 1},
+loadIndicator: {html: '&lt;span&gt;Adding...&lt;/span&gt;'}
+})&quot;&gt;Add to cart&lt;/a&gt;</pre></div></span></li>
+</ul>
+<p>For details about AJAX handlers supported by LemonStand modules please refer to the <a href="api_function_and_class_reference/index.html">API section</a>.</p>
+<p>As from the version #1.11.74 of the Core module the jQuery front-end AJAX library supports simplified syntax for the AJAX requests - the getForm() call is not required and the sendRequest() method can be called directly on the element. The following expressions are similar. Old syntax:</p>
+<p><span><div class="codeblock"><pre class="brush:javascript; collapse: false">onchange=&quot;$(this).getForm().sendRequest('shop:on_updatePaymentMethod')&quot; ...</pre></div></span></p>
+<p><span>New syntax:</span></p>
+<p><span><span><div class="codeblock"><pre class="brush:javascript; collapse: false">onchange=&quot;$(this).sendRequest('shop:on_updatePaymentMethod')&quot; ...</pre></div></span></span></p>
+<h3>The frontendready event</h3>
+<p>LemonStand front-end framework fires the <strong>frontendready</strong> event on the window object after loading all required front-end libraries. You can use this event instead the domready event to be sure that LemonStand front-end framework is ready.&nbsp;</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">window.addEvent('frontendready', function(){
+  alert('The framework is ready');
+});</pre></div><h3>The&nbsp;onAfterAjaxUpdate event</h3>
+<p>The&nbsp;<strong>onAfterAjaxUpdate</strong> is triggered on the window object each time when an AJAX request updates an element on the page. The event handler function can accept two arguments - jQuery event object and the identifier of the updated element (in MooTools the handler has a single argument - the updated element). Example:</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">&lt;script type=&quot;text/javascript&quot;&gt;
+  window.addEvent('onAfterAjaxUpdate', function(event, element_id){alert('Updated: '+element_id)});
+&lt;/script&gt;</pre></div><h3>Rendering partials instead of flash messages</h3>
+<p>If you pass the&nbsp;<strong>flash_partial</strong> POST&nbsp;parameter to the AJAX call, and call the&nbsp;<a href="http://v1.lemonstand.com/docs/function_flash_message">flash_message()</a> function in the updated page block, LemonStand will render a partial specified in the flash_partial parameter, instead of displaying a flash message. Example: <div class="codeblock"><pre class="brush:php; collapse: false">// The Add To Cart button which renders the 'add_to_cart_partial' partial on success
+&lt;input onclick=&quot;return $(this).getForm().sendRequest('shop:on_addToCart', {
+ extraFields: {
+   flash_partial: 'add_to_cart_partial'
+ },
+ update: {'mini_cart': 'shop:mini_cart', 'product_page': 'product_partial'}})&quot;
+ type=&quot;button&quot; value=&quot;Add to cart&quot;/&gt;
+</pre></div></p>
+<p>If there any flash message has been assigned by the AJAX hander, you can access it inside the partial using the <strong>$message</strong> variable.</p>
+<h3>Using jQuery with MooTools</h3>
+<p>If you need to use both jQuery and MooTools libraries on your store pages, please use jQuery <a href="http://api.jquery.com/jQuery.noConflict/">noConflict</a> plugin to avoid conflicts between jQuery and MooTools frameworks. jQuery library should be linked and the noConflict() function should be called before you link MooTools libraries required by LemonStand. The <a href="combining_and_minifying_javascript_and_css_files.html">js_combine()</a> controllers method has two aliases for linking jQuery and noConflict scripts: <strong>jquery</strong> and <strong>jquery_noconflict</strong>. The <strong>jquery</strong>&nbsp;alias links the jQuery framework copy distributed with LemonStand, but you can link any other copy of the library instead of this alias. Example of using jQuery with LemonStand:&nbsp;<div class="codeblock"><pre class="brush:javascript; collapse: true">// Old way: using the include_resources function
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;jQuery.noConflict();&lt;/script&gt;
+
+&lt;?= include_resources() ?&gt;
+
+// New way: using the js_combine method:
+  
+&lt;?= $this-&gt;js_combine(array(
+  'jquery',
+  'jquery_noconflict',
+  'mootools',
+  'ls_core_mootools')) ?&gt;
+  
+// Linking jQuery copy from an external source
+  
+&lt;?= $this-&gt;js_combine(array(
+  'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js',
+  'jquery_noconflict',
+  'mootools',
+  'ls_core_mootools')) ?&gt;</pre></div></p>
+<p>Please also remember that in noConflict mode you should use <strong>jQuery</strong>&nbsp;instead of <strong>$</strong>&nbsp;in your jQuery calls.</p>
+<h3>The core:on_null event handler</h3>
+<p>The core:on_null event handler does not execute any specific code on the server and can be used for updating (redrawing) partials on a page. Example: <div class="codeblock"><pre class="brush:javascript; collapse: false">&lt;input onclick=&quot;$(this).getForm().sendRequest('core:on_null', {
+  update: {'mini_cart': 'shop:mini_cart'}})&quot;
+  type=&quot;button&quot; 
+  value=&quot;Update mini cart&quot;/&gt;</pre></div></p>
+<h3 id="data_attributes_api">Data attributes API</h3>
+<p>As from the version #1.11.74 of the Core module the jQuery front-end AJAX library supports the data attributes API. The data attributes API simplifies the AJAX request triggering syntax, in many cases allowing to get rid of the JavaScript code in CMS pages, partials and layouts.</p>
+<p class="wiki_note">The data attributes API requires jQuery version 1.7 or higher.</p>
+<p>The following data attributes are supported.</p>
+<h4>data-ajax-handler</h4>
+<p>Specifies the AJAX handler to execute. The event the AJAX request is triggered depends on the element the attribute is declared for:</p>
+<ul>
+<li>for the SELECT attribute the request is triggered when the selection is changed</li>
+<li>for buttons and anchors the request is triggered when the element is clicked</li>
+<li>for forms the request is triggered with the form is submitted.</li>
+</ul>
+<p>The following statements are equivalent. Data attributes syntax:</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">&lt;a href=&quot;#&quot; data-ajax-handler=&quot;shop:on_evalShippingRate&quot; ...
+...
+&lt;?= open_form(array('data-ajax-handler'=&gt;'shop:on_evalShippingRate')) ?&gt;</pre></div><p>JavaScript syntax:</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">&lt;a href=&quot;#&quot; onclick=&quot;return $(this).sendRequest('shop:on_evalShippingRate')&quot; ...
+...
+&lt;?= open_form(array('onsubmit'=&gt;&quot;return $(this).sendRequest('shop:on_evalShippingRate')&quot;)) ?&gt;
+</pre></div><h4>data-ajax-update</h4>
+<p>Specifies a list of the page elements and partials to update when the AJAX request finishes. This attribute is equivalent for the update configuration parameter in the JavaScript code. The attribute value should list the page element identifiers and corresponding partials in the following format:</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">element_id=parital</pre></div><p>Use the comma to list multiple elements and partials:</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">element_id_1=parital_1, element_id_2=parital_2</pre></div><p>The following statements are equivalent. Data attributes syntax:</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">&lt;a data-ajax-handler=&quot;shop:on_evalShippingRate&quot; data-ajax-update=&quot;shipping_options=shop:estimated_shipping_options&quot; ...</pre></div><p><span>JavaScript syntax:</span></p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">&lt;a onclick=&quot;$(this).sendRequest('shop:on_evalShippingRate', {update: {'shipping_options': 'shop:estimated_shipping_options'}})&quot;</pre></div><h4>data-ajax-confirm</h4>
+<p>This attribtue corresponds to the <strong>confirm</strong> option in the JavaScript sendRequest() syntax. Specifies a confirmation message to display before the request is sent. Example:</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">&lt;a href=&quot;#&quot; data-ajax-handler=&quot;shop:on_deleteCartItem&quot; data-ajax-confirm=&quot;Do you really want to remove this item from the cart?&quot; ...</pre></div><h4>data-ajax-extra-fields</h4>
+<p>This attribute corresponds to the extraFields option in the JavaScript sendRequest() syntax. Specifies extra field names and values to post to the server with the AJAX request. Field names and values should be specified in the following format:&nbsp;</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">field_name='field_value'</pre></div><p>Multiple fields can be separated with the comma:&nbsp;</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">field_name='field_value', field_name_2='field_value_2'</pre></div><p>The following statements are equivalent. Data attributes syntax:</p>
+<div class="codeblock"><pre class="brush:html; collapse: false">&lt;a href=&quot;#&quot; 
+    data-ajax-handler=&quot;shop:on_deleteCartItem&quot; 
+    data-ajax-confirm=&quot;Do you really want to remove this item from the cart?&quot; 
+    data-ajax-update=&quot;cart-content=shop:cart_content, mini-cart=shop:mini_cart&quot;
+    data-ajax-extra-fields=&quot;key='&lt;?= $item-&gt;key ?&gt;'&quot;
+&gt;Remove&lt;/a&gt;</pre></div><p>JavaScript syntax:&nbsp;</p>
+<div class="codeblock"><pre class="brush:javascript; collapse: false">&lt;a href=&quot;#&quot; 
+    onclick=&quot;return $(this).sendRequest(
+        'shop:on_deleteCartItem', {
+            confirm: 'Do you really want to remove this item from the cart?',
+            update: {'cart-content': 'shop:cart_content', 'mini-cart' :'shop:mini_cart'},
+            extraFields: {'key': '&lt;?= $item-&gt;key ?&gt;'}
+        })&quot;
+&gt;Remove&lt;/a&gt;</pre></div><h4>data-ajax-indicator-html</h4>
+<p>Allows to set a custom loading indicator content. The default value is "&lt;span&gt;Loading...&lt;/span&gt;".</p>
+        
+        <p>Next: <a href="caching_api.html">Caching API</a><br/>Previous: <a href="programming_pages.html">Programming Pages</a><br/>Return to <a href="lemonstand_back_end.html">LemonStand Back-End</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_25"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/lemonstand_front_end_javascript_framework/";
+		var disqus_title = "LemonStand Front-End JavaScript Framework";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

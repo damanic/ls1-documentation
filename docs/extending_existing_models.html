@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Extending Existing Models</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="extending_lemonstand.html">Extending LemonStand</a></li><li class="last">Extending Existing Models</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Extending Existing Models</h2>
+        
+        <p>LemonStand API allows you to add new fields to existing business entities - customers, products and orders. It helps to solve the following tasks:</p>
+<ul>
+<li><strong>Extend customers</strong> - add new fields to the Customer model and assign them values during the checkout or from the Create/Edit Customer form in the Administration Area. Below we will demonstrate how you can extend the customer model with the Middle Name field.</li>
+<li><strong>Extend orders</strong> - add new fields to the Order model. You can assign values to the added fields using the Create/Edit form in the Administration Area, or during the checkout.</li>
+<li><strong>Extend products</strong> - add new fields the Product model and display the field values on the front-end website.</li>
+</ul>
+<p>In order to extend existing models, you need to handle specific <strong>events</strong>, which LemonStand sends through the built-in event system. To subscribe to system events, you need to override the <strong>subscribeEvents()</strong> method in the <strong>module information class</strong>. The module information class is described in the <a href="developing_a_simple_module.html">Developing a simple module</a> article.</p>
+<p>Inside the <strong>subscribeEvents()</strong> method you can subscribe to specific events by calling the <strong>Backend::$events-&gt;addEvent()</strong> method. This method has 3 parameters: an event name, an object which contains the event handler function, and a name of the event handler function. Usually you will define event handler functions right in the module information class, so the second parameter will refer to the <strong>$this</strong> PHP variable. Below is an example of the overridden <strong>subscribeEvents()</strong> method:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function subscribeEvents()
+{
+  Backend::$events-&gt;addEvent('shop:onExtendCustomerForm', $this, 'extend_customer_form');
+}</pre></div><p>The code subscribes the module information class to the shop:onExtendCustomerForm event. The second parameter of the <strong>addEvent()</strong> method refers to the $this variable. It means that the event handler function is defined in the module information class. The last parameter contains a name of the event handler function - <strong>extend_customer_form</strong> in our case. This function should be declared in the module information class as a public class method:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function extend_customer_form($customer)
+{
+  /*
+   * Some PHP code for extending the customer form
+   */
+}
+</pre></div><p>You can use any names for the event handler functions. From examples in this article you can infer that the event handler names are predefined, but this is not so.</p>
+<p>Parameters, which are passed to an event handler function, depend on a specific event. The <strong>shop:onExtendCustomerForm</strong> event passes a single parameter to its handlers - a reference to the customer object to extend. You will find a list of parameters for each specific event below in this article.</p>
+<p>LemonStand fires two separate events for extending existing objects - one event for <strong>adding a column definition</strong>, and another event for <strong>adding a field</strong> to the Administration Area forms. As any new field requires a corresponding column in the database, your module should create all needed fields, using the update approach described in the <a href="creating_and_updating_database_tables.html">Creating and updating database tables</a> article. We will not repeat the explanation here, but you should remember that the database update should be applied by your module, but not by the Shop module. You should not modify the Shop module for adding new features to your store.</p>
+<p class="wiki_note">In order to avoid conflicts between custom columns added to existing database tables by different modules, always add the <strong>x_module_identifier_</strong> prefix to all field columns your module creates. For example: x_mymodule_middle_name - a suitable name for the customer middle name column, created by some module with the "My Module" name.</p>
+<p>Another important thing about new field names is that you should not use fields with same names for customer, order and product tables, otherwise it could confuse the LemonStand database engine during the checkout process and it will apply, for example, customer field values to order table fields.</p>
+<h3>Extending customers</h3>
+<p>To extend the customer model, your module should handle the following events:</p>
+<ul>
+<li><strong>shop:onExtendCustomerModel</strong> - allows to add new column definitions to a customer model object.</li>
+<li><strong>shop:onExtendCustomerForm</strong> - allows to add new form fields to the Create/Edit Customer form in the Administration Area.</li>
+</ul>
+<p>Both events pass a single parameter to their handlers - a reference to the <a href="class_shop_customer.html">Shop_Customer</a> object, which should be extended. For the demonstration purposes we will extend the customer model with the Middle Name field. Before we extend the customer model we must create a corresponding field in the <strong>shop_customers</strong> table. You can do it by creating an update file containing the following SQL query:</p>
+<div class="codeblock"><pre class="brush:sql; collapse: false">alter table shop_customers add column x_mymodule_middle_name varchar(100);</pre></div><p>After adding the column the customer table, we can extend the customer model by subscribing and handling corresponding events. The example code below subscribes a module information class to the shop:onExtendCustomerForm and shop:onExtendCustomerModel events:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function subscribeEvents()
+{
+  Backend::$events-&gt;addEvent('shop:onExtendCustomerModel', $this, 'extend_customer_model');
+  Backend::$events-&gt;addEvent('shop:onExtendCustomerForm', $this, 'extend_customer_form');
+}</pre></div><p>The <strong>extend_customer_form()</strong> and <strong>extend_customer_model()</strong> functions must be defined in the module information class in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function extend_customer_model($customer)
+{
+  $customer-&gt;define_column('x_mymodule_middle_name', 'Middle Name')-&gt;validation()-&gt;fn('trim');
+}
+
+public function extend_customer_form($customer)
+{
+  $customer-&gt;add_form_field('x_mymodule_middle_name')-&gt;tab('Customer');
+}</pre></div><p>As you can see, inside the <strong>shop:onExtendCustomerModel</strong> event handler we call the <strong>define_column()</strong> method of the model object. The even handler is similar to the define_columns() method of the model class. The define_columns() method is described in detail in the <a href="administration_area_lists.html">Lists</a> article. Inside the event handler you can define any columns and <a href="administration_area_forms.html">validation rules</a> for them.</p>
+<p>The shop:onExtendCustomerForm event handler is very similar to the <strong>define_form_fields()</strong> method of the model class, which is described in the <a href="administration_area_forms.html">Forms</a> article. Please note that forms for editing customers, orders and products in LemonStand have tabs. When you add new fields to the models, you need to specify a tab you want the field to be placed on.</p>
+<p>After extending the customer model, the new field becomes available in the customer list, and on the Customer Preview and Create/Edit Customer forms:</p>
+<p><img src="../resources/i/wiki/extending/customer_middle_name_init.png" alt="" /></p>
+<p>By default LemonStand places new fields to the bottom of the form. You can specify an exact location for a field using the <strong>sortOrder()</strong> method of the form field definition object:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function extend_customer_form($customer)
+{
+  $customer-&gt;add_form_field('x_mymodule_middle_name')-&gt;tab('Customer')-&gt;sortOrder(21);
+}
+</pre></div><p>A value you pass to the <strong>sortOrder()</strong> method specifies an order of the field on the form. Default form fields have orders with step 10. If you look to the default Customer form, you will see that the first 2 fields on the form are the First Name and Last Name. Sort orders for these fields are 10 and 20. Thus, if we want to place a new field after the Last Name field, we need to specify a sort order value between 20 and 30.</p>
+<p><img src="../resources/i/wiki/extending/customer_middle_name_updated_order.png" alt="" /></p>
+<p>Now you can assign values to the customer middle name column using the Administration Area <strong>Create/Edit Customer</strong> from. Also, you can allow your customers to specify a middle name during the checkout.</p>
+<h4>Adding the customer middle name to the checkout forms</h4>
+<p>LemonStand can save values of custom fields, provided during on any step of the checkout process. You only need to add corresponding input elements to the checkout forms. Below is an example code of the Billing Info partial. The code adds the Middle Name field to the Billing Information checkout form:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;label for=&quot;x_mymodule_middle_name&quot;&gt;Middle name&lt;/label&gt;
+&lt;input 
+    name=&quot;x_mymodule_middle_name&quot;
+    id=&quot;x_mymodule_middle_name&quot;
+    value=&quot;&lt;?= h(Shop_CheckoutData::get_custom_field('x_mymodule_middle_name')) ?&gt;&quot; 
+    type=&quot;text&quot;/&gt;
+</pre></div><p>The code uses the <strong>Shop_CheckoutData::get_custom_field()</strong> method for obtaining a value of the middle name, previously saved to the session. It allows a customer to leave and return to the Billing Information form, without losing the field value.</p>
+<h3>Extending orders</h3>
+<p>The process of extending the order model is very similar to extending the customer model, described in the previous section. To extend the order model you need to handle the following events:</p>
+<ul>
+<li><strong>shop:onExtendOrderModel</strong> - allows to add new column definitions to an order model object.</li>
+<li><strong>shop:onExtendOrderForm</strong> - allows to add new form fields to the Create/Edit Order form in the Administration Area.</li>
+</ul>
+<p>Both events pass a single parameter to their event handlers - an object of the <a href="class_shop_order.html">Shop_Order</a> class. In order to add a column to the order model, you will also need to add a corresponding column to the <strong>shop_orders</strong> table. You can also add custom order fields to the checkout steps and they will be saved to the database automatically, in the same way as it is described in the Extending Customers section above.</p>
+<h3>Extending products</h3>
+<p>Extending products is a process similar to extending customers. To extend the product model the following events should be handled:</p>
+<ul>
+<li><strong>shop:onExtendProductModel</strong> - allows to add new column definitions to a product model object.</li>
+<li><strong>shop:onExtendProductForm&nbsp;</strong> - allows to add new form fields to the Create/Edit Product form in the Administration Area.</li>
+<li><strong>shop:onGetProductFieldOptions</strong>&nbsp;- allows to set options for drop-down lists.&nbsp;</li>
+</ul>
+<p>Both events pass a single parameter to their event handlers - an object of the <a href="class_shop_product.html">Shop_Product</a> class. In order to add a column to the product model, you will also need to add a corresponding column to the <strong>shop_products</strong> table.</p>
+<p>Unlike the customer and order fields, you cannot update product fields from the front-end website. You can only access custom fields and display them in the catalog, in the similar way as you do with any standard product field. For example, if you added the <strong>x_mymodule_special_description</strong> field to a product, you can output it in your catalog with the following code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= h($product-&gt;x_mymodule_special_description) ?&gt;</pre></div><h4>Creating drop-down product fields</h4>
+<p>To create a drop-down field and populate it manually, you need to handle the <strong>shop:onGetProductFieldOptions</strong>&nbsp;event in your module. Please note, that if you are adding a <a href="extending_models_with_related_columns.html">relation column</a>, drop-down fields are populated automatically. Example of using the <strong>shop:onGetProductFieldOptions</strong>&nbsp;event: <div class="codeblock"><pre class="brush:php; collapse: true">public function subscribeEvents()
+{
+  Backend::$events-&gt;addEvent('shop:onExtendProductModel', $this, 'extend_product_model');
+  Backend::$events-&gt;addEvent('shop:onExtendProductForm', $this, 'extend_product_form');
+  Backend::$events-&gt;addEvent('shop:onGetProductFieldOptions', $this, 'get_product_field_options');
+}
+
+public function extend_product_model($product)
+{
+  $product-&gt;define_column('x_product_shape', 'Product shape');      
+}
+
+public function extend_product_form($product, $context)
+{
+  $product-&gt;add_form_field('x_product_shape')-&gt;tab('Product')-&gt;renderAs(frm_dropdown);
+}
+
+public function get_product_field_options($field_name, $current_value)
+{
+  if ($field_name == 'x_product_shape')
+  {
+    $options = array('square'=&gt;'Square', 'circle'=&gt;'Circle', 'triangle'=&gt;'Triangle');
+    if ($current_value == -1)
+      return $options;
+    
+    if (array_key_exists($current_value, $options))
+      return $options[$current_value];
+  }
+}
+</pre></div></p>
+<h3>Extending manufacturers</h3>
+<p>Please use the following events for extending the manufacturer model:</p>
+<ul>
+<li><strong>shop:onExtendManufacturerForm</strong> - allows to add new column definitions to a manufacturer model object.</li>
+<li><strong>shop:onExtendManufacturerModel</strong> - allows to add new form fields to the Create/Edit Manufacturer form in the Administration Area.</li>
+</ul>
+<h3>Module templates</h3>
+<p>On the <a href="lemonstand_module_templates.html">Module Templates</a> page you can download templates of modules which extend some existing LemonStand models.</p>
+        
+        <p>Next: <a href="extending_models_with_related_columns.html">Extending Models with Related Columns</a><br/>Previous: <a href="developing_payment_modules.html">Guide for Developing a Payment Module</a><br/>Return to <a href="extending_lemonstand.html">Extending LemonStand</a></p>
+        
+              </div>
+      
+            <div class="wrap12 commentsWrap">
+		<div id="thread"></div>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		var disqus_identifier = "wiki_page_191"; //[Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+		var disqus_url = "http://v1.lemonstand.com/docs/extending_existing_models/";
+		var disqus_title = "Extending Existing Models";
+		(function() {
+		 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		 dsq.src = 'http://lemonstand.disqus.com/embed.js';
+		 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=lemonstand">comments powered by Disqus.</a></noscript>
+
+      </div><!--/commentsWrap-->
+              
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml" class="mac">
+<head>
+    <title>LemonStand Version 1 - Lists</title>
+  <link rel="shortcut icon" href="../favicon.ico" />
+  <link href="http://feeds.feedburner.com/lemonstand" type="application/rss+xml" rel="alternate" title="LemonStand blog" />
+  <link href="http://feeds.feedburner.com/LemonstandReleaseNotes" type="application/rss+xml" rel="alternate" title="LemonStand release notes" />
+
+  <link rel="stylesheet" type="text/css" href="../ls_css_combine/index.html@file[]=%252Fresources%252Fcss%252Fgrid.css&amp;file[]=%252Fresources%252Fcss%252Fformsframework.css&amp;file[]=%252Fresources%252Fcss%252Fscreen.css&amp;file[]=%252Fresources%252Fcss%252Fjquery.fancybox.css&amp;file[]=%252Fresources%252.css"/>
+
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-1.7.1.min.js&amp;file[]=%252Fresources%252Fjs%252Ftwitter.js&amp;file[]=%252Fresources%252Fjs%252Fjquery.noconflict.js&amp;file[]=%252Fmodules%252Fcms%252Fresources%252Fjavascript%252Ff"></script>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+
+  <meta property="fb:app_id" content="194533163908263"/>
+
+
+   
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shCore.css" />
+  <link type="text/css" rel="stylesheet" href="../resources/shl/styles/shThemeRDark.css" />  
+  <script type="text/javascript" src="../ls_javascript_combine/index.html@file[]=%252Fresources%252Fjs%252Fjquery-ui-1.8.11.custom.min.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshCore.js&amp;file[]=%252Fresources%252Fshl%252Fscripts%252FshBrushJScript.js&amp;file[]=%252Fresources%252Fs"></script>
+  
+  <script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/resources/shl/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.gutter = false;
+	SyntaxHighlighter.config.strings.expandSource = "Click to expand the code block";
+        
+    window.addEvent('domready', function() {
+      var $ = jQuery;
+
+      $(".thumbnailWrap a").fancybox({      
+         'zoomSpeedIn': 300,
+         'zoomSpeedOut': 300,
+         'overlayShow': true,
+         'titleShow'      : 'true',
+         'overlayOpacity': .6
+       });
+       
+       jQuery(".code-tabs").tabs();
+    });
+  </script>  
+  <link rel="stylesheet" type="text/css" href="../resources/css/syntax_highlightier.css@1.css" />
+  <link rel="stylesheet" type="text/css" href="../resources/css/wiki.css@1.css" />
+  
+</head>
+<body id="b_help" class="mac">
+  <div id="wrapper">
+    <div id="headerWrapper">
+	  	<div style="background:#333;color:#fff;text-align:center;padding:20px 0;">
+	  		<p style="color:#eaeaea">This is the documentation for LemonStand V1, which has been discontinued. You can <a href="https://lemonstand.com/v1tocloud">learn more and upgrade your store here</a>.</p>
+	  	</div>
+       <div id="header">
+      <a href="../index.html" id="headerLogo"><img src="../resources/i/lemonstand_logo.png" alt="LemonStand" /></a>      
+      	<p id="contactUs"><span data-icon="&#xe04f;" aria-hidden="true"></span> <a href="tel://1-855-332-0555"><strong>1-855-332-0555</strong></a> &nbsp;&nbsp;&nbsp;<span data-icon="&#xe03e;" aria-hidden="true"> <a href="mailto:sales@lemonstand.com"><strong>sales@lemonstand.com</strong></a>&nbsp;&nbsp;&nbsp; 
+      			<span data-icon="&#xe016;" aria-hidden="true"></span> <a id="myaccont_login" href="http://v1.lemonstand.com/myaccount/"><strong>Log In</strong></a>
+			</p>
+
+      <div id="navigation">
+		<ul>
+		<!-- <li class="dropdown"><span>Tour &#9662;</span>
+			<ul>
+				<li class="first"><a href="/tour/">Take a Tour</a></li>
+				<li class="last"><a href="/features/customization/">Features</a></li>
+			</ul>
+		</li> -->
+		<!--<li><a href="/features/">Features</a></li>
+		<li><a href="/gallery/">Gallery</a></li>-->
+		<li><a href="http://v1.lemonstand.com/marketplace/">Marketplace</a></li>
+		<!--<li><a href="/buy/">Pricing</a></li>-->
+		<li class="dropdown last"><span>Resources &#9662;</span>
+			<ul>              
+			  <li class="first"><a href="../docs.html">Documentation</a></li>
+			  <li><a href="api_function_and_class_reference/index.html">API</a></li>
+			  <li id="n_forum"><a href="http://forum.lemonstand.com">Forum</a></li>
+			  <li><a href="http://v1.lemonstand.com/myaccount/tickets/">Technical Support</a></li>
+			  <li><a href="http://forum.lemonstandapp.com/index.php?app=tracker&showproject=2">Issue Tracker</a></li>
+			  <li><a href="http://v1.lemonstand.com/release-notes/">Release Notes</a></li>
+			  <!--<li><a href="/faq/">FAQ</a></li>-->
+			  <li class="last"><a href="http://blog.lemonstand.com">Blog</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><span>Partners &#9662;</span>
+			<ul>
+				<li class="first"><a href="../partners.html">Certified Partners</a></li>
+				<li class="last"><a href="../hire-developers/index.html">Hire a Freelancer</a></li>
+			</ul>
+		
+		</li>
+        </ul>
+      </div><!--/navigation-->      
+      
+      	    </div><!--/header-->
+    </div><!-- /headerWrapper -->    
+    <!-- <div id="topContentWrapper">  
+      <div id="topContent">
+        <div id="topCol1">
+          <h1>LemonStand <span>Documentation</span></h1>
+        </div>
+      </div>
+    </div> -->
+    <div id="contentWrapper">  
+      <div id="content" class="clearfix">
+        <div class="wrap12">
+	        <form method="get" action="http://v1.lemonstand.com/docs_search">
+        <div id="wiki_search">
+          <input name="query" type="text" id="wiki_search_field"/>
+          <input type="submit" id="btn-doc-search" class="awesome blue large" value="Search"/>
+          <div class="wiki_clear"></div>
+        </div>
+      </form>
+    </div>
+  
+          <div class="col12 wiki_page_content">
+        <div class="wiki_breadcrumbs"><ul class="wiki_toc"><li><a href="front_page.html">LemonStand</a></li><li><a href="developer_guide.html">Developer Guide</a></li><li><a href="administrative_dashboard.html">Administrative Dashboard</a></li><li><a href="adding_a_back_end_user_interface.html">Adding a Back-End User Interface</a></li><li><a href="lists_in_forms_in_the_administration_area.html">Lists and Forms in the Administration Area</a></li><li class="last">Lists</li></ul></div>
+        <div id="wiki-cta">
+        	<h3>LemonStand Version 1 Has Been Discontinued</h1>
+        	<p>This documentation is for LemonStand Version 1. LemonStand is now offered as a cloud-based eCommerce platform.<br> You can try the new LemonStand and <a href="https://lemonstand.com/v1tocloud">learn about upgrading here</a>.</p>
+        </div>
+        
+        <h2>Lists</h2>
+        
+        <p>In this section we will continue extending a simple blog module which we started in the <a href="developing_a_simple_module.html">Developing a simple module</a> article. We already have the AbcBlog_Posts controller, which will manage blog post records. In the controller we have defined the index() action, which will display a list of blog posts. Below is a code of the AbcBlog_Posts controller class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">&lt;?
+  class AbcBlog_Posts extends Backend_Controller
+  {
+    public function __construct()
+    {
+      parent::__construct();
+      $this-&gt;app_module_name = 'Blog';
+      $this-&gt;app_tab = 'abcblog';
+      $this-&gt;app_page = 'posts';
+    }
+
+    public function index()
+    {
+      $this-&gt;app_page_title = 'Posts';
+    }
+  }
+?&gt;</pre></div><h3>Defining model columns</h3>
+<p>In order to display a post list on the /abcblog/posts page, we first need to define list columns in the <strong>AbcBlog_Post</strong> model class, which we created in the <a href="working_with_the_database.html">Working with the database</a> article. The <a href="http://v1.lemonstand.com/docs/class_db_activerecord">Db_ActiveRecord</a> class (a parent class of the AbcBlog_Post class) has the <strong>define_columns()</strong> method. In this method we can define model columns. By defining columns we just inform the programming framework which fields from the database table we are going to use in lists and forms, and what titles these fields should have. We need to override this method in the AbcBlog_Post class declaration. Inside the method we will call the <strong>define_column()</strong> method for defining individual columns.</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function define_columns($context = null)
+{
+  $this-&gt;define_column('id', '#');
+  $this-&gt;define_column('title', 'Title');
+  $this-&gt;define_column('description', 'Description');
+}
+</pre></div><p>In the code above we declared 3 list columns. The <strong>define_column()</strong> method of the Db_ActiveRecord class has 2 parameters - the column name in the database table, and the column title in the list.</p>
+<h3>Extending the controller</h3>
+<p>After defining the model columns, we need to extend the controller class, in order to add list features. The <a href="../api/class/db_listbehavior/index.html">Db_ListBehavior</a> behavior implements everything we need for displaying a list. To extend our posts controller, we need to define the <strong>$implement</strong> field in the controller class declaration. This field should have a string-type value, containing a list of behaviors, separated with a comma. In our case we want to add only a single behavior:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">class AbcBlog_Posts extends Backend_Controller
+{
+  public $implement = 'Db_ListBehavior';
+  ...
+</pre></div><p>All behaviors in LemonStand have a number of configuration parameters. The list behavior requires at least one parameter to be specified - the model class name, which represents items we are going to display in the list. This parameter should be added using the <strong>$list_model_class</strong> controller field. In our case the model class name is <strong>AbcBlog_Post</strong>:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">class AbcBlog_Posts extends Backend_Controller
+{
+  public $implement = 'Db_ListBehavior';
+  public $list_model_class = 'AbcBlog_Post';
+  ...
+</pre></div><h3>Displaying a list in the view document</h3>
+<p>The list behavior adds several methods to the controller. The most important method is the <strong>listRender()</strong>. This method outputs a list on a page. In the view document (the <strong>index.htm</strong> file, in our case) we need to add the following line of code:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">&lt;?= $this-&gt;listRender() ?&gt;</pre></div><p>If you go to the Blog/Posts page in the Administration Area, you will see a page with a list of posts on it:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/abcblog_post_list_init.png" alt="" /></p>
+<p>As you can see the list behavior not only displays the record table, but also supports pagination, sorting and provides the standard list setup interface (the icon on the right side of the page, above the list).</p>
+<p>The list behavior has many configuration options. Some of them will be described below. But first we will demonstrate how you can add links to list records. In our case we need each record in the post list to refer to the <strong>Edit Post</strong> page (we will create this page later). The list behavior has the <strong>$list_record_url</strong> for specifying an URL for list records. We need to add this field to the controller class declaration:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">class AbcBlog_Posts extends Backend_Controller
+{
+  public $implement = 'Db_ListBehavior, Db_FormBehavior';
+  public $list_model_class = 'AbcBlog_Post';
+  public $list_record_url = null;
+  ...
+</pre></div><p>As you can see we declared the field, but assigned the <strong>NULL</strong> value to it. This is because URLs of pages in the Administration Area are not static. They depend on the Administration Area URL key specified during the application installation. The problem and the solution are explained in the <a href="adding_a_back_end_user_interface.html">Adding a back-end user interface</a> article. To obtain an actual URL of the Edit Post page we need to use the url() function. But we cannot call functions in class declaration code in PHP. The solution is to define the field in the class declaration and assign a value to it in the class constructor:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function __construct()
+{
+  ...
+  $this-&gt;list_record_url = url('/abcblog/posts/edit/');
+  ...
+}</pre></div><p>This code adds a link to all list record. The link refers to the <strong>Edit Post</strong> page, which we will add to the controller in the <a href="administration_area_forms.html">Forms</a> article.</p>
+<h3>Adding the search functions</h3>
+<p>The list behavior has many useful features, which are described in the <a href="../api/class/db_listbehavior/index.html">Db_ListBehavior</a>.</p>
+<p>article. In this section we want to demonstrate how you can add the search feature to the post list. To enable the search function, we need to define 3 fields in the controller declaration: <strong>$list_search_enabled</strong>, <strong>$list_search_fields</strong> and <strong>$list_search_prompt</strong>:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">class AbcBlog_Posts extends Backend_Controller
+{
+  public $implement = 'Db_ListBehavior, Db_FormBehavior';
+  public $list_model_class = 'AbcBlog_Post';
+  public $list_record_url = null;
+
+  public $list_search_enabled = true;
+  public $list_search_fields = array('@title', '@description', '@content');
+  public $list_search_prompt = 'find posts by title or content';
+  ...
+</pre></div><p>The <strong>$list_search_enabled</strong> field just tells the list behavior that the search feature should be enabled. The <strong>$list_search_fields</strong> field contains a list of database fields you want to search in. The <strong>@</strong> symbol is used for indicating that a field belongs to a main table the model (AbcBlog_Post) refers to. In some cases models can have a number of linked tables. In the next section we will add the Categories column to the blog post list. Then the SQL query for fetching data from the database, generated by the list behavior, will contain more than one table reference. If there will be more than one table containing the "title" column, the SQL error will occur, because MySQL server will not known what specific table we mean in the query. The @ symbol helps the behavior to bind a field to the main model table.</p>
+<p>The <strong>$list_search_prompt</strong> specifies a message which will be displayed in the search field.</p>
+<p>After declaring all necessary fields and refreshing the blog post list page, you will find a search field above the record table:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/blog_posts_search.png" alt="" /></p>
+<p>The search feature tries to find ALL words specified in the search box in ANY field specified in the <strong>$list_search_fields</strong> controller field. We recommend you to create database indexes for all fields you are going to make searchable.</p>
+<h3>Displaying record modification information and data from related tables</h3>
+<p>Earlier we defined 4 special fields in our blog posts table: created_at, updated_at, created_user_id, updated_user_id. You can add these service fields to the blog post list with two line of code in the AbcBlog_Post model class declaration:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">class AbcBlog_Post extends Db_ActiveRecord
+{
+  public $table_name = 'abcblog_posts';
+
+  public $implement = 'Db_AutoFootprints';
+  public $auto_footprints_visible = true;
+  ...
+</pre></div><p>The <strong>$implement</strong> filed tells the Active Record engine that the AbcBlog_Post model should be extended with the <strong>Db_AutoFootprints</strong> class. This class is an extension for the Db_ActiveRecord class, which automatically defines all update information columns. You can define all columns manually, in the same way as we defined the id, title and description columns, but with the Db_AutoFootprints extension you can save some time. Now our blog post list has 4 new columns:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/blog_posts_update_info.png" alt="" /></p>
+<p>In the <a href="creating_data_relations.html">Creating data relations</a> article we created a blog categories model - the <strong>AbcBlog_Category</strong> class. It is possible to display data from related tables in LemonStand lists. In our blog implementation we can display a list of categories each post belongs to.</p>
+<p>We already have the <strong>has_and_belongs_to_many</strong> relation definition in the AbcBlog_Post model class:</p>
+<div class="codeblock"><pre class="brush:php; collapse: true">class AbcBlog_Post extends Db_ActiveRecord
+{
+  ...
+  public $has_and_belongs_to_many = array(
+    'categories'=&gt;array(
+      'class_name'=&gt;'AbcBlog_Category', 
+      'join_table'=&gt;'abcblog_posts_categories', 
+      'primary_key'=&gt;'post_id', 
+      'foreign_key'=&gt;'category_id')
+  );
+  ...</pre></div><p>Now we can define a column for the <strong>Categories</strong> relation in the model's <strong>define_columns()</strong> method. But this time we will use the <strong>define_multi_relation_column()</strong> method instead of the <strong>define_column()</strong>:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">public function define_columns($context = null)
+{
+  $this-&gt;define_column('id', '#');
+  $this-&gt;define_column('title', 'Title');
+  $this-&gt;define_column('description', 'Description');
+  
+  $this-&gt;define_multi_relation_column('categories', 'categories', 'Categories', &quot;@name&quot;);
+}</pre></div><p>The <strong>define_multi_relation_column()</strong> method is designed for defining columns for <strong>Has Many</strong> and <strong>Has and Belongs To Many</strong> relations. The method has the following parameters:</p>
+<ul>
+<li><strong>Column name</strong> - a name of a column to add to the model. The name should be compatible with SQL table column names.</li>
+<li><strong>Relation name</strong> - a reference to a relation to be presented by the column. It should refer to an existing relation defined in the model class using the $has_many or $has_and_belongs_to_many fields. In our case the relation name is <strong>categories</strong>.</li>
+<li><strong>Column title</strong> - a title text for the column.</li>
+<li><strong>Value SQL expression</strong> - an SQL expression for fetching the column value. You can use a name of a column from the related table. In our case the related table is <strong>abcblog_categories</strong>, which have the <strong>name</strong> column, representing a category name. Also it is possible to use SQL functions here, for example CONCAT. The @ symbol is used to indicate that the column belongs to the related table (abcblog_categories). In this case it is not necessary. But if our blog posts table contained the <strong>name</strong> column, the @ symbol would be required in order to distinguish the columns from the abcblog_categories and abcblog_posts tables.</li>
+</ul>
+<p>After adding the Categories column, you can refresh the post list. Now it contains the Categories column. In our database the single post belongs to 2 categories. LemonStand outputs both categories in the Categories column, separating them with the comma symbol:</p>
+<p><img class="wiki_image_frame" src="../resources/i/wiki/extending/blog_categories_column.png" alt="" /></p>
+<p>The last method for defining columns which we need to describe is the <strong>define_relation_column()</strong>. Use this method when you need to define a column for the <strong>Belongs To</strong> or <strong>Has One</strong> data relation. For example, in the LemonStand <strong>Shop_Order</strong> model class we defined a column for the shipping method in the following way:</p>
+<div class="codeblock"><pre class="brush:php; collapse: false">$this-&gt;define_relation_column('shipping_method', 'shipping_method', 'Shipping Method', db_varchar, '@name');</pre></div><p>The first 3 parameters of this method match first 3 parameters of the <strong>define_multi_relation_column()</strong> method described above. The <strong>shipping_method</strong> relation is defined in the Shop_Order class as a <strong>Belongs To</strong> relation. The fourth method parameter is a column type. Column types are described in the <a href="http://v1.lemonstand.com/docs/class_db_activerecord">Db_ActiveRecord</a> class description. Active Record engine uses the column type information for formatting columns in list and forms. For example, values of date and numeric columns are right aligned. The last parameter of the method specifies a name of a column from a related table, which value should be displayed in the column.</p>
+<h3>Conclusion</h3>
+<p>In this article we demonstrated the power of behaviors in the LemonStand programming framework. You can download the updated Blog module archive <a href="http://res.lemonstandapp.com/wiki/files/abcblog-03.zip">here</a>.</p>
+        
+        <p>Next: <a href="list_filters.html">List Filters</a><br/>Previous: <a href="lists_in_forms_in_the_administration_area.html">Lists and Forms in the Administration Area</a><br/>Return to <a href="lists_in_forms_in_the_administration_area.html">Lists and Forms in the Administration Area</a></p>
+        
+              </div>
+      
+             
+          </div><!--/content-->
+    </div><!-- /contentWrapper -->
+</div><!--/wrapper-->
+<div id="footer">
+  <div id="footerContent">
+    <div class="wrap12">
+	    <div class="col4">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">Learn About The New LemonStand Cloud</span></li><li id="" class="level1"><a href="https://lemonstand.com" title="More information" class="title">More information</a></li><li id="" class="level1"><a href="https://lemonstand.com/showcase" title="LemonStand Showcase" class="title">LemonStand Showcase</a></li><li id="" class="level1"><a href="https://lemonstand.com/features" title="LS Cloud Features" class="title">LS Cloud Features</a></li><li id="" class="level1"><a href="https://lemonstand.com/pricing" title="LS Cloud Pricing" class="title">LS Cloud Pricing</a></li><li id="" class="level1"><a href="https://lemonstand.com/signup" title="LS Cloud Free Trial" class="title">LS Cloud Free Trial</a></li><li id="" class="level1"><a href="http://blog.lemonstand.com" title="eCommerce Blog" class="title">eCommerce Blog</a></li>			</ul>
+	    </div>
+	    <!--<div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">About V1</span></li><li id="" class="level1"><a href="/gallery-oldurl" title="V1 Customer Gallery" class="title">V1 Customer Gallery</a></li><li id="" class="level1"><a href="/buy" title="Buy V1 License" class="title">Buy V1 License</a></li><li id="" class="level1"><a href="/freetrial" title="V1 Trial License" class="title">V1 Trial License</a></li>			</ul>
+	    </div>-->
+	    <div class="col2">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Community</span></li><li id="" class="level1"><a href="http://v1.lemonstand.com/marketplace" title="Marketplace" class="title">Marketplace</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/modules/" title="V1 Modules" class="title">V1 Modules</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/category/themes/" title="V1 Themes" class="title">V1 Themes</a></li><li id="" class="level2"><a href="http://v1.lemonstand.com/marketplace/ideas/all/" title="V1 Ideas" class="title">V1 Ideas</a></li></ul></li><li id="" class="level1"><a href="../partners.html" title="Partners" class="title">Partners</a></li><li id="" class="level1"><a href="http://forum.lemonstandapp.com/" title="Community Forums" class="title">Community Forums</a></li>			</ul>
+	    </div>
+	    <div class="col3">
+	      	<ul>
+			<li id="" class="menuHead level1"><span class="title">V1 Support</span></li><li id="" class="level1"><a href="../myaccount.html" title="My Account" class="title">My Account</a><ul><li id="" class="level2"><a href="http://v1.lemonstand.com/myaccount/tickets" title="V1 Support Tickets" class="title">V1 Support Tickets</a></li></ul></li><li id="" class="level1"><a href="../docs.html" title="Documentation" class="title">Documentation</a><ul><li id="" class="level2"><a href="ecommerce_guide.html" title="V1 Merchant's Guide" class="title">V1 Merchant's Guide</a></li><li id="" class="level2"><a href="developer_s_guide/index.html" title="V1 Developer's Guide" class="title">V1 Developer's Guide</a></li><li id="" class="level2"><a href="../api.html" title="V1 API Docs" class="title">V1 API Docs</a></li></ul></li>			</ul>
+	    </div>
+	    <!--<div class="col3 share">
+	    	<div>
+		    	<a href="https://twitter.com/lemonstand" class="twitter-follow-button" data-show-count="false">Follow @lemonstand</a>
+		    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	    	</div>
+	    	
+	    	<div>
+	    		<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Flemonstand&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=194533163908263" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90; height:21px;" allowTransparency="true"></iframe>
+	    	</div>
+	    	
+
+	    	<div class="g-plusone" data-size="medium" data-href="http://lemonstand.com"></div>
+	    	
+	    	<div id="footer_newsletter">
+	    		<h5>Get Email updates (It's Free)</h5>
+	    		<form method="post" action="/" onsubmit="return subscribe_email(this, 'footer_newsletter', 'site:footer:newsletter')">
+				    <input type="hidden" name="format" value="h" />
+				    <input type="text" name="email" value="Email Address" id="optInEmail" class="formField" />
+				    <input type="submit" value="Sign-Up" id="optInBtn" class="button small yellow" />
+				    <p>We'll keep your email safe. Promise.</p>
+			  </form>
+  			</div>
+	    </div>-->
+    </div>
+    <div class="col12 terms">
+      <p>Copyright &copy; 2018 LemonStand eCommerce Inc. All Rights Reserved. <a href="../tos/index.html">Terms &amp; Conditions</a> | <a href="../privacy-policy/index.html">Privacy Policy</a></p>
+    </div>
+  </div><!--/footerContent-->
+  <div style="clear: both; width: 960p;">&nbsp;</div>
+</div><!--/footer-->
+
+
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<!-- affiliate -->
+<script type="text/javascript"><!--
+document.write(unescape("%3Cscript id='pap_x2s6df8d' src='" + (("https:" == document.location.protocol) ? "https://" : "http://") + 
+"affiliate.lemonstandapp.com/scripts/trackjs.js' type='text/javascript'%3E%3C/script%3E"));//-->
+</script>
+<script type="text/javascript"><!--
+PostAffTracker.setAccountId('default1');
+try {
+PostAffTracker.track();
+} catch (err) { }
+//-->
+</script>
+<!-- /affiliate -->
+<script type="text/javascript">
+  // Track GA variables
+  var _gaq = _gaq || [];
+  
+  _gaq.push(['_setCustomVar', 1, 'Visitor Type', 'Guest', 1]);
+  _gaq.push(['_setCustomVar', 2, 'Partner', 'No', 1]);
+  
+  
+  _gaq.push(['_setCustomVar', 4, 'Author', 'No', 1]);
+</script>
+
+<!--CrazyEgg-->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0000/6128.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+	<!--AdRoll-->
+	<script type="text/javascript">
+	adroll_adv_id = "QICDG4SA4BCD7BH2B4E4OA";
+	adroll_pix_id = "BZOADVG5ZFG4XATGXBKRV7";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	<!-- Pathful tracking -->
+<script>
+var PF_APPID = "3b5537e5529b89e5";
+setTimeout(function(){ var d = document; 
+s = d.createElement('script');
+s.type = 'text/javascript'; s.async = true;
+s.src = ("https:" == document.location.protocol) ? 
+"https://ssl.pathful.com/js/scripts/secure.js"
+: "http://s.pathful.com/js/scripts/capture.js";
+document.body.appendChild(s, d);
+}, 1);
+</script>
+
+</body>
+ </html>
